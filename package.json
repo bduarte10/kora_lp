@@ -1,0 +1,46 @@
+{
+  "name": "kora-lp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KORA — Implantação de IA & Automação para PMEs brasileiras",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "postbuild": "next-sitemap"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/og": "^0.6.5",
+    "@vercel/speed-insights": "^1.2.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "geist": "^1.7.0",
+    "googleapis": "^144.0.0",
+    "gsap": "^3.15.0",
+    "lenis": "^1.1.20",
+    "lucide-react": "^0.469.0",
+    "next": "16.2.4",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-hook-form": "^7.54.2",
+    "resend": "^4.0.1",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "next-sitemap": "^4.2.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
