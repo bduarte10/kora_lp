@@ -24,7 +24,7 @@ export async function sendLeadEmail(lead: LeadPayload) {
   }
 
   return resend.emails.send({
-    from: "KORA Leads <leads@kora.com.br>",
+    from: "KORA Leads <leads@getsynapse.com.br>",
     to,
     replyTo: lead.email,
     subject: `Novo lead · ${lead.company}`,
