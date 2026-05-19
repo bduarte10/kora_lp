@@ -35,7 +35,7 @@ export function Hero() {
 
           <Reveal delay={0.22}>
             <p className="mt-9 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
-              Mergulhamos na sua operação, identificamos onde IA gera retorno real e implementamos
+              Identificamos onde IA e automação geram retorno real no seu negócio, implementamos
               sob medida em semanas, com suporte contínuo.
             </p>
           </Reveal>
