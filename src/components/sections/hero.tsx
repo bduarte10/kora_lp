@@ -29,7 +29,7 @@ export function Hero() {
         <div className="flex-1 flex flex-col justify-center py-14 sm:py-20">
           <Reveal delay={0.12}>
             <h1 className="display max-w-[16ch] text-balance text-[length:var(--fs-display)] text-cream">
-              Da estratégia à automação: IA feita para o seu negócio.
+              Menos promessa. Mais operação.
             </h1>
           </Reveal>
 
