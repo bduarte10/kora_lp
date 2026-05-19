@@ -1,10 +1,9 @@
 import { google } from "googleapis";
-import { serverEnv } from "@/lib/env";
 import type { LeadPayload } from "@/lib/resend";
 
 function getClient() {
-  const email = serverEnv.GOOGLE_SHEETS_CLIENT_EMAIL;
-  const key = serverEnv.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, "\n");
+  const email = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
+  const key = process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, "\n");
   if (!email || !key) return null;
   return new google.auth.JWT({
     email,
@@ -15,7 +14,7 @@ function getClient() {
 
 export async function appendLeadToSheet(lead: LeadPayload) {
   const auth = getClient();
-  const spreadsheetId = serverEnv.GOOGLE_SHEETS_SPREADSHEET_ID;
+  const spreadsheetId = process.env.GOOGLE_SHEETS_SPREADSHEET_ID;
   if (!auth || !spreadsheetId) {
     console.warn("[sheets] credenciais ausentes;pulando append.");
     return { skipped: true as const };

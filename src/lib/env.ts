@@ -18,12 +18,14 @@ const clientSchema = z.object({
   NEXT_PUBLIC_LINKEDIN_PARTNER_ID: z.string().optional(),
 });
 
+const empty = (v: string | undefined) => v || undefined;
+
 export const serverEnv = serverSchema.parse({
-  RESEND_API_KEY: process.env.RESEND_API_KEY,
-  LEAD_NOTIFICATION_EMAIL: process.env.LEAD_NOTIFICATION_EMAIL,
-  GOOGLE_SHEETS_CLIENT_EMAIL: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-  GOOGLE_SHEETS_PRIVATE_KEY: process.env.GOOGLE_SHEETS_PRIVATE_KEY,
-  GOOGLE_SHEETS_SPREADSHEET_ID: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
+  RESEND_API_KEY: empty(process.env.RESEND_API_KEY),
+  LEAD_NOTIFICATION_EMAIL: empty(process.env.LEAD_NOTIFICATION_EMAIL),
+  GOOGLE_SHEETS_CLIENT_EMAIL: empty(process.env.GOOGLE_SHEETS_CLIENT_EMAIL),
+  GOOGLE_SHEETS_PRIVATE_KEY: empty(process.env.GOOGLE_SHEETS_PRIVATE_KEY),
+  GOOGLE_SHEETS_SPREADSHEET_ID: empty(process.env.GOOGLE_SHEETS_SPREADSHEET_ID),
 });
 
 export const clientEnv = clientSchema.parse({

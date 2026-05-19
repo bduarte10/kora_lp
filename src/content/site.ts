@@ -1,6 +1,6 @@
 export const site = {
   name: "KORA",
-  tagline: "Bússola de IA para PMEs",
+  tagline: "Especialistas em IA para PMEs brasileiras",
   description:
     "Diagnóstico, automação e implantação de IA sob medida para empresas brasileiras que querem transformar processos em resultado.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kora.com.br",
