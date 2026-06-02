@@ -11,8 +11,8 @@ export function Solutions() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[24ch] text-[length:var(--fs-h1)]">
-            Comece pelo site.{" "}
-            <span className="text-foreground-muted">Cresça com automação e IA.</span>
+            Uma parceria que cresce com você.{" "}
+            <span className="text-foreground-muted">Do site à automação e IA.</span>
           </h2>
         </Reveal>
 

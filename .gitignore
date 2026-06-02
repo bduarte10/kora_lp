@@ -41,3 +41,6 @@ next-env.d.ts
 # sitemap
 public/sitemap*.xml
 public/robots.txt
+
+# Playwright MCP artifacts
+.playwright-mcp/

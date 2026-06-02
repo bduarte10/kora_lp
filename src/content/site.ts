@@ -26,7 +26,7 @@ export const site = {
   },
 
   ctas: {
-    primary: "Ver planos",
+    primary: "Criar meu site",
     secondary: "Falar no WhatsApp",
     nav: "Ver planos",
   },
