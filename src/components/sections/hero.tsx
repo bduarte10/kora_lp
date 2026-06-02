@@ -26,22 +26,23 @@ export function Hero() {
 
         {/* Bloco central: H1 massive */}
         <div className="flex-1 flex flex-col justify-center py-14 sm:py-20">
-          <Reveal delay={0.12}>
-            <h1 className="display max-w-[16ch] text-balance text-[length:var(--fs-display)] text-cream">
-              Seu site no ar.
-              <br />
-              Tudo incluso.
-            </h1>
-          </Reveal>
+          <h1 className="display max-w-[16ch] text-[length:var(--fs-display)] text-cream">
+            <span className="hero-line">
+              <span>Seu site no ar.</span>
+            </span>
+            <span className="hero-line">
+              <span>Tudo incluso.</span>
+            </span>
+          </h1>
 
-          <Reveal delay={0.22}>
-            <p className="mt-9 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
+          <Reveal delay={0.34}>
+            <p className="mt-7 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
               Criação, hospedagem, domínio e suporte contínuo numa assinatura simples — sem custo
               escondido, sem dor de cabeça. E quando quiser escalar, automação e IA sob medida.
             </p>
           </Reveal>
 
-          <Reveal delay={0.3}>
+          <Reveal delay={0.44}>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
                 href="#planos"
@@ -68,7 +69,7 @@ export function Hero() {
         </div>
 
         {/* Faixa pilares marquee — mask gradient nas bordas fade o texto sem cobrir o aurora */}
-        <Reveal delay={0.4}>
+        <Reveal delay={0.52}>
           <div className="border-t border-cream-faint pt-6">
             <div
               className="overflow-hidden"

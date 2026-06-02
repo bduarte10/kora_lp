@@ -1,6 +1,6 @@
 import { ArrowRight, Check } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
-import { plans, pricingNote } from "@/content/pricing";
+import { plans, pricingLead, pricingLeadDetail, pricingNote } from "@/content/pricing";
 import { cn } from "@/lib/utils";
 
 export function Pricing() {
@@ -15,6 +15,12 @@ export function Pricing() {
             Seu site no ar.{" "}
             <span className="text-foreground-muted">Tudo incluso, por assinatura.</span>
           </h2>
+        </Reveal>
+        <Reveal delay={0.1}>
+          <p className="mt-6 max-w-xl text-[length:var(--fs-lead)] leading-relaxed">
+            <span className="font-medium text-foreground">{pricingLead}</span>{" "}
+            <span className="text-foreground-muted">{pricingLeadDetail}</span>
+          </p>
         </Reveal>
 
         <div className="mt-20 grid gap-6 lg:grid-cols-3">

@@ -21,7 +21,7 @@ export const plans: Plan[] = [
       "1 página de alta conversão",
       "Domínio + hospedagem + SSL inclusos",
       "Formulário e integração com WhatsApp",
-      "Otimizada para celular e Google",
+      "Otimizada para celular, Google e IA",
     ],
     highlighted: false,
     ctaLabel: "Começar agora",
@@ -37,7 +37,7 @@ export const plans: Plan[] = [
       "4 a 8 páginas (institucional completo)",
       "Domínio + hospedagem + SSL inclusos",
       "Blog ou área de conteúdo opcional",
-      "SEO técnico e performance",
+      "SEO técnico + GEO (otimização para IA)",
     ],
     highlighted: true,
     ctaLabel: "Quero esse plano",
@@ -60,6 +60,10 @@ export const plans: Plan[] = [
     ctaHref: "#cta",
   },
 ];
+
+export const pricingLead = "Otimizado para SEO e GEO.";
+export const pricingLeadDetail =
+  "Seu site achado no Google e citado por IAs como ChatGPT, Perplexity e Gemini.";
 
 export const pricingNote =
   "Todos os planos incluem domínio, hospedagem, SSL, suporte e alterações ilimitadas (uma na fila por vez). Setup é uma taxa única na criação; a mensalidade cobre tudo a partir daí.";

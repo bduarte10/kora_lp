@@ -3,6 +3,7 @@ export function NoiseBackground() {
     <div className="aurora-bg" aria-hidden>
       {/* Layer 1: diagonal light modeling — luz top-left, sombra bottom-right */}
       <div
+        className="hero-light-breathe"
         style={{
           position: "absolute",
           inset: 0,

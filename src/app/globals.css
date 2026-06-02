@@ -170,4 +170,60 @@
     pointer-events: none;
     z-index: 0;
   }
+
+  /* Hero craft: revelação do H1 linha a linha (mask reveal) */
+  .hero-line {
+    display: block;
+    overflow: hidden;
+  }
+  .hero-line > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: hero-line-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .hero-line:nth-child(1) > span {
+    animation-delay: 0.08s;
+  }
+  .hero-line:nth-child(2) > span {
+    animation-delay: 0.22s;
+  }
+  @keyframes hero-line-rise {
+    from {
+      transform: translateY(110%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /* Hero craft: camada de luz do fundo "respirando" */
+  .hero-light-breathe {
+    will-change: transform, opacity;
+    animation: hero-light-breathe 22s ease-in-out infinite alternate;
+  }
+  @keyframes hero-light-breathe {
+    from {
+      transform: scale(1) translate3d(0, 0, 0);
+      opacity: 0.92;
+    }
+    to {
+      transform: scale(1.12) translate3d(2%, -2%, 0);
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line > span {
+      transform: none;
+      animation: none;
+    }
+    .hero-light-breathe {
+      animation: none;
+    }
+  }
+
+  /* Âncora: pousa o título abaixo do nav fixo, sem o vazio do padding da seção */
+  section[id] {
+    scroll-margin-top: calc(6rem - var(--space-section));
+  }
 }
