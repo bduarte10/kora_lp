@@ -4,14 +4,14 @@ import { services } from "@/content/services";
 
 export function Services() {
   return (
-    <section id="servicos" className="section bg-bone border-y border-border">
+    <section id="ia" className="section bg-bone border-y border-border">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">O que entregamos</p>
+          <p className="eyebrow section-anchor">Próximo nível · Automação & IA</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[26ch] text-[length:var(--fs-h1)]">
-            Do diagnóstico inicial ao seu time operando sozinho.
+            Quando o site já roda, a gente automatiza o resto da operação.
           </h2>
         </Reveal>
 

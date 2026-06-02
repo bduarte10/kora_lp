@@ -1,10 +1,9 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { NoiseBackground } from "@/components/ui/noise-background";
-import { services } from "@/content/services";
 import { site, whatsappLink } from "@/content/site";
 
-const pillars = services.map((s) => s.kicker);
+const pillars = ["Sites", "Automação", "IA Aplicada", "Suporte Contínuo"];
 
 export function Hero() {
   return (
@@ -16,7 +15,7 @@ export function Hero() {
         <Reveal delay={0.04}>
           <div className="flex items-center gap-x-6 border-b border-cream-faint pb-5">
             <span className="text-[13px] font-medium section-anchor section-anchor-cream">
-              <span className="text-cream-muted">Especialistas em IA para PMEs brasileiras</span>
+              <span className="text-cream-muted">Sites, automação e IA para PMEs brasileiras</span>
             </span>
             <span className="hidden h-px flex-1 bg-cream-faint sm:block" aria-hidden />
             <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream-faint">
@@ -29,21 +28,23 @@ export function Hero() {
         <div className="flex-1 flex flex-col justify-center py-14 sm:py-20">
           <Reveal delay={0.12}>
             <h1 className="display max-w-[16ch] text-balance text-[length:var(--fs-display)] text-cream">
-              Menos promessa. Mais operação.
+              Seu site no ar.
+              <br />
+              Tudo incluso.
             </h1>
           </Reveal>
 
           <Reveal delay={0.22}>
             <p className="mt-9 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
-              Identificamos onde IA e automação geram retorno real no seu negócio, implementamos
-              sob medida em semanas, com suporte contínuo.
+              Criação, hospedagem, domínio e suporte contínuo numa assinatura simples — sem custo
+              escondido, sem dor de cabeça. E quando quiser escalar, automação e IA sob medida.
             </p>
           </Reveal>
 
           <Reveal delay={0.3}>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <a
-                href="#cta"
+                href="#planos"
                 className="group inline-flex items-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-medium text-coral-deep transition hover:bg-cream/95"
               >
                 {site.ctas.primary}

@@ -1,18 +1,18 @@
 export const site = {
   name: "KORA",
-  tagline: "Especialistas em IA para PMEs brasileiras",
+  tagline: "Sites, automação e IA para PMEs brasileiras",
   description:
-    "Diagnóstico, automação e implantação de IA sob medida para empresas brasileiras que querem transformar processos em resultado.",
+    "Sites profissionais por assinatura — criação, hospedagem, domínio e suporte inclusos. E automação e IA sob medida para empresas brasileiras que querem crescer.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kora.com.br",
   locale: "pt-BR",
   defaultOgImage: "/og-default.png",
 
   contact: {
     email: "contato@kora.com.br",
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511999999999",
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511920923143",
     whatsappMessage:
       process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
-      "Oi, vim pelo site da KORA e quero solicitar um diagnóstico",
+      "Oi, vim pelo site da KORA e quero saber mais sobre os planos",
     address: {
       city: "São Paulo",
       state: "SP",
@@ -26,16 +26,16 @@ export const site = {
   },
 
   ctas: {
-    primary: "Solicitar diagnóstico gratuito",
+    primary: "Ver planos",
     secondary: "Falar no WhatsApp",
-    nav: "Solicitar diagnóstico",
+    nav: "Ver planos",
   },
 
   nav: [
-    { href: "#problema", label: "O problema" },
-    { href: "#servicos", label: "Serviços" },
-    { href: "#processo", label: "Processo" },
-    { href: "#cases", label: "Metodologia" },
+    { href: "#solucoes", label: "Soluções" },
+    { href: "#planos", label: "Planos" },
+    { href: "#processo", label: "Como funciona" },
+    { href: "#ia", label: "Automação & IA" },
     { href: "#faq", label: "FAQ" },
   ],
 } as const;

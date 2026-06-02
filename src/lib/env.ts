@@ -10,7 +10,7 @@ const serverSchema = z.object({
 
 const clientSchema = z.object({
   NEXT_PUBLIC_SITE_URL: z.string().url().default("https://kora.com.br"),
-  NEXT_PUBLIC_WHATSAPP_NUMBER: z.string().default("5511999999999"),
+  NEXT_PUBLIC_WHATSAPP_NUMBER: z.string().default("5511920923143"),
   NEXT_PUBLIC_WHATSAPP_MESSAGE: z.string().default(""),
   NEXT_PUBLIC_GTM_ID: z.string().optional(),
   NEXT_PUBLIC_GA4_ID: z.string().optional(),

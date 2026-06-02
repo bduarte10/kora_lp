@@ -5,31 +5,31 @@ export type FAQItem = {
 
 export const faq: FAQItem[] = [
   {
-    q: "Minha empresa é pequena demais para IA?",
-    a: "Não. Justamente em PMEs a IA gera o maior impacto relativo.automatizando o que hoje rouba tempo do dono ou de uma equipe enxuta. O diagnóstico inicial é gratuito e mostra exatamente onde faz sentido começar.",
+    q: "O que está incluso na assinatura do site?",
+    a: "Tudo: criação do site sob medida, domínio, hospedagem, certificado SSL, suporte e alterações ilimitadas. Você paga a mensalidade e não precisa contratar nem configurar mais nada por fora.",
   },
   {
-    q: "Quanto tempo até ver resultado?",
-    a: "Os primeiros ganhos costumam aparecer em 4 a 6 semanas após o início da implantação. Automações simples geram retorno antes; agentes e copilots demandam ajuste fino, mas começam a operar em paralelo.",
+    q: "Em quanto tempo meu site fica no ar?",
+    a: "Em poucos dias após o briefing. Assim que você envia textos e fotos (ou aprova o que sugerimos), criamos e publicamos rápido — sem os meses que uma agência tradicional costuma levar.",
   },
   {
-    q: "Vocês substituem minha equipe?",
-    a: "Não. A KORA libera sua equipe das tarefas repetitivas para focar no que dá margem. IA e automação multiplicam a capacidade do time atual; não eliminam ele.",
+    q: "Como funcionam as alterações ilimitadas?",
+    a: "Você pode pedir quantas alterações quiser ao longo do tempo: trocar um texto, atualizar uma foto, adicionar uma página. Resolvemos uma de cada vez, em fila, na ordem dos pedidos. Sem cobrança extra.",
   },
   {
-    q: "Preciso ter dados organizados antes de começar?",
-    a: "Não precisa estar perfeito. Parte do diagnóstico é exatamente entender o que existe e como aproveitar. Em muitos casos, a primeira entrega é justamente organizar o fluxo de dados.",
+    q: "Preciso pagar domínio e hospedagem à parte?",
+    a: "Não. Domínio, hospedagem e SSL já estão inclusos na mensalidade. Sem custo escondido, sem boleto surpresa de outro fornecedor.",
   },
   {
-    q: "Quanto custa?",
-    a: "Cada projeto é dimensionado pelo escopo definido no diagnóstico.não trabalhamos com pacote fechado de prateleira. Após o diagnóstico (gratuito), você recebe uma proposta clara com investimento, prazo e retorno esperado.",
+    q: "Tem taxa de setup e fidelidade?",
+    a: "Há uma taxa de setup única na criação do site (varia por plano) e depois só a mensalidade. Sem contrato longo de fidelidade: o site fica no ar enquanto você mantém a assinatura.",
   },
   {
-    q: "O que acontece depois que a implantação termina?",
-    a: "Oferecemos acompanhamento mensal opcional para evoluir as automações, capacitar novos integrantes do seu time e acompanhar resultados. Você nunca fica preso a nós: tudo é documentado e operável internamente.",
+    q: "Já tenho site ou domínio. Vocês migram?",
+    a: "Sim. Se você já tem domínio, apontamos para o novo site sem perder seu endereço. E reaproveitamos o que fizer sentido do conteúdo atual.",
   },
   {
-    q: "Vocês trabalham com qual tipo de empresa?",
-    a: "PMEs brasileiras com processos consolidados.geralmente entre 5 e 200 colaboradores. Atendemos serviços, indústria leve, e-commerce, jurídico, saúde e operações B2B em geral.",
+    q: "Vocês também fazem automação e IA?",
+    a: "Sim — é o próximo nível. Depois que o site está no ar, automatizamos processos (propostas, follow-ups, relatórios) e implantamos agentes de IA sob medida. Começa com um diagnóstico gratuito de 30 minutos.",
   },
 ];

@@ -59,7 +59,7 @@ export function Nav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#cta"
+            href="#planos"
             onClick={() => pushEvent({ event: "cta_click", label: site.ctas.nav, location: "nav" })}
             className={cn(
               "hidden rounded-full px-4 py-2 text-[13px] font-medium transition md:inline-flex",
@@ -101,7 +101,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#cta"
+              href="#planos"
               onClick={() => {
                 setOpen(false);
                 pushEvent({ event: "cta_click", label: site.ctas.nav, location: "nav-mobile" });

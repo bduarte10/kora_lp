@@ -2,8 +2,12 @@ import { Reveal } from "@/components/motion/reveal";
 
 const pains = [
   {
-    title: "Você ouve sobre IA todo dia. Não sabe por onde começar.",
-    body: "Conteúdo demais, promessa demais, prática de menos. Falta um mapa concreto pra sua empresa.",
+    title: "Site fraco (ou nenhum) custa venda todo dia.",
+    body: "Seu cliente pesquisa antes de comprar. Sem uma presença profissional no ar, a confiança vai pro concorrente.",
+  },
+  {
+    title: "Fazer site virou dor de cabeça e custo escondido.",
+    body: "Orçamento alto na criação, agência que some depois, hospedagem e manutenção cobradas à parte. Ninguém te dá suporte.",
   },
   {
     title: "Processos repetitivos sugam o melhor da sua equipe.",
@@ -12,10 +16,6 @@ const pains = [
   {
     title: "Ferramentas isoladas, nada conversa entre si.",
     body: "CRM, planilha, WhatsApp, ERP. Dados duplicados, decisões lentas, retrabalho diário.",
-  },
-  {
-    title: "Quem entende de IA não entende do seu negócio.",
-    body: "Consultoria genérica não vira resultado. Você precisa de quem mergulhe na sua operação.",
   },
 ];
 
@@ -28,8 +28,8 @@ export function Problem() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[20ch] text-[length:var(--fs-h1)]">
-            Você sabe que IA pode transformar sua operação.{" "}
-            <span className="text-foreground-muted">Só não sabe por onde começar.</span>
+            Sua empresa precisa estar online de verdade.{" "}
+            <span className="text-foreground-muted">E operar sem desperdício.</span>
           </h2>
         </Reveal>
 

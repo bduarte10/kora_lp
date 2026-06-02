@@ -7,6 +7,9 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="text-base font-semibold tracking-[-0.04em]">{site.name}</div>
+            <p className="mt-2 text-sm font-medium text-foreground">
+              Menos promessa. Mais operação.
+            </p>
             <p className="mt-3 max-w-sm text-sm leading-relaxed text-foreground-muted">
               {site.description}
             </p>

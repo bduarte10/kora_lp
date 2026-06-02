@@ -9,34 +9,34 @@ export type ProcessStep = {
 export const process: ProcessStep[] = [
   {
     step: "01",
-    title: "Discovery",
-    duration: "1 semana",
+    title: "Briefing",
+    duration: "1–2 dias",
     description:
-      "Conversamos com fundadores e líderes para entender modelo de negócio, métricas críticas e onde o tempo da equipe está indo.",
-    outputs: ["Mapa de stakeholders", "Hipóteses iniciais", "Métricas de baseline"],
+      "Conversa rápida para entender seu negócio, objetivo do site e referências. Você manda textos e fotos, ou a gente te orienta o que enviar.",
+    outputs: ["Objetivo definido", "Conteúdo coletado", "Referências de estilo"],
   },
   {
     step: "02",
-    title: "Mapeamento",
-    duration: "1–2 semanas",
+    title: "Criação",
+    duration: "Poucos dias",
     description:
-      "Acompanhamos processos chave, levantamos sistemas, dados e dores. Priorizamos oportunidades por impacto x esforço.",
-    outputs: ["Mapa de processos", "Inventário de dados", "Roadmap priorizado"],
+      "Desenhamos e desenvolvemos seu site sob medida, rápido, com tecnologia moderna. Você acompanha e aprova antes de publicar.",
+    outputs: ["Design sob medida", "Site responsivo", "Revisão com você"],
   },
   {
     step: "03",
-    title: "Implantação",
-    duration: "4–8 semanas",
+    title: "No ar",
+    duration: "Em dias",
     description:
-      "Construímos as automações e agentes priorizados em sprints curtos, sempre com o time validando o que vai pra produção.",
-    outputs: ["Automações em produção", "Agentes operando", "Documentação viva"],
+      "Publicamos com domínio, hospedagem e SSL inclusos. Sem você ter que contratar ou configurar nada por fora.",
+    outputs: ["Domínio + hospedagem", "Certificado SSL", "Otimizado para Google"],
   },
   {
     step: "04",
-    title: "Operação",
+    title: "Evolução",
     duration: "Contínuo",
     description:
-      "Acompanhamento mensal, ajustes finos, novas iniciativas. A IA evolui junto com sua empresa, não engessa.",
-    outputs: ["Iteração mensal", "Métricas de impacto", "Novas oportunidades"],
+      "Precisou mudar um texto, trocar uma foto, adicionar página? Você pede e a gente faz. Alterações ilimitadas, uma na fila por vez.",
+    outputs: ["Suporte contínuo", "Alterações ilimitadas", "Sempre no ar"],
   },
 ];

@@ -22,14 +22,14 @@ export function FinalCTA() {
               </p>
             </Reveal>
             <Reveal delay={0.05}>
-              <h2 className="display mt-6 max-w-[16ch] text-balance text-[clamp(2.5rem,4.5vw+1rem,5.5rem)] text-cream">
-                Diagnóstico gratuito de 30 minutos, sem proposta empurrada.
+              <h2 className="display mt-6 max-w-[18ch] text-balance text-[length:var(--fs-h1)] text-cream">
+                Pronto pra colocar sua empresa no ar?
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream-muted">
-                Conta um pouco do que você quer resolver. Respondemos em até 24 horas úteis com
-                uma agenda direta para o diagnóstico.
+                Escolheu um plano de site ou quer um diagnóstico de automação e IA? Conta o que
+                você precisa e respondemos em até 24 horas úteis.
               </p>
             </Reveal>
 
@@ -62,10 +62,10 @@ export function FinalCTA() {
           >
             <div className="rounded-2xl bg-paper p-6 text-foreground shadow-lg sm:p-10">
               <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
-                Solicitar diagnóstico
+                Fale com a gente
               </p>
               <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
-                Conte um pouco do que você quer resolver
+                Conte o que você precisa
               </h3>
               <div className="mt-7">
                 <LeadForm />

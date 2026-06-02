@@ -84,7 +84,7 @@ export function LeadForm() {
         <input {...register("company")} className={inputCls} aria-invalid={!!errors.company} />
       </Field>
 
-      <Field label="O que você gostaria de automatizar? (opcional)" error={errors.message?.message}>
+      <Field label="O que você precisa? Site, automação, IA... (opcional)" error={errors.message?.message}>
         <textarea {...register("message")} rows={3} className={inputCls} />
       </Field>
 
@@ -99,7 +99,7 @@ export function LeadForm() {
         )}
       >
         {submitting && <Loader2 size={16} className="animate-spin" />}
-        Quero o diagnóstico gratuito
+        Quero falar com a KORA
       </button>
 
       <p className="text-xs text-foreground-subtle">

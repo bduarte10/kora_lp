@@ -6,11 +6,11 @@ export function Process() {
     <section id="processo" className="section">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">Como trabalhamos</p>
+          <p className="eyebrow section-anchor">Como funciona</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[20ch] text-[length:var(--fs-h1)]">
-            Quatro etapas. <span className="text-foreground-muted">Zero achismo.</span>
+            Do briefing ao ar. <span className="text-foreground-muted">Em dias, sem enrolação.</span>
           </h2>
         </Reveal>
 

@@ -18,7 +18,7 @@ export function FAQ() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="display mt-5 text-[length:var(--fs-h1)]">
-              Antes de marcar, <br />
+              Antes de começar, <br />
               <span className="text-foreground-muted">talvez você queira saber.</span>
             </h2>
           </Reveal>
