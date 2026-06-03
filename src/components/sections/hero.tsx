@@ -20,7 +20,7 @@ export function Hero() {
     <section className="relative overflow-hidden bg-coral text-cream">
       <NoiseBackground />
 
-      <div className="container-page relative z-10 flex min-h-[88vh] flex-col pt-28 pb-12 sm:pt-32 lg:pt-36 lg:pb-16">
+      <div className="container-page relative z-10 flex min-h-[92svh] flex-col pt-28 pb-12 sm:pt-32 lg:pt-36 lg:pb-16">
         {/* Editorial strip topo */}
         <Reveal delay={0.04}>
           <div className="flex items-center gap-x-6 border-b border-cream-faint pb-5">
@@ -35,7 +35,7 @@ export function Hero() {
         </Reveal>
 
         {/* Bloco central: 2 colunas — copy à esquerda, inclusos à direita */}
-        <div className="flex-1 py-14 sm:py-20">
+        <div className="flex-1 py-10 sm:py-16">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             {/* Esquerda: H1 + sub + CTAs + reasseguramento */}
             <div className="lg:col-span-7">

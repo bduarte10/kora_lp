@@ -175,10 +175,19 @@
   .hero-line {
     display: block;
     overflow: hidden;
+    /* Vertical breathing room inside the clip box so the tilde on "ã" (top) and the
+       cedilla on "ç" (bottom) are not shaved off by the tight 0.96 line-height.
+       Negative margins cancel the shift so layout/line spacing is unchanged. */
+    padding-top: 0.18em;
+    padding-bottom: 0.18em;
+    margin-top: -0.18em;
+    margin-bottom: -0.18em;
   }
   .hero-line > span {
     display: inline-block;
-    transform: translateY(110%);
+    /* Start far enough below that the padding-bottom area stays empty (text fully
+       hidden) before the rise — must clear 100% + padding-bottom. */
+    transform: translateY(130%);
     animation: hero-line-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
   .hero-line:nth-child(1) > span {
@@ -189,7 +198,7 @@
   }
   @keyframes hero-line-rise {
     from {
-      transform: translateY(110%);
+      transform: translateY(130%);
     }
     to {
       transform: translateY(0);
