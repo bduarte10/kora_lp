@@ -1,5 +1,6 @@
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
+import { PlanCta } from "@/components/pricing/plan-cta";
 import { plans, pricingLead, pricingLeadDetail, pricingNote } from "@/content/pricing";
 import { cn } from "@/lib/utils";
 
@@ -65,21 +66,7 @@ export function Pricing() {
                   ))}
                 </ul>
 
-                <a
-                  href={plan.ctaHref}
-                  className={cn(
-                    "group mt-10 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium transition",
-                    plan.highlighted
-                      ? "bg-coral text-cream hover:bg-coral-deep"
-                      : "border border-border-strong text-foreground hover:border-foreground",
-                  )}
-                >
-                  {plan.ctaLabel}
-                  <ArrowRight
-                    size={15}
-                    className="transition-transform duration-300 group-hover:translate-x-0.5"
-                  />
-                </a>
+                <PlanCta plan={plan} />
               </article>
             </Reveal>
           ))}

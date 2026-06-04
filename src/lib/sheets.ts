@@ -23,17 +23,18 @@ export async function appendLeadToSheet(lead: LeadPayload) {
   const sheets = google.sheets({ version: "v4", auth });
   return sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: "Leads!A:F",
+    range: "Leads!A:G",
     valueInputOption: "RAW",
     requestBody: {
       values: [
         [
           new Date().toISOString(),
           lead.name,
-          lead.email,
+          lead.email ?? "",
           lead.phone,
-          lead.company,
+          lead.company ?? "",
           lead.message ?? "",
+          lead.plan ?? "",
         ],
       ],
     },

@@ -1,3 +1,5 @@
+import { whatsappLinkWith } from "@/content/site";
+
 export type Plan = {
   id: string;
   name: string;
@@ -7,7 +9,6 @@ export type Plan = {
   features: string[];
   highlighted: boolean;
   ctaLabel: string;
-  ctaHref: string;
 };
 
 export const plans: Plan[] = [
@@ -25,7 +26,6 @@ export const plans: Plan[] = [
     ],
     highlighted: false,
     ctaLabel: "Começar agora",
-    ctaHref: "#cta",
   },
   {
     id: "profissional",
@@ -41,7 +41,6 @@ export const plans: Plan[] = [
     ],
     highlighted: true,
     ctaLabel: "Quero esse plano",
-    ctaHref: "#cta",
   },
   {
     id: "performance",
@@ -57,9 +56,16 @@ export const plans: Plan[] = [
     ],
     highlighted: false,
     ctaLabel: "Quero esse plano",
-    ctaHref: "#cta",
   },
 ];
+
+export const planById = (id?: string | null) =>
+  plans.find((p) => p.id === id);
+
+export const planWhatsappLink = (plan: Plan) =>
+  whatsappLinkWith(
+    `Oi! Tenho interesse no plano ${plan.name} (${plan.monthly}/mês). Pode me explicar como funciona?`,
+  );
 
 export const pricingLead = "Otimizado para SEO e GEO.";
 export const pricingLeadDetail =

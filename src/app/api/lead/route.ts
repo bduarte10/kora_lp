@@ -7,9 +7,10 @@ export const runtime = "nodejs";
 
 const schema = z.object({
   name: z.string().min(2).max(120),
-  email: z.string().email().max(160),
-  company: z.string().min(2).max(160),
   phone: z.string().min(10).max(20),
+  plan: z.string().max(80).optional(),
+  email: z.string().email().max(160).optional().or(z.literal("")),
+  company: z.string().max(160).optional(),
   message: z.string().max(2000).optional(),
 });
 

@@ -1,7 +1,6 @@
-import { ArrowRight, MessageCircle } from "lucide-react";
 import { LeadForm } from "@/components/forms/lead-form";
 import { Reveal } from "@/components/motion/reveal";
-import { whatsappLink } from "@/content/site";
+import { FinalCtaWhatsApp } from "@/components/sections/final-cta-whatsapp";
 
 export function FinalCTA() {
   return (
@@ -35,19 +34,7 @@ export function FinalCTA() {
 
             <Reveal delay={0.18}>
               <div className="mt-10 space-y-4">
-                <a
-                  href={whatsappLink()}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-full border border-cream-faint px-5 py-3 text-sm font-medium text-cream transition hover:border-cream"
-                >
-                  <MessageCircle size={15} />
-                  Falar direto no WhatsApp
-                  <ArrowRight
-                    size={15}
-                    className="ml-1 transition-transform duration-300 group-hover:translate-x-0.5"
-                  />
-                </a>
+                <FinalCtaWhatsApp />
                 <p className="text-xs text-cream-faint">
                   Para conversa rápida ou casos urgentes.
                 </p>

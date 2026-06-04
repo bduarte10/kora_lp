@@ -1,3 +1,4 @@
+import { PlanSelectionProvider } from "@/components/pricing/plan-selection";
 import { JsonLd } from "@/components/seo/json-ld";
 import { FAQ } from "@/components/sections/faq";
 import { FinalCTA } from "@/components/sections/final-cta";
@@ -16,15 +17,17 @@ export default function HomePage() {
       <JsonLd data={professionalServiceJsonLd} />
       <JsonLd data={faqJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
-      <Hero />
-      <Solutions />
-      <Problem />
-      <Pricing />
-      <Process />
-      <Services />
-      <Proof />
-      <FAQ />
-      <FinalCTA />
+      <PlanSelectionProvider>
+        <Hero />
+        <Solutions />
+        <Problem />
+        <Pricing />
+        <Process />
+        <Services />
+        <Proof />
+        <FAQ />
+        <FinalCTA />
+      </PlanSelectionProvider>
     </>
   );
 }

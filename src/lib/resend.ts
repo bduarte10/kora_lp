@@ -6,9 +6,10 @@ export const resend = apiKey ? new Resend(apiKey) : null;
 
 export type LeadPayload = {
   name: string;
-  email: string;
-  company: string;
   phone: string;
+  plan?: string;
+  email?: string;
+  company?: string;
   message?: string;
 };
 
@@ -26,15 +27,14 @@ export async function sendLeadEmail(lead: LeadPayload) {
   return resend.emails.send({
     from: "KORA Leads <leads@getsynapse.com.br>",
     to,
-    replyTo: lead.email,
-    subject: `Novo lead · ${lead.company}`,
+    ...(lead.email ? { replyTo: lead.email } : {}),
+    subject: `Novo lead · ${lead.plan ?? lead.name}`,
     text: `Nome: ${lead.name}
-Empresa: ${lead.company}
-E-mail: ${lead.email}
+Plano de interesse: ${lead.plan ?? "(não informado)"}
 Telefone: ${lead.phone}
-
-Mensagem:
-${lead.message ?? "(sem mensagem)"}
-`,
+E-mail: ${lead.email || "(não informado)"}
+${lead.company ? `Empresa: ${lead.company}\n` : ""}${
+      lead.message ? `\nMensagem:\n${lead.message}\n` : ""
+    }`,
   });
 }

@@ -40,7 +40,9 @@ export const site = {
   ],
 } as const;
 
-export const whatsappLink = () => {
+export const whatsappLinkWith = (text: string) => {
   const n = site.contact.whatsappNumber.replace(/\D/g, "");
-  return `https://wa.me/${n}?text=${site.contact.whatsappMessage}`;
+  return `https://wa.me/${n}?text=${encodeURIComponent(text)}`;
 };
+
+export const whatsappLink = () => whatsappLinkWith(site.contact.whatsappMessage);
