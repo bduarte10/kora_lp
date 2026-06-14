@@ -1,3 +1,4 @@
+import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -30,4 +31,13 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: process.env.SENTRY_ORG,
+  project: process.env.SENTRY_PROJECT,
+  // Silencioso no dev; loga só no CI. Upload de sourcemaps só roda se
+  // SENTRY_AUTH_TOKEN estiver presente (build da Vercel) — caso contrário é pulado.
+  silent: !process.env.CI,
+  widenClientFileUpload: true,
+  // Remove os logs de debug do SDK no bundle de produção.
+  webpack: { treeshake: { removeDebugLogging: true } },
+});

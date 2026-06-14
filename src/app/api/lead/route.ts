@@ -1,7 +1,8 @@
-import { NextResponse } from "next/server";
-import { z } from "zod";
 import { sendLeadEmail } from "@/lib/resend";
 import { appendLeadToSheet } from "@/lib/sheets";
+import * as Sentry from "@sentry/nextjs";
+import { NextResponse } from "next/server";
+import { z } from "zod";
 
 export const runtime = "nodejs";
 
@@ -37,14 +38,19 @@ export async function POST(req: Request) {
     appendLeadToSheet(lead),
   ]);
 
-  if (emailResult.status === "rejected") console.error("[lead] resend falhou:", emailResult.reason);
-  if (sheetsResult.status === "rejected")
+  if (emailResult.status === "rejected") {
+    console.error("[lead] resend falhou:", emailResult.reason);
+    Sentry.captureException(emailResult.reason, { tags: { channel: "resend" } });
+  }
+  if (sheetsResult.status === "rejected") {
     console.error("[lead] sheets falhou:", sheetsResult.reason);
+    Sentry.captureException(sheetsResult.reason, { tags: { channel: "sheets" } });
+  }
 
-  const allFailed =
-    emailResult.status === "rejected" && sheetsResult.status === "rejected";
+  const allFailed = emailResult.status === "rejected" && sheetsResult.status === "rejected";
 
   if (allFailed) {
+    Sentry.captureMessage("[lead] todos os canais de entrega falharam", "error");
     return NextResponse.json({ error: "delivery_failed" }, { status: 502 });
   }
 
