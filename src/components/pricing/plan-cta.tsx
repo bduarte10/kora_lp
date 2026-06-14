@@ -1,12 +1,18 @@
 "use client";
 
-import { ArrowRight, MessageCircle } from "lucide-react";
 import { usePlanSelection } from "@/components/pricing/plan-selection";
-import { type Plan, planWhatsappLink } from "@/content/pricing";
+import { type BillingPeriod, type Plan, planWhatsappLink } from "@/content/pricing";
 import { pushEvent } from "@/lib/gtm";
 import { cn } from "@/lib/utils";
+import { ArrowRight, MessageCircle } from "lucide-react";
 
-export function PlanCta({ plan }: { plan: Plan }) {
+export function PlanCta({
+  plan,
+  period = "monthly",
+}: {
+  plan: Plan;
+  period?: BillingPeriod;
+}) {
   const { setSelectedPlan } = usePlanSelection();
 
   return (
@@ -32,7 +38,7 @@ export function PlanCta({ plan }: { plan: Plan }) {
       </a>
 
       <a
-        href={planWhatsappLink(plan)}
+        href={planWhatsappLink(plan, period)}
         target="_blank"
         rel="noreferrer"
         onClick={() => pushEvent({ event: "whatsapp_click", location: "pricing" })}

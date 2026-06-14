@@ -10,6 +10,7 @@ export type GTMEvent =
   | { event: "cta_click"; label: string; location: string }
   | { event: "whatsapp_click"; location: string }
   | { event: "select_plan"; plan: string; location: string }
+  | { event: "toggle_billing"; period: "monthly" | "annual" }
   | { event: "form_submit"; form_id: string; plan?: string }
   | { event: "lead_qualified"; form_id: string; email?: string; plan?: string }
   | { event: "section_view"; section: string };

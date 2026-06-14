@@ -1,11 +1,17 @@
 import { whatsappLinkWith } from "@/content/site";
 
+export type BillingPeriod = "monthly" | "annual";
+
 export type Plan = {
   id: string;
   name: string;
   forWho: string;
   setup: string;
   monthly: string;
+  annual: string;
+  annualNote: string;
+  valueAnchor: string;
+  valueAnchorAnnual: string;
   features: string[];
   highlighted: boolean;
   ctaLabel: string;
@@ -18,6 +24,10 @@ export const plans: Plan[] = [
     forWho: "Landing page de uma página, focada em conversão.",
     setup: "R$297",
     monthly: "R$127",
+    annual: "R$106",
+    annualNote: "2 meses grátis",
+    valueAnchor: "≈ R$4 por dia",
+    valueAnchorAnnual: "≈ R$3,50 por dia",
     features: [
       "1 página de alta conversão",
       "Domínio + hospedagem + SSL inclusos",
@@ -33,9 +43,13 @@ export const plans: Plan[] = [
     forWho: "Site institucional de 4 a 8 páginas para sua empresa.",
     setup: "R$597",
     monthly: "R$297",
+    annual: "R$247",
+    annualNote: "2 meses grátis",
+    valueAnchor: "≈ R$10 por dia",
+    valueAnchorAnnual: "≈ R$8 por dia",
     features: [
+      "Tudo do Essencial +",
       "4 a 8 páginas (institucional completo)",
-      "Domínio + hospedagem + SSL inclusos",
       "Blog ou área de conteúdo opcional",
       "SEO técnico + GEO (otimização para IA)",
     ],
@@ -48,8 +62,12 @@ export const plans: Plan[] = [
     forWho: "Site institucional com automação básica integrada.",
     setup: "R$997",
     monthly: "R$497",
+    annual: "R$414",
+    annualNote: "2 meses grátis",
+    valueAnchor: "≈ R$17 por dia",
+    valueAnchorAnnual: "≈ R$14 por dia",
     features: [
-      "Tudo do plano Profissional",
+      "Tudo do plano Profissional +",
       "Automação de leads e notificações",
       "Integração com CRM / planilha / e-mail",
       "Painel simples de acompanhamento",
@@ -59,17 +77,28 @@ export const plans: Plan[] = [
   },
 ];
 
-export const planById = (id?: string | null) =>
-  plans.find((p) => p.id === id);
+export const planById = (id?: string | null) => plans.find((p) => p.id === id);
 
-export const planWhatsappLink = (plan: Plan) =>
+export const planPrice = (plan: Plan, period: BillingPeriod = "monthly") =>
+  period === "annual" ? plan.annual : plan.monthly;
+
+export const planWhatsappLink = (plan: Plan, period: BillingPeriod = "monthly") =>
   whatsappLinkWith(
-    `Oi! Tenho interesse no plano ${plan.name} (${plan.monthly}/mês). Pode me explicar como funciona?`,
+    `Oi! Tenho interesse no plano ${plan.name} (${planPrice(plan, period)}/mês${
+      period === "annual" ? ", plano anual" : ""
+    }). Pode me explicar como funciona?`,
   );
 
 export const pricingLead = "Otimizado para SEO e GEO.";
 export const pricingLeadDetail =
   "Seu site achado no Google e citado por IAs como ChatGPT, Perplexity e Gemini.";
+
+export const pricingTrust = [
+  "Sem fidelidade",
+  "Cancele quando quiser",
+  "Suporte humano de verdade",
+  "Alterações ilimitadas",
+];
 
 export const pricingNote =
   "Todos os planos incluem domínio, hospedagem, SSL, suporte e alterações ilimitadas (uma na fila por vez). Setup é uma taxa única na criação; a mensalidade cobre tudo a partir daí.";
