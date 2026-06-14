@@ -1,12 +1,13 @@
+import { JsonLd } from "@/components/seo/json-ld";
+import { ConsentBanner } from "@/components/tracking/consent-banner";
+import { GTM, GTMNoScript } from "@/components/tracking/gtm";
+import { PostHog } from "@/components/tracking/posthog";
+import { baseMetadata, organizationJsonLd } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { ReactNode } from "react";
-import { JsonLd } from "@/components/seo/json-ld";
-import { ConsentBanner } from "@/components/tracking/consent-banner";
-import { GTM, GTMNoScript } from "@/components/tracking/gtm";
-import { baseMetadata, organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata = baseMetadata;
@@ -37,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <GTMNoScript />
         {children}
         <ConsentBanner />
+        <PostHog />
         <Analytics />
         <SpeedInsights />
       </body>
