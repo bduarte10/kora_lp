@@ -1,3 +1,4 @@
+import createMDX from "@next/mdx";
 import { withSentryConfig } from "@sentry/nextjs";
 import type { NextConfig } from "next";
 
@@ -5,6 +6,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -31,7 +33,15 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default withSentryConfig(nextConfig, {
+// Plugins como strings para compatibilidade com Turbopack (serializável).
+const withMDX = createMDX({
+  options: {
+    remarkPlugins: [["remark-gfm"]],
+    rehypePlugins: [["rehype-slug"], ["rehype-autolink-headings", { behavior: "wrap" }]],
+  },
+});
+
+export default withSentryConfig(withMDX(nextConfig), {
   org: process.env.SENTRY_ORG,
   project: process.env.SENTRY_PROJECT,
   // Silencioso no dev; loga só no CI. Upload de sourcemaps só roda se
