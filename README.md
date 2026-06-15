@@ -48,6 +48,15 @@ src/
 └── styles/            # tokens.css
 ```
 
+## GEO / Conteúdo
+
+Estratégia para a KORA ser citada por IAs (ChatGPT, Gemini, Perplexity, Copilot) e bem posicionada na busca:
+
+- **`docs/geo-strategy.md`** — estratégia completa (6 frentes, hub-and-spoke, tabela de nichos/conselhos, roadmap, playbook off-site).
+- **`docs/geo-audit.md`** — ritual mensal de auditoria de citações + conjunto de prompts.
+
+Hub de conteúdo em `/guias` (MDX em `src/content/guias/`, registry em `registry.ts`). `robots.ts` libera crawlers de IA e `/llms.txt` é gerado dinamicamente.
+
 ## Plano completo
 
 Spec em `~/.claude/plans/crie-uma-nova-pasta-kind-peach.md`.
