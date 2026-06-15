@@ -5,6 +5,29 @@ import { useEffect } from "react";
 
 const CONSENT_KEY = "kora:consent";
 
+// Mapeia o referrer para a IA de origem (GEO/medição). null se não for de IA.
+function detectAiSource(referrer: string): string | null {
+  if (!referrer) return null;
+  let host: string;
+  try {
+    host = new URL(referrer).hostname;
+  } catch {
+    return null;
+  }
+  const sources: Record<string, string> = {
+    "chatgpt.com": "chatgpt",
+    "chat.openai.com": "chatgpt",
+    "perplexity.ai": "perplexity",
+    "gemini.google.com": "gemini",
+    "copilot.microsoft.com": "copilot",
+    "claude.ai": "claude",
+  };
+  for (const domain in sources) {
+    if (host === domain || host.endsWith(`.${domain}`)) return sources[domain];
+  }
+  return null;
+}
+
 /**
  * Inicializa o PostHog de forma deferida (primeira interação ou 3s), igual ao GTM,
  * via dynamic import para manter o bundle inicial leve.
@@ -35,6 +58,9 @@ export function PostHog() {
         person_profiles: "identified_only",
         respect_dnt: true,
       });
+
+      const aiSource = detectAiSource(document.referrer);
+      if (aiSource) posthog.register({ ai_source: aiSource });
 
       if (window.localStorage.getItem(CONSENT_KEY) === "granted") {
         posthog.opt_in_capturing();

@@ -2,7 +2,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { ConsentBanner } from "@/components/tracking/consent-banner";
 import { GTM, GTMNoScript } from "@/components/tracking/gtm";
 import { PostHog } from "@/components/tracking/posthog";
-import { baseMetadata, organizationJsonLd } from "@/lib/seo";
+import { baseMetadata, organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GeistMono } from "geist/font/mono";
@@ -30,6 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <GTM />
         <JsonLd data={organizationJsonLd} />
+        <JsonLd data={websiteJsonLd} />
       </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <a href="#main" className={skipLinkClass}>

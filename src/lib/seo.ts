@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { faq } from "@/content/faq";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
+import type { Metadata } from "next";
 
 const siteUrl = site.url;
 
@@ -68,10 +68,36 @@ export const baseMetadata: Metadata = {
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
   name: site.name,
   url: siteUrl,
   logo: `${siteUrl}/og-default.png`,
+  image: `${siteUrl}/og-default.png`,
   description: site.description,
+  slogan: site.tagline,
+  email: site.contact.email,
+  telephone: `+${site.contact.whatsappNumber.replace(/\D/g, "")}`,
+  areaServed: { "@type": "Country", name: "Brazil" },
+  foundingLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: site.contact.address.city,
+      addressRegion: site.contact.address.state,
+      addressCountry: site.contact.address.country,
+    },
+  },
+  knowsAbout: [
+    "Criação de sites",
+    "Site por assinatura",
+    "Hospedagem de sites",
+    "Automação de processos",
+    "Inteligência artificial aplicada a negócios",
+    "Agentes de IA",
+    "SEO",
+    "GEO (Generative Engine Optimization)",
+    "Atendimento automatizado no WhatsApp",
+  ],
   sameAs: Object.values(site.social),
   contactPoint: {
     "@type": "ContactPoint",
@@ -80,6 +106,17 @@ export const organizationJsonLd = {
     availableLanguage: "Portuguese",
     email: site.contact.email,
   },
+};
+
+export const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
+  name: site.name,
+  url: siteUrl,
+  description: site.description,
+  inLanguage: "pt-BR",
+  publisher: { "@id": `${siteUrl}/#organization` },
 };
 
 export const professionalServiceJsonLd = {
@@ -108,28 +145,56 @@ export const professionalServiceJsonLd = {
   },
 };
 
-export const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faq.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
+export function buildFaqJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
 
-export const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
+export function buildBreadcrumbJsonLd(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
-      position: 1,
-      name: "Início",
-      item: siteUrl,
-    },
-  ],
-};
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildArticleJsonLd(article: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    url: article.url,
+    inLanguage: "pt-BR",
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: { "@type": "Organization", name: site.name, url: siteUrl },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": article.url },
+  };
+}
+
+export const faqJsonLd = buildFaqJsonLd(faq);
+
+export const breadcrumbJsonLd = buildBreadcrumbJsonLd([{ name: "Início", url: siteUrl }]);
 
 export function jsonLdString(data: object) {
   return JSON.stringify(data);
