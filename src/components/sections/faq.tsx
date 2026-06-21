@@ -1,10 +1,10 @@
 "use client";
 
-import { Plus } from "lucide-react";
-import { useState } from "react";
 import { Reveal } from "@/components/motion/reveal";
 import { faq } from "@/content/faq";
 import { cn } from "@/lib/utils";
+import { Plus } from "lucide-react";
+import { useState } from "react";
 
 export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);

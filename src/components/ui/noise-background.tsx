@@ -29,9 +29,11 @@ export function NoiseBackground() {
 
       {/* Layer 3: grain fotográfico */}
       <svg
+        aria-hidden
         className="absolute inset-0 h-full w-full"
         style={{ opacity: 0.38, mixBlendMode: "overlay" } as React.CSSProperties}
       >
+        <title>Ruído decorativo</title>
         <filter id="hero-grain">
           <feTurbulence
             type="fractalNoise"

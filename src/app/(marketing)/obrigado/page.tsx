@@ -1,8 +1,8 @@
 "use client";
 
+import { pushEvent } from "@/lib/gtm";
 import { ArrowLeft } from "lucide-react";
 import { useEffect } from "react";
-import { pushEvent } from "@/lib/gtm";
 
 export default function ThankYouPage() {
   useEffect(() => {
@@ -12,12 +12,10 @@ export default function ThankYouPage() {
   return (
     <section className="section">
       <div className="container-text text-center">
-        <h1 className="display text-[length:var(--fs-h1)]">
-          Obrigado. Vamos cuidar disso agora.
-        </h1>
+        <h1 className="display text-[length:var(--fs-h1)]">Aplicação recebida.</h1>
         <p className="mt-6 text-foreground-muted">
-          Sua solicitação chegou. Respondemos em até 24 horas úteis, e, se preferir, você pode
-          acelerar tudo conversando direto no WhatsApp.
+          Vamos analisar o contexto da sua empresa. Se houver fit, retornamos com os próximos passos
+          para o Diagnóstico GEO & Automação de Atendimento.
         </p>
         <a
           href="/"

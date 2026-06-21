@@ -1,10 +1,10 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
 import { site } from "@/content/site";
 import { pushEvent } from "@/lib/gtm";
 import { cn } from "@/lib/utils";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,9 +23,7 @@ export function Nav() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-40 transition-all duration-300",
-        overHero
-          ? "bg-transparent"
-          : "border-b border-border bg-background/85 backdrop-blur-xl",
+        overHero ? "bg-transparent" : "border-b border-border bg-background/85 backdrop-blur-xl",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between">
@@ -59,7 +57,7 @@ export function Nav() {
 
         <div className="flex items-center gap-3">
           <a
-            href="#planos"
+            href={site.ctas.navHref}
             onClick={() => pushEvent({ event: "cta_click", label: site.ctas.nav, location: "nav" })}
             className={cn(
               "hidden rounded-full px-4 py-2 text-[13px] font-medium transition md:inline-flex",
@@ -75,9 +73,7 @@ export function Nav() {
             onClick={() => setOpen((s) => !s)}
             className={cn(
               "inline-flex h-9 w-9 items-center justify-center rounded-full border transition md:hidden",
-              overHero
-                ? "border-cream-faint text-cream"
-                : "border-border text-foreground",
+              overHero ? "border-cream-faint text-cream" : "border-border text-foreground",
             )}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
@@ -101,7 +97,7 @@ export function Nav() {
               </a>
             ))}
             <a
-              href="#planos"
+              href={site.ctas.navHref}
               onClick={() => {
                 setOpen(false);
                 pushEvent({ event: "cta_click", label: site.ctas.nav, location: "nav-mobile" });

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Reveal } from "@/components/motion/reveal";
 import { photos } from "@/content/photos";
+import Image from "next/image";
 
 type Transformation = {
   area: string;
@@ -10,25 +10,24 @@ type Transformation = {
 
 const transformations: Transformation[] = [
   {
-    area: "Atendimento",
+    area: "GEO",
     before:
-      "Equipe de 4 atendentes gasta 6h por dia respondendo perguntas repetidas no WhatsApp e e-mail.",
+      "A empresa tem conteúdo disperso e não aparece quando o cliente pergunta para uma IA quais fornecedores considerar.",
     after:
-      "Agente conectado à base de conhecimento resolve 70% das conversas. As 6h voltam para o time fechar venda.",
+      "Entidade, respostas e sinais de autoridade ficam estruturados. A marca passa a ser mais fácil de entender, comparar e citar.",
   },
   {
-    area: "Operação",
+    area: "Atendimento",
     before:
-      "Diretor passa toda segunda copiando números de 3 sistemas para uma planilha do relatório semanal.",
+      "Equipe de atendimento responde as mesmas dúvidas no WhatsApp e perde contexto entre canais.",
     after:
-      "Painel automático puxa dados a cada hora. O relatório aparece pronto no Slack; nenhuma planilha manual.",
+      "Agente assistido usa base revisada, acelera respostas e passa casos críticos para humano com histórico organizado.",
   },
   {
     area: "Vendas",
     before:
       "Cada proposta consome 1 hora do vendedor: copiar template, ajustar números, escrever introdução, revisar.",
-    after:
-      "Copilot rascunha em 90 segundos a partir do briefing. O vendedor refina em 10 minutos.",
+    after: "Copilot rascunha em 90 segundos a partir do briefing. O vendedor refina em 10 minutos.",
   },
 ];
 
@@ -41,8 +40,8 @@ export function Proof() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[24ch] text-[length:var(--fs-h1)]">
-            Onde o trabalho da KORA aparece{" "}
-            <span className="text-foreground-muted">no dia a dia.</span>
+            O que muda quando GEO encontra{" "}
+            <span className="text-foreground-muted">operação real.</span>
           </h2>
         </Reveal>
 

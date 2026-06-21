@@ -1,6 +1,6 @@
-import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { solutions } from "@/content/solutions";
+import { ArrowRight } from "lucide-react";
 
 export function Solutions() {
   return (
@@ -11,8 +11,8 @@ export function Solutions() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[24ch] text-[length:var(--fs-h1)]">
-            Uma parceria que cresce com você.{" "}
-            <span className="text-foreground-muted">Do site à automação e IA.</span>
+            Visibilidade em IA precisa de operação por trás.{" "}
+            <span className="text-foreground-muted">Não só conteúdo bonito.</span>
           </h2>
         </Reveal>
 

@@ -1,8 +1,8 @@
 export const site = {
   name: "KORA",
-  tagline: "Sites, automação e IA para PMEs brasileiras",
+  tagline: "GEO e automação de atendimento para PMEs brasileiras",
   description:
-    "Sites profissionais por assinatura — criação, hospedagem, domínio e suporte inclusos. E automação e IA sob medida para empresas brasileiras que querem crescer.",
+    "A KORA prepara empresas brasileiras para serem encontradas, citadas e escolhidas por ChatGPT, Gemini, Perplexity e Google com IA, com GEO, bases de conhecimento e automação de atendimento.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://kora.com.br",
   locale: "pt-BR",
   defaultOgImage: "/og-default.png",
@@ -12,7 +12,7 @@ export const site = {
     whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511920923143",
     whatsappMessage:
       process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
-      "Oi, vim pelo site da KORA e quero saber mais sobre os planos",
+      "Oi, vim pelo site da KORA e quero tirar uma dúvida sobre o Diagnóstico GEO",
     address: {
       city: "São Paulo",
       state: "SP",
@@ -26,16 +26,18 @@ export const site = {
   },
 
   ctas: {
-    primary: "Criar meu site",
+    primary: "Solicitar diagnóstico GEO",
     secondary: "Falar no WhatsApp",
-    nav: "Ver planos",
+    nav: "Aplicar para diagnóstico",
+    primaryHref: "#diagnostico",
+    navHref: "#diagnostico",
   },
 
   nav: [
     { href: "#solucoes", label: "Soluções" },
-    { href: "#planos", label: "Planos" },
+    { href: "#diagnostico", label: "Diagnóstico" },
     { href: "#processo", label: "Como funciona" },
-    { href: "#ia", label: "Automação & IA" },
+    { href: "#geo", label: "GEO & IA" },
     { href: "#faq", label: "FAQ" },
   ],
 } as const;

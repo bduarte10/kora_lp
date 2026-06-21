@@ -1,10 +1,10 @@
 # Design
 
-Visual system para a landing **KORA**. Lane **Drenched Coral + Aurora** (referência: resend.com, lovable.dev). Surface coral muted (#A04A30 burnt sienna) cobre Hero e FinalCTA como bookends; orbs blurred fluem lentamente no fundo (lane Aceternity UI). Demais seções em cream warm com accent coral parcimonioso. Tipografia única Geist com weights altos e tracking calibrado. Motion mínimo. Antônimos diretos: Bricolage Heavy condensada, SVG procedural (parecem wireframe), bento dense, hero centered template, eyebrows mono em todas as seções, paleta restrained-cream-amber (lane saturada).
+Visual system para a landing **KORA**. A página agora vende autoridade high ticket em GEO e automação de atendimento, não planos de site. Lane **Drenched Coral + Aurora** (referência: resend.com, lovable.dev). Surface coral muted (#A04A30 burnt sienna) cobre Hero e FinalCTA como bookends; orbs blurred fluem lentamente no fundo. Demais seções em cream warm com accent coral parcimonioso. Tipografia única Geist com weights altos e tracking calibrado. Motion mínimo.
 
 ## Theme
 
-Tema claro warm. Cena física: fundador/diretor de PME brasileira abre a página no laptop num escritório bem iluminado, depois de clicar num anúncio. O coral drenched no hero captura atenção dos primeiros 1,5s; transição para cream serve a leitura longa do scroll. Hero coral também serve como ancoragem de identidade (todo creative pago carrega o tom). Dark mode propositalmente postergado.
+Tema claro warm. Cena física: fundador/diretor de PME brasileira abre a página depois de perceber que clientes já pesquisam fornecedores em mecanismos de IA. O coral drenched no hero captura atenção dos primeiros 1,5s; transição para cream serve a leitura longa do scroll. Hero coral também serve como ancoragem de identidade. Dark mode propositalmente postergado.
 
 ## Color
 
@@ -73,15 +73,18 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 
 1. Hero — `bg-coral` + aurora
 2. Problem — `bg-background` (paper)
-3. Services — `bg-bone border-y` (cream warm mais saturado)
-4. Process — `bg-background` (paper)
-5. Proof — `bg-ink` (única seção escura, intervalo cinematográfico)
-6. FAQ — `bg-bone border-y`
-7. FinalCTA — `bg-coral` + aurora (bookend do Hero)
-8. Footer — `bg-background` (paper)
+3. Problem — `bg-background` (paper)
+4. Diagnostic — `bg-bone border-y`, split de oferta e aplicação
+5. Process — `bg-background` (paper)
+6. Services — `bg-bone border-y`
+7. Proof — `bg-background`
+8. FAQ — `bg-bone border-y`
+9. FinalCTA — `bg-coral` + aurora (bookend do Hero)
+10. Footer — `bg-background` (paper)
 
 **Grids específicos:**
 - Problem: 2×2 simples com `divide-y` + `divide-y-0 sm:grid sm:grid-cols-2`. Sem bento.
+- Diagnostic: split 5/6. Oferta, entregáveis e critérios à esquerda; aplicação em painel cream à direita.
 - Services: lista vertical divide-y. 3-col (numerais/kicker) + 9-col (conteúdo).
 - Process: lista divide-y. 12-col com numeral + título + descrição + chips.
 - Proof: 3 transformações em 3-col (área) + 4-col (antes) + 5-col (depois).
@@ -98,7 +101,7 @@ Type-driven Resend-style:
 2. **H1 massive** — `display` class, scale `clamp(3rem, 6vw+1rem, 7.5rem)`, max-w-[16ch], cream sobre coral.
 3. **Sub-paragraph** — cream-muted (78% alpha), max-w-xl.
 4. **CTAs** — primary `bg-cream text-coral-deep`, secondary outline `border-cream-faint text-cream`.
-5. **Marquee pilares** — pilares de serviço (Diagnóstico, Automação, IA aplicada, Operação contínua) rolando lentamente (CSS animation 36s), mask-image fade nas bordas (não overlay coral — overlay esconde aurora).
+5. **Marquee pilares** — pilares de serviço (GEO, Atendimento com IA, Bases de conhecimento, Copilots internos, Automação) rolando lentamente (CSS animation 36s), mask-image fade nas bordas.
 6. **Aurora layer** — 3 orbs blurred fluindo no fundo, atrás de todo conteúdo.
 
 Min-height: `88vh`. Sem foto no hero. Sem stagger forçado. Foco total em uma frase, gigante, com confiança.
@@ -107,8 +110,8 @@ Min-height: `88vh`. Sem foto no hero. Sem stagger forçado. Foco total em uma fr
 
 Bookend do Hero — mesma surface coral + aurora. Split 5/6:
 
-- **Esquerda (cols 1-5)**: eyebrow "Próximo passo" com section-anchor-cream, H2 "Diagnóstico gratuito de 30 minutos, sem proposta empurrada", lead cream-muted, WhatsApp CTA outline.
-- **Direita (cols 7-12)**: painel `rounded-2xl bg-paper shadow-lg` contendo LeadForm. Ilha cream sobre o coral, dark text readable (contrast WCAG AA+).
+- **Esquerda (cols 1-5)**: eyebrow "Próximo passo" com section-anchor-cream, H2 de fit para diagnóstico, lead cream-muted, WhatsApp CTA outline como canal secundário.
+- **Direita (cols 7-12)**: painel `rounded-2xl bg-paper shadow-lg` contendo LeadForm de aplicação consultiva. Ilha cream sobre o coral, dark text readable (contrast WCAG AA+).
 
 ## Imagery
 
@@ -137,6 +140,7 @@ Removidos (não fazem sentido nessa lane): `ScrubReveal`, `CardStack`, `StickySp
 | `Nav` | Client | Detecta `scrolled`; sobre hero coral: transparent + text-cream; sobre cream: blur + text-foreground. CTA primário inverte: cream-on-coral vs ink-on-cream. |
 | `Hero` | Server | Aurora layer + editorial strip + H1 massive + lead + CTAs + marquee pilares. |
 | `Problem` | Server | 2×2 grid `divide-y`. Hierarquia com `0X` mono + linha + título. |
+| `Diagnostic` | Server | Split oferta/aplicação. Lista entregáveis, critérios de fit e LeadForm. |
 | `Services` | Server | Lista divide-y. 3-col (numero+kicker) + 9-col (título+entregáveis com check coral). |
 | `Process` | Server | Lista divide-y. 12-col (numero mono + título + descrição + chips). |
 | `Proof` | Server | Bg ink. 1 foto ampla + 3 transformações Antes/Depois em texto. |
@@ -144,7 +148,7 @@ Removidos (não fazem sentido nessa lane): `ScrubReveal`, `CardStack`, `StickySp
 | `FinalCTA` | Server | Aurora bookend. Split 5/6: copy+WhatsApp / cream-panel form. **Sem Cal.com.** |
 | `Footer` | Server | 4-col grid, wordmark simples. |
 | `WhatsAppFab` | Client | Fixed bottom-right, aparece após scroll>600. |
-| `LeadForm` | Client | RHF + zod; submete a `/api/lead` (Resend + Sheets). |
+| `LeadForm` | Client | RHF + zod; aplicação para diagnóstico, CNPJ opcional, submete a `/api/lead` (Resend + Sheets). |
 | `ConsentBanner` | Client | LGPD + Consent Mode v2. |
 
 ## Iconography
@@ -166,3 +170,4 @@ Removidos (não fazem sentido nessa lane): `ScrubReveal`, `CardStack`, `StickySp
 - Mono-tracked eyebrows em toda seção
 - Hero centered template (AI slop)
 - Cal.com ou outro agendamento embedado (removido — form-only flow)
+- Pricing público ou cards de plano para a oferta principal

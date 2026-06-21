@@ -9,34 +9,34 @@ export type ProcessStep = {
 export const process: ProcessStep[] = [
   {
     step: "01",
-    title: "Briefing",
-    duration: "1–2 dias",
+    title: "Aplicação",
+    duration: "10 minutos",
     description:
-      "Conversa rápida para entender seu negócio, objetivo do site e referências. Você manda textos e fotos, ou a gente te orienta o que enviar.",
-    outputs: ["Objetivo definido", "Conteúdo coletado", "Referências de estilo"],
+      "Você envia contexto sobre empresa, atendimento, presença digital e urgência. A KORA avalia se existe fit para o diagnóstico pago.",
+    outputs: ["Contexto inicial", "Critérios de fit", "Próximo passo claro"],
   },
   {
     step: "02",
-    title: "Criação",
-    duration: "Poucos dias",
+    title: "Diagnóstico",
+    duration: "1–2 semanas",
     description:
-      "Desenhamos e desenvolvemos seu site sob medida, rápido, com tecnologia moderna. Você acompanha e aprova antes de publicar.",
-    outputs: ["Design sob medida", "Site responsivo", "Revisão com você"],
+      "Mapeamos presença em IA, autoridade digital, perguntas do cliente, gargalos de atendimento e oportunidades de automação.",
+    outputs: ["Auditoria GEO", "Mapa de perguntas", "Gargalos priorizados"],
   },
   {
     step: "03",
-    title: "No ar",
-    duration: "Em dias",
+    title: "Arquitetura",
+    duration: "Projeto fechado",
     description:
-      "Publicamos com domínio, hospedagem e SSL inclusos. Sem você ter que contratar ou configurar nada por fora.",
-    outputs: ["Domínio + hospedagem", "Certificado SSL", "Otimizado para Google"],
+      "Desenhamos a arquitetura de presença, conteúdo, base de conhecimento, agentes e automações que sustentam a nova operação.",
+    outputs: ["Roadmap de implantação", "Escopo técnico", "Prioridade por impacto"],
   },
   {
     step: "04",
-    title: "Evolução",
+    title: "Implantação",
     duration: "Contínuo",
     description:
-      "Precisou mudar um texto, trocar uma foto, adicionar página? Você pede e a gente faz. Alterações ilimitadas, uma na fila por vez.",
-    outputs: ["Suporte contínuo", "Alterações ilimitadas", "Sempre no ar"],
+      "Implementamos, medimos, treinamos o time e ajustamos os fluxos para que GEO e atendimento com IA virem rotina, não demo.",
+    outputs: ["Ativos publicados", "Equipe treinada", "Otimização contínua"],
   },
 ];

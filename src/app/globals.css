@@ -146,8 +146,12 @@
 
   /* Marquee CSS-only: loop seamless via duplicação + translate -50% */
   @keyframes marquee-x {
-    from { transform: translate3d(0, 0, 0); }
-    to { transform: translate3d(-50%, 0, 0); }
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
   }
   .marquee-track {
     animation: marquee-x 36s linear infinite;
@@ -233,6 +237,6 @@
 
   /* Âncora: pousa o título abaixo do nav fixo, sem o vazio do padding da seção */
   section[id] {
-    scroll-margin-top: calc(6rem - var(--space-section));
+    scroll-margin-top: 5rem;
   }
 }

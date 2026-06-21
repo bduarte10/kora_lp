@@ -1,6 +1,6 @@
 # KORA — Landing Page
 
-Landing page de **implantação de IA & automação para PMEs brasileiras**. Posicionamento premium cinematográfico, multi-conversão (Cal.com + WhatsApp), preparada para tráfego pago e SEO long-tail.
+Landing page de **GEO e automação de atendimento para PMEs brasileiras**. Posicionamento premium cinematográfico, aplicação consultiva para diagnóstico pago e conteúdo preparado para SEO tradicional e mecanismos generativos.
 
 ## Stack
 
@@ -8,17 +8,18 @@ Landing page de **implantação de IA & automação para PMEs brasileiras**. Pos
 - **Tailwind CSS v4** com `@theme inline` design tokens
 - **GSAP + ScrollTrigger + Lenis** para motion cinematográfico
 - **shadcn/ui** (Radix primitives) para componentes base
+- **react-hook-form** + **zod** para aplicação de diagnóstico
 - **Resend** + **Google Sheets API** para captura de leads
-- **Cal.com** embed para agendamento
-- **GTM** (GA4 + Meta Pixel + LinkedIn Insight Tag) com Consent Mode v2
+- **BrasilAPI** para enriquecimento opcional de CNPJ no backend
+- **GTM** + PostHog com Consent Mode v2
 - **Vercel** hosting + Analytics + Speed Insights
 
 ## Setup
 
 ```bash
 pnpm install
-cp .env.example .env.local  # preencher chaves
-pnpm dev                    # localhost:3000
+cp .env.example .env.local
+pnpm dev
 ```
 
 ## Scripts
@@ -37,27 +38,30 @@ pnpm dev                    # localhost:3000
 src/
 ├── app/                # App Router (RSC default)
 ├── components/
-│   ├── ui/            # shadcn primitives
-│   ├── sections/      # Hero, Problem, Services, Process, Proof, FAQ, FinalCTA, Nav, Footer
-│   ├── motion/        # SmoothScrollProvider, SplitText, Reveal, PinnedSection
-│   ├── forms/         # LeadForm (RHF + zod)
-│   ├── widgets/       # CalEmbed, WhatsAppFab
-│   └── tracking/      # GTM, ConsentBanner
-├── content/           # Copy estruturado (site, services, process, faq)
-├── lib/               # env, gtm, sheets, resend, seo, utils
+│   ├── sections/      # Hero, Solutions, Problem, Diagnostic, Process, Services, Proof, FAQ
+│   ├── forms/         # LeadForm (aplicação para diagnóstico)
+│   ├── motion/        # SmoothScrollProvider, Reveal
+│   ├── widgets/       # WhatsAppFab
+│   └── tracking/      # GTM, PostHog, ConsentBanner
+├── content/           # Copy estruturado
+├── lib/               # env, gtm, cnpj, sheets, resend, seo, utils
 └── styles/            # tokens.css
 ```
 
-## Plano completo
+## OpenSpec
 
-Spec em `~/.claude/plans/crie-uma-nova-pasta-kind-peach.md`.
+Mudança ativa:
 
-## Pendências antes do go-live
+```bash
+openspec validate reposition-kora-geo-high-ticket
+```
 
-- Domínio `kora.com.br` (apontar para Vercel)
-- Conta Cal.com com event type `diagnostico-kora`
+Artefatos em `openspec/changes/reposition-kora-geo-high-ticket`.
+
+## Go-live
+
 - Service Account Google + Spreadsheet compartilhada
 - Domínio verificado no Resend (DKIM/SPF)
-- Containers: GTM, GA4, Meta Business, LinkedIn Campaign Manager
+- Containers GTM e PostHog
 - WhatsApp Business + número
-- CNPJ + endereço (footer + política de privacidade)
+- CNPJ + endereço definitivo para footer e políticas

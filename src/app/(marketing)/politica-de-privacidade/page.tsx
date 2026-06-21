@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { site } from "@/content/site";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
@@ -12,9 +12,7 @@ export default function PrivacyPage() {
   return (
     <article className="section">
       <div className="container-text">
-        <h1 className="display text-[length:var(--fs-h1)]">
-          Política de Privacidade
-        </h1>
+        <h1 className="display text-[length:var(--fs-h1)]">Política de Privacidade</h1>
         <p className="mt-6 text-sm text-foreground-subtle">
           Última atualização: {new Date().toLocaleDateString("pt-BR")}
         </p>
@@ -30,8 +28,8 @@ export default function PrivacyPage() {
           <p>
             Coletamos: (a) dados fornecidos voluntariamente em formulários ou agendamentos (nome,
             e-mail, telefone, empresa, mensagem); (b) dados técnicos de navegação (cookies, IP,
-            páginas visitadas) por meio de ferramentas como Google Analytics, Meta Pixel e
-            LinkedIn Insight Tag, mediante seu consentimento.
+            páginas visitadas) por meio de ferramentas como Google Analytics, Meta Pixel e LinkedIn
+            Insight Tag, mediante seu consentimento.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">2. Finalidade</h2>
@@ -43,8 +41,8 @@ export default function PrivacyPage() {
           <h2 className="display-balanced text-[length:var(--fs-h3)]">3. Compartilhamento</h2>
           <p>
             Não vendemos nem compartilhamos seus dados com terceiros para fins comerciais.
-            Utilizamos processadores como Resend (envio de e-mail), Google (planilhas e
-            analytics) e Vercel (hospedagem), todos sob acordos de tratamento de dados.
+            Utilizamos processadores como Resend (envio de e-mail), Google (planilhas e analytics) e
+            Vercel (hospedagem), todos sob acordos de tratamento de dados.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">4. Cookies</h2>
@@ -55,8 +53,8 @@ export default function PrivacyPage() {
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">5. Seus direitos</h2>
           <p>
-            Você pode, a qualquer momento, solicitar acesso, correção, exclusão ou portabilidade
-            dos seus dados escrevendo para{" "}
+            Você pode, a qualquer momento, solicitar acesso, correção, exclusão ou portabilidade dos
+            seus dados escrevendo para{" "}
             <a className="underline" href={`mailto:${site.contact.email}`}>
               {site.contact.email}
             </a>
@@ -64,9 +62,7 @@ export default function PrivacyPage() {
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">6. Contato</h2>
-          <p>
-            Encarregado de Proteção de Dados: {site.contact.email}.
-          </p>
+          <p>Encarregado de Proteção de Dados: {site.contact.email}.</p>
         </div>
       </div>
     </article>

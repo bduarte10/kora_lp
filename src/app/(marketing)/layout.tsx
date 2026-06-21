@@ -1,8 +1,8 @@
-import type { ReactNode } from "react";
 import { SmoothScrollProvider } from "@/components/motion/smooth-scroll-provider";
 import { Footer } from "@/components/sections/footer";
 import { Nav } from "@/components/sections/nav";
 import { WhatsAppFab } from "@/components/widgets/whatsapp-fab";
+import type { ReactNode } from "react";
 
 export default function MarketingLayout({ children }: { children: ReactNode }) {
   return (

@@ -2,20 +2,20 @@ import { Reveal } from "@/components/motion/reveal";
 
 const pains = [
   {
-    title: "Site fraco (ou nenhum) custa venda todo dia.",
-    body: "Seu cliente pesquisa antes de comprar. Sem uma presença profissional no ar, a confiança vai pro concorrente.",
+    title: "Busca está virando resposta, não lista de links.",
+    body: "Seu cliente pergunta para uma IA quem contratar. Se sua empresa não é uma resposta clara, ela nem entra na comparação.",
   },
   {
-    title: "Fazer site virou dor de cabeça e custo escondido.",
-    body: "Orçamento alto na criação, agência que some depois, hospedagem e manutenção cobradas à parte. Ninguém te dá suporte.",
+    title: "Autoridade mal estruturada deixa a empresa invisível.",
+    body: "Conteúdo solto, sinais fracos e informações inconsistentes tornam difícil para mecanismos generativos entenderem sua marca.",
   },
   {
-    title: "Processos repetitivos sugam o melhor da sua equipe.",
-    body: "Cotação, follow-up, planilha, e-mail. Tarefa de máquina sendo feita por gente cara.",
+    title: "Atendimento lento desperdiça demanda qualificada.",
+    body: "WhatsApp, e-mail e CRM acumulam perguntas repetidas. O time perde velocidade justamente quando o lead já demonstrou intenção.",
   },
   {
-    title: "Ferramentas isoladas, nada conversa entre si.",
-    body: "CRM, planilha, WhatsApp, ERP. Dados duplicados, decisões lentas, retrabalho diário.",
+    title: "Conhecimento interno espalhado impede IA confiável.",
+    body: "Sem base, regras e revisão, a empresa fica presa entre respostas manuais e automações genéricas que ninguém confia.",
   },
 ];
 
@@ -28,8 +28,10 @@ export function Problem() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[20ch] text-[length:var(--fs-h1)]">
-            Sua empresa precisa estar online de verdade.{" "}
-            <span className="text-foreground-muted">E operar sem desperdício.</span>
+            A nova busca já começou.{" "}
+            <span className="text-foreground-muted">
+              A maioria das empresas ainda não se preparou.
+            </span>
           </h2>
         </Reveal>
 
@@ -39,13 +41,9 @@ export function Problem() {
               key={p.title}
               delay={0.04 * i}
               as="li"
-              className={
-                "py-12 sm:py-14 " +
-                (i % 2 === 0
-                  ? "sm:border-r sm:border-border sm:pr-10"
-                  : "sm:pl-10") +
-                ((i === 2 || i === 3) ? " sm:border-t sm:border-border" : "")
-              }
+              className={`py-12 sm:py-14 ${
+                i % 2 === 0 ? "sm:border-r sm:border-border sm:pr-10" : "sm:pl-10"
+              }${i === 2 || i === 3 ? " sm:border-t sm:border-border" : ""}`}
             >
               <div className="flex items-center gap-3">
                 <span className="font-mono text-xs text-foreground-faint">0{i + 1}</span>

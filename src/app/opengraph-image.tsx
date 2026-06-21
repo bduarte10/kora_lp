@@ -1,5 +1,5 @@
-import { ImageResponse } from "next/og";
 import { site } from "@/content/site";
+import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 export const alt = `${site.name} · ${site.tagline}`;
@@ -33,13 +33,15 @@ export default async function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         <div style={{ fontSize: 92, lineHeight: 1, letterSpacing: "-0.03em" }}>
-          A IA já está aqui.
+          Sua empresa aparece
         </div>
         <div style={{ fontSize: 92, lineHeight: 1, letterSpacing: "-0.03em", color: "#56565C" }}>
-          Sua empresa também?
+          nas respostas de IA?
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#56565C" }}>
+      <div
+        style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#56565C" }}
+      >
         <span>{site.tagline}</span>
         <span style={{ color: "#A86026" }}>kora.com.br</span>
       </div>

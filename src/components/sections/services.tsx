@@ -1,17 +1,17 @@
-import { Check } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { services } from "@/content/services";
+import { Check } from "lucide-react";
 
 export function Services() {
   return (
-    <section id="ia" className="section bg-bone border-y border-border">
+    <section id="geo" className="section bg-bone border-y border-border">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">Próximo nível · Automação & IA</p>
+          <p className="eyebrow section-anchor">GEO & IA aplicada</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[26ch] text-[length:var(--fs-h1)]">
-            Quando o site já roda, a gente automatiza o resto da operação.
+            Quatro frentes para ser citado, entendido e escolhido.
           </h2>
         </Reveal>
 
@@ -26,9 +26,7 @@ export function Services() {
                     </span>
                     <span className="h-px w-12 bg-border-strong" aria-hidden />
                   </div>
-                  <h3 className="display-balanced mt-4 text-[length:var(--fs-h2)]">
-                    {s.kicker}
-                  </h3>
+                  <h3 className="display-balanced mt-4 text-[length:var(--fs-h2)]">{s.kicker}</h3>
                 </div>
 
                 <div className="md:col-span-9">
@@ -42,11 +40,7 @@ export function Services() {
                   <ul className="mt-8 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-2">
                     {s.deliverables.map((d) => (
                       <li key={d} className="flex items-start gap-2 text-sm text-foreground">
-                        <Check
-                          size={15}
-                          className="mt-[3px] shrink-0 text-coral"
-                          aria-hidden
-                        />
+                        <Check size={15} className="mt-[3px] shrink-0 text-coral" aria-hidden />
                         <span>{d}</span>
                       </li>
                     ))}

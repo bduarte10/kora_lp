@@ -10,7 +10,8 @@ export function Process() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[20ch] text-[length:var(--fs-h1)]">
-            Do briefing ao ar. <span className="text-foreground-muted">Em dias, sem enrolação.</span>
+            Do fit à implantação.{" "}
+            <span className="text-foreground-muted">Método antes de ferramenta.</span>
           </h2>
         </Reveal>
 

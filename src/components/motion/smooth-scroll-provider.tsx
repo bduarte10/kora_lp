@@ -7,13 +7,12 @@ let gsapPromise: Promise<typeof import("gsap").default> | null = null;
 
 async function loadGsap() {
   if (!gsapPromise) {
-    gsapPromise = Promise.all([
-      import("gsap"),
-      import("gsap/ScrollTrigger"),
-    ]).then(([{ default: gsap }, { ScrollTrigger }]) => {
-      gsap.registerPlugin(ScrollTrigger);
-      return gsap;
-    });
+    gsapPromise = Promise.all([import("gsap"), import("gsap/ScrollTrigger")]).then(
+      ([{ default: gsap }, { ScrollTrigger }]) => {
+        gsap.registerPlugin(ScrollTrigger);
+        return gsap;
+      },
+    );
   }
   return gsapPromise;
 }

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { pushConsent } from "@/lib/gtm";
+import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "kora:consent";
 
@@ -26,6 +26,7 @@ export function ConsentBanner() {
   };
 
   return (
+    // biome-ignore lint/a11y/useSemanticElements: Fixed banner needs lightweight dialog semantics without native modal behavior.
     <div
       role="dialog"
       aria-label="Aviso de cookies"
@@ -34,7 +35,10 @@ export function ConsentBanner() {
       <p className="text-sm text-foreground-muted">
         Usamos cookies para medir o desempenho deste site e ajustar nossas campanhas. Você pode
         aceitar ou recusar; sua escolha fica salva localmente.{" "}
-        <a href="/politica-de-privacidade" className="underline underline-offset-2 hover:text-foreground">
+        <a
+          href="/politica-de-privacidade"
+          className="underline underline-offset-2 hover:text-foreground"
+        >
           Saiba mais
         </a>
         .

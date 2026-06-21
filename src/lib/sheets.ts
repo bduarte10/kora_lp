@@ -1,5 +1,5 @@
-import { google } from "googleapis";
 import type { LeadPayload } from "@/lib/resend";
+import { google } from "googleapis";
 
 function getClient() {
   const email = process.env.GOOGLE_SHEETS_CLIENT_EMAIL;
@@ -23,7 +23,7 @@ export async function appendLeadToSheet(lead: LeadPayload) {
   const sheets = google.sheets({ version: "v4", auth });
   return sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: "Leads!A:G",
+    range: "Leads!A:T",
     valueInputOption: "RAW",
     requestBody: {
       values: [
@@ -33,8 +33,21 @@ export async function appendLeadToSheet(lead: LeadPayload) {
           lead.email ?? "",
           lead.phone,
           lead.company ?? "",
-          lead.message ?? "",
-          lead.plan ?? "",
+          lead.role ?? "",
+          lead.segment ?? "",
+          lead.companySize ?? "",
+          lead.cnpj ?? "",
+          lead.mainChallenge ?? "",
+          lead.priority ?? "",
+          lead.urgency ?? "",
+          lead.paidDiagnosticOpenness ?? "",
+          lead.cnpjEnrichment?.razaoSocial ?? "",
+          lead.cnpjEnrichment?.nomeFantasia ?? "",
+          lead.cnpjEnrichment?.cidade ?? "",
+          lead.cnpjEnrichment?.uf ?? "",
+          lead.cnpjEnrichment?.cnaeFiscal ?? "",
+          lead.cnpjEnrichment?.atividadePrincipal ?? "",
+          lead.cnpjEnrichment?.situacaoCadastral ?? "",
         ],
       ],
     },

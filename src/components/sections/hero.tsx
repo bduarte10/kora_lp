@@ -1,19 +1,29 @@
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { site, whatsappLink } from "@/content/site";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
-const pillars = ["Sites", "Automação", "IA Aplicada", "Suporte Contínuo"];
-
-const includes = [
-  "Site profissional sob medida",
-  "Domínio + hospedagem + SSL",
-  "WhatsApp integrado",
-  "SEO + GEO (otimização para IA)",
-  "Suporte e alterações contínuas",
+const pillars = [
+  "GEO",
+  "Atendimento com IA",
+  "Bases de conhecimento",
+  "Copilots internos",
+  "Automação",
 ];
 
-const reassurance = ["No ar em dias", "Sem fidelidade", "Suporte humano"];
+const marqueePillars = Array.from({ length: 4 }, (_, cycle) =>
+  pillars.map((pillar) => ({ id: `${cycle}-${pillar}`, label: pillar })),
+).flat();
+
+const includes = [
+  "Auditoria de presença em IA",
+  "GEO para ChatGPT, Gemini e Perplexity",
+  "Base de conhecimento para atendimento",
+  "Automação de WhatsApp, CRM e e-mail",
+  "Plano de implantação priorizado",
+];
+
+const reassurance = ["Diagnóstico pago", "Aplicação com fit", "Implantação sob medida"];
 
 export function Hero() {
   return (
@@ -25,7 +35,7 @@ export function Hero() {
         <Reveal delay={0.04}>
           <div className="flex items-center gap-x-6 border-b border-cream-faint pb-5">
             <span className="text-[13px] font-medium section-anchor section-anchor-cream">
-              <span className="text-cream-muted">Sites, automação e IA para PMEs brasileiras</span>
+              <span className="text-cream-muted">{site.tagline}</span>
             </span>
             <span className="hidden h-px flex-1 bg-cream-faint sm:block" aria-hidden />
             <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream-faint">
@@ -41,24 +51,25 @@ export function Hero() {
             <div className="lg:col-span-7">
               <h1 className="display text-[clamp(2rem,2.6vw+1rem,3.25rem)] text-cream">
                 <span className="hero-line">
-                  <span>Comece com um site.</span>
+                  <span>Sua empresa está pronta</span>
                 </span>
                 <span className="hero-line">
-                  <span>Escale com automação e IA.</span>
+                  <span>para ser recomendada por IAs?</span>
                 </span>
               </h1>
 
               <Reveal delay={0.34}>
-                <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream">
-                  Criação, hospedagem, domínio e suporte numa assinatura simples. Sem taxas
-                  escondidas.
+                <p className="mt-7 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
+                  Clientes já pesquisam em ChatGPT, Gemini, Perplexity e Google com IA. A KORA
+                  prepara sua empresa para ser encontrada, citada e escolhida nesse novo ambiente de
+                  busca.
                 </p>
               </Reveal>
 
               <Reveal delay={0.44}>
                 <div className="mt-9 flex flex-wrap items-center gap-3">
                   <a
-                    href="#planos"
+                    href={site.ctas.primaryHref}
                     className="group inline-flex items-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-medium text-coral-deep transition hover:bg-cream/95"
                   >
                     {site.ctas.primary}
@@ -100,7 +111,7 @@ export function Hero() {
             <Reveal delay={0.42} className="lg:col-span-5">
               <div className="border-t border-cream-faint pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream-faint">
-                  Tudo incluso
+                  O que entra no diagnóstico
                 </p>
                 <ul className="mt-5 space-y-3.5">
                   {includes.map((item) => (
@@ -130,12 +141,12 @@ export function Hero() {
             }}
           >
             <div className="marquee-track flex w-max gap-12">
-              {[...pillars, ...pillars, ...pillars, ...pillars].map((p, i) => (
+              {marqueePillars.map((pillar) => (
                 <span
-                  key={i}
+                  key={pillar.id}
                   className="flex shrink-0 items-center text-[length:var(--fs-h3)] tracking-tight text-cream-muted"
                 >
-                  {p}
+                  {pillar.label}
                   <span className="ml-12 text-cream-faint" aria-hidden>
                     ·
                   </span>

@@ -1,10 +1,10 @@
 "use client";
 
-import { MessageCircle } from "lucide-react";
-import { useEffect, useState } from "react";
 import { site, whatsappLink } from "@/content/site";
 import { pushEvent } from "@/lib/gtm";
 import { cn } from "@/lib/utils";
+import { MessageCircle } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function WhatsAppFab() {
   const [visible, setVisible] = useState(false);

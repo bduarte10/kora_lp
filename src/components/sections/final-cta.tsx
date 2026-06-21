@@ -22,13 +22,13 @@ export function FinalCTA() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="display mt-6 max-w-[18ch] text-balance text-[length:var(--fs-h1)] text-cream">
-                Pronto pra colocar sua empresa no ar?
+                Quer saber se existe fit?
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream-muted">
-                Escolheu um plano de site ou quer um diagnóstico de automação e IA? Conta o que
-                você precisa e respondemos em até 24 horas úteis.
+                Aplique para o Diagnóstico GEO & Automação de Atendimento. Se a KORA puder ajudar,
+                retornamos com próximos passos e escopo inicial.
               </p>
             </Reveal>
 
@@ -36,23 +36,20 @@ export function FinalCTA() {
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
                 <p className="text-xs text-cream-faint">
-                  Para conversa rápida ou casos urgentes.
+                  Para uma dúvida objetiva antes de aplicar.
                 </p>
               </div>
             </Reveal>
           </div>
 
           {/* Coluna direita: form em painel cream */}
-          <Reveal
-            delay={0.22}
-            className="lg:col-span-6 lg:col-start-7"
-          >
+          <Reveal delay={0.22} className="lg:col-span-6 lg:col-start-7">
             <div className="rounded-2xl bg-paper p-6 text-foreground shadow-lg sm:p-10">
               <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
                 Fale com a gente
               </p>
               <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
-                Conte o que você precisa
+                Aplicação para diagnóstico
               </h3>
               <div className="mt-7">
                 <LeadForm />

@@ -5,31 +5,31 @@ export type FAQItem = {
 
 export const faq: FAQItem[] = [
   {
-    q: "O que está incluso na assinatura do site?",
-    a: "Tudo: criação do site sob medida, domínio, hospedagem, certificado SSL, suporte e alterações ilimitadas. Você paga a mensalidade e não precisa contratar nem configurar mais nada por fora.",
+    q: "O que é GEO?",
+    a: "GEO é a prática de preparar marca, conteúdo, dados e sinais de autoridade para que mecanismos generativos, como ChatGPT, Gemini, Perplexity e Google com IA, entendam sua empresa e possam citá-la em respostas relevantes.",
   },
   {
-    q: "Em quanto tempo meu site fica no ar?",
-    a: "Em poucos dias após o briefing. Assim que você envia textos e fotos (ou aprova o que sugerimos), criamos e publicamos rápido — sem os meses que uma agência tradicional costuma levar.",
+    q: "Qual a diferença entre SEO e GEO?",
+    a: "SEO ajuda sua empresa a aparecer melhor em páginas de resultado tradicionais. GEO complementa isso ao estruturar respostas, entidades, autoridade e conteúdo para ambientes onde a IA resume opções antes do clique.",
   },
   {
-    q: "Como funcionam as alterações ilimitadas?",
-    a: "Você pode pedir quantas alterações quiser ao longo do tempo: trocar um texto, atualizar uma foto, adicionar uma página. Resolvemos uma de cada vez, em fila, na ordem dos pedidos. Sem cobrança extra.",
+    q: "O diagnóstico é gratuito?",
+    a: "Não. O diagnóstico é pago porque envolve análise estratégica, auditoria de presença em IA, leitura de gargalos de atendimento e um plano de implantação. Antes disso, avaliamos o fit da empresa pela aplicação.",
   },
   {
-    q: "Preciso pagar domínio e hospedagem à parte?",
-    a: "Não. Domínio, hospedagem e SSL já estão inclusos na mensalidade. Sem custo escondido, sem boleto surpresa de outro fornecedor.",
+    q: "Vocês garantem que minha empresa será citada por IA?",
+    a: "Não prometemos citações garantidas. O trabalho aumenta clareza, autoridade, estrutura e rastreabilidade para melhorar as chances de a empresa ser compreendida e considerada por mecanismos de IA.",
   },
   {
-    q: "Tem taxa de setup e fidelidade?",
-    a: "Há uma taxa de setup única na criação do site (varia por plano) e depois só a mensalidade. Sem contrato longo de fidelidade: o site fica no ar enquanto você mantém a assinatura.",
+    q: "Preciso trocar meu site atual?",
+    a: "Nem sempre. O diagnóstico identifica se o site, conteúdo, dados estruturados e base de conhecimento atuais sustentam GEO. Quando fizer sentido, recomendamos ajustes, não uma reconstrução por padrão.",
   },
   {
-    q: "Já tenho site ou domínio. Vocês migram?",
-    a: "Sim. Se você já tem domínio, apontamos para o novo site sem perder seu endereço. E reaproveitamos o que fizer sentido do conteúdo atual.",
+    q: "Como a automação de atendimento entra no projeto?",
+    a: "GEO gera demanda melhor apenas se a operação consegue responder bem. Por isso mapeamos WhatsApp, e-mail, CRM e conhecimento interno para criar fluxos, agentes assistidos e respostas consistentes.",
   },
   {
-    q: "Vocês também fazem automação e IA?",
-    a: "Sim — é o próximo nível. Depois que o site está no ar, automatizamos processos (propostas, follow-ups, relatórios) e implantamos agentes de IA sob medida. Começa com um diagnóstico gratuito de 30 minutos.",
+    q: "Para quem a KORA não é indicada?",
+    a: "Não é indicada para quem busca apenas uma peça rápida, um chatbot genérico ou volume barato de leads. A KORA trabalha melhor com empresas que têm operação real, equipe comercial ou atendimento ativo e abertura para implantação séria.",
   },
 ];

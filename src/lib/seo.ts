@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import { diagnostic } from "@/content/diagnostic";
 import { faq } from "@/content/faq";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
+import type { Metadata } from "next";
 
 const siteUrl = site.url;
 
@@ -15,14 +16,18 @@ export const baseMetadata: Metadata = {
   applicationName: site.name,
   generator: "Next.js",
   keywords: [
-    "criação de sites",
-    "site por assinatura",
-    "site com hospedagem inclusa",
-    "site para PME",
-    "implantação de IA",
-    "automação de processos",
+    "GEO",
+    "generative engine optimization",
+    "otimização para IA",
+    "busca por IA",
+    "diagnóstico GEO",
+    "ChatGPT para empresas",
+    "Perplexity para empresas",
+    "Google AI Overviews",
+    "automação de atendimento",
     "agentes de IA",
-    "automação para PME",
+    "base de conhecimento para IA",
+    "automação para PMEs",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -39,7 +44,14 @@ export const baseMetadata: Metadata = {
     siteName: site.name,
     title: `${site.name} · ${site.tagline}`,
     description: site.description,
-    images: [{ url: site.defaultOgImage, width: 1200, height: 630, alt: site.name }],
+    images: [
+      {
+        url: site.defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: "KORA · GEO e automação de atendimento para PMEs brasileiras",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -59,9 +71,9 @@ export const baseMetadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
 };
 
@@ -90,7 +102,7 @@ export const professionalServiceJsonLd = {
   url: siteUrl,
   image: `${siteUrl}/og-default.png`,
   areaServed: { "@type": "Country", name: "Brazil" },
-  serviceType: "Criação de sites por assinatura, automação e IA para empresas",
+  serviceType: "GEO, automação de atendimento e IA aplicada para empresas",
   address: {
     "@type": "PostalAddress",
     addressLocality: site.contact.address.city,
@@ -100,11 +112,22 @@ export const professionalServiceJsonLd = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Serviços KORA",
-    itemListElement: services.map((s, i) => ({
-      "@type": "Offer",
-      position: i + 1,
-      itemOffered: { "@type": "Service", name: s.title, description: s.description },
-    })),
+    itemListElement: [
+      {
+        "@type": "Offer",
+        position: 1,
+        itemOffered: {
+          "@type": "Service",
+          name: diagnostic.title,
+          description: diagnostic.description,
+        },
+      },
+      ...services.map((s, i) => ({
+        "@type": "Offer",
+        position: i + 2,
+        itemOffered: { "@type": "Service", name: s.title, description: s.description },
+      })),
+    ],
   },
 };
 

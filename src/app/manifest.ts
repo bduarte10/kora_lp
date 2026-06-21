@@ -1,5 +1,5 @@
-import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
+import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -10,9 +10,6 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: "#F6F5F2",
     theme_color: "#0C0C0E",
-    icons: [
-      { src: "/favicon.ico", sizes: "any", type: "image/x-icon" },
-      { src: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    icons: [{ src: "/favicon.svg", sizes: "any", type: "image/svg+xml" }],
   };
 }
