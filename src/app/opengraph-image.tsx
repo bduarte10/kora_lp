@@ -43,7 +43,7 @@ export default async function OpenGraphImage() {
         style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#56565C" }}
       >
         <span>{site.tagline}</span>
-        <span style={{ color: "#A86026" }}>kora.com.br</span>
+        <span style={{ color: "#A86026" }}>koraintelligence.com.br</span>
       </div>
     </div>,
     { ...size },

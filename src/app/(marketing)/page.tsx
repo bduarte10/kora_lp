@@ -8,12 +8,18 @@ import { Proof } from "@/components/sections/proof";
 import { Services } from "@/components/sections/services";
 import { Solutions } from "@/components/sections/solutions";
 import { JsonLd } from "@/components/seo/json-ld";
-import { breadcrumbJsonLd, faqJsonLd, professionalServiceJsonLd } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  diagnosticServiceJsonLd,
+  faqJsonLd,
+  professionalServiceJsonLd,
+} from "@/lib/seo";
 
 export default function HomePage() {
   return (
     <>
       <JsonLd data={professionalServiceJsonLd} />
+      <JsonLd data={diagnosticServiceJsonLd} />
       <JsonLd data={faqJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <Hero />

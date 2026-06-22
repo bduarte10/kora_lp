@@ -5,12 +5,26 @@ import { site } from "@/content/site";
 import type { Metadata } from "next";
 
 const siteUrl = site.url;
+const knowsAbout = [
+  "GEO",
+  "Generative Engine Optimization",
+  "busca por IA",
+  "atendimento com IA",
+  "automação de atendimento",
+  "bases de conhecimento",
+  "agentes de IA",
+  "copilots internos",
+  "ChatGPT",
+  "Gemini",
+  "Perplexity",
+  "Google com IA",
+];
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${site.name} · ${site.tagline}`,
-    template: `%s · ${site.name}`,
+    default: "KORA | GEO e Atendimento com IA para PMEs",
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -24,10 +38,14 @@ export const baseMetadata: Metadata = {
     "ChatGPT para empresas",
     "Perplexity para empresas",
     "Google AI Overviews",
+    "Google com IA",
     "automação de atendimento",
+    "atendimento com IA",
     "agentes de IA",
     "base de conhecimento para IA",
+    "copilots internos",
     "automação para PMEs",
+    "PMEs brasileiras",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -42,20 +60,20 @@ export const baseMetadata: Metadata = {
     locale: site.locale,
     url: siteUrl,
     siteName: site.name,
-    title: `${site.name} · ${site.tagline}`,
+    title: "KORA | GEO e Atendimento com IA para PMEs",
     description: site.description,
     images: [
       {
         url: site.defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "KORA · GEO e automação de atendimento para PMEs brasileiras",
+        alt: "KORA | GEO e Atendimento com IA para PMEs",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} · ${site.tagline}`,
+    title: "KORA | GEO e Atendimento com IA para PMEs",
     description: site.description,
     images: [site.defaultOgImage],
   },
@@ -83,7 +101,10 @@ export const organizationJsonLd = {
   name: site.name,
   url: siteUrl,
   logo: `${siteUrl}/og-default.png`,
+  email: site.contact.email,
   description: site.description,
+  areaServed: "BR",
+  knowsAbout,
   sameAs: Object.values(site.social),
   contactPoint: {
     "@type": "ContactPoint",
@@ -91,6 +112,39 @@ export const organizationJsonLd = {
     areaServed: "BR",
     availableLanguage: "Portuguese",
     email: site.contact.email,
+  },
+};
+
+export const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: siteUrl,
+  inLanguage: site.locale,
+  description: site.description,
+  publisher: {
+    "@type": "Organization",
+    name: site.name,
+    url: siteUrl,
+  },
+  about: knowsAbout.map((name) => ({ "@type": "Thing", name })),
+};
+
+export const diagnosticServiceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: diagnostic.title,
+  description: diagnostic.description,
+  serviceType: "Diagnóstico GEO e automação de atendimento",
+  provider: {
+    "@type": "Organization",
+    name: site.name,
+    url: siteUrl,
+  },
+  areaServed: { "@type": "Country", name: "Brazil" },
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "PMEs brasileiras",
   },
 };
 
