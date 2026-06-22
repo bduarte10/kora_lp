@@ -1,6 +1,8 @@
-import { LeadForm } from "@/components/forms/lead-form";
 import { Reveal } from "@/components/motion/reveal";
 import { FinalCtaWhatsApp } from "@/components/sections/final-cta-whatsapp";
+import { TrackedLink } from "@/components/tracking/tracked-link";
+import { site } from "@/content/site";
+import { ArrowRight } from "lucide-react";
 
 export function FinalCTA() {
   return (
@@ -51,9 +53,25 @@ export function FinalCTA() {
               <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
                 Aplicação para diagnóstico
               </h3>
-              <div className="mt-7">
-                <LeadForm />
-              </div>
+              <p className="mt-5 text-sm leading-relaxed text-foreground-muted">
+                Abra a experiência dedicada, responda em etapas e envie sua aplicação para análise
+                de fit.
+              </p>
+              <TrackedLink
+                href={site.ctas.navHref}
+                event={{
+                  event: "cta_click",
+                  label: site.ctas.nav,
+                  location: "final-cta-application",
+                }}
+                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
+              >
+                {site.ctas.nav}
+                <ArrowRight
+                  size={15}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5"
+                />
+              </TrackedLink>
             </div>
           </Reveal>
         </div>

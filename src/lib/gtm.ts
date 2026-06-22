@@ -24,10 +24,17 @@ export type GTMEvent =
   | { event: "cta_click"; label: string; location: string }
   | { event: "whatsapp_click"; location: string }
   | { event: "diagnostic_interest"; location: string; priority?: string }
-  | { event: "form_submit"; form_id: string; interest?: string; priority?: string }
+  | {
+      event: "form_submit";
+      form_id: string;
+      form_variant?: string;
+      interest?: string;
+      priority?: string;
+    }
   | {
       event: "lead_qualified";
       form_id: string;
+      form_variant?: string;
       email?: string;
       interest?: string;
       priority?: string;

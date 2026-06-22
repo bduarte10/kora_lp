@@ -29,8 +29,8 @@ export const site = {
     primary: "Solicitar diagnóstico GEO",
     secondary: "Falar no WhatsApp",
     nav: "Aplicar para diagnóstico",
-    primaryHref: "#diagnostico",
-    navHref: "#diagnostico",
+    primaryHref: "/diagnostico",
+    navHref: "/diagnostico",
   },
 
   nav: [

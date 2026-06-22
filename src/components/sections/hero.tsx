@@ -1,4 +1,5 @@
 import { Reveal } from "@/components/motion/reveal";
+import { TrackedLink } from "@/components/tracking/tracked-link";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { hero } from "@/content/hero";
 import { site, whatsappLink } from "@/content/site";
@@ -50,8 +51,13 @@ export function Hero() {
 
               <Reveal delay={0.44}>
                 <div className="mt-9 flex flex-wrap items-center gap-3">
-                  <a
+                  <TrackedLink
                     href={site.ctas.primaryHref}
+                    event={{
+                      event: "cta_click",
+                      label: site.ctas.primary,
+                      location: "hero-primary",
+                    }}
                     className="group inline-flex items-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-medium text-coral-deep transition hover:bg-cream/95"
                   >
                     {site.ctas.primary}
@@ -59,7 +65,7 @@ export function Hero() {
                       size={15}
                       className="transition-transform duration-300 group-hover:translate-x-0.5"
                     />
-                  </a>
+                  </TrackedLink>
                   <a
                     href={whatsappLink()}
                     target="_blank"
