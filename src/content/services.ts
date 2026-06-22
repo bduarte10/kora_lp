@@ -20,7 +20,7 @@ export const services: ServicePillar[] = [
       "Mapa de perguntas e intenções do cliente ideal",
       "Auditoria de entidade, autoridade e conteúdo",
       "Estrutura de respostas answer-first",
-      "Recomendações para ChatGPT, Gemini, Perplexity e Google com IA",
+      "Recomendações para ChatGPT, Claude, Gemini, Perplexity e Google com IA",
     ],
     imageSeed: "atlas-quiet",
   },

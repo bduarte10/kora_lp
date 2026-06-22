@@ -6,7 +6,7 @@ export type FAQItem = {
 export const faq: FAQItem[] = [
   {
     q: "O que é GEO?",
-    a: "GEO é a prática de preparar marca, conteúdo, dados e sinais de autoridade para que mecanismos generativos, como ChatGPT, Gemini, Perplexity e Google com IA, entendam sua empresa e possam citá-la em respostas relevantes.",
+    a: "GEO é a prática de preparar marca, conteúdo, dados e sinais de autoridade para que mecanismos generativos, como ChatGPT, Claude, Gemini, Perplexity e Google com IA, entendam sua empresa e possam citá-la em respostas relevantes.",
   },
   {
     q: "Qual a diferença entre SEO e GEO?",

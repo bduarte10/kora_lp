@@ -8,7 +8,7 @@ export const diagnostic = {
     "Times que querem sair de testes soltos de IA para implantação rastreável",
   ],
   deliverables: [
-    "Auditoria de presença em ChatGPT, Gemini, Perplexity e Google com IA",
+    "Auditoria de presença em ChatGPT, Claude, Gemini, Perplexity e Google com IA",
     "Mapa das perguntas que seu cliente ideal faz antes de contratar",
     "Diagnóstico de autoridade digital, entidade e conteúdo answer-first",
     "Leitura dos gargalos de atendimento comercial e suporte",

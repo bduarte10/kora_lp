@@ -15,7 +15,7 @@ export const solutions: Solution[] = [
     kicker: "GEO",
     title: "Presença para respostas de IA",
     description:
-      "Estruturamos conteúdo, entidade, autoridade e sinais de confiança para sua empresa ser compreendida por ChatGPT, Gemini, Perplexity e Google com IA.",
+      "Estruturamos conteúdo, entidade, autoridade e sinais de confiança para sua empresa ser compreendida por ChatGPT, Claude, Gemini, Perplexity e Google com IA.",
     ctaLabel: "Solicitar diagnóstico",
     ctaHref: "#diagnostico",
   },
