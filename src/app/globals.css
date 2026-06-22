@@ -189,10 +189,21 @@
   }
   .hero-line > span {
     display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: normal;
     /* Start far enough below that the padding-bottom area stays empty (text fully
        hidden) before the rise — must clear 100% + padding-bottom. */
     transform: translateY(130%);
     animation: hero-line-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  @media (min-width: 1024px) {
+    .hero-line > span {
+      width: auto;
+      max-width: none;
+      white-space: nowrap;
+    }
   }
   .hero-line:nth-child(1) > span {
     animation-delay: 0.08s;

@@ -2,7 +2,7 @@ export const site = {
   name: "KORA",
   tagline: "GEO e Atendimento com IA para PMEs",
   description:
-    "A KORA ajuda PMEs brasileiras a serem encontradas, compreendidas e escolhidas por ChatGPT, Gemini, Perplexity e Google com IA, unindo GEO, bases de conhecimento e automação de atendimento.",
+    "A KORA ajuda PMEs brasileiras a serem encontradas, compreendidas e consideradas por ChatGPT, Gemini, Perplexity e Google com IA, unindo GEO, bases de conhecimento e automação de atendimento.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://koraintelligence.com.br",
   locale: "pt-BR",
   defaultOgImage: "/og-default.png",

@@ -1,3 +1,4 @@
+import { hero } from "@/content/hero";
 import { site } from "@/content/site";
 import { ImageResponse } from "next/og";
 
@@ -33,10 +34,10 @@ export default async function OpenGraphImage() {
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
         <div style={{ fontSize: 92, lineHeight: 1, letterSpacing: "-0.03em" }}>
-          Sua empresa aparece
+          {hero.headlineLines[0]}
         </div>
         <div style={{ fontSize: 92, lineHeight: 1, letterSpacing: "-0.03em", color: "#56565C" }}>
-          nas respostas de IA?
+          sua empresa aparece?
         </div>
       </div>
       <div

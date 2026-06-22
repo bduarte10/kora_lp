@@ -1,36 +1,12 @@
 import { Reveal } from "@/components/motion/reveal";
 import { NoiseBackground } from "@/components/ui/noise-background";
+import { hero } from "@/content/hero";
 import { site, whatsappLink } from "@/content/site";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
-const pillars = [
-  "GEO",
-  "Atendimento com IA",
-  "Bases de conhecimento",
-  "Copilots internos",
-  "Automação",
-];
-
 const marqueePillars = Array.from({ length: 4 }, (_, cycle) =>
-  pillars.map((pillar) => ({ id: `${cycle}-${pillar}`, label: pillar })),
+  hero.pillars.map((pillar) => ({ id: `${cycle}-${pillar}`, label: pillar })),
 ).flat();
-
-const includes = [
-  { id: "auditoria", label: "Auditoria de presença em IA" },
-  { id: "geo", label: "GEO para ChatGPT, Gemini e Perplexity" },
-  { id: "base", label: "Base de conhecimento para atendimento" },
-  {
-    id: "automacao",
-    label: (
-      <>
-        Automação de WhatsApp, CRM e <span className="whitespace-nowrap">e-mail</span>
-      </>
-    ),
-  },
-  { id: "plano", label: "Plano de implantação priorizado" },
-];
-
-const reassurance = ["Diagnóstico pago", "Aplicação com fit", "Implantação sob medida"];
 
 export function Hero() {
   return (
@@ -55,21 +31,20 @@ export function Hero() {
         <div className="flex-1 py-10 sm:py-16">
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             {/* Esquerda: H1 + sub + CTAs + reasseguramento */}
-            <div className="lg:col-span-7">
-              <h1 className="display text-[clamp(2rem,2.45vw+0.95rem,3.05rem)] text-cream">
-                <span className="hero-line">
-                  <span className="lg:whitespace-nowrap">Sua empresa está pronta</span>
-                </span>
-                <span className="hero-line">
-                  <span className="lg:whitespace-nowrap">para ser recomendada por IAs?</span>
-                </span>
+            <div className="min-w-0 lg:col-span-7">
+              <h1 className="display text-[clamp(2rem,1.75vw+0.9rem,2.55rem)] text-cream">
+                {hero.headlineLines.map((line) => (
+                  <span key={line} className="hero-line">
+                    <span className="block w-full lg:inline-block lg:w-auto lg:whitespace-nowrap">
+                      {line}
+                    </span>
+                  </span>
+                ))}
               </h1>
 
               <Reveal delay={0.34}>
                 <p className="mt-7 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
-                  Clientes já pesquisam em ChatGPT, Gemini, Perplexity e Google com IA. A KORA
-                  prepara sua empresa para ser encontrada, citada e escolhida nesse novo ambiente de
-                  busca.
+                  {hero.description}
                 </p>
               </Reveal>
 
@@ -100,7 +75,7 @@ export function Hero() {
 
               <Reveal delay={0.52}>
                 <ul className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-cream-muted">
-                  {reassurance.map((r, i) => (
+                  {hero.reassurance.map((r, i) => (
                     <li key={r} className="flex items-center gap-3">
                       {i > 0 && (
                         <span className="text-cream-faint" aria-hidden>
@@ -115,19 +90,21 @@ export function Hero() {
             </div>
 
             {/* Direita: checklist de inclusos */}
-            <Reveal delay={0.42} className="lg:col-span-5">
+            <Reveal delay={0.42} className="min-w-0 lg:col-span-5">
               <div className="border-t border-cream-faint pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
                 <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream-faint">
-                  O que entra no diagnóstico
+                  {hero.includesTitle}
                 </p>
-                <ul className="mt-5 space-y-3.5">
-                  {includes.map((item) => (
+                <ul className="mt-6 space-y-4">
+                  {hero.includes.map((item) => (
                     <li
                       key={item.id}
-                      className="flex items-start gap-2.5 text-[length:var(--fs-lead)] text-cream"
+                      className="grid grid-cols-[1.625rem_1fr] gap-3.5 text-[length:var(--fs-body)] leading-snug text-cream-muted"
                     >
-                      <Check size={18} className="mt-1 shrink-0 text-cream" aria-hidden />
-                      <span>{item.label}</span>
+                      <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-cream/10 text-cream">
+                        <Check size={13} strokeWidth={2.4} aria-hidden />
+                      </span>
+                      <span className="max-w-[38ch]">{item.label}</span>
                     </li>
                   ))}
                 </ul>
