@@ -16,11 +16,18 @@ const marqueePillars = Array.from({ length: 4 }, (_, cycle) =>
 ).flat();
 
 const includes = [
-  "Auditoria de presença em IA",
-  "GEO para ChatGPT, Gemini e Perplexity",
-  "Base de conhecimento para atendimento",
-  "Automação de WhatsApp, CRM e e-mail",
-  "Plano de implantação priorizado",
+  { id: "auditoria", label: "Auditoria de presença em IA" },
+  { id: "geo", label: "GEO para ChatGPT, Gemini e Perplexity" },
+  { id: "base", label: "Base de conhecimento para atendimento" },
+  {
+    id: "automacao",
+    label: (
+      <>
+        Automação de WhatsApp, CRM e <span className="whitespace-nowrap">e-mail</span>
+      </>
+    ),
+  },
+  { id: "plano", label: "Plano de implantação priorizado" },
 ];
 
 const reassurance = ["Diagnóstico pago", "Aplicação com fit", "Implantação sob medida"];
@@ -49,12 +56,12 @@ export function Hero() {
           <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
             {/* Esquerda: H1 + sub + CTAs + reasseguramento */}
             <div className="lg:col-span-7">
-              <h1 className="display text-[clamp(2rem,2.6vw+1rem,3.25rem)] text-cream">
+              <h1 className="display text-[clamp(2rem,2.45vw+0.95rem,3.05rem)] text-cream">
                 <span className="hero-line">
-                  <span>Sua empresa está pronta</span>
+                  <span className="lg:whitespace-nowrap">Sua empresa está pronta</span>
                 </span>
                 <span className="hero-line">
-                  <span>para ser recomendada por IAs?</span>
+                  <span className="lg:whitespace-nowrap">para ser recomendada por IAs?</span>
                 </span>
               </h1>
 
@@ -116,11 +123,11 @@ export function Hero() {
                 <ul className="mt-5 space-y-3.5">
                   {includes.map((item) => (
                     <li
-                      key={item}
+                      key={item.id}
                       className="flex items-start gap-2.5 text-[length:var(--fs-lead)] text-cream"
                     >
                       <Check size={18} className="mt-1 shrink-0 text-cream" aria-hidden />
-                      <span>{item}</span>
+                      <span>{item.label}</span>
                     </li>
                   ))}
                 </ul>
