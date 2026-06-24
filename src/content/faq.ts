@@ -6,11 +6,23 @@ export type FAQItem = {
 export const faq: FAQItem[] = [
   {
     q: "O que é GEO?",
-    a: "GEO é a prática de preparar marca, conteúdo, dados e sinais de autoridade para que mecanismos generativos, como ChatGPT, Claude, Gemini, Perplexity e Google com IA, entendam sua empresa e possam citá-la em respostas relevantes.",
+    a: "GEO é a prática de preparar marca, entidade, conteúdo, dados estruturados e sinais de autoridade para que mecanismos generativos, como ChatGPT, Claude, Gemini, Perplexity e Google com IA, entendam sua empresa e possam considerá-la em respostas relevantes.",
   },
   {
     q: "Qual a diferença entre SEO e GEO?",
     a: "SEO ajuda sua empresa a aparecer melhor em páginas de resultado tradicionais. GEO complementa isso ao estruturar respostas, entidades, autoridade e conteúdo para ambientes onde a IA resume opções antes do clique.",
+  },
+  {
+    q: "Como vocês medem presença em IA?",
+    a: "Usamos clusters de prompts reais do cliente ideal e avaliamos presença, ausência, contexto da menção, concorrentes citados, qualidade da resposta, fontes associadas e consistência entre ChatGPT, Claude, Gemini, Perplexity e Google com IA.",
+  },
+  {
+    q: "Vocês conseguem provar aumento de share of voice?",
+    a: "Conseguimos medir baseline e evolução em um conjunto controlado de prompts. Acompanhamos indicadores como mention rate, share of voice generativo, recommendation rate, context quality, competitor gap e source influence, sem prometer domínio absoluto das respostas.",
+  },
+  {
+    q: "O diagnóstico inclui monitoramento contínuo?",
+    a: "A entrega inicial cria baseline e roadmap. Em projetos recorrentes, podemos monitorar prompts estratégicos, mudanças de resposta, concorrentes citados, deterioração de sinais e novas oportunidades de conteúdo.",
   },
   {
     q: "O diagnóstico é gratuito?",
@@ -18,7 +30,15 @@ export const faq: FAQItem[] = [
   },
   {
     q: "Vocês garantem que minha empresa será citada por IA?",
-    a: "Não prometemos citações garantidas. O trabalho aumenta clareza, autoridade, estrutura e rastreabilidade para melhorar as chances de a empresa ser compreendida e considerada por mecanismos de IA.",
+    a: "Não prometemos citações garantidas. Respostas de IA variam por modelo, contexto, data, localização, personalização e atualização das fontes. O trabalho aumenta clareza, autoridade, estrutura e rastreabilidade para melhorar as chances de a empresa ser compreendida e considerada.",
+  },
+  {
+    q: "Vocês fazem só conteúdo para blog?",
+    a: "Não. O diagnóstico avalia site, schema, entidade, reputação, avaliações, menções externas, perfis públicos, diretórios, fontes confiáveis, distribuição e conteúdo answer-first. Blog pode entrar, mas não é o centro do trabalho.",
+  },
+  {
+    q: "Têm cases auditáveis?",
+    a: "Cases nomeados dependem de autorização dos clientes. Quando não houver autorização, apresentamos recortes anonimizados com prompts datados, modelos testados, prints, URLs, concorrentes monitorados, ações implementadas e comparação 30/60/90 dias.",
   },
   {
     q: "Preciso trocar meu site atual?",

@@ -92,8 +92,9 @@ export function Proof() {
 
         <Reveal delay={0.2} className="mt-12 max-w-prose text-sm text-foreground-subtle">
           <p>
-            Os exemplos acima representam padrões reais que aparecem em quase toda implantação.
-            Cases nomeados são compartilhados no diagnóstico, sob NDA quando o cliente prefere.
+            Os exemplos acima representam padrões recorrentes de implantação. Cases nomeados
+            dependem de autorização do cliente; quando não houver, usamos recortes anonimizados,
+            prompts datados, prints, URLs e evolução dos indicadores.
           </p>
         </Reveal>
       </div>

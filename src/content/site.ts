@@ -2,7 +2,7 @@ export const site = {
   name: "KORA",
   tagline: "GEO e Atendimento com IA para PMEs",
   description:
-    "A KORA ajuda PMEs brasileiras a serem encontradas, compreendidas e consideradas por ChatGPT, Claude, Gemini, Perplexity e Google com IA, unindo GEO, bases de conhecimento e automação de atendimento.",
+    "A KORA ajuda PMEs brasileiras a medir e fortalecer presença em ChatGPT, Claude, Gemini, Perplexity e Google com IA, unindo GEO, autoridade digital, bases de conhecimento e automação de atendimento.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://koraintelligence.com.br",
   locale: "pt-BR",
   defaultOgImage: "/og-default.png",
@@ -36,6 +36,7 @@ export const site = {
   nav: [
     { href: "#solucoes", label: "Soluções" },
     { href: "#diagnostico", label: "Diagnóstico" },
+    { href: "#metodologia", label: "Metodologia" },
     { href: "#processo", label: "Como funciona" },
     { href: "#geo", label: "GEO & IA" },
     { href: "#faq", label: "FAQ" },

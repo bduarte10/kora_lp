@@ -2,7 +2,7 @@ export const diagnosticApplication = {
   route: "/diagnostico",
   title: "Aplique para o Diagnóstico GEO & Automação de Atendimento",
   description:
-    "A KORA avalia o contexto antes de propor próximos passos. Responda o essencial para entendermos fit, urgência e onde IA pode gerar vantagem operacional.",
+    "A KORA avalia o contexto antes de propor próximos passos. Responda o essencial para entendermos fit, urgência, presença atual em IA e onde automação pode gerar vantagem operacional.",
   expectations: [
     {
       label: "Tempo",
@@ -11,8 +11,9 @@ export const diagnosticApplication = {
     },
     {
       label: "Análise",
-      value: "GEO + atendimento",
-      description: "Presença em IA, autoridade digital, base de conhecimento e automações.",
+      value: "Baseline + roadmap",
+      description:
+        "Presença em IA, concorrentes citados, autoridade digital, base de conhecimento e automações.",
     },
     {
       label: "Retorno",
