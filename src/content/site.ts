@@ -21,8 +21,8 @@ export const site = {
   },
 
   social: {
-    linkedin: "https://www.linkedin.com/company/kora-ai",
-    instagram: "https://www.instagram.com/kora.ia",
+    linkedin: "https://www.linkedin.com/company/kora-intelligence",
+    instagram: "https://www.instagram.com/kora.solucoes",
   },
 
   ctas: {

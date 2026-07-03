@@ -1,4 +1,5 @@
 import { site } from "@/content/site";
+import { Instagram, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -37,19 +38,13 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-sm">
               <li>
                 <a
-                  href={`mailto:${site.contact.email}`}
-                  className="text-foreground-muted hover:text-foreground"
-                >
-                  {site.contact.email}
-                </a>
-              </li>
-              <li>
-                <a
                   href={site.social.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-foreground-muted hover:text-foreground"
+                  aria-label="KORA no LinkedIn"
+                  className="inline-flex items-center gap-2 text-foreground-muted transition hover:text-foreground"
                 >
+                  <Linkedin size={15} aria-hidden />
                   LinkedIn
                 </a>
               </li>
@@ -58,8 +53,10 @@ export function Footer() {
                   href={site.social.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-foreground-muted hover:text-foreground"
+                  aria-label="KORA no Instagram"
+                  className="inline-flex items-center gap-2 text-foreground-muted transition hover:text-foreground"
                 >
+                  <Instagram size={15} aria-hidden />
                   Instagram
                 </a>
               </li>

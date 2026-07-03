@@ -5,7 +5,7 @@ import { diagnostic } from "@/content/diagnostic";
 import { diagnosticApplication } from "@/content/diagnostic-application";
 import { site, whatsappLink } from "@/content/site";
 import { diagnosticServiceJsonLd } from "@/lib/seo";
-import { ArrowLeft, MessageCircle } from "lucide-react";
+import { ArrowLeft, Linkedin, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 const pageUrl = `${site.url}${diagnosticApplication.route}`;
@@ -149,7 +149,17 @@ export default function DiagnosticApplicationPage() {
         <footer className="border-t border-border">
           <div className="container-page flex flex-col gap-3 py-6 text-xs text-foreground-subtle sm:flex-row sm:items-center sm:justify-between">
             <p>{diagnosticApplication.footerNote}</p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-4">
+              <a
+                href={site.social.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="KORA no LinkedIn"
+                className="inline-flex items-center gap-1.5 hover:text-foreground"
+              >
+                <Linkedin size={14} aria-hidden />
+                LinkedIn
+              </a>
               <a href="/politica-de-privacidade" className="hover:text-foreground">
                 Política de privacidade
               </a>
