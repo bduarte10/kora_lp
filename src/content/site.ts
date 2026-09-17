@@ -1,3 +1,13 @@
+const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511920923143";
+
+const waLink = (text: string) =>
+  `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`;
+
+const diagnosticFromBRL = 2900;
+
+const callMessage =
+  "Oi, vim pelo site da KORA. Quero agendar 15 minutos para entender como minha empresa aparece nas respostas de IA.";
+
 export const site = {
   name: "KORA",
   tagline: "GEO e Atendimento com IA para PMEs",
@@ -9,7 +19,7 @@ export const site = {
 
   contact: {
     email: "contato@kora.com.br",
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511920923143",
+    whatsappNumber,
     whatsappMessage:
       process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
       "Oi, vim pelo site da KORA e quero tirar uma dúvida sobre o Diagnóstico GEO",
@@ -25,12 +35,20 @@ export const site = {
     instagram: "https://www.instagram.com/kora.solucoes",
   },
 
+  pricing: {
+    diagnosticFromBRL,
+    diagnosticFrom: new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+      maximumFractionDigits: 0,
+    }).format(diagnosticFromBRL),
+  },
+
   ctas: {
-    primary: "Solicitar diagnóstico GEO",
-    secondary: "Falar no WhatsApp",
-    nav: "Aplicar para diagnóstico",
-    primaryHref: "/diagnostico",
-    navHref: "/diagnostico",
+    call: "Agendar 15 minutos",
+    callHref: waLink(callMessage),
+    apply: "Aplicar para diagnóstico",
+    applyHref: "/diagnostico",
   },
 
   nav: [
@@ -43,9 +61,6 @@ export const site = {
   ],
 } as const;
 
-export const whatsappLinkWith = (text: string) => {
-  const n = site.contact.whatsappNumber.replace(/\D/g, "");
-  return `https://wa.me/${n}?text=${encodeURIComponent(text)}`;
-};
+export const whatsappLinkWith = waLink;
 
-export const whatsappLink = () => whatsappLinkWith(site.contact.whatsappMessage);
+export const whatsappLink = () => waLink(site.contact.whatsappMessage);

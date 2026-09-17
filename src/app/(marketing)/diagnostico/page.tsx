@@ -133,13 +133,39 @@ export default function DiagnosticApplicationPage() {
                 </div>
               </div>
 
-              <p className="max-w-md text-sm leading-relaxed text-foreground-muted">
+              <p className="max-w-md text-sm font-medium leading-relaxed text-foreground">
+                {diagnostic.price}
+              </p>
+              <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground-muted">
                 {diagnostic.note}
               </p>
             </div>
 
             <div className="lg:col-span-7">
-              <div className="border border-border bg-paper p-5 shadow-lg sm:p-8 lg:p-10">
+              <div className="flex flex-col gap-4 border border-border bg-bone p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                <div>
+                  <p className="font-medium text-foreground">Não quer preencher formulário?</p>
+                  <p className="mt-1 text-sm leading-relaxed text-foreground-muted">
+                    15 minutos no WhatsApp, sem apresentação comercial.
+                  </p>
+                </div>
+                <TrackedLink
+                  href={site.ctas.callHref}
+                  target="_blank"
+                  rel="noreferrer"
+                  event={{
+                    event: "cta_click",
+                    label: site.ctas.call,
+                    location: "diagnostic-page-top",
+                  }}
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
+                >
+                  <MessageCircle size={15} />
+                  {site.ctas.call}
+                </TrackedLink>
+              </div>
+
+              <div className="mt-6 border border-border bg-paper p-5 shadow-lg sm:p-8 lg:p-10">
                 <ProgressiveLeadForm />
               </div>
             </div>

@@ -1,3 +1,5 @@
+import { site } from "./site";
+
 export type FAQItem = {
   q: string;
   a: string;
@@ -25,8 +27,8 @@ export const faq: FAQItem[] = [
     a: "A entrega inicial cria baseline e roadmap. Em projetos recorrentes, podemos monitorar prompts estratégicos, mudanças de resposta, concorrentes citados, deterioração de sinais e novas oportunidades de conteúdo.",
   },
   {
-    q: "O diagnóstico é gratuito?",
-    a: "Não. O diagnóstico é pago porque envolve análise estratégica, auditoria de presença em IA, leitura de gargalos de atendimento e um plano de implantação. Antes disso, avaliamos o fit da empresa pela aplicação.",
+    q: "Quanto custa o diagnóstico da KORA?",
+    a: `O Diagnóstico GEO & Automação de Atendimento começa em ${site.pricing.diagnosticFrom}. O valor final depende do número de prompts monitorados, de concorrentes acompanhados e da profundidade da leitura de atendimento. O escopo e o preço são fechados antes de começar, e não existe versão gratuita porque a entrega envolve auditoria de presença em IA, leitura de gargalos e plano de implantação.`,
   },
   {
     q: "Vocês garantem que minha empresa será citada por IA?",

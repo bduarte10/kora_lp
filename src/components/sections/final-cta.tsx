@@ -24,13 +24,13 @@ export function FinalCTA() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="display mt-6 max-w-[18ch] text-balance text-[length:var(--fs-h1)] text-cream">
-                Quer saber se existe fit?
+                Quer ver como sua empresa aparece hoje?
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream-muted">
-                Aplique para o Diagnóstico GEO & Automação de Atendimento. Se a KORA puder ajudar,
-                retornamos com próximos passos e escopo inicial.
+                Em 15 minutos a gente olha junto quais perguntas seu cliente faria para uma IA e
+                quem aparece hoje nessas respostas. Se fizer sentido, o diagnóstico vem depois.
               </p>
             </Reveal>
 
@@ -38,7 +38,7 @@ export function FinalCTA() {
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
                 <p className="text-xs text-cream-faint">
-                  Para uma dúvida objetiva antes de aplicar.
+                  Sem apresentação comercial. Diagnóstico a partir de {site.pricing.diagnosticFrom}.
                 </p>
               </div>
             </Reveal>
@@ -58,15 +58,15 @@ export function FinalCTA() {
                 de fit.
               </p>
               <TrackedLink
-                href={site.ctas.navHref}
+                href={site.ctas.applyHref}
                 event={{
                   event: "cta_click",
-                  label: site.ctas.nav,
+                  label: site.ctas.apply,
                   location: "final-cta-application",
                 }}
                 className="group mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
               >
-                {site.ctas.nav}
+                {site.ctas.apply}
                 <ArrowRight
                   size={15}
                   className="transition-transform duration-300 group-hover:translate-x-0.5"

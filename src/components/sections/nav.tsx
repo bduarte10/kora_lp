@@ -57,8 +57,12 @@ export function Nav() {
 
         <div className="flex items-center gap-3">
           <a
-            href={site.ctas.navHref}
-            onClick={() => pushEvent({ event: "cta_click", label: site.ctas.nav, location: "nav" })}
+            href={site.ctas.callHref}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() =>
+              pushEvent({ event: "cta_click", label: site.ctas.call, location: "nav" })
+            }
             className={cn(
               "hidden rounded-full px-4 py-2 text-[13px] font-medium transition md:inline-flex",
               overHero
@@ -66,7 +70,7 @@ export function Nav() {
                 : "bg-foreground text-background hover:bg-foreground/90",
             )}
           >
-            {site.ctas.nav}
+            {site.ctas.call}
           </a>
           <button
             type="button"
@@ -97,14 +101,16 @@ export function Nav() {
               </a>
             ))}
             <a
-              href={site.ctas.navHref}
+              href={site.ctas.callHref}
+              target="_blank"
+              rel="noreferrer"
               onClick={() => {
                 setOpen(false);
-                pushEvent({ event: "cta_click", label: site.ctas.nav, location: "nav-mobile" });
+                pushEvent({ event: "cta_click", label: site.ctas.call, location: "nav-mobile" });
               }}
               className="mt-2 inline-flex rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background"
             >
-              {site.ctas.nav}
+              {site.ctas.call}
             </a>
           </nav>
         </div>
