@@ -28,7 +28,7 @@ export const faq: FAQItem[] = [
   },
   {
     q: "Quanto custa o diagnóstico da KORA?",
-    a: `O Diagnóstico GEO & Automação de Atendimento começa em ${site.pricing.diagnosticFrom}. O valor final depende do número de prompts monitorados, de concorrentes acompanhados e da profundidade da leitura de atendimento. O escopo e o preço são fechados antes de começar, e não existe versão gratuita porque a entrega envolve auditoria de presença em IA, leitura de gargalos e plano de implantação.`,
+    a: `O Diagnóstico GEO & Automação de Atendimento começa em ${site.pricing.diagnosticFrom} — menos do que a maioria das empresas do porte que atendemos gasta em um mês de agência, e pagamento único. O valor final depende do número de prompts monitorados, de concorrentes acompanhados e da profundidade da leitura de atendimento. Não existe versão gratuita: a entrega envolve auditoria de presença em IA, leitura de gargalos e plano de implantação.`,
   },
   {
     q: "Vocês garantem que minha empresa será citada por IA?",

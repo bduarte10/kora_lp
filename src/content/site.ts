@@ -3,7 +3,7 @@ const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511920923143
 const waLink = (text: string) =>
   `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`;
 
-const diagnosticFromBRL = 2900;
+const diagnosticFromBRL = 4900;
 
 const callMessage =
   "Oi, vim pelo site da KORA. Quero agendar 15 minutos para entender como minha empresa aparece nas respostas de IA.";
