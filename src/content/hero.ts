@@ -1,3 +1,5 @@
+import { site } from "./site";
+
 export const hero = {
   headlineLines: ["Quando seu cliente pergunta", "para uma IA, sua empresa aparece?"],
   description:
@@ -11,5 +13,9 @@ export const hero = {
     { id: "plano", label: "Plano de implantação priorizado" },
   ],
   pillars: ["GEO", "Atendimento com IA", "Bases de conhecimento", "Copilots internos", "Automação"],
-  reassurance: ["Diagnóstico pago", "Aplicação com fit", "Implantação sob medida"],
+  reassurance: [
+    `Diagnóstico a partir de ${site.pricing.diagnosticFrom}`,
+    "15 minutos sem compromisso",
+    "Implantação sob medida",
+  ],
 } as const;

@@ -2,7 +2,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { hero } from "@/content/hero";
-import { site, whatsappLink } from "@/content/site";
+import { site } from "@/content/site";
 import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 const marqueePillars = Array.from({ length: 4 }, (_, cycle) =>
@@ -52,30 +52,35 @@ export function Hero() {
               <Reveal delay={0.44}>
                 <div className="mt-9 flex flex-wrap items-center gap-3">
                   <TrackedLink
-                    href={site.ctas.primaryHref}
+                    href={site.ctas.callHref}
+                    target="_blank"
+                    rel="noreferrer"
                     event={{
                       event: "cta_click",
-                      label: site.ctas.primary,
+                      label: site.ctas.call,
                       location: "hero-primary",
                     }}
                     className="group inline-flex items-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-medium text-coral-deep transition hover:bg-cream/95"
                   >
-                    {site.ctas.primary}
+                    <MessageCircle size={15} />
+                    {site.ctas.call}
                     <ArrowRight
                       size={15}
                       className="transition-transform duration-300 group-hover:translate-x-0.5"
                     />
                   </TrackedLink>
-                  <a
-                    href={whatsappLink()}
-                    target="_blank"
-                    rel="noreferrer"
+                  <TrackedLink
+                    href={site.ctas.applyHref}
+                    event={{
+                      event: "cta_click",
+                      label: site.ctas.apply,
+                      location: "hero-secondary",
+                    }}
                     className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-medium text-cream transition hover:border-cream"
                     style={{ borderColor: "rgb(250 246 242 / 0.35)" }}
                   >
-                    <MessageCircle size={15} />
-                    {site.ctas.secondary}
-                  </a>
+                    {site.ctas.apply}
+                  </TrackedLink>
                 </div>
               </Reveal>
 

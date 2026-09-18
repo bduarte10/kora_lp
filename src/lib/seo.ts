@@ -163,6 +163,15 @@ export const diagnosticServiceJsonLd = {
     "@type": "BusinessAudience",
     audienceType: "PMEs brasileiras",
   },
+  offers: {
+    "@type": "Offer",
+    url: `${siteUrl}/diagnostico`,
+    priceSpecification: {
+      "@type": "PriceSpecification",
+      priceCurrency: "BRL",
+      minPrice: site.pricing.diagnosticFromBRL,
+    },
+  },
 };
 
 export const professionalServiceJsonLd = {

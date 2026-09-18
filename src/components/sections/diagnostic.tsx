@@ -2,7 +2,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import { diagnostic } from "@/content/diagnostic";
 import { site } from "@/content/site";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, MessageCircle } from "lucide-react";
 
 const featuredDeliverables = diagnostic.deliverables.slice(0, 3);
 
@@ -45,27 +45,42 @@ export function Diagnostic() {
                 <p className="mt-1 text-xs text-foreground-subtle">Tempo médio</p>
               </div>
               <div className="py-4 pl-4">
-                <p className="font-medium text-foreground">Fit primeiro</p>
-                <p className="mt-1 text-xs text-foreground-subtle">Sem proposta genérica</p>
+                <p className="font-medium text-foreground">{site.pricing.diagnosticFrom}</p>
+                <p className="mt-1 text-xs text-foreground-subtle">Diagnóstico a partir de</p>
               </div>
             </div>
 
             <p className="mt-6 text-sm leading-relaxed text-foreground-muted">{diagnostic.note}</p>
 
             <TrackedLink
-              href={site.ctas.navHref}
+              href={site.ctas.applyHref}
               event={{
                 event: "cta_click",
-                label: site.ctas.nav,
+                label: site.ctas.apply,
                 location: "diagnostic-section",
               }}
               className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
             >
-              {site.ctas.nav}
+              {site.ctas.apply}
               <ArrowRight
                 size={15}
                 className="transition-transform duration-300 group-hover:translate-x-0.5"
               />
+            </TrackedLink>
+
+            <TrackedLink
+              href={site.ctas.callHref}
+              target="_blank"
+              rel="noreferrer"
+              event={{
+                event: "cta_click",
+                label: site.ctas.call,
+                location: "diagnostic-section-call",
+              }}
+              className="mt-4 flex w-full items-center justify-center gap-2 text-sm font-medium text-foreground-muted underline-offset-4 transition hover:text-foreground hover:underline"
+            >
+              <MessageCircle size={15} />
+              Ou agende 15 minutos antes de aplicar
             </TrackedLink>
           </div>
         </Reveal>

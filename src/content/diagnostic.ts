@@ -1,3 +1,5 @@
+import { site } from "./site";
+
 export const diagnostic = {
   title: "Diagnóstico GEO & Automação de Atendimento",
   description:
@@ -17,7 +19,8 @@ export const diagnostic = {
     "Plano de implantação 30/60/90 dias para GEO, base de conhecimento e agentes",
     "Recomendação de monitoramento contínuo quando houver fit para recorrência",
   ],
-  note: "A KORA avalia cada aplicação antes de propor o diagnóstico. Se houver fit, retornamos com próximos passos e escopo inicial.",
+  price: `A partir de ${site.pricing.diagnosticFrom}, com escopo e prazo fechados antes de começar.`,
+  note: "Se preferir entender o método antes de preencher qualquer formulário, agende 15 minutos.",
 } as const;
 
 export const segmentOptions = [
