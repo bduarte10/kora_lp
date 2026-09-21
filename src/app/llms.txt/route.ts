@@ -37,7 +37,6 @@ function buildLlmsTxt(): string {
 
   lines.push(
     "## Contato",
-    `- E-mail: ${site.contact.email}`,
     `- WhatsApp: +${site.contact.whatsappNumber.replace(/\D/g, "")}`,
     `- LinkedIn: ${site.social.linkedin}`,
     `- Instagram: ${site.social.instagram}`,

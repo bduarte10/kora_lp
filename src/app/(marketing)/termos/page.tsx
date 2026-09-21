@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { site, whatsappLink } from "@/content/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -41,9 +41,9 @@ export default function TermsPage() {
           </p>
           <h2 className="display-balanced text-[length:var(--fs-h3)]">4. Contato</h2>
           <p>
-            Dúvidas:{" "}
-            <a className="underline" href={`mailto:${site.contact.email}`}>
-              {site.contact.email}
+            Dúvidas pelo{" "}
+            <a className="underline" href={whatsappLink()} target="_blank" rel="noreferrer">
+              WhatsApp
             </a>
             .
           </p>

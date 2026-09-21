@@ -1,4 +1,4 @@
-import { site } from "@/content/site";
+import { site, whatsappLinkWith } from "@/content/site";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -54,15 +54,20 @@ export default function PrivacyPage() {
           <h2 className="display-balanced text-[length:var(--fs-h3)]">5. Seus direitos</h2>
           <p>
             Você pode, a qualquer momento, solicitar acesso, correção, exclusão ou portabilidade dos
-            seus dados escrevendo para{" "}
-            <a className="underline" href={`mailto:${site.contact.email}`}>
-              {site.contact.email}
+            seus dados pelo{" "}
+            <a
+              className="underline"
+              href={whatsappLinkWith("Quero exercer meus direitos de titular de dados (LGPD)")}
+              target="_blank"
+              rel="noreferrer"
+            >
+              nosso WhatsApp
             </a>
-            .
+            . Respondemos em até 15 dias.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">6. Contato</h2>
-          <p>Encarregado de Proteção de Dados: {site.contact.email}.</p>
+          <p>Encarregado de Proteção de Dados: Bruno Duarte, pelo WhatsApp acima.</p>
         </div>
       </div>
     </article>

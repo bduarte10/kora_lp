@@ -80,7 +80,6 @@ export const organizationJsonLd = {
   image: `${siteUrl}/og-default.png`,
   description: site.description,
   slogan: site.tagline,
-  email: site.contact.email,
   telephone: `+${site.contact.whatsappNumber.replace(/\D/g, "")}`,
   areaServed: { "@type": "Country", name: "Brazil" },
   address: {
@@ -107,7 +106,8 @@ export const organizationJsonLd = {
     contactType: "customer support",
     areaServed: "BR",
     availableLanguage: "Portuguese",
-    email: site.contact.email,
+    telephone: `+${site.contact.whatsappNumber.replace(/\D/g, "")}`,
+    url: `${siteUrl}/diagnostico`,
   },
 };
 

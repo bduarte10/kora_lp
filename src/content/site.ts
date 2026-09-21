@@ -22,7 +22,6 @@ export const site = {
   defaultOgImage: "/og-default.png",
 
   contact: {
-    email: "contato@kora.com.br",
     whatsappNumber,
     whatsappMessage:
       process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
