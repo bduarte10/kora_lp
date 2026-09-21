@@ -72,6 +72,9 @@ export const organizationJsonLd = {
   "@id": `${siteUrl}/#organization`,
   name: site.name,
   alternateName: site.alternateNames,
+  legalName: site.legalName,
+  taxID: site.cnpj,
+  foundingDate: site.foundingDate,
   url: siteUrl,
   logo: `${siteUrl}/og-default.png`,
   image: `${siteUrl}/og-default.png`,
@@ -80,14 +83,13 @@ export const organizationJsonLd = {
   email: site.contact.email,
   telephone: `+${site.contact.whatsappNumber.replace(/\D/g, "")}`,
   areaServed: { "@type": "Country", name: "Brazil" },
-  foundingLocation: {
-    "@type": "Place",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: site.contact.address.city,
-      addressRegion: site.contact.address.state,
-      addressCountry: site.contact.address.country,
-    },
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: site.contact.address.street,
+    addressLocality: site.contact.address.city,
+    addressRegion: site.contact.address.state,
+    postalCode: site.contact.address.postalCode,
+    addressCountry: site.contact.address.country,
   },
   knowsAbout: [
     "GEO (Generative Engine Optimization)",
@@ -154,13 +156,15 @@ export const professionalServiceJsonLd = {
   serviceType: "Consultoria de GEO, auditoria de presença em IA e automação de atendimento",
   address: {
     "@type": "PostalAddress",
+    streetAddress: site.contact.address.street,
     addressLocality: site.contact.address.city,
     addressRegion: site.contact.address.state,
+    postalCode: site.contact.address.postalCode,
     addressCountry: site.contact.address.country,
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Serviços KORA",
+    name: `Serviços ${site.name}`,
     itemListElement: services.map((s, i) => ({
       "@type": "Offer",
       position: i + 1,

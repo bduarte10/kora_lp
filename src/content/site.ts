@@ -11,6 +11,9 @@ const callMessage =
 export const site = {
   name: "Kora GEO",
   alternateNames: ["Kora Intelligence Brasil", "KORA", "Kora"],
+  legalName: "Bruno Bilego Duarte Consultoria em Tecnologia da Informação LTDA",
+  cnpj: "54.381.960/0001-78",
+  foundingDate: "2024-03-19",
   tagline: "GEO e Atendimento com IA para PMEs",
   description:
     "A KORA ajuda PMEs brasileiras a medir e fortalecer presença em ChatGPT, Claude, Gemini, Perplexity e Google com IA, unindo GEO, autoridade digital, bases de conhecimento e automação de atendimento.",
@@ -25,8 +28,11 @@ export const site = {
       process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
       "Oi, vim pelo site da KORA e quero tirar uma dúvida sobre o Diagnóstico GEO",
     address: {
+      street: "Av. Paulista, 1106, sala 01, andar 16",
+      district: "Bela Vista",
       city: "São Paulo",
       state: "SP",
+      postalCode: "01310-914",
       country: "BR",
     },
   },
