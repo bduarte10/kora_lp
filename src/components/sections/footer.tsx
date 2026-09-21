@@ -28,6 +28,11 @@ export function Footer() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a href="/guias" className="text-foreground-muted hover:text-foreground">
+                  Guias
+                </a>
+              </li>
             </ul>
           </div>
 

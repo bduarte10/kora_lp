@@ -9,7 +9,8 @@ const callMessage =
   "Oi, vim pelo site da KORA. Quero agendar 15 minutos para entender como minha empresa aparece nas respostas de IA.";
 
 export const site = {
-  name: "KORA",
+  name: "Kora GEO",
+  alternateNames: ["Kora Intelligence Brasil", "KORA", "Kora"],
   tagline: "GEO e Atendimento com IA para PMEs",
   description:
     "A KORA ajuda PMEs brasileiras a medir e fortalecer presença em ChatGPT, Claude, Gemini, Perplexity e Google com IA, unindo GEO, autoridade digital, bases de conhecimento e automação de atendimento.",

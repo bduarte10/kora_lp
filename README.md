@@ -1,6 +1,6 @@
 # KORA — Landing Page
 
-Landing page de **GEO e automação de atendimento para PMEs brasileiras**. Posicionamento premium cinematográfico, aplicação consultiva para diagnóstico pago e conteúdo preparado para SEO tradicional e mecanismos generativos.
+Landing page de **implantação de IA & automação para PMEs brasileiras**. Posicionamento premium cinematográfico, multi-conversão (Cal.com + WhatsApp), preparada para tráfego pago e SEO long-tail.
 
 ## Stack
 
@@ -8,18 +8,17 @@ Landing page de **GEO e automação de atendimento para PMEs brasileiras**. Posi
 - **Tailwind CSS v4** com `@theme inline` design tokens
 - **GSAP + ScrollTrigger + Lenis** para motion cinematográfico
 - **shadcn/ui** (Radix primitives) para componentes base
-- **react-hook-form** + **zod** para aplicação de diagnóstico
 - **Resend** + **Google Sheets API** para captura de leads
-- **BrasilAPI** para enriquecimento opcional de CNPJ no backend
-- **GTM** + PostHog com Consent Mode v2
+- **Cal.com** embed para agendamento
+- **GTM** (GA4 + Meta Pixel + LinkedIn Insight Tag) com Consent Mode v2
 - **Vercel** hosting + Analytics + Speed Insights
 
 ## Setup
 
 ```bash
 pnpm install
-cp .env.example .env.local
-pnpm dev
+cp .env.example .env.local  # preencher chaves
+pnpm dev                    # localhost:3000
 ```
 
 ## Scripts
@@ -38,30 +37,36 @@ pnpm dev
 src/
 ├── app/                # App Router (RSC default)
 ├── components/
-│   ├── sections/      # Hero, Solutions, Problem, Diagnostic, Process, Services, Proof, FAQ
-│   ├── forms/         # LeadForm (aplicação para diagnóstico)
-│   ├── motion/        # SmoothScrollProvider, Reveal
-│   ├── widgets/       # WhatsAppFab
-│   └── tracking/      # GTM, PostHog, ConsentBanner
-├── content/           # Copy estruturado
-├── lib/               # env, gtm, cnpj, sheets, resend, seo, utils
+│   ├── ui/            # shadcn primitives
+│   ├── sections/      # Hero, Problem, Services, Process, Proof, FAQ, FinalCTA, Nav, Footer
+│   ├── motion/        # SmoothScrollProvider, SplitText, Reveal, PinnedSection
+│   ├── forms/         # LeadForm (RHF + zod)
+│   ├── widgets/       # CalEmbed, WhatsAppFab
+│   └── tracking/      # GTM, ConsentBanner
+├── content/           # Copy estruturado (site, services, process, faq)
+├── lib/               # env, gtm, sheets, resend, seo, utils
 └── styles/            # tokens.css
 ```
 
-## OpenSpec
+## GEO / Conteúdo
 
-Mudança ativa:
+Estratégia para a KORA ser citada por IAs (ChatGPT, Gemini, Perplexity, Copilot) e bem posicionada na busca:
 
-```bash
-openspec validate reposition-kora-geo-high-ticket
-```
+- **`docs/geo-strategy.md`** — estratégia completa (6 frentes, hub-and-spoke, tabela de nichos/conselhos, roadmap, playbook off-site).
+- **`docs/geo-audit.md`** — ritual mensal de auditoria de citações + conjunto de prompts.
 
-Artefatos em `openspec/changes/reposition-kora-geo-high-ticket`.
+Hub de conteúdo em `/guias` (MDX em `src/content/guias/`, registry em `registry.ts`). `robots.ts` libera crawlers de IA e `/llms.txt` é gerado dinamicamente.
 
-## Go-live
+## Plano completo
 
+Spec em `~/.claude/plans/crie-uma-nova-pasta-kind-peach.md`.
+
+## Pendências antes do go-live
+
+- Domínio `kora.com.br` (apontar para Vercel)
+- Conta Cal.com com event type `diagnostico-kora`
 - Service Account Google + Spreadsheet compartilhada
 - Domínio verificado no Resend (DKIM/SPF)
-- Containers GTM e PostHog
+- Containers: GTM, GA4, Meta Business, LinkedIn Campaign Manager
 - WhatsApp Business + número
-- CNPJ + endereço definitivo para footer e políticas
+- CNPJ + endereço (footer + política de privacidade)

@@ -5,34 +5,12 @@ import { site } from "@/content/site";
 import type { Metadata } from "next";
 
 const siteUrl = site.url;
-const knowsAbout = [
-  "GEO",
-  "Generative Engine Optimization",
-  "busca por IA",
-  "auditoria de presença em IA",
-  "monitoramento de prompts",
-  "share of voice generativo",
-  "AI Share of Voice",
-  "entity audit",
-  "schema para GEO",
-  "dados estruturados",
-  "atendimento com IA",
-  "automação de atendimento",
-  "bases de conhecimento",
-  "agentes de IA",
-  "copilots internos",
-  "ChatGPT",
-  "Claude",
-  "Gemini",
-  "Perplexity",
-  "Google com IA",
-];
 
 export const baseMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "KORA | GEO e Atendimento com IA para PMEs",
-    template: `%s | ${site.name}`,
+    default: `${site.name} · ${site.tagline}`,
+    template: `%s · ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -40,29 +18,12 @@ export const baseMetadata: Metadata = {
   keywords: [
     "GEO",
     "generative engine optimization",
-    "otimização para IA",
-    "busca por IA",
-    "diagnóstico GEO",
+    "consultoria de GEO no Brasil",
+    "aparecer no ChatGPT",
+    "presença em IA",
     "auditoria de presença em IA",
-    "monitoramento de prompts",
-    "share of voice generativo",
-    "AI Share of Voice",
-    "entity audit",
-    "schema para GEO",
-    "dados estruturados",
-    "autoridade digital para IA",
-    "ChatGPT para empresas",
-    "Claude para empresas",
-    "Perplexity para empresas",
-    "Google AI Overviews",
-    "Google com IA",
     "automação de atendimento",
-    "atendimento com IA",
     "agentes de IA",
-    "base de conhecimento para IA",
-    "copilots internos",
-    "automação para PMEs",
-    "PMEs brasileiras",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -77,20 +38,13 @@ export const baseMetadata: Metadata = {
     locale: site.locale,
     url: siteUrl,
     siteName: site.name,
-    title: "KORA | GEO e Atendimento com IA para PMEs",
+    title: `${site.name} · ${site.tagline}`,
     description: site.description,
-    images: [
-      {
-        url: site.defaultOgImage,
-        width: 1200,
-        height: 630,
-        alt: "KORA | GEO e Atendimento com IA para PMEs",
-      },
-    ],
+    images: [{ url: site.defaultOgImage, width: 1200, height: 630, alt: site.name }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "KORA | GEO e Atendimento com IA para PMEs",
+    title: `${site.name} · ${site.tagline}`,
     description: site.description,
     images: [site.defaultOgImage],
   },
@@ -106,22 +60,45 @@ export const baseMetadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 
 export const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": `${siteUrl}/#organization`,
   name: site.name,
+  alternateName: site.alternateNames,
   url: siteUrl,
   logo: `${siteUrl}/og-default.png`,
-  email: site.contact.email,
+  image: `${siteUrl}/og-default.png`,
   description: site.description,
-  areaServed: "BR",
-  knowsAbout,
+  slogan: site.tagline,
+  email: site.contact.email,
+  telephone: `+${site.contact.whatsappNumber.replace(/\D/g, "")}`,
+  areaServed: { "@type": "Country", name: "Brazil" },
+  foundingLocation: {
+    "@type": "Place",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: site.contact.address.city,
+      addressRegion: site.contact.address.state,
+      addressCountry: site.contact.address.country,
+    },
+  },
+  knowsAbout: [
+    "GEO (Generative Engine Optimization)",
+    "Auditoria de presença em IA",
+    "Monitoramento de menções em ChatGPT, Gemini e Perplexity",
+    "Dados estruturados e entidade de marca",
+    "Conteúdo answer-first",
+    "Automação de atendimento no WhatsApp",
+    "Agentes de IA",
+    "Inteligência artificial aplicada a negócios",
+  ],
   sameAs: Object.values(site.social),
   contactPoint: {
     "@type": "ContactPoint",
@@ -132,19 +109,15 @@ export const organizationJsonLd = {
   },
 };
 
-export const webSiteJsonLd = {
+export const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": `${siteUrl}/#website`,
   name: site.name,
   url: siteUrl,
-  inLanguage: site.locale,
   description: site.description,
-  publisher: {
-    "@type": "Organization",
-    name: site.name,
-    url: siteUrl,
-  },
-  about: knowsAbout.map((name) => ({ "@type": "Thing", name })),
+  inLanguage: "pt-BR",
+  publisher: { "@id": `${siteUrl}/#organization` },
 };
 
 export const diagnosticServiceJsonLd = {
@@ -153,11 +126,7 @@ export const diagnosticServiceJsonLd = {
   name: diagnostic.title,
   description: diagnostic.description,
   serviceType: "Diagnóstico GEO, auditoria de presença em IA e automação de atendimento",
-  provider: {
-    "@type": "Organization",
-    name: site.name,
-    url: siteUrl,
-  },
+  provider: { "@id": `${siteUrl}/#organization` },
   areaServed: { "@type": "Country", name: "Brazil" },
   audience: {
     "@type": "BusinessAudience",
@@ -182,8 +151,7 @@ export const professionalServiceJsonLd = {
   url: siteUrl,
   image: `${siteUrl}/og-default.png`,
   areaServed: { "@type": "Country", name: "Brazil" },
-  serviceType:
-    "GEO, auditoria de presença em IA, monitoramento de prompts, automação de atendimento e IA aplicada para empresas",
+  serviceType: "Consultoria de GEO, auditoria de presença em IA e automação de atendimento",
   address: {
     "@type": "PostalAddress",
     addressLocality: site.contact.address.city,
@@ -193,47 +161,64 @@ export const professionalServiceJsonLd = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Serviços KORA",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        position: 1,
-        itemOffered: {
-          "@type": "Service",
-          name: diagnostic.title,
-          description: diagnostic.description,
-        },
-      },
-      ...services.map((s, i) => ({
-        "@type": "Offer",
-        position: i + 2,
-        itemOffered: { "@type": "Service", name: s.title, description: s.description },
-      })),
-    ],
+    itemListElement: services.map((s, i) => ({
+      "@type": "Offer",
+      position: i + 1,
+      itemOffered: { "@type": "Service", name: s.title, description: s.description },
+    })),
   },
 };
 
-export const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faq.map((item) => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  })),
-};
+export function buildFaqJsonLd(items: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: { "@type": "Answer", text: item.a },
+    })),
+  };
+}
 
-export const breadcrumbJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
+export function buildBreadcrumbJsonLd(items: { name: string; url: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
-      position: 1,
-      name: "Início",
-      item: siteUrl,
-    },
-  ],
-};
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function buildArticleJsonLd(article: {
+  title: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    url: article.url,
+    inLanguage: "pt-BR",
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: { "@type": "Organization", name: site.name, url: siteUrl },
+    publisher: { "@id": `${siteUrl}/#organization` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": article.url },
+  };
+}
+
+export const faqJsonLd = buildFaqJsonLd(faq);
+
+export const breadcrumbJsonLd = buildBreadcrumbJsonLd([{ name: "Início", url: siteUrl }]);
 
 export function jsonLdString(data: object) {
   return JSON.stringify(data);
