@@ -144,80 +144,12 @@
     background: rgb(var(--kora-cream));
   }
 
-  /* Marquee CSS-only: loop seamless via duplicação + translate -50% */
-  @keyframes marquee-x {
-    from {
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      transform: translate3d(-50%, 0, 0);
-    }
-  }
-  .marquee-track {
-    animation: marquee-x 36s linear infinite;
-    will-change: transform;
-  }
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
-    }
-  }
-
-  /* Hero background container */
   .aurora-bg {
     position: absolute;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
-  }
-
-  /* Hero craft: revelação do H1 linha a linha (mask reveal) */
-  .hero-line {
-    display: block;
-    overflow: hidden;
-    /* Vertical breathing room inside the clip box so the tilde on "ã" (top) and the
-       cedilla on "ç" (bottom) are not shaved off by the tight 0.96 line-height.
-       Negative margins cancel the shift so layout/line spacing is unchanged. */
-    padding-top: 0.18em;
-    padding-bottom: 0.18em;
-    margin-top: -0.18em;
-    margin-bottom: -0.18em;
-  }
-  .hero-line > span {
-    display: inline-block;
-    width: 100%;
-    max-width: 100%;
-    overflow-wrap: break-word;
-    white-space: normal;
-    /* Start far enough below that the padding-bottom area stays empty (text fully
-       hidden) before the rise — must clear 100% + padding-bottom. */
-    transform: translateY(130%);
-    animation: hero-line-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-  @media (min-width: 1024px) {
-    .hero-line > span {
-      width: auto;
-      max-width: none;
-      white-space: nowrap;
-    }
-  }
-  .hero-line:nth-child(1) > span {
-    animation-delay: 0.08s;
-  }
-  .hero-line:nth-child(2) > span {
-    animation-delay: 0.22s;
-  }
-  @keyframes hero-line-rise {
-    from {
-      transform: translateY(130%);
-    }
-    to {
-      transform: translateY(0);
-    }
   }
 
   /* Hero craft: camada de luz do fundo "respirando" */
@@ -237,10 +169,6 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-line > span {
-      transform: none;
-      animation: none;
-    }
     .hero-light-breathe {
       animation: none;
     }

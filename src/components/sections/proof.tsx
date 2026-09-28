@@ -1,6 +1,5 @@
 import { Reveal } from "@/components/motion/reveal";
-import { photos } from "@/content/photos";
-import Image from "next/image";
+import { reportSample } from "@/content/report-sample";
 
 type Transformation = {
   area: string;
@@ -46,20 +45,55 @@ export function Proof() {
         </Reveal>
 
         <Reveal delay={0.12} className="mt-20">
-          <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-bone">
-            <Image
-              src={photos.proof.src}
-              alt={photos.proof.alt}
-              fill
-              sizes="(min-width: 1024px) 1280px, 100vw"
-              className="object-cover"
-              style={{ filter: "grayscale(1) contrast(1.02) brightness(0.96)" }}
-            />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent"
-            />
-          </div>
+          <figure className="relative overflow-hidden rounded-2xl bg-coral px-4 py-10 sm:px-10 sm:py-14 lg:px-20 lg:py-20">
+            <div className="mx-auto max-w-3xl rounded-[20px] bg-paper p-5 text-foreground shadow-[0_30px_80px_rgba(60,20,8,0.35)] sm:p-8">
+              <p className="font-mono text-xs uppercase tracking-wider text-foreground-subtle">
+                {reportSample.kicker}
+              </p>
+              <p className="display-balanced mt-2 text-[length:var(--fs-h3)]">
+                {reportSample.clinic}
+              </p>
+
+              <table className="mt-6 w-full border-collapse text-left">
+                <thead>
+                  <tr className="border-b border-border text-sm text-foreground-subtle">
+                    <th scope="col" className="py-3 pr-4 font-medium">
+                      {reportSample.columns.question}
+                    </th>
+                    <th scope="col" className="hidden py-3 pr-4 font-medium sm:table-cell">
+                      {reportSample.columns.where}
+                    </th>
+                    <th scope="col" className="py-3 text-right font-medium">
+                      {reportSample.columns.result}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {reportSample.rows.map((row) => (
+                    <tr key={row.question} className="border-b border-border">
+                      <td className="py-4 pr-4">{row.question}</td>
+                      <td className="hidden py-4 pr-4 text-sm text-foreground-muted sm:table-cell">
+                        {row.where}
+                      </td>
+                      <td className="py-4 text-right">
+                        <span
+                          className={
+                            row.cited
+                              ? "inline-block whitespace-nowrap rounded-full bg-foreground px-3 py-1 text-sm font-semibold text-background"
+                              : "inline-block whitespace-nowrap rounded-full border border-dashed border-coral px-3 py-1 text-sm font-semibold text-coral-deep"
+                          }
+                        >
+                          {row.result}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <p className="mt-5 text-sm text-foreground-muted">{reportSample.footnote}</p>
+            </div>
+          </figure>
         </Reveal>
 
         <ol className="mt-20 divide-y divide-border border-y border-border">

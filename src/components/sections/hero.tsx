@@ -3,153 +3,110 @@ import { TrackedLink } from "@/components/tracking/tracked-link";
 import { NoiseBackground } from "@/components/ui/noise-background";
 import { hero } from "@/content/hero";
 import { site } from "@/content/site";
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
-
-const marqueePillars = Array.from({ length: 4 }, (_, cycle) =>
-  hero.pillars.map((pillar) => ({ id: `${cycle}-${pillar}`, label: pillar })),
-).flat();
+import { ArrowRight, Search } from "lucide-react";
 
 export function Hero() {
+  const { answer } = hero;
+
   return (
     <section className="relative overflow-hidden bg-coral text-cream">
       <NoiseBackground />
 
-      <div className="container-page relative z-10 flex min-h-[92svh] flex-col pt-28 pb-12 sm:pt-32 lg:pt-36 lg:pb-16">
-        {/* Editorial strip topo */}
-        <Reveal delay={0.04}>
-          <div className="flex items-center gap-x-6 border-b border-cream-faint pb-5">
-            <span className="text-[13px] font-medium section-anchor section-anchor-cream">
-              <span className="text-cream-muted">{site.tagline}</span>
-            </span>
-            <span className="hidden h-px flex-1 bg-cream-faint sm:block" aria-hidden />
-            <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream-faint">
-              BR / 2026
-            </span>
+      <div className="container-page relative z-10 grid min-h-[92svh] items-center gap-14 pt-28 pb-16 sm:pt-32 lg:grid-cols-12 lg:gap-16 lg:pt-36 lg:pb-20">
+        {/* Esquerda: a pergunta, a promessa e uma CTA */}
+        <div className="min-w-0 lg:col-span-7">
+          <p className="text-[15px] font-medium text-cream-muted">{hero.eyebrow}</p>
+
+          <h1 className="display mt-6 text-balance text-[length:var(--fs-hero)] text-cream">
+            {hero.headlineLines.join(" ")}
+          </h1>
+
+          <p className="mt-8 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream/85">
+            {hero.description}
+          </p>
+
+          <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-7">
+            <TrackedLink
+              href={site.ctas.callHref}
+              target="_blank"
+              rel="noreferrer"
+              event={{
+                event: "cta_click",
+                label: hero.primaryCta,
+                location: "hero-primary",
+              }}
+              className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-full bg-cream px-7 text-base font-semibold text-coral-deep transition hover:bg-cream/95"
+            >
+              {hero.primaryCta}
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </TrackedLink>
+            <TrackedLink
+              href={hero.secondaryCta.href}
+              event={{
+                event: "cta_click",
+                label: hero.secondaryCta.label,
+                location: "hero-secondary",
+              }}
+              className="text-center text-base font-medium text-cream underline decoration-cream/45 underline-offset-[5px] transition hover:decoration-cream"
+            >
+              {hero.secondaryCta.label}
+            </TrackedLink>
           </div>
-        </Reveal>
 
-        {/* Bloco central: 2 colunas — copy à esquerda, inclusos à direita */}
-        <div className="flex-1 py-10 sm:py-16">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-16">
-            {/* Esquerda: H1 + sub + CTAs + reasseguramento */}
-            <div className="min-w-0 lg:col-span-7">
-              <h1 className="display text-[clamp(2rem,1.75vw+0.9rem,2.55rem)] text-cream">
-                {hero.headlineLines.map((line) => (
-                  <span key={line} className="hero-line">
-                    <span className="block w-full lg:inline-block lg:w-auto lg:whitespace-nowrap">
-                      {line}
-                    </span>
-                  </span>
-                ))}
-              </h1>
+          <p className="mt-6 text-[15px] text-cream-muted">{hero.note}</p>
+        </div>
 
-              <Reveal delay={0.34}>
-                <p className="mt-7 max-w-xl text-[length:var(--fs-lead)] leading-relaxed text-cream">
-                  {hero.description}
-                </p>
-              </Reveal>
-
-              <Reveal delay={0.44}>
-                <div className="mt-9 flex flex-wrap items-center gap-3">
-                  <TrackedLink
-                    href={site.ctas.callHref}
-                    target="_blank"
-                    rel="noreferrer"
-                    event={{
-                      event: "cta_click",
-                      label: site.ctas.call,
-                      location: "hero-primary",
-                    }}
-                    className="group inline-flex items-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-medium text-coral-deep transition hover:bg-cream/95"
-                  >
-                    <MessageCircle size={15} />
-                    {site.ctas.call}
-                    <ArrowRight
-                      size={15}
-                      className="transition-transform duration-300 group-hover:translate-x-0.5"
-                    />
-                  </TrackedLink>
-                  <TrackedLink
-                    href={site.ctas.applyHref}
-                    event={{
-                      event: "cta_click",
-                      label: site.ctas.apply,
-                      location: "hero-secondary",
-                    }}
-                    className="inline-flex items-center gap-2 rounded-full border px-5 py-3 text-sm font-medium text-cream transition hover:border-cream"
-                    style={{ borderColor: "rgb(250 246 242 / 0.35)" }}
-                  >
-                    {site.ctas.apply}
-                  </TrackedLink>
-                </div>
-              </Reveal>
-
-              <Reveal delay={0.52}>
-                <ul className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-[13px] text-cream-muted">
-                  {hero.reassurance.map((r, i) => (
-                    <li key={r} className="flex items-center gap-3">
-                      {i > 0 && (
-                        <span className="text-cream-faint" aria-hidden>
-                          ·
-                        </span>
-                      )}
-                      {r}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-
-            {/* Direita: checklist de inclusos */}
-            <Reveal delay={0.42} className="min-w-0 lg:col-span-5">
-              <div className="border-t border-cream-faint pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12">
-                <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-cream-faint">
-                  {hero.includesTitle}
-                </p>
-                <ul className="mt-6 space-y-4">
-                  {hero.includes.map((item) => (
-                    <li
-                      key={item.id}
-                      className="grid grid-cols-[1.625rem_1fr] gap-3.5 text-[length:var(--fs-body)] leading-snug text-cream-muted"
-                    >
-                      <span className="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-cream/10 text-cream">
-                        <Check size={13} strokeWidth={2.4} aria-hidden />
-                      </span>
-                      <span className="max-w-[38ch]">{item.label}</span>
-                    </li>
-                  ))}
-                </ul>
+        {/* Direita: a resposta de IA em que a clínica do leitor não aparece */}
+        <Reveal delay={0.2} className="min-w-0 lg:col-span-5">
+          <figure>
+            <div className="overflow-hidden rounded-[20px] bg-paper text-foreground shadow-[0_30px_80px_rgba(60,20,8,0.35)]">
+              <div className="flex items-center gap-3 border-b border-border px-5 py-4">
+                <Search size={17} className="shrink-0 text-coral" aria-hidden />
+                <span className="text-base font-medium">{answer.query}</span>
               </div>
-            </Reveal>
-          </div>
-        </div>
 
-        {/* Faixa pilares marquee — visível no load; mask gradient nas bordas fade o texto sem cobrir o aurora */}
-        <div className="border-t border-cream-faint pt-6">
-          <div
-            className="overflow-hidden"
-            style={{
-              maskImage:
-                "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
-              WebkitMaskImage:
-                "linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%)",
-            }}
-          >
-            <div className="marquee-track flex w-max gap-12">
-              {marqueePillars.map((pillar) => (
-                <span
-                  key={pillar.id}
-                  className="flex shrink-0 items-center text-[length:var(--fs-h3)] tracking-tight text-cream-muted"
-                >
-                  {pillar.label}
-                  <span className="ml-12 text-cream-faint" aria-hidden>
-                    ·
+              <div className="px-5 pt-5">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-foreground-subtle">
+                  {answer.label}
+                </p>
+                <p className="mt-1.5 hidden leading-relaxed text-foreground-muted sm:block">
+                  {answer.intro}
+                </p>
+              </div>
+
+              <ol className="flex flex-col gap-2.5 p-5">
+                {answer.cited.map((clinic, i) => (
+                  <li
+                    key={clinic.id}
+                    className="flex items-center gap-3.5 rounded-xl border border-border bg-background-elev px-4 py-3"
+                  >
+                    <span className="font-mono text-[13px] text-foreground-subtle">{i + 1}º</span>
+                    <span className="flex min-w-0 flex-col">
+                      <span className="font-semibold">{clinic.name}</span>
+                      <span className="hidden text-sm text-foreground-subtle sm:block">
+                        {clinic.reason}
+                      </span>
+                    </span>
+                  </li>
+                ))}
+                <li className="flex items-center gap-3.5 rounded-xl border-[1.5px] border-dashed border-coral bg-coral/[0.07] px-4 py-3 text-coral-deep">
+                  <span className="font-mono text-[13px]" aria-hidden>
+                    ?
                   </span>
-                </span>
-              ))}
+                  <span className="flex min-w-0 flex-col">
+                    <span className="font-semibold">{answer.missing.name}</span>
+                    <span className="text-sm">{answer.missing.reason}</span>
+                  </span>
+                </li>
+              </ol>
             </div>
-          </div>
-        </div>
+            <figcaption className="mt-4 text-sm text-cream-muted">{answer.caption}</figcaption>
+          </figure>
+        </Reveal>
       </div>
     </section>
   );

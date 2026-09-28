@@ -93,18 +93,15 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 
 Bordas 1px neutras, nunca side-stripe colorida.
 
-## Hero composition (v12)
+## Hero composition (v13)
 
-Type-driven Resend-style:
+Split 7/5 sobre coral:
 
-1. **Top editorial strip** — eyebrow cream-muted com section-anchor cream + rule + "BR / 2026" cream-faint.
-2. **H1 massive** — `display` class, scale `clamp(3rem, 6vw+1rem, 7.5rem)`, max-w-[16ch], cream sobre coral.
-3. **Sub-paragraph** — cream-muted (78% alpha), max-w-xl.
-4. **CTAs** — primary `bg-cream text-coral-deep`, secondary outline `border-cream-faint text-cream`.
-5. **Marquee pilares** — pilares de serviço (GEO, Atendimento com IA, Bases de conhecimento, Copilots internos, Automação) rolando lentamente (CSS animation 36s), mask-image fade nas bordas.
-6. **Aurora layer** — 3 orbs blurred fluindo no fundo, atrás de todo conteúdo.
+1. **Esquerda:** eyebrow "Para clínicas odontológicas", H1 em `--fs-hero` (`clamp(2.75rem, 5vw + 0.5rem, 5.25rem)`, maior texto da página), lead, uma CTA primária cream (WhatsApp, "Ver onde minha clínica aparece") e um link sublinhado para `#mensalidade`. Nota de 15px com duração da conversa e preço inicial.
+2. **Direita:** painel cream com uma resposta de IA para "onde fazer implante em Moema?". Três clínicas genéricas citadas (Clínica A, B, C) e a última linha tracejada em coral, "Sua clínica: não citada". Legenda "Exemplo ilustrativo" sempre visível.
+3. **Fundo:** `NoiseBackground` (luz diagonal, grade, grain).
 
-Min-height: `88vh`. Sem foto no hero. Sem stagger forçado. Foco total em uma frase, gigante, com confiança.
+Sem marquee, sem faixa editorial, sem checklist de inclusos (o conteúdo vive em Services). Min-height `92svh`.
 
 ## FinalCTA composition
 
@@ -115,11 +112,7 @@ Bookend do Hero — mesma surface coral + aurora. Split 5/6:
 
 ## Imagery
 
-**Fotografia Unsplash profissional curada — só 1 instância**, em Proof (foto B&W aspect 16:9 ampla, anchor visual da seção de metodologia).
-
-Tratamento padrão: `grayscale(1) contrast(1.02) brightness(0.96)`. IDs estáveis em `src/content/photos.ts`.
-
-**Zero fotos no Hero** (a composição é type-driven; foto seria competir com aurora + headline).
+**Sem fotografia.** As imagens são mockups do próprio produto, construídos em HTML: a resposta de IA no Hero e uma página de exemplo do relatório mensal em Proof (painel cream sobre coral, `src/content/report-sample.ts`). Todo mockup leva o rótulo "exemplo" e nenhum número inventado.
 
 ## Motion
 
