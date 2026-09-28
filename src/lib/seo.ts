@@ -16,9 +16,8 @@ export const baseMetadata: Metadata = {
   applicationName: site.name,
   generator: "Next.js",
   keywords: [
-    "agente de IA para clínica odontológica",
-    "atendimento no WhatsApp para dentista",
     "marketing para clínica odontológica",
+    "avaliações no Google para dentista",
     "clínica odontológica no Google",
     "aparecer no ChatGPT",
     "GEO para clínicas",
@@ -93,9 +92,7 @@ export const organizationJsonLd = {
     "GEO (Generative Engine Optimization)",
     "Presença de clínicas odontológicas no Google e em IA",
     "Google Business Profile e avaliações",
-    "Agentes de IA para atendimento no WhatsApp",
     "Publicidade odontológica e Código de Ética Odontológica",
-    "LGPD em atendimento de saúde",
     "Dados estruturados e entidade de marca",
   ],
   sameAs: Object.values(site.social),
@@ -125,7 +122,7 @@ export const offerServiceJsonLd = {
   "@type": "Service",
   name: offer.title,
   description: offer.description,
-  serviceType: "Presença no Google e em IA e agente de IA no WhatsApp para clínicas odontológicas",
+  serviceType: "Presença no Google, no Maps e em respostas de IA para clínicas odontológicas",
   provider: { "@id": `${siteUrl}/#organization` },
   areaServed: { "@type": "Country", name: "Brazil" },
   audience: {
@@ -153,7 +150,7 @@ export const professionalServiceJsonLd = {
   url: siteUrl,
   image: `${siteUrl}/og-default.png`,
   areaServed: { "@type": "Country", name: "Brazil" },
-  serviceType: "Presença no Google e em IA e agente de IA no WhatsApp para clínicas odontológicas",
+  serviceType: "Presença no Google, no Maps e em respostas de IA para clínicas odontológicas",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.contact.address.street,

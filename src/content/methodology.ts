@@ -33,7 +33,7 @@ export const methodology = {
       id: "acoes",
       title: "Ações do mês",
       description:
-        "O que muda no perfil, no conteúdo e no agente, em ordem de impacto. É isso que o relatório seguinte confere.",
+        "O que muda no perfil, nas avaliações e no conteúdo, em ordem de impacto. É isso que o relatório seguinte confere.",
     },
   ],
   metricsTitle: "O que o relatório mostra",
@@ -57,8 +57,8 @@ export const methodology = {
       description: "Se a IA descreve certo o que a clínica faz, onde fica e para quem.",
     },
     {
-      label: "Conversas",
-      description: "Quantos pacientes o agente atendeu e quantos foram para a recepção.",
+      label: "Perfil do Google",
+      description: "Ligações, pedidos de rota e visitas ao site vindos do perfil.",
     },
     {
       label: "Avaliações",

@@ -20,27 +20,23 @@ export const process: ProcessStep[] = [
     title: "Diagnóstico e setup",
     duration: "Primeiro mês",
     description:
-      "Rodamos as perguntas que seus pacientes fazem, auditamos perfil, avaliações e site, e montamos com o dentista responsável a base de respostas do agente.",
-    outputs: [
-      "Linha de base registrada",
-      "Perfil do Google revisado",
-      "Base de respostas aprovada",
-    ],
+      "Rodamos as perguntas que seus pacientes fazem, auditamos perfil, avaliações, site e diretórios, e entregamos o diagnóstico com as ações priorizadas.",
+    outputs: ["Linha de base registrada", "Diagnóstico entregue", "Ações priorizadas"],
   },
   {
     step: "03",
-    title: "Agente no ar",
+    title: "Primeiras entregas",
     duration: "Segundo mês",
     description:
-      "O agente começa a atender no WhatsApp com regras de passagem para a recepção, e as primeiras páginas sobre procedimentos vão ao ar.",
-    outputs: ["Agente atendendo", "Recepção treinada", "Páginas publicadas"],
+      "Perfil do Google revisado, rotina de avaliações combinada com a recepção e as primeiras páginas sobre procedimentos no ar, aprovadas pelo dentista.",
+    outputs: ["Perfil revisado", "Rotina de avaliações", "Páginas publicadas"],
   },
   {
     step: "04",
     title: "Rotina mensal",
     duration: "Contínuo",
     description:
-      "Todo mês repetimos as mesmas perguntas, ajustamos o agente com base nas conversas reais e entregamos o relatório com as ações do mês seguinte.",
-    outputs: ["Relatório mensal", "Agente ajustado", "Novas avaliações e conteúdo"],
+      "Todo mês repetimos as mesmas perguntas, cuidamos do perfil e das avaliações e entregamos o relatório com as ações do mês seguinte.",
+    outputs: ["Relatório mensal", "Perfil em dia", "Novas avaliações e conteúdo"],
   },
 ];

@@ -14,7 +14,7 @@ function buildLlmsTxt(): string {
     "",
     `> ${site.description}`,
     "",
-    `${site.name} (também ${site.alternateNames.join(", ")}) — ${site.tagline}. Atende clínicas odontológicas no Brasil com uma mensalidade que junta GEO (presença no Google, no Maps e em respostas de ChatGPT, Gemini e Google com IA) e um agente de IA no WhatsApp com passagem para a recepção. Mede a presença todo mês com as mesmas perguntas de paciente. Atendimento em português, base em São Paulo, Brasil.`,
+    `${site.name} (também ${site.alternateNames.join(", ")}) — ${site.tagline}. Atende clínicas odontológicas no Brasil com uma mensalidade de GEO: presença no Google, no Maps e em respostas de ChatGPT, Gemini e Google com IA, com perfil do Google, avaliações e páginas de procedimento cuidados todo mês. Mede a presença todo mês com as mesmas perguntas de paciente. Atendimento em português, base em São Paulo, Brasil.`,
     "",
     "Não confundir com a Kora Intelligence (koraintelligence.com), plataforma internacional de IA sem relação com esta empresa.",
     "",

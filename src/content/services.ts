@@ -12,25 +12,25 @@ export const services: ServicePillar[] = [
     kicker: "Ser encontrada",
     title: "Sua clínica na resposta do Google, do Maps e da IA",
     description:
-      "O Google e o ChatGPT recomendam a clínica que conseguem entender e confirmar em várias fontes. Arrumamos essas fontes e publicamos as respostas que o paciente procura antes de ligar.",
+      "O Google e o ChatGPT recomendam a clínica que conseguem entender e confirmar em várias fontes. Arrumamos essas fontes para que a clínica apareça quando o paciente procura.",
     deliverables: [
       "Perfil do Google revisado e atualizado todo mês",
-      "Rotina para pedir e responder avaliações",
-      "Páginas que explicam procedimentos e o que define o custo",
-      "Dados da clínica consistentes em diretórios e redes",
+      "Nome, endereço e telefone iguais em diretórios e redes",
+      "Dados estruturados no site da clínica",
+      "Menções em fontes que a IA consulta",
     ],
   },
   {
-    id: "agente",
-    kicker: "Responder na hora",
-    title: "Agente de IA no WhatsApp, sem tirar a recepção do controle",
+    id: "escolha",
+    kicker: "Ser escolhida",
+    title: "A opção mais fácil de escolher quando o paciente compara",
     description:
-      "O agente responde dúvidas sobre procedimentos, horários e convênios a partir de uma base revisada pela clínica e oferece horário de avaliação. Caso clínico, urgência e negociação vão para a recepção, com o histórico da conversa.",
+      "Entre três clínicas citadas, o paciente escolhe a que tem avaliações recentes e responde as dúvidas dele. Cuidamos disso todo mês, dentro das regras do CFO.",
     deliverables: [
-      "Base de respostas aprovada pelo dentista responsável",
-      "Atendimento fora do horário e no fim de semana",
-      "Passagem para humano em casos sensíveis",
-      "Sem diagnóstico e sem promessa de resultado, dentro das regras do CFO",
+      "Rotina com a recepção para pedir avaliações",
+      "Resposta às avaliações do Google",
+      "Páginas que explicam procedimentos e o que define o custo",
+      "Todo conteúdo aprovado pelo dentista responsável",
     ],
   },
   {
@@ -38,11 +38,11 @@ export const services: ServicePillar[] = [
     kicker: "Acompanhar",
     title: "Um relatório por mês, em linguagem de clínica",
     description:
-      "Todo mês rodamos as mesmas perguntas que um paciente faria e mostramos se a clínica apareceu, quem apareceu no lugar dela e quantas conversas o agente atendeu.",
+      "Todo mês rodamos as mesmas perguntas que um paciente faria e mostramos se a clínica apareceu, quem apareceu no lugar dela e o que o perfil do Google trouxe.",
     deliverables: [
       "Perguntas de pacientes testadas no Google e no ChatGPT",
       "Clínicas concorrentes que aparecem no seu lugar",
-      "Conversas atendidas e passadas para a recepção",
+      "Ligações e rotas vindas do perfil do Google",
       "Próximas ações do mês",
     ],
   },

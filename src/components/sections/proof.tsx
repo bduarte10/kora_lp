@@ -17,18 +17,18 @@ const transformations: Transformation[] = [
       "Perfil, avaliações e páginas de procedimento contam a mesma história. A clínica passa a ter o que a IA precisa para citá-la.",
   },
   {
-    area: "Atendimento",
+    area: "Escolha",
     before:
-      "A mensagem chega às 22h perguntando preço de lente de contato. A recepção responde às 9h, e o paciente já marcou em outro lugar.",
+      "O paciente compara três clínicas no Google. A sua tem poucas avaliações, a última de meses atrás, e nenhuma respondida.",
     after:
-      "O agente responde na hora, explica como funciona a avaliação e oferece um horário. A recepção só confirma.",
+      "Avaliações novas todo mês, todas respondidas, e uma página que explica o procedimento. A clínica vira a opção mais fácil de escolher.",
   },
   {
     area: "Gestão",
     before:
       "O dono da clínica paga agência e não sabe dizer se a clínica aparece mais ou menos do que no mês passado.",
     after:
-      "Um relatório por mês mostra as mesmas perguntas, quem apareceu e quantos pacientes o agente atendeu.",
+      "Um relatório por mês mostra as mesmas perguntas, quem apareceu e quantas ligações o perfil do Google trouxe.",
   },
 ];
 

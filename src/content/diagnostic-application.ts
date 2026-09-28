@@ -2,7 +2,7 @@ export const diagnosticApplication = {
   route: "/diagnostico",
   title: "Aplique para a mensalidade da sua clínica",
   description:
-    "Responda o essencial sobre a clínica, o atendimento no WhatsApp e a urgência. Com isso a KORA volta com setup, prazo e preço fechados, sem proposta genérica.",
+    "Responda o essencial sobre a clínica, como ela aparece hoje e a urgência. Com isso a KORA volta com setup, prazo e preço fechados, sem proposta genérica.",
   expectations: [
     {
       label: "Tempo",
@@ -12,8 +12,7 @@ export const diagnosticApplication = {
     {
       label: "Análise",
       value: "Onde a clínica aparece",
-      description:
-        "Google, Maps e IA, clínicas citadas no seu lugar e como o WhatsApp é atendido hoje.",
+      description: "Google, Maps e IA, clínicas citadas no seu lugar, perfil e avaliações.",
     },
     {
       label: "Retorno",

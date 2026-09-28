@@ -11,7 +11,7 @@ export function Services() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[26ch] text-[length:var(--fs-h1)]">
-            Ser encontrada, responder na hora{" "}
+            Ser encontrada, ser escolhida{" "}
             <span className="text-foreground-muted">e saber o que mudou.</span>
           </h2>
         </Reveal>

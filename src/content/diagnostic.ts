@@ -16,7 +16,7 @@ export const companySizeOptions = [
 
 export const priorityOptions = [
   "Aparecer no Google e na IA",
-  "Responder paciente no WhatsApp",
+  "Conteúdo sobre procedimentos",
   "Avaliações e perfil do Google",
   "Ainda não sei",
 ] as const;

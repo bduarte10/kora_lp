@@ -223,7 +223,7 @@ export function ProgressiveLeadForm() {
             <textarea
               {...register("mainChallenge")}
               rows={4}
-              placeholder="Ex.: WhatsApp sem resposta à noite, poucas avaliações, não aparece no Google..."
+              placeholder="Ex.: poucas avaliações, não aparece no Google, concorrente sempre na frente..."
               className={cn(inputCls, "resize-y leading-relaxed")}
             />
           </Field>

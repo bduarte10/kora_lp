@@ -10,8 +10,8 @@ const pains = [
     body: "As buscas mais comuns sobre implante no Google são sobre valor. Preço não pode ser anunciado, mas dá para explicar o que define o custo. A clínica que faz isso bem é a que a IA encontra e a que o paciente chama.",
   },
   {
-    title: "WhatsApp sem resposta à noite é avaliação perdida.",
-    body: "O paciente pesquisa depois do expediente. Se a mensagem só é respondida no dia seguinte, ele já marcou com a clínica que respondeu primeiro.",
+    title: "Site que não responde a dúvida manda o paciente embora.",
+    body: "O paciente quer saber se dói, quanto tempo leva e o que muda o custo. Se o site da clínica não responde, a IA busca a resposta, e a clínica, em outro lugar.",
   },
   {
     title: "Perfil desatualizado tira a clínica do mapa.",

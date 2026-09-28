@@ -88,7 +88,7 @@ export function ArticleLayout({ guide }: { guide: Guide }) {
           </p>
           <p className="mx-auto mt-2 max-w-md text-sm text-foreground-muted">
             A Kora GEO mede se sua clínica aparece no Google, no ChatGPT e no Gemini, quem aparece
-            no lugar dela, e coloca um agente de IA para responder o paciente no WhatsApp.
+            no lugar dela, e cuida todo mês do que faz a clínica ser encontrada e escolhida.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
