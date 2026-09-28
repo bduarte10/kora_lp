@@ -1,17 +1,17 @@
 import { ProgressiveLeadForm } from "@/components/forms/progressive-lead-form";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TrackedLink } from "@/components/tracking/tracked-link";
-import { diagnostic } from "@/content/diagnostic";
 import { diagnosticApplication } from "@/content/diagnostic-application";
+import { offer } from "@/content/offer";
 import { site, whatsappLink } from "@/content/site";
-import { diagnosticServiceJsonLd } from "@/lib/seo";
+import { offerServiceJsonLd } from "@/lib/seo";
 import { ArrowLeft, Linkedin, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 const pageUrl = `${site.url}${diagnosticApplication.route}`;
 
 export const metadata: Metadata = {
-  title: "Aplicação para Diagnóstico GEO",
+  title: "Aplicação para clínicas",
   description: diagnosticApplication.description,
   alternates: {
     canonical: diagnosticApplication.route,
@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: pageUrl,
     siteName: site.name,
-    title: "Aplicação para Diagnóstico GEO | KORA",
+    title: "Aplicação para clínicas | KORA",
     description: diagnosticApplication.description,
     images: [
       {
         url: site.defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "Aplicação para Diagnóstico GEO KORA",
+        alt: "Aplicação para clínicas KORA",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aplicação para Diagnóstico GEO | KORA",
+    title: "Aplicação para clínicas | KORA",
     description: diagnosticApplication.description,
     images: [site.defaultOgImage],
   },
@@ -54,7 +54,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Diagnóstico",
+      name: "Aplicação",
       item: pageUrl,
     },
   ],
@@ -63,7 +63,7 @@ const breadcrumbJsonLd = {
 export default function DiagnosticApplicationPage() {
   return (
     <>
-      <JsonLd data={diagnosticServiceJsonLd} />
+      <JsonLd data={offerServiceJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
       <div className="min-h-screen bg-background text-foreground">
         <header className="border-b border-border bg-background/90 backdrop-blur-xl">
@@ -134,10 +134,10 @@ export default function DiagnosticApplicationPage() {
               </div>
 
               <p className="max-w-md text-sm font-medium leading-relaxed text-foreground">
-                {diagnostic.price}
+                {offer.price}
               </p>
               <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground-muted">
-                {diagnostic.note}
+                {offer.note}
               </p>
             </div>
 

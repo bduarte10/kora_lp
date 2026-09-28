@@ -1,92 +1,92 @@
 export const methodology = {
-  eyebrow: "Como medimos presença em IA",
-  title: "Um diagnóstico mensurável, não uma opinião sobre conteúdo.",
+  eyebrow: "Como medimos",
+  title: "Um relatório com dado, não uma opinião sobre o seu Instagram.",
   description:
-    "O Kora AI Presence Framework transforma GEO em um protocolo de baseline, comparação e priorização. Medimos como a empresa aparece, deixa de aparecer ou é comparada quando o cliente ideal pergunta para mecanismos de IA.",
-  frameworkName: "Kora AI Presence Framework",
+    "Toda clínica começa com uma linha de base: as mesmas perguntas que um paciente faria, feitas no Google e no ChatGPT, com data e print. É contra essa linha que cada mês é comparado.",
+  frameworkName: "Método KORA",
   framework: [
     {
-      id: "prompt-universe",
-      title: "Prompt Universe",
+      id: "perguntas",
+      title: "Perguntas do paciente",
       description:
-        "Clusters de perguntas reais que compradores fariam antes de contratar uma empresa como a sua.",
+        "Lista das perguntas que um paciente faz antes de escolher uma clínica: procedimento, preço, bairro, convênio, urgência.",
     },
     {
-      id: "visibility-scan",
-      title: "AI Visibility Scan",
+      id: "leitura",
+      title: "Leitura das respostas",
       description:
-        "Leitura controlada de presença, ausência, contexto da menção e concorrentes citados em ChatGPT, Claude, Gemini, Perplexity e Google com IA.",
+        "Fazemos essas perguntas no Google com IA, no ChatGPT e no Gemini e registramos quem é citado, em que ordem e com qual descrição.",
     },
     {
-      id: "share-of-voice",
-      title: "Share of Voice Generativo",
+      id: "concorrentes",
+      title: "Clínicas no seu lugar",
       description:
-        "Comparação entre frequência de menção da marca, posição relativa e recorrência dos concorrentes por tema.",
+        "Quando a sua clínica não aparece, anotamos quem aparece e o que essas clínicas têm que a sua ainda não mostra.",
     },
     {
-      id: "entity-trust",
-      title: "Entity & Trust Audit",
+      id: "fontes",
+      title: "Fontes que sustentam a resposta",
       description:
-        "Auditoria de entidade, schema, reputação, consistência de perfis, menções externas e sinais que ajudam IAs a validar a marca.",
+        "Perfil do Google, avaliações, site, diretórios e menções: as fontes que a IA usa para confirmar que a clínica existe e é confiável.",
     },
     {
-      id: "action-roadmap",
-      title: "Action Roadmap",
+      id: "acoes",
+      title: "Ações do mês",
       description:
-        "Plano de conteúdo, distribuição, estrutura técnica, reputação e automação priorizado por impacto e esforço.",
+        "O que muda no perfil, no conteúdo e no agente, em ordem de impacto. É isso que o relatório seguinte confere.",
     },
   ],
-  metricsTitle: "Indicadores acompanhados",
+  metricsTitle: "O que o relatório mostra",
   metricsIntro:
-    "A evolução é medida em um conjunto controlado de prompts. Não prometemos citação garantida; acompanhamos sinais comparáveis ao longo do tempo.",
+    "Medimos sempre o mesmo conjunto de perguntas para que a comparação entre meses seja justa. Não prometemos citação garantida; mostramos a evolução.",
   metrics: [
     {
-      label: "Mention Rate",
-      description: "Percentual de prompts em que a marca aparece.",
+      label: "Aparições",
+      description: "Em quantas perguntas a clínica aparece na resposta.",
     },
     {
-      label: "AI Share of Voice",
-      description: "Presença relativa frente aos concorrentes citados pelas respostas.",
+      label: "Recomendação",
+      description: "Quantas vezes a clínica é indicada, não só citada de passagem.",
     },
     {
-      label: "Recommendation Rate",
-      description: "Frequência em que a marca é recomendada, não apenas mencionada.",
+      label: "Concorrentes",
+      description: "Quais clínicas aparecem quando a sua não aparece.",
     },
     {
-      label: "Context Quality",
-      description: "Precisão com que a IA descreve a empresa, oferta, público e diferenciais.",
+      label: "Descrição",
+      description: "Se a IA descreve certo o que a clínica faz, onde fica e para quem.",
     },
     {
-      label: "Competitor Gap",
-      description: "Quem aparece quando a marca não aparece, e em quais temas isso acontece.",
+      label: "Conversas",
+      description: "Quantos pacientes o agente atendeu e quantos foram para a recepção.",
     },
     {
-      label: "Source Influence",
-      description: "Fontes, páginas e perfis que parecem sustentar a resposta gerada.",
+      label: "Avaliações",
+      description: "Novas avaliações no Google e respostas dadas a elas.",
     },
   ],
   scope: {
-    title: "Não é só conteúdo on-site",
+    title: "Não é só post em rede social",
     description:
-      "GEO fraco vira blog post. O diagnóstico da KORA cruza site, dados estruturados, clareza de entidade, Google Business Profile, LinkedIn, diretórios, reputação, avaliações, menções externas e distribuição estratégica.",
+      "Presença em IA não se resolve com conteúdo solto. O trabalho cruza perfil do Google, avaliações, site, dados estruturados, diretórios e o que se fala da clínica fora dela.",
     items: [
-      "Entidade e consistência da marca",
-      "Schema e dados estruturados",
-      "Reputação, avaliações e menções externas",
-      "Conteúdo answer-first e páginas comerciais",
-      "Fontes que IAs podem usar para validar a empresa",
+      "Perfil do Google e avaliações",
+      "Nome, endereço e telefone iguais em toda parte",
+      "Páginas que explicam procedimentos e o que define o custo",
+      "Dados estruturados no site",
+      "Menções em fontes que a IA consulta",
     ],
   },
   monitoring: {
-    title: "Diagnóstico agora, monitoramento depois",
+    title: "O primeiro mês cria a linha de base",
     description:
-      "A entrega inicial cria baseline e roadmap. Em projetos contínuos, a KORA acompanha prompts estratégicos, mudanças de resposta, concorrentes citados, deterioração de sinais e novas oportunidades de conteúdo.",
+      "O diagnóstico do primeiro mês registra onde a clínica está. A partir daí, cada relatório mostra o que mudou e o que vem a seguir.",
   },
   evidence: {
-    title: "Prova auditável, sem teatro",
+    title: "Prova com data, sem teatro",
     description:
-      "Cases nomeados dependem de autorização. Quando isso não existe, trabalhamos com recortes anonimizados, prompts datados, modelos testados, prints, URLs, concorrentes monitorados, ações implementadas e comparação 30/60/90 dias.",
+      "Cada resultado vem com a pergunta feita, a data, o print da resposta e as ações feitas no mês. Cases com nome de clínica só com autorização dela.",
   },
   caveat:
-    "Respostas de IA variam por modelo, contexto, data, localização, personalização e atualização das fontes. O trabalho aumenta clareza, autoridade e rastreabilidade; não controla a resposta final de terceiros.",
+    "Respostas de IA mudam com o modelo, a data, a localização e a pessoa que pergunta. O trabalho aumenta as chances de a clínica ser entendida e recomendada; ninguém controla a resposta final.",
 } as const;

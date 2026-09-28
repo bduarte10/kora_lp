@@ -10,24 +10,25 @@ type Transformation = {
 
 const transformations: Transformation[] = [
   {
-    area: "GEO",
+    area: "Presença",
     before:
-      "A empresa tem conteúdo disperso e não aparece quando o cliente pergunta para uma IA quais fornecedores considerar.",
+      "O paciente pergunta ao Google com IA onde fazer implante no bairro. A resposta cita três clínicas, e nenhuma é a sua.",
     after:
-      "Entidade, respostas e sinais de autoridade ficam estruturados. A marca passa a ser mais fácil de entender, comparar e citar.",
+      "Perfil, avaliações e páginas de procedimento contam a mesma história. A clínica passa a ter o que a IA precisa para citá-la.",
   },
   {
     area: "Atendimento",
     before:
-      "Equipe de atendimento responde as mesmas dúvidas no WhatsApp e perde contexto entre canais.",
+      "A mensagem chega às 22h perguntando preço de lente de contato. A recepção responde às 9h, e o paciente já marcou em outro lugar.",
     after:
-      "Agente assistido usa base revisada, acelera respostas e passa casos críticos para humano com histórico organizado.",
+      "O agente responde na hora, explica como funciona a avaliação e oferece um horário. A recepção só confirma.",
   },
   {
-    area: "Vendas",
+    area: "Gestão",
     before:
-      "Cada proposta consome 1 hora do vendedor: copiar template, ajustar números, escrever introdução, revisar.",
-    after: "Copilot rascunha em 90 segundos a partir do briefing. O vendedor refina em 10 minutos.",
+      "O dono da clínica paga agência e não sabe dizer se a clínica aparece mais ou menos do que no mês passado.",
+    after:
+      "Um relatório por mês mostra as mesmas perguntas, quem apareceu e quantos pacientes o agente atendeu.",
   },
 ];
 
@@ -36,12 +37,11 @@ export function Proof() {
     <section id="cases" className="section border-t border-border">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">Metodologia validada</p>
+          <p className="eyebrow section-anchor">Antes e depois</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[24ch] text-[length:var(--fs-h1)]">
-            O que muda quando GEO encontra{" "}
-            <span className="text-foreground-muted">operação real.</span>
+            O que muda na rotina <span className="text-foreground-muted">da clínica.</span>
           </h2>
         </Reveal>
 
@@ -92,9 +92,9 @@ export function Proof() {
 
         <Reveal delay={0.2} className="mt-12 max-w-prose text-sm text-foreground-subtle">
           <p>
-            Os exemplos acima representam padrões recorrentes de implantação. Cases nomeados
-            dependem de autorização do cliente; quando não houver, usamos recortes anonimizados,
-            prompts datados, prints, URLs e evolução dos indicadores.
+            Os exemplos acima descrevem o que o trabalho muda, não resultados de uma clínica
+            específica. Cases com nome dependem de autorização da clínica; sem ela, mostramos
+            perguntas datadas, prints e a evolução do relatório.
           </p>
         </Reveal>
       </div>

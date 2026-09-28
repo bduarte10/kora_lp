@@ -2,20 +2,20 @@ import { Reveal } from "@/components/motion/reveal";
 
 const pains = [
   {
-    title: "Busca está virando resposta, não lista de links.",
-    body: "Seu cliente pergunta para uma IA quem contratar. Se sua empresa não é uma resposta clara, ela nem entra na comparação.",
+    title: "A IA já cita clínicas pelo nome.",
+    body: "Perguntamos ao Google com IA onde fazer implante em São Paulo. A resposta trouxe clínicas pelo nome, com endereço e dentista responsável. Quem não está nessa lista nem entra na comparação.",
   },
   {
-    title: "Autoridade mal estruturada deixa a empresa invisível.",
-    body: "Conteúdo solto, sinais fracos e informações inconsistentes tornam difícil para mecanismos generativos entenderem sua marca.",
+    title: "Quem procura implante quer saber o preço.",
+    body: "As buscas mais comuns sobre implante no Google são sobre valor. Preço não pode ser anunciado, mas dá para explicar o que define o custo. A clínica que faz isso bem é a que a IA encontra e a que o paciente chama.",
   },
   {
-    title: "Atendimento lento desperdiça demanda qualificada.",
-    body: "WhatsApp, e-mail e CRM acumulam perguntas repetidas. O time perde velocidade justamente quando o lead já demonstrou intenção.",
+    title: "WhatsApp sem resposta à noite é avaliação perdida.",
+    body: "O paciente pesquisa depois do expediente. Se a mensagem só é respondida no dia seguinte, ele já marcou com a clínica que respondeu primeiro.",
   },
   {
-    title: "Conhecimento interno espalhado impede IA confiável.",
-    body: "Sem base, regras e revisão, a empresa fica presa entre respostas manuais e automações genéricas que ninguém confia.",
+    title: "Perfil desatualizado tira a clínica do mapa.",
+    body: "Horário errado, poucas avaliações e nenhuma resposta a elas. É dali que o Google e a IA tiram os dados para recomendar alguém.",
   },
 ];
 
@@ -28,9 +28,9 @@ export function Problem() {
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[20ch] text-[length:var(--fs-h1)]">
-            A nova busca já começou.{" "}
+            O paciente mudou de busca.{" "}
             <span className="text-foreground-muted">
-              A maioria das empresas ainda não se preparou.
+              A maioria das clínicas ainda não percebeu.
             </span>
           </h2>
         </Reveal>

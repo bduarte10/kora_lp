@@ -14,8 +14,8 @@ export default function ThankYouPage() {
       <div className="container-text text-center">
         <h1 className="display text-[length:var(--fs-h1)]">Aplicação recebida.</h1>
         <p className="mt-6 text-foreground-muted">
-          Vamos analisar o contexto da sua empresa. Se houver fit, retornamos com os próximos passos
-          para o Diagnóstico GEO & Automação de Atendimento.
+          Vamos analisar o contexto da sua clínica e voltar em até 1 dia útil com setup, prazo e
+          preço, ou dizer que não é o momento.
         </p>
         <a
           href="/"

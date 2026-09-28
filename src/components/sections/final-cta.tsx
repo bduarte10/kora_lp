@@ -24,13 +24,13 @@ export function FinalCTA() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="display mt-6 max-w-[18ch] text-balance text-[length:var(--fs-h1)] text-cream">
-                Quer ver como sua empresa aparece hoje?
+                Quer ver como sua clínica aparece hoje?
               </h2>
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream-muted">
-                Em 15 minutos a gente olha junto quais perguntas seu cliente faria para uma IA e
-                quem aparece hoje nessas respostas. Se fizer sentido, o diagnóstico vem depois.
+                Em 15 minutos a gente faz junto as perguntas que seu paciente faria ao Google e ao
+                ChatGPT e vê quem aparece hoje. Se fizer sentido, a mensalidade vem depois.
               </p>
             </Reveal>
 
@@ -38,7 +38,7 @@ export function FinalCTA() {
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
                 <p className="text-xs text-cream-faint">
-                  Sem apresentação comercial. Diagnóstico a partir de {site.pricing.diagnosticFrom}.
+                  Sem apresentação comercial. Mensalidade a partir de {site.pricing.monthlyFrom}.
                 </p>
               </div>
             </Reveal>
@@ -51,11 +51,11 @@ export function FinalCTA() {
                 Fale com a gente
               </p>
               <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
-                Aplicação para diagnóstico
+                Aplicação para a mensalidade
               </h3>
               <p className="mt-5 text-sm leading-relaxed text-foreground-muted">
-                Abra a experiência dedicada, responda em etapas e envie sua aplicação para análise
-                de fit.
+                Responda em etapas, em poucos minutos, e a gente volta com setup, prazo e preço para
+                a sua clínica.
               </p>
               <TrackedLink
                 href={site.ctas.applyHref}

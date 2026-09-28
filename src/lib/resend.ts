@@ -43,12 +43,12 @@ Empresa: ${lead.company ?? "(não informado)"}
 Cargo: ${lead.role ?? "(não informado)"}
 Telefone: ${lead.phone}
 E-mail: ${lead.email}
-Segmento: ${lead.segment ?? "(não informado)"}
-Tamanho: ${lead.companySize ?? "(não informado)"}
+Tipo de clínica: ${lead.segment ?? "(não informado)"}
+Tamanho da clínica: ${lead.companySize ?? "(não informado)"}
 CNPJ: ${lead.cnpj || "(não informado)"}
 Prioridade: ${lead.priority ?? "(não informado)"}
 Urgência: ${lead.urgency ?? "(não informado)"}
-Abertura para diagnóstico pago: ${lead.paidDiagnosticOpenness ?? "(não informado)"}
+Abertura para mensalidade: ${lead.paidDiagnosticOpenness ?? "(não informado)"}
 
 Desafio:
 ${lead.mainChallenge ?? "(não informado)"}

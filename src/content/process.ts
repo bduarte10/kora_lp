@@ -9,34 +9,38 @@ export type ProcessStep = {
 export const process: ProcessStep[] = [
   {
     step: "01",
-    title: "Aplicação",
-    duration: "10 minutos",
+    title: "Conversa",
+    duration: "15 minutos",
     description:
-      "Você envia contexto sobre empresa, atendimento, presença digital e urgência. A KORA avalia se existe fit para o diagnóstico pago.",
-    outputs: ["Contexto inicial", "Critérios de fit", "Próximo passo claro"],
+      "Olhamos juntos o que o Google e a IA respondem hoje quando um paciente procura o que a sua clínica faz. Se não fizer sentido, a gente diz.",
+    outputs: ["Onde a clínica aparece hoje", "Quem aparece no lugar", "Proposta com setup e prazo"],
   },
   {
     step: "02",
-    title: "Diagnóstico",
-    duration: "1–2 semanas",
+    title: "Diagnóstico e setup",
+    duration: "Primeiro mês",
     description:
-      "Rodamos clusters de prompts, medimos baseline em IA, comparamos concorrentes citados e auditamos entidade, schema, reputação e conteúdo.",
-    outputs: ["Baseline GEO", "Share of voice", "Entity & Trust Audit"],
+      "Rodamos as perguntas que seus pacientes fazem, auditamos perfil, avaliações e site, e montamos com o dentista responsável a base de respostas do agente.",
+    outputs: [
+      "Linha de base registrada",
+      "Perfil do Google revisado",
+      "Base de respostas aprovada",
+    ],
   },
   {
     step: "03",
-    title: "Arquitetura",
-    duration: "Projeto fechado",
+    title: "Agente no ar",
+    duration: "Segundo mês",
     description:
-      "Desenhamos o roadmap 30/60/90 dias para presença, conteúdo answer-first, distribuição, base de conhecimento, agentes e automações.",
-    outputs: ["Roadmap 30/60/90", "Escopo técnico", "Prioridade por impacto"],
+      "O agente começa a atender no WhatsApp com regras de passagem para a recepção, e as primeiras páginas sobre procedimentos vão ao ar.",
+    outputs: ["Agente atendendo", "Recepção treinada", "Páginas publicadas"],
   },
   {
     step: "04",
-    title: "Implantação",
+    title: "Rotina mensal",
     duration: "Contínuo",
     description:
-      "Implementamos, medimos evolução em prompts estratégicos, treinamos o time e ajustamos os fluxos para que GEO e atendimento com IA virem rotina, não demo.",
-    outputs: ["Ativos publicados", "Equipe treinada", "Monitoramento contínuo"],
+      "Todo mês repetimos as mesmas perguntas, ajustamos o agente com base nas conversas reais e entregamos o relatório com as ações do mês seguinte.",
+    outputs: ["Relatório mensal", "Agente ajustado", "Novas avaliações e conteúdo"],
   },
 ];

@@ -1,8 +1,8 @@
 export const diagnosticApplication = {
   route: "/diagnostico",
-  title: "Aplique para o Diagnóstico GEO & Automação de Atendimento",
+  title: "Aplique para a mensalidade da sua clínica",
   description:
-    "Responda o essencial sobre presença atual em IA, atendimento e urgência. Com isso a KORA volta com escopo e preço fechados, sem proposta genérica.",
+    "Responda o essencial sobre a clínica, o atendimento no WhatsApp e a urgência. Com isso a KORA volta com setup, prazo e preço fechados, sem proposta genérica.",
   expectations: [
     {
       label: "Tempo",
@@ -11,21 +11,21 @@ export const diagnosticApplication = {
     },
     {
       label: "Análise",
-      value: "Baseline + roadmap",
+      value: "Onde a clínica aparece",
       description:
-        "Presença em IA, concorrentes citados, autoridade digital, base de conhecimento e automações.",
+        "Google, Maps e IA, clínicas citadas no seu lugar e como o WhatsApp é atendido hoje.",
     },
     {
       label: "Retorno",
       value: "Em até 1 dia útil",
-      description: "Voltamos com escopo, prazo e preço fechados, ou dizemos que não é o momento.",
+      description: "Voltamos com setup, prazo e preço fechados, ou dizemos que não é o momento.",
     },
   ],
   steps: [
     {
       eyebrow: "Etapa 1",
-      title: "Primeiro, o fit operacional.",
-      description: "Isso ajuda a entender se o diagnóstico faz sentido para o momento da empresa.",
+      title: "Primeiro, a clínica.",
+      description: "Isso ajuda a entender se a mensalidade faz sentido para o momento da clínica.",
     },
     {
       eyebrow: "Etapa 2",

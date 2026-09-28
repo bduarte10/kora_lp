@@ -3,10 +3,25 @@ const whatsappNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "5511920923143
 const waLink = (text: string) =>
   `https://wa.me/${whatsappNumber.replace(/\D/g, "")}?text=${encodeURIComponent(text)}`;
 
-const diagnosticFromBRL = 4900;
+// Aceita a mensagem crua ou já URL-encoded; o waLink codifica de novo.
+const fromEnvMessage = (value: string | undefined) => {
+  if (!value) return undefined;
+  try {
+    return decodeURIComponent(value.replace(/\+/g, " "));
+  } catch {
+    return value;
+  }
+};
+
+const monthlyFromBRL = 1500;
+const monthlyFrom = new Intl.NumberFormat("pt-BR", {
+  style: "currency",
+  currency: "BRL",
+  maximumFractionDigits: 0,
+}).format(monthlyFromBRL);
 
 const callMessage =
-  "Oi, vim pelo site da KORA. Quero agendar 15 minutos para entender como minha empresa aparece nas respostas de IA.";
+  "Oi, vim pelo site da KORA. Quero agendar 15 minutos para ver como minha clínica aparece no Google e nas respostas de IA.";
 
 export const site = {
   name: "Kora GEO",
@@ -14,9 +29,8 @@ export const site = {
   legalName: "Bruno Bilego Duarte Consultoria em Tecnologia da Informação LTDA",
   cnpj: "54.381.960/0001-78",
   foundingDate: "2024-03-19",
-  tagline: "GEO e Atendimento com IA para PMEs",
-  description:
-    "A KORA ajuda PMEs brasileiras a medir e fortalecer presença em ChatGPT, Claude, Gemini, Perplexity e Google com IA, unindo GEO, autoridade digital, bases de conhecimento e automação de atendimento.",
+  tagline: "Agente de IA e presença no Google para clínicas odontológicas",
+  description: `A KORA faz clínicas odontológicas aparecerem quando o paciente procura no Google, no Maps e no ChatGPT, e coloca um agente de IA no WhatsApp para responder na hora. Mensalidade a partir de ${monthlyFrom}.`,
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://koraintelligence.com.br",
   locale: "pt-BR",
   defaultOgImage: "/og-default.png",
@@ -24,8 +38,8 @@ export const site = {
   contact: {
     whatsappNumber,
     whatsappMessage:
-      process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE ??
-      "Oi, vim pelo site da KORA e quero tirar uma dúvida sobre o Diagnóstico GEO",
+      fromEnvMessage(process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE) ??
+      "Oi, vim pelo site da KORA e quero tirar uma dúvida sobre a mensalidade para clínicas",
     address: {
       street: "Av. Paulista, 1106, sala 01, andar 16",
       district: "Bela Vista",
@@ -42,27 +56,22 @@ export const site = {
   },
 
   pricing: {
-    diagnosticFromBRL,
-    diagnosticFrom: new Intl.NumberFormat("pt-BR", {
-      style: "currency",
-      currency: "BRL",
-      maximumFractionDigits: 0,
-    }).format(diagnosticFromBRL),
+    monthlyFromBRL,
+    monthlyFrom,
   },
 
   ctas: {
     call: "Agendar 15 minutos",
     callHref: waLink(callMessage),
-    apply: "Aplicar para diagnóstico",
+    apply: "Aplicar para a mensalidade",
     applyHref: "/diagnostico",
   },
 
   nav: [
-    { href: "#solucoes", label: "Soluções" },
-    { href: "#diagnostico", label: "Diagnóstico" },
-    { href: "#metodologia", label: "Metodologia" },
+    { href: "#mensalidade", label: "O que entra" },
+    { href: "#preco", label: "Preço" },
     { href: "#processo", label: "Como funciona" },
-    { href: "#geo", label: "GEO & IA" },
+    { href: "#metodologia", label: "Como medimos" },
     { href: "#faq", label: "FAQ" },
   ],
 } as const;

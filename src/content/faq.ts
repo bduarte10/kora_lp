@@ -7,51 +7,47 @@ export type FAQItem = {
 
 export const faq: FAQItem[] = [
   {
+    q: "O que a KORA faz por uma clínica odontológica?",
+    a: "Duas coisas, numa mensalidade só. Faz a clínica aparecer quando o paciente procura no Google, no Maps e em IAs como o ChatGPT e o Gemini, e coloca um agente de IA no WhatsApp para responder o paciente na hora, com passagem para a recepção quando precisa.",
+  },
+  {
+    q: "Quanto custa?",
+    a: `A mensalidade começa em ${site.pricing.monthlyFrom}. O valor final e o setup dependem do tamanho da clínica, do volume de conversas no WhatsApp e de quantos procedimentos entram no trabalho. Tudo é fechado na conversa, antes de qualquer contrato.`,
+  },
+  {
+    q: "O agente de IA vai dar diagnóstico ou falar preço para o paciente?",
+    a: "Não. O agente responde a partir de uma base revisada pelo dentista responsável: procedimentos, horários, convênios, como funciona a avaliação. Diagnóstico, urgência e negociação vão para a recepção. O agente também não promete resultado, seguindo o Código de Ética Odontológica.",
+  },
+  {
+    q: "Isso respeita as regras de publicidade do CFO?",
+    a: "Sim. O Código de Ética Odontológica proíbe anunciar preço, usar antes e depois e prometer resultado. O conteúdo que produzimos explica procedimentos e o que define o custo, sem anunciar valor, e passa pela aprovação do dentista responsável antes de ir ao ar.",
+  },
+  {
+    q: "E os dados dos pacientes?",
+    a: "Conversas de saúde são dados sensíveis pela LGPD. O agente não pede informação clínica além do necessário para agendar, as conversas ficam registradas para a clínica e o acesso é restrito. Os detalhes entram no contrato.",
+  },
+  {
     q: "O que é GEO?",
-    a: "GEO é a prática de preparar marca, entidade, conteúdo, dados estruturados e sinais de autoridade para que mecanismos generativos, como ChatGPT, Claude, Gemini, Perplexity e Google com IA, entendam sua empresa e possam considerá-la em respostas relevantes.",
+    a: "GEO é o nome técnico do trabalho de fazer uma empresa ser entendida e citada por IAs como o ChatGPT, o Gemini e o Google com IA. Na prática, para uma clínica, significa perfil do Google completo, avaliações, informações iguais em toda parte e páginas que respondem as dúvidas do paciente.",
   },
   {
-    q: "Qual a diferença entre SEO e GEO?",
-    a: "SEO ajuda sua empresa a aparecer melhor em páginas de resultado tradicionais. GEO complementa isso ao estruturar respostas, entidades, autoridade e conteúdo para ambientes onde a IA resume opções antes do clique.",
+    q: "Vocês garantem que minha clínica vai aparecer no ChatGPT?",
+    a: "Não. Ninguém controla a resposta de uma IA, que muda com o modelo, a data e a localização de quem pergunta. O que garantimos é o trabalho feito e a medição honesta: as mesmas perguntas todo mês, com data e print, para você ver o que mudou.",
   },
   {
-    q: "Como vocês medem presença em IA?",
-    a: "Usamos clusters de prompts reais do cliente ideal e avaliamos presença, ausência, contexto da menção, concorrentes citados, qualidade da resposta, fontes associadas e consistência entre ChatGPT, Claude, Gemini, Perplexity e Google com IA.",
+    q: "Como vocês medem se está funcionando?",
+    a: "No primeiro mês registramos uma linha de base: as perguntas que um paciente faria, feitas no Google com IA, no ChatGPT e no Gemini, e quem aparece em cada uma. Todo mês repetimos as mesmas perguntas e somamos as conversas atendidas pelo agente.",
   },
   {
-    q: "Vocês conseguem provar aumento de share of voice?",
-    a: "Conseguimos medir baseline e evolução em um conjunto controlado de prompts. Acompanhamos indicadores como mention rate, share of voice generativo, recommendation rate, context quality, competitor gap e source influence, sem prometer domínio absoluto das respostas.",
+    q: "Preciso trocar meu site ou minha agência?",
+    a: "Não. A KORA trabalha com o site que a clínica já tem e convive com a agência que cuida das redes e dos anúncios. Quando o site atrapalha, dizemos o que ajustar.",
   },
   {
-    q: "O diagnóstico inclui monitoramento contínuo?",
-    a: "A entrega inicial cria baseline e roadmap. Em projetos recorrentes, podemos monitorar prompts estratégicos, mudanças de resposta, concorrentes citados, deterioração de sinais e novas oportunidades de conteúdo.",
-  },
-  {
-    q: "Quanto custa o diagnóstico da KORA?",
-    a: `O Diagnóstico GEO & Automação de Atendimento começa em ${site.pricing.diagnosticFrom} — menos do que a maioria das empresas do porte que atendemos gasta em um mês de agência, e pagamento único. O valor final depende do número de prompts monitorados, de concorrentes acompanhados e da profundidade da leitura de atendimento. Não existe versão gratuita: a entrega envolve auditoria de presença em IA, leitura de gargalos e plano de implantação.`,
-  },
-  {
-    q: "Vocês garantem que minha empresa será citada por IA?",
-    a: "Não prometemos citações garantidas. Respostas de IA variam por modelo, contexto, data, localização, personalização e atualização das fontes. O trabalho aumenta clareza, autoridade, estrutura e rastreabilidade para melhorar as chances de a empresa ser compreendida e considerada.",
-  },
-  {
-    q: "Vocês fazem só conteúdo para blog?",
-    a: "Não. O diagnóstico avalia site, schema, entidade, reputação, avaliações, menções externas, perfis públicos, diretórios, fontes confiáveis, distribuição e conteúdo answer-first. Blog pode entrar, mas não é o centro do trabalho.",
-  },
-  {
-    q: "Têm cases auditáveis?",
-    a: "Cases nomeados dependem de autorização dos clientes. Quando não houver autorização, apresentamos recortes anonimizados com prompts datados, modelos testados, prints, URLs, concorrentes monitorados, ações implementadas e comparação 30/60/90 dias.",
-  },
-  {
-    q: "Preciso trocar meu site atual?",
-    a: "Nem sempre. O diagnóstico identifica se o site, conteúdo, dados estruturados e base de conhecimento atuais sustentam GEO. Quando fizer sentido, recomendamos ajustes, não uma reconstrução por padrão.",
-  },
-  {
-    q: "Como a automação de atendimento entra no projeto?",
-    a: "GEO gera demanda melhor apenas se a operação consegue responder bem. Por isso mapeamos WhatsApp, e-mail, CRM e conhecimento interno para criar fluxos, agentes assistidos e respostas consistentes.",
+    q: "Já tenho secretária e sistema de agenda. Onde o agente entra?",
+    a: "O agente não substitui a recepção. Ele atende nos horários em que ninguém está olhando o WhatsApp e responde as dúvidas repetidas, para que a recepção cuide de confirmar, receber e negociar.",
   },
   {
     q: "Para quem a KORA não é indicada?",
-    a: "Não é indicada para quem busca apenas uma peça rápida, um chatbot genérico ou volume barato de leads. A KORA trabalha melhor com empresas que têm operação real, equipe comercial ou atendimento ativo e abertura para implantação séria.",
+    a: "Para quem quer só post em rede social, chatbot genérico de menu ou volume barato de leads. O trabalho funciona melhor em clínicas particulares com foco em implante, reabilitação ou estética, e com um dentista disposto a revisar as respostas do agente.",
   },
 ];

@@ -8,6 +8,7 @@ import {
   urgencyOptions,
 } from "@/content/diagnostic";
 import { diagnosticApplication } from "@/content/diagnostic-application";
+import { site } from "@/content/site";
 import { pushEvent } from "@/lib/gtm";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,12 +22,12 @@ import { z } from "zod";
 const formVariant = "dedicated_progressive_v1";
 
 const schema = z.object({
-  segment: z.string().min(1, "Selecione o segmento"),
-  companySize: z.string().min(1, "Selecione o tamanho da empresa"),
+  segment: z.string().min(1, "Selecione o tipo de clínica"),
+  companySize: z.string().min(1, "Selecione o tamanho da clínica"),
   priority: z.string().min(1, "Selecione a prioridade"),
   urgency: z.string().min(1, "Selecione a urgência"),
   name: z.string().min(2, "Informe seu nome"),
-  company: z.string().min(2, "Informe a empresa"),
+  company: z.string().min(2, "Informe a clínica"),
   phone: z.string().min(10, "Telefone inválido"),
   email: z.string().email("E-mail inválido"),
   mainChallenge: z.string().min(8, "Conte em uma frase o principal desafio"),
@@ -100,7 +101,7 @@ export function ProgressiveLeadForm() {
       event: "form_submit",
       form_id: "diagnostic-application",
       form_variant: formVariant,
-      interest: "Diagnóstico GEO",
+      interest: "Mensalidade clínica",
       priority: data.priority,
     });
 
@@ -116,7 +117,7 @@ export function ProgressiveLeadForm() {
         form_id: "diagnostic-application",
         form_variant: formVariant,
         email: data.email,
-        interest: "Diagnóstico GEO",
+        interest: "Mensalidade clínica",
         priority: data.priority,
       });
       router.push("/obrigado");
@@ -158,7 +159,7 @@ export function ProgressiveLeadForm() {
       {step === 0 && (
         <div className="space-y-7">
           <ChoiceGroup
-            label="Segmento"
+            label="Tipo de clínica"
             name="segment"
             options={segmentOptions}
             value={selected.segment}
@@ -166,7 +167,7 @@ export function ProgressiveLeadForm() {
             onChoose={choose}
           />
           <ChoiceGroup
-            label="Tamanho da empresa"
+            label="Tamanho da clínica"
             name="companySize"
             options={companySizeOptions}
             value={selected.companySize}
@@ -197,7 +198,7 @@ export function ProgressiveLeadForm() {
           <Field label="Nome" error={errors.name?.message}>
             <input {...register("name")} autoComplete="name" className={inputCls} />
           </Field>
-          <Field label="Empresa" error={errors.company?.message}>
+          <Field label="Clínica" error={errors.company?.message}>
             <input {...register("company")} autoComplete="organization" className={inputCls} />
           </Field>
           <Field label="WhatsApp" error={errors.phone?.message}>
@@ -222,13 +223,13 @@ export function ProgressiveLeadForm() {
             <textarea
               {...register("mainChallenge")}
               rows={4}
-              placeholder="Ex.: atendimento sobrecarregado, baixa presença em IA, CRM manual..."
+              placeholder="Ex.: WhatsApp sem resposta à noite, poucas avaliações, não aparece no Google..."
               className={cn(inputCls, "resize-y leading-relaxed")}
             />
           </Field>
 
           <ChoiceGroup
-            label="Abertura para diagnóstico pago"
+            label={`Abertura para mensalidade a partir de ${site.pricing.monthlyFrom}`}
             name="paidDiagnosticOpenness"
             options={paidDiagnosticOptions}
             value={selected.paidDiagnosticOpenness}

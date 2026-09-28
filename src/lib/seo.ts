@@ -1,5 +1,5 @@
-import { diagnostic } from "@/content/diagnostic";
 import { faq } from "@/content/faq";
+import { offer } from "@/content/offer";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
 import type { Metadata } from "next";
@@ -16,14 +16,13 @@ export const baseMetadata: Metadata = {
   applicationName: site.name,
   generator: "Next.js",
   keywords: [
-    "GEO",
-    "generative engine optimization",
-    "consultoria de GEO no Brasil",
+    "agente de IA para clínica odontológica",
+    "atendimento no WhatsApp para dentista",
+    "marketing para clínica odontológica",
+    "clínica odontológica no Google",
     "aparecer no ChatGPT",
+    "GEO para clínicas",
     "presença em IA",
-    "auditoria de presença em IA",
-    "automação de atendimento",
-    "agentes de IA",
   ],
   authors: [{ name: site.name }],
   creator: site.name,
@@ -92,13 +91,12 @@ export const organizationJsonLd = {
   },
   knowsAbout: [
     "GEO (Generative Engine Optimization)",
-    "Auditoria de presença em IA",
-    "Monitoramento de menções em ChatGPT, Gemini e Perplexity",
+    "Presença de clínicas odontológicas no Google e em IA",
+    "Google Business Profile e avaliações",
+    "Agentes de IA para atendimento no WhatsApp",
+    "Publicidade odontológica e Código de Ética Odontológica",
+    "LGPD em atendimento de saúde",
     "Dados estruturados e entidade de marca",
-    "Conteúdo answer-first",
-    "Automação de atendimento no WhatsApp",
-    "Agentes de IA",
-    "Inteligência artificial aplicada a negócios",
   ],
   sameAs: Object.values(site.social),
   contactPoint: {
@@ -122,25 +120,27 @@ export const websiteJsonLd = {
   publisher: { "@id": `${siteUrl}/#organization` },
 };
 
-export const diagnosticServiceJsonLd = {
+export const offerServiceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: diagnostic.title,
-  description: diagnostic.description,
-  serviceType: "Diagnóstico GEO, auditoria de presença em IA e automação de atendimento",
+  name: offer.title,
+  description: offer.description,
+  serviceType: "Presença no Google e em IA e agente de IA no WhatsApp para clínicas odontológicas",
   provider: { "@id": `${siteUrl}/#organization` },
   areaServed: { "@type": "Country", name: "Brazil" },
   audience: {
     "@type": "BusinessAudience",
-    audienceType: "PMEs brasileiras",
+    audienceType: "Clínicas odontológicas",
   },
   offers: {
     "@type": "Offer",
     url: `${siteUrl}/diagnostico`,
     priceSpecification: {
-      "@type": "PriceSpecification",
+      "@type": "UnitPriceSpecification",
       priceCurrency: "BRL",
-      minPrice: site.pricing.diagnosticFromBRL,
+      minPrice: site.pricing.monthlyFromBRL,
+      unitCode: "MON",
+      unitText: "mês",
     },
   },
 };
@@ -153,7 +153,7 @@ export const professionalServiceJsonLd = {
   url: siteUrl,
   image: `${siteUrl}/og-default.png`,
   areaServed: { "@type": "Country", name: "Brazil" },
-  serviceType: "Consultoria de GEO, auditoria de presença em IA e automação de atendimento",
+  serviceType: "Presença no Google e em IA e agente de IA no WhatsApp para clínicas odontológicas",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.contact.address.street,

@@ -84,18 +84,18 @@ export function ArticleLayout({ guide }: { guide: Guide }) {
 
         <section className="mt-12 rounded-2xl border border-border bg-background-elev p-8 text-center">
           <p className="display-balanced text-[length:var(--fs-h3)]">
-            Sua empresa aparece quando perguntam para uma IA?
+            Sua clínica aparece quando o paciente pergunta a uma IA?
           </p>
           <p className="mx-auto mt-2 max-w-md text-sm text-foreground-muted">
-            A Kora GEO mede em quantas respostas de ChatGPT, Gemini e Perplexity sua empresa é
-            citada, quem aparece no lugar dela e o que fazer a respeito.
+            A Kora GEO mede se sua clínica aparece no Google, no ChatGPT e no Gemini, quem aparece
+            no lugar dela, e coloca um agente de IA para responder o paciente no WhatsApp.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
               href="/diagnostico"
               className="inline-flex items-center justify-center rounded-full bg-coral px-5 py-3 text-sm font-medium text-cream transition hover:bg-coral-deep"
             >
-              Ver o diagnóstico
+              Aplicar para a mensalidade
             </Link>
             <a
               href={whatsapp}

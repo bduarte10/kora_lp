@@ -4,14 +4,15 @@ import { Check } from "lucide-react";
 
 export function Services() {
   return (
-    <section id="geo" className="section bg-bone border-y border-border">
+    <section id="mensalidade" className="section scroll-mt-16 bg-bone border-y border-border">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">GEO & IA aplicada</p>
+          <p className="eyebrow section-anchor">O que entra na mensalidade</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[26ch] text-[length:var(--fs-h1)]">
-            Quatro frentes para ser citado, entendido e escolhido.
+            Ser encontrada, responder na hora{" "}
+            <span className="text-foreground-muted">e saber o que mudou.</span>
           </h2>
         </Reveal>
 

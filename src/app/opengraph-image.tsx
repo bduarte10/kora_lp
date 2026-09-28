@@ -33,11 +33,11 @@ export default async function OpenGraphImage() {
         {site.name}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        <div style={{ fontSize: 92, lineHeight: 1, letterSpacing: "-0.03em" }}>
+        <div style={{ fontSize: 76, lineHeight: 1, letterSpacing: "-0.03em" }}>
           {hero.headlineLines[0]}
         </div>
-        <div style={{ fontSize: 92, lineHeight: 1, letterSpacing: "-0.03em", color: "#56565C" }}>
-          sua empresa aparece?
+        <div style={{ fontSize: 76, lineHeight: 1, letterSpacing: "-0.03em", color: "#56565C" }}>
+          {hero.headlineLines[1]}
         </div>
       </div>
       <div

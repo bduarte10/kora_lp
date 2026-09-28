@@ -1,72 +1,49 @@
 export type ServicePillar = {
   id: string;
-  index: string;
   kicker: string;
   title: string;
   description: string;
   deliverables: string[];
-  imageSeed: string;
 };
 
 export const services: ServicePillar[] = [
   {
-    id: "geo",
-    index: "I",
-    kicker: "GEO",
-    title: "Sua empresa legível para mecanismos generativos",
+    id: "presenca",
+    kicker: "Ser encontrada",
+    title: "Sua clínica na resposta do Google, do Maps e da IA",
     description:
-      "Organizamos a presença digital para que mecanismos de IA entendam quem você é, o que faz, onde atua e por que pode ser uma resposta confiável.",
+      "O Google e o ChatGPT recomendam a clínica que conseguem entender e confirmar em várias fontes. Arrumamos essas fontes e publicamos as respostas que o paciente procura antes de ligar.",
     deliverables: [
-      "Mapa de perguntas e intenções do cliente ideal",
-      "Auditoria de entidade, autoridade e conteúdo",
-      "Estrutura de respostas answer-first",
-      "Recomendações para ChatGPT, Claude, Gemini, Perplexity e Google com IA",
+      "Perfil do Google revisado e atualizado todo mês",
+      "Rotina para pedir e responder avaliações",
+      "Páginas que explicam procedimentos e o que define o custo",
+      "Dados da clínica consistentes em diretórios e redes",
     ],
-    imageSeed: "atlas-quiet",
   },
   {
-    id: "atendimento",
-    index: "II",
-    kicker: "Atendimento",
-    title: "Atendimento com IA sem virar caixa-preta",
+    id: "agente",
+    kicker: "Responder na hora",
+    title: "Agente de IA no WhatsApp, sem tirar a recepção do controle",
     description:
-      "Transformamos conhecimento comercial e operacional em base consultável, agente assistido e fluxos que mantêm o time no controle.",
+      "O agente responde dúvidas sobre procedimentos, horários e convênios a partir de uma base revisada pela clínica e oferece horário de avaliação. Caso clínico, urgência e negociação vão para a recepção, com o histórico da conversa.",
     deliverables: [
-      "Base de conhecimento para atendimento",
-      "Agentes para WhatsApp, site e e-mail",
-      "Regras de passagem para atendimento humano",
-      "Logs e revisão de respostas críticas",
+      "Base de respostas aprovada pelo dentista responsável",
+      "Atendimento fora do horário e no fim de semana",
+      "Passagem para humano em casos sensíveis",
+      "Sem diagnóstico e sem promessa de resultado, dentro das regras do CFO",
     ],
-    imageSeed: "linear-rivers",
   },
   {
-    id: "automacao",
-    index: "III",
-    kicker: "Automação",
-    title: "Fluxos que reduzem atrito comercial",
+    id: "relatorio",
+    kicker: "Acompanhar",
+    title: "Um relatório por mês, em linguagem de clínica",
     description:
-      "Conectamos CRM, planilhas, formulários, e-mail e canais de atendimento para tirar trabalho manual dos pontos que travam venda.",
+      "Todo mês rodamos as mesmas perguntas que um paciente faria e mostramos se a clínica apareceu, quem apareceu no lugar dela e quantas conversas o agente atendeu.",
     deliverables: [
-      "Follow-ups e qualificação de leads",
-      "Propostas e resumos comerciais assistidos",
-      "Alertas para gargalos e oportunidades",
-      "Dashboards simples para acompanhamento",
+      "Perguntas de pacientes testadas no Google e no ChatGPT",
+      "Clínicas concorrentes que aparecem no seu lugar",
+      "Conversas atendidas e passadas para a recepção",
+      "Próximas ações do mês",
     ],
-    imageSeed: "neural-amber",
-  },
-  {
-    id: "copilots",
-    index: "IV",
-    kicker: "Copilots",
-    title: "IA aplicada ao conhecimento interno",
-    description:
-      "Criamos copilots internos para vendas, suporte e operação consultarem documentos, padrões, playbooks e histórico com segurança.",
-    deliverables: [
-      "RAG sobre documentos e processos",
-      "Templates de prompts versionados",
-      "Treinamento do time usuário",
-      "Evolução contínua com métricas de uso",
-    ],
-    imageSeed: "studio-desk",
   },
 ];
