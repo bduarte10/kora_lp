@@ -2,7 +2,7 @@ import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import { hero } from "@/content/hero";
 import { offer } from "@/content/offer";
-import { services } from "@/content/services";
+import { services, servicesIntro } from "@/content/services";
 import { site } from "@/content/site";
 import { ArrowRight, Check } from "lucide-react";
 
@@ -19,6 +19,14 @@ export function Services() {
               Ser encontrada, ser escolhida{" "}
               <span className="text-foreground-muted">e saber o que mudou.</span>
             </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-7 max-w-2xl text-[length:var(--fs-lead)] leading-relaxed text-foreground-muted">
+              {servicesIntro.bridge}
+            </p>
+            <p className="mt-6 max-w-2xl rounded-xl bg-paper p-5 leading-relaxed text-foreground sm:p-6">
+              {servicesIntro.success}
+            </p>
           </Reveal>
 
           <div className="mt-14 divide-y divide-border border-y border-border">
@@ -65,6 +73,17 @@ export function Services() {
               <p className="mt-5 leading-relaxed text-foreground">{offer.card.firstMonth}</p>
               <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
                 {offer.card.terms}
+              </p>
+              <p className="mt-5 rounded-lg bg-bone p-4 text-sm leading-relaxed text-foreground">
+                {offer.card.value.text}{" "}
+                <a
+                  href={offer.card.value.source.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-foreground-subtle underline underline-offset-2 hover:text-foreground"
+                >
+                  Fonte: {offer.card.value.source.label}
+                </a>
               </p>
 
               <TrackedLink

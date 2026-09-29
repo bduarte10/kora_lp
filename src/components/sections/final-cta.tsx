@@ -29,8 +29,9 @@ export function FinalCTA() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream-muted">
-                Em 15 minutos a gente faz junto as perguntas que seu paciente faria ao Google e ao
-                ChatGPT e vê quem aparece hoje. Se fizer sentido, a mensalidade vem depois.
+                Em 15 minutos, sem custo, a gente faz junto as perguntas que seu paciente faria ao
+                Google e ao ChatGPT e mostra quem aparece hoje. Se fizer sentido, a mensalidade vem
+                depois.
               </p>
             </Reveal>
 
@@ -38,7 +39,8 @@ export function FinalCTA() {
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
                 <p className="text-[13px] text-cream-muted">
-                  Sem apresentação comercial. Mensalidade a partir de {site.pricing.monthlyFrom}.
+                  Grátis e sem apresentação comercial. Mensalidade a partir de{" "}
+                  {site.pricing.monthlyFrom}.
                 </p>
               </div>
             </Reveal>

@@ -7,7 +7,7 @@ export const hero = {
     "A KORA cuida, todo mês, para que a sua clínica esteja na resposta do Google e do ChatGPT. E mostra, com print e data, o que mudou.",
   primaryCta: "Ver onde minha clínica aparece",
   secondaryCta: { label: "Ver o que entra", href: "#mensalidade" },
-  note: `Conversa de 15 minutos pelo WhatsApp · Mensalidade a partir de ${site.pricing.monthlyFrom}`,
+  note: `Grátis: em 15 minutos pelo WhatsApp, mostramos o print do que o paciente vê no seu bairro. Mensalidade a partir de ${site.pricing.monthlyFrom}.`,
   answer: {
     query: "onde fazer implante em Moema?",
     label: "Resposta de IA",
@@ -20,6 +20,6 @@ export const hero = {
     ],
     missing: { name: "Sua clínica", reason: "Não citada nesta resposta" },
     caption:
-      "Exemplo ilustrativo. Na conversa de 15 minutos, fazemos essa pergunta com o nome do seu bairro.",
+      "Exemplo ilustrativo. Na análise gratuita, fazemos essa pergunta com o nome do seu bairro.",
   },
 } as const;

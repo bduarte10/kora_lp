@@ -6,6 +6,13 @@ export type ServicePillar = {
   deliverables: string[];
 };
 
+export const servicesIntro = {
+  bridge:
+    "A IA não inventa: ela repete o que o Google, as avaliações e o site dizem da clínica. Por isso o trabalho começa ali.",
+  success:
+    "O objetivo é simples: quando alguém perguntar “implante em [seu bairro]”, o nome da sua clínica está na resposta, com avaliações recentes e uma página que tira a dúvida do paciente. E você vê, todo mês, quantas ligações e rotas isso trouxe.",
+};
+
 export const services: ServicePillar[] = [
   {
     id: "presenca",

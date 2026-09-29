@@ -76,16 +76,17 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 3. Services — `bg-bone border-y`, com o card de preço (`#preco`)
 4. Process — `bg-background` (paper)
 5. Report — `bg-foreground` (ink)
-6. FAQ — `bg-bone border-y`
-7. FinalCTA — `bg-coral` (bookend do Hero)
-8. Footer — `bg-background` (paper)
+6. About — `bg-background` (paper), quem faz + dados legais
+7. FAQ — `bg-bone border-y`
+8. FinalCTA — `bg-coral` (bookend do Hero)
+9. Footer — `bg-background` (paper)
 
 **CTA:** a principal é sempre a conversa de 15 minutos pelo WhatsApp ("Ver onde minha clínica aparece"). "Aplicar para a mensalidade" aparece como link ou botão outline, nunca como botão cheio.
 
 **Piso de texto:** 13px para labels mono e eyebrows, 14px para nav. Numerais e labels usam `stone` (`foreground-subtle`), não `mist`/`fog`, para passar AA sobre cream.
 
 **Grids específicos:**
-- Problem: 3 colunas com `border-t`, sem numerais.
+- Problem: bloco `bone` com os números reais da pesquisa (prova do problema antes da solução) + 3 colunas com `border-t`, sem numerais.
 - Services: 7 colunas com os três pilares (kicker coral, título, entregáveis em 2 colunas) + card de preço sticky em 5 colunas.
 - Process: timeline de 4 colunas (2 no tablet, 1 no mobile), linha com ponto coral, duração em mono acima do título.
 - Report: título e lead em 6/6; exemplo de relatório (tabela) em 7 colunas, métricas e limite honesto em 5.

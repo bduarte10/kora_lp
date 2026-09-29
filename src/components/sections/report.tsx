@@ -1,4 +1,3 @@
-import { CountUp } from "@/components/motion/count-up";
 import { Reveal } from "@/components/motion/reveal";
 import { Scrub } from "@/components/motion/scrub";
 import { methodology } from "@/content/methodology";
@@ -27,33 +26,6 @@ export function Report() {
             </p>
           </Reveal>
         </div>
-
-        <Reveal delay={0.1} className="mt-16 border-y border-cream-faint py-10">
-          <p className="font-mono text-[13px] uppercase tracking-wider text-cream-muted">
-            {methodology.research.title}
-          </p>
-          <dl className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-10">
-            {methodology.research.stats.map((stat) => (
-              <div key={stat.value}>
-                <dt className="display text-[length:var(--fs-h1)]">
-                  <CountUp value={stat.value} />
-                </dt>
-                <dd className="mt-3 max-w-[30ch] leading-relaxed text-cream-muted">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
-          <div className="mt-10 grid gap-3 lg:grid-cols-12 lg:gap-16">
-            <p className="display-balanced text-[length:var(--fs-h3)] lg:col-span-7">
-              “{methodology.research.example.question}”
-            </p>
-            <div className="lg:col-span-5">
-              <p className="leading-relaxed">{methodology.research.example.answer}</p>
-              <p className="mt-3 text-sm leading-relaxed text-cream-muted">
-                {methodology.research.caveat}
-              </p>
-            </div>
-          </div>
-        </Reveal>
 
         <div className="mt-16 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal delay={0.12} className="lg:col-span-7">

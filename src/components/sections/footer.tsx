@@ -71,7 +71,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col gap-2 border-t border-border pt-6 text-[13px] text-foreground-subtle md:flex-row md:justify-between">
           <span>
-            © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
+            © {new Date().getFullYear()} {site.name} · {site.legalName} · CNPJ {site.cnpj}
           </span>
           <div className="flex gap-4">
             <a href="/politica-de-privacidade" className="hover:text-foreground">
