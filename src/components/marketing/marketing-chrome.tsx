@@ -14,13 +14,13 @@ export function MarketingChrome({ children }: { children: ReactNode }) {
   return (
     <SmoothScrollProvider>
       {minimalChrome ? (
-        <main id="main" className="w-full max-w-full overflow-x-hidden">
+        <main id="main" className="w-full max-w-full overflow-x-clip">
           {children}
         </main>
       ) : (
         <>
           <Nav />
-          <main id="main" className="w-full max-w-full overflow-x-hidden">
+          <main id="main" className="w-full max-w-full overflow-x-clip">
             {children}
           </main>
           <Footer />
