@@ -37,7 +37,7 @@ export function FinalCTA() {
             <Reveal delay={0.18}>
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
-                <p className="text-xs text-cream-faint">
+                <p className="text-[13px] text-cream-muted">
                   Sem apresentação comercial. Mensalidade a partir de {site.pricing.monthlyFrom}.
                 </p>
               </div>
@@ -47,8 +47,8 @@ export function FinalCTA() {
           {/* Coluna direita: form em painel cream */}
           <Reveal delay={0.22} className="lg:col-span-6 lg:col-start-7">
             <div className="rounded-2xl bg-paper p-6 text-foreground shadow-lg sm:p-10">
-              <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
-                Fale com a gente
+              <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
+                Prefere o formulário?
               </p>
               <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
                 Aplicação para a mensalidade
@@ -64,7 +64,7 @@ export function FinalCTA() {
                   label: site.ctas.apply,
                   location: "final-cta-application",
                 }}
-                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
+                className="group mt-8 inline-flex items-center gap-2 rounded-full border border-foreground px-6 py-3 text-sm font-medium text-foreground transition hover:bg-foreground hover:text-background"
               >
                 {site.ctas.apply}
                 <ArrowRight

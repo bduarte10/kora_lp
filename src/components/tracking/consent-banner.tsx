@@ -30,11 +30,10 @@ export function ConsentBanner() {
     <div
       role="dialog"
       aria-label="Aviso de cookies"
-      className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-2rem)] max-w-xl -translate-x-1/2 rounded-md border border-border bg-background-elev p-4 shadow-lg sm:p-5"
+      className="fixed inset-x-3 bottom-3 z-50 rounded-md border border-border bg-background-elev p-4 shadow-lg sm:inset-x-auto sm:bottom-4 sm:left-4 sm:max-w-sm"
     >
       <p className="text-sm text-foreground-muted">
-        Usamos cookies para medir o desempenho deste site e ajustar nossas campanhas. Você pode
-        aceitar ou recusar; sua escolha fica salva localmente.{" "}
+        Usamos cookies para medir o site e ajustar campanhas.{" "}
         <a
           href="/politica-de-privacidade"
           className="underline underline-offset-2 hover:text-foreground"

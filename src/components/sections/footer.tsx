@@ -17,7 +17,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
+            <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
               Navegar
             </p>
             <ul className="mt-4 space-y-2 text-sm">
@@ -37,7 +37,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
+            <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
               Contato
             </p>
             <ul className="mt-4 space-y-2 text-sm">
@@ -69,7 +69,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-2 border-t border-border pt-6 text-xs text-foreground-subtle md:flex-row md:justify-between">
+        <div className="mt-16 flex flex-col gap-2 border-t border-border pt-6 text-[13px] text-foreground-subtle md:flex-row md:justify-between">
           <span>
             © {new Date().getFullYear()} {site.name}. Todos os direitos reservados.
           </span>

@@ -1,37 +1,21 @@
 export function NoiseBackground() {
   return (
     <div className="aurora-bg" aria-hidden>
-      {/* Layer 1: diagonal light modeling — luz top-left, sombra bottom-right */}
+      {/* Luz suave no topo esquerdo; baixa o bastante para o texto cream manter contraste */}
       <div
         className="hero-light-breathe"
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: [
-            "linear-gradient(135deg, rgba(245, 165, 110, 0.88) 0%, transparent 45%)",
-            "linear-gradient(315deg, rgba(28, 7, 2, 0.85) 0%, transparent 45%)",
-          ].join(", "),
+          backgroundImage:
+            "radial-gradient(90% 70% at 0% 0%, rgba(245, 165, 110, 0.22) 0%, transparent 60%)",
         }}
       />
 
-      {/* Layer 2: grade técnica cream */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: [
-            "linear-gradient(rgba(250, 246, 242, 0.055) 1px, transparent 1px)",
-            "linear-gradient(90deg, rgba(250, 246, 242, 0.055) 1px, transparent 1px)",
-          ].join(", "),
-          backgroundSize: "72px 72px",
-        }}
-      />
-
-      {/* Layer 3: grain fotográfico */}
       <svg
         aria-hidden
         className="absolute inset-0 h-full w-full"
-        style={{ opacity: 0.38, mixBlendMode: "overlay" } as React.CSSProperties}
+        style={{ opacity: 0.18, mixBlendMode: "overlay" } as React.CSSProperties}
       >
         <title>Ruído decorativo</title>
         <filter id="hero-grain">

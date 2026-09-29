@@ -71,7 +71,7 @@ export const site = {
     { href: "#mensalidade", label: "O que entra" },
     { href: "#preco", label: "Preço" },
     { href: "#processo", label: "Como funciona" },
-    { href: "#metodologia", label: "Como medimos" },
+    { href: "#relatorio", label: "O relatório" },
     { href: "#faq", label: "FAQ" },
   ],
 } as const;

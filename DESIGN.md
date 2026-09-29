@@ -1,10 +1,10 @@
 # Design
 
-Visual system para a landing **KORA**. A página agora vende autoridade high ticket em GEO e automação de atendimento, não planos de site. Lane **Drenched Coral + Aurora** (referência: resend.com, lovable.dev). Surface coral muted (#A04A30 burnt sienna) cobre Hero e FinalCTA como bookends; orbs blurred fluem lentamente no fundo. Demais seções em cream warm com accent coral parcimonioso. Tipografia única Geist com weights altos e tracking calibrado. Motion mínimo.
+Visual system para a landing **KORA**. A página vende uma mensalidade de presença no Google, no Maps e em IA para clínicas odontológicas. Lane **Drenched Coral + Aurora** (referência: resend.com, lovable.dev). Surface coral muted (#A04A30 burnt sienna) cobre Hero e FinalCTA como bookends. Demais seções em cream warm com accent coral parcimonioso. Tipografia única Geist com weights altos e tracking calibrado. Motion mínimo.
 
 ## Theme
 
-Tema claro warm. Cena física: fundador/diretor de PME brasileira abre a página depois de perceber que clientes já pesquisam fornecedores em mecanismos de IA. O coral drenched no hero captura atenção dos primeiros 1,5s; transição para cream serve a leitura longa do scroll. Hero coral também serve como ancoragem de identidade. Dark mode propositalmente postergado.
+Tema claro warm. Cena física: dono ou dona de clínica odontológica abre a página, muitas vezes no celular, depois de uma mensagem de prospecção ou de perceber que pacientes perguntam à IA onde se tratar. O coral drenched no hero captura atenção dos primeiros 1,5s; transição para cream serve a leitura longa do scroll. Hero coral também serve como ancoragem de identidade. Dark mode propositalmente postergado.
 
 ## Color
 
@@ -15,10 +15,10 @@ Tema claro warm. Cena física: fundador/diretor de PME brasileira abre a página
 | `paper` | `#FAF6F2` | Bg base cream warm (Problem, Process, Footer) |
 | `paper-warm` | `#F5EFE6` | Surface elevada / form panels |
 | `bone` | `#EFE8DD` | Bg de Services e FAQ — cream warm mais saturado para alternância |
-| `ink` | `#171717` | Bg de Proof; texto sobre cream |
+| `ink` | `#171717` | Bg de Report; texto sobre cream |
 | `ink-soft` | `#3A3A3A` | Texto secundário sobre cream |
 | `stone` | `#737373` | Foreground muted/subtle |
-| `mist` | `#A3A3A3` | Foreground faint (sobre ink: chips na Proof) |
+| `mist` | `#A3A3A3` | Só decorativo; não usar em texto sobre cream (2.5:1) |
 | `fog` | `#D4D4D4` | Numerais discretos (01, 02) sobre cream |
 | `coral` | `#A04A30` | **Bg drenched** Hero + FinalCTA. Burnt sienna muted. Contraste 7.8:1 com cream. |
 | `coral-deep` | `#7A3924` | Hover/active sobre coral; texto sobre cream-panel dentro do hero |
@@ -44,7 +44,7 @@ Não há fonte de display separada. Geist em weight 600 (`display` class) ou 500
 |---|---|---|---|---|
 | `.display` | 600 | -0.04em | 0.96 | Hero H1, FinalCTA H2 |
 | `.display-balanced` | 500 | -0.015em | 1.12 | H3, subtítulos, "Conte um pouco..." |
-| `.eyebrow` | 500 | +0.08em uppercase | normal | 5 momentos: Problem, Services, Process, Proof, FinalCTA |
+| `.eyebrow` | 500 | +0.08em uppercase | normal | Problem, Services, Process, Report, FAQ, FinalCTA |
 | `font-mono` (Geist Mono) | 400 | +0.08em uppercase | normal | Numerais (01, 02), "Antes" / "Depois" labels, BR / 2026 marker |
 | (default body) | 400 | 0 | 1.55 | Texto corrido |
 
@@ -55,7 +55,7 @@ Não há fonte de display separada. Geist em weight 600 (`display` class) ou 500
 | `--fs-display` | `clamp(3rem, 6vw + 1rem, 7.5rem)` | Hero H1 type-driven |
 | `--fs-h1` | `clamp(2.25rem, 3vw + 1rem, 3.75rem)` | Section H2 |
 | `--fs-h2` | `clamp(1.875rem, 2vw + 1rem, 2.75rem)` | Subsection / step title |
-| `--fs-h3` | `clamp(1.375rem, 0.8vw + 1rem, 1.75rem)` | Card title, pillar marquee items |
+| `--fs-h3` | `clamp(1.375rem, 0.8vw + 1rem, 1.75rem)` | Card title, título de etapa e de pilar |
 | `--fs-lead` | `clamp(1.125rem, 0.4vw + 1rem, 1.375rem)` | Sub-paragraph |
 
 Sem font-display secundária, sem Bricolage, sem heavy condensed.
@@ -71,40 +71,39 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 
 **Ritmo de bg colors (alternância intencional):**
 
-1. Hero — `bg-coral` + aurora
+1. Hero — `bg-coral` + NoiseBackground
 2. Problem — `bg-background` (paper)
-3. Problem — `bg-background` (paper)
-4. Diagnostic — `bg-bone border-y`, split de oferta e aplicação
-5. Process — `bg-background` (paper)
-6. Services — `bg-bone border-y`
-7. Proof — `bg-background`
-8. FAQ — `bg-bone border-y`
-9. FinalCTA — `bg-coral` + aurora (bookend do Hero)
-10. Footer — `bg-background` (paper)
+3. Services — `bg-bone border-y`, com o card de preço (`#preco`)
+4. Process — `bg-background` (paper)
+5. Report — `bg-foreground` (ink)
+6. FAQ — `bg-bone border-y`
+7. FinalCTA — `bg-coral` (bookend do Hero)
+8. Footer — `bg-background` (paper)
+
+**CTA:** a principal é sempre a conversa de 15 minutos pelo WhatsApp ("Ver onde minha clínica aparece"). "Aplicar para a mensalidade" aparece como link ou botão outline, nunca como botão cheio.
+
+**Piso de texto:** 13px para labels mono e eyebrows, 14px para nav. Numerais e labels usam `stone` (`foreground-subtle`), não `mist`/`fog`, para passar AA sobre cream.
 
 **Grids específicos:**
-- Problem: 2×2 simples com `divide-y` + `divide-y-0 sm:grid sm:grid-cols-2`. Sem bento.
-- Diagnostic: split 5/6. Oferta, entregáveis e critérios à esquerda; aplicação em painel cream à direita.
-- Services: lista vertical divide-y. 3-col (numerais/kicker) + 9-col (conteúdo).
-- Process: lista divide-y. 12-col com numeral + título + descrição + chips.
-- Proof: 3 transformações em 3-col (área) + 4-col (antes) + 5-col (depois).
+- Problem: 3 colunas com `border-t`, sem numerais.
+- Services: 7 colunas com os três pilares (kicker coral, título, entregáveis em 2 colunas) + card de preço sticky em 5 colunas.
+- Process: timeline de 4 colunas (2 no tablet, 1 no mobile), linha com ponto coral, duração em mono acima do título.
+- Report: título e lead em 6/6; exemplo de relatório (tabela) em 7 colunas, métricas e limite honesto em 5.
 - FAQ: 4-col título + 8-col accordion.
-- FinalCTA: split 5/6 — copy+WhatsApp à esquerda, form em painel cream à direita.
+- FinalCTA: split 5/6, WhatsApp cheio à esquerda, painel cream com o link do formulário à direita.
 
 Bordas 1px neutras, nunca side-stripe colorida.
 
-## Hero composition (v12)
+## Hero composition (v13)
 
-Type-driven Resend-style:
+Split 7/5 sobre coral:
 
-1. **Top editorial strip** — eyebrow cream-muted com section-anchor cream + rule + "BR / 2026" cream-faint.
-2. **H1 massive** — `display` class, scale `clamp(3rem, 6vw+1rem, 7.5rem)`, max-w-[16ch], cream sobre coral.
-3. **Sub-paragraph** — cream-muted (78% alpha), max-w-xl.
-4. **CTAs** — primary `bg-cream text-coral-deep`, secondary outline `border-cream-faint text-cream`.
-5. **Marquee pilares** — pilares de serviço (GEO, Atendimento com IA, Bases de conhecimento, Copilots internos, Automação) rolando lentamente (CSS animation 36s), mask-image fade nas bordas.
-6. **Aurora layer** — 3 orbs blurred fluindo no fundo, atrás de todo conteúdo.
+1. **Esquerda:** eyebrow "Para clínicas odontológicas", H1 em `--fs-hero` (`clamp(2.75rem, 5vw + 0.5rem, 5.25rem)`, maior texto da página), lead, uma CTA primária cream (WhatsApp, "Ver onde minha clínica aparece") e um link sublinhado para `#mensalidade`. Nota de 15px com duração da conversa e preço inicial.
+2. **Direita:** painel cream com uma resposta de IA para "onde fazer implante em Moema?". Três clínicas genéricas citadas (Clínica A, B, C) e a última linha tracejada em coral, "Sua clínica: não citada". Legenda "Exemplo ilustrativo" sempre visível.
+3. **Fundo:** coral quase chapado. `NoiseBackground` só adiciona uma luz radial fraca no topo esquerdo (22%, para o texto cream manter contraste) e grão a 18%. Sem grade, sem escurecimento para marrom.
+4. **Motion:** as três clínicas entram uma por uma (0,7 a 1,2 s) e a linha "Sua clínica" chega por último, a 1,9 s, com um tremor curto. Com `prefers-reduced-motion`, tudo aparece de uma vez.
 
-Min-height: `88vh`. Sem foto no hero. Sem stagger forçado. Foco total em uma frase, gigante, com confiança.
+Sem marquee, sem faixa editorial, sem checklist de inclusos (o conteúdo vive em Services). Min-height `92svh`.
 
 ## FinalCTA composition
 
@@ -115,35 +114,32 @@ Bookend do Hero — mesma surface coral + aurora. Split 5/6:
 
 ## Imagery
 
-**Fotografia Unsplash profissional curada — só 1 instância**, em Proof (foto B&W aspect 16:9 ampla, anchor visual da seção de metodologia).
-
-Tratamento padrão: `grayscale(1) contrast(1.02) brightness(0.96)`. IDs estáveis em `src/content/photos.ts`.
-
-**Zero fotos no Hero** (a composição é type-driven; foto seria competir com aurora + headline).
+**Sem fotografia.** As imagens são mockups do próprio produto, construídos em HTML: a resposta de IA no Hero e uma página de exemplo do relatório mensal em Report (`src/content/report-sample.ts`). Todo mockup leva o rótulo "exemplo" e nenhum número inventado.
 
 ## Motion
 
 Stack reduzida:
 - **SmoothScrollProvider** (Lenis) — suave, sem exagero.
 - **Reveal** — fade + translate-y simples, scroll-triggered.
-- **Marquee CSS** — `@keyframes marquee-x` 36s linear infinite.
+- **Scrub** — timeline GSAP presa à rolagem (`scrub: 0.6`), passo a passo. Usado na linha da timeline de Process (ponto e preenchimento coral por etapa) e nas linhas da tabela do relatório.
+- **CountUp** — os números da pesquisa contam até o valor uma vez, ao entrar na tela.
+- **InViewPlay** — segura a animação CSS da resposta de IA do hero até o card aparecer (no mobile ele fica abaixo da dobra).
 - **Aurora CSS** — `@keyframes aurora-drift-1/2/3` 28-36s ease-in-out infinite alternate.
 
-Removidos (não fazem sentido nessa lane): `ScrubReveal`, `CardStack`, `StickySpy`, `ImageScaleFade`, `Marquee` JS, `SplitText`, `PinnedSection`. Apenas `Reveal` + `SmoothScrollProvider` permanecem.
+Scroll-driven só onde o movimento conta algo (progresso, relatório sendo preenchido). Nada de pin, parallax ou texto que se monta letra a letra. Nunca apagar texto para dar foco: derruba o contraste.
 
-`prefers-reduced-motion`: marquee + aurora param.
+`prefers-reduced-motion`: nada anima; tudo aparece no estado final.
 
 ## Components
 
 | Componente | Tipo | Notas |
 |---|---|---|
 | `Nav` | Client | Detecta `scrolled`; sobre hero coral: transparent + text-cream; sobre cream: blur + text-foreground. CTA primário inverte: cream-on-coral vs ink-on-cream. |
-| `Hero` | Server | Aurora layer + editorial strip + H1 massive + lead + CTAs + marquee pilares. |
-| `Problem` | Server | 2×2 grid `divide-y`. Hierarquia com `0X` mono + linha + título. |
-| `Diagnostic` | Server | Split oferta/aplicação. Lista entregáveis, critérios de fit e LeadForm. |
-| `Services` | Server | Lista divide-y. 3-col (numero+kicker) + 9-col (título+entregáveis com check coral). |
-| `Process` | Server | Lista divide-y. 12-col (numero mono + título + descrição + chips). |
-| `Proof` | Server | Bg ink. 1 foto ampla + 3 transformações Antes/Depois em texto. |
+| `Hero` | Server | Split 7/5: H1 + lead + CTA WhatsApp / mockup de resposta de IA com a clínica do leitor fora da lista. |
+| `Problem` | Server | 3 colunas com `border-t`. |
+| `Services` | Server | Três pilares + card de preço sticky (`#preco`). |
+| `Process` | Server | Timeline de 4 etapas com duração. |
+| `Report` | Server | Bg ink. Exemplo de relatório mensal, métricas e limite honesto. |
 | `FAQ` | Client | Accordion limpo com `Plus` que rotaciona para `x`. |
 | `FinalCTA` | Server | Aurora bookend. Split 5/6: copy+WhatsApp / cream-panel form. **Sem Cal.com.** |
 | `Footer` | Server | 4-col grid, wordmark simples. |

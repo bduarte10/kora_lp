@@ -1,11 +1,9 @@
 import { FAQ } from "@/components/sections/faq";
 import { FinalCTA } from "@/components/sections/final-cta";
 import { Hero } from "@/components/sections/hero";
-import { Methodology } from "@/components/sections/methodology";
-import { Offer } from "@/components/sections/offer";
 import { Problem } from "@/components/sections/problem";
 import { Process } from "@/components/sections/process";
-import { Proof } from "@/components/sections/proof";
+import { Report } from "@/components/sections/report";
 import { Services } from "@/components/sections/services";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
@@ -25,10 +23,8 @@ export default function HomePage() {
       <Hero />
       <Problem />
       <Services />
-      <Offer />
       <Process />
-      <Methodology />
-      <Proof />
+      <Report />
       <FAQ />
       <FinalCTA />
     </>

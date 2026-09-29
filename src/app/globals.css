@@ -144,29 +144,6 @@
     background: rgb(var(--kora-cream));
   }
 
-  /* Marquee CSS-only: loop seamless via duplicação + translate -50% */
-  @keyframes marquee-x {
-    from {
-      transform: translate3d(0, 0, 0);
-    }
-    to {
-      transform: translate3d(-50%, 0, 0);
-    }
-  }
-  .marquee-track {
-    animation: marquee-x 36s linear infinite;
-    will-change: transform;
-  }
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
-    }
-  }
-
-  /* Hero background container */
   .aurora-bg {
     position: absolute;
     inset: 0;
@@ -175,48 +152,46 @@
     z-index: 0;
   }
 
-  /* Hero craft: revelação do H1 linha a linha (mask reveal) */
-  .hero-line {
-    display: block;
-    overflow: hidden;
-    /* Vertical breathing room inside the clip box so the tilde on "ã" (top) and the
-       cedilla on "ç" (bottom) are not shaved off by the tight 0.96 line-height.
-       Negative margins cancel the shift so layout/line spacing is unchanged. */
-    padding-top: 0.18em;
-    padding-bottom: 0.18em;
-    margin-top: -0.18em;
-    margin-bottom: -0.18em;
+  /* Hero: a resposta de IA monta clínica por clínica; a do leitor chega por último */
+  .answer-item {
+    opacity: 0;
+    animation: answer-in 0.6s var(--ease-out-expo) forwards;
   }
-  .hero-line > span {
-    display: inline-block;
-    width: 100%;
-    max-width: 100%;
-    overflow-wrap: break-word;
-    white-space: normal;
-    /* Start far enough below that the padding-bottom area stays empty (text fully
-       hidden) before the rise — must clear 100% + padding-bottom. */
-    transform: translateY(130%);
-    animation: hero-line-rise 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  .answer-item:nth-child(1) {
+    animation-delay: 0.7s;
   }
-  @media (min-width: 1024px) {
-    .hero-line > span {
-      width: auto;
-      max-width: none;
-      white-space: nowrap;
-    }
+  .answer-item:nth-child(2) {
+    animation-delay: 0.95s;
   }
-  .hero-line:nth-child(1) > span {
-    animation-delay: 0.08s;
+  .answer-item:nth-child(3) {
+    animation-delay: 1.2s;
   }
-  .hero-line:nth-child(2) > span {
-    animation-delay: 0.22s;
+  .answer-missing {
+    animation: answer-in 0.6s var(--ease-out-expo) 1.9s forwards, answer-nudge 0.5s ease-in-out 2.5s;
   }
-  @keyframes hero-line-rise {
+  [data-play="false"] .answer-item {
+    animation-play-state: paused;
+  }
+  @keyframes answer-in {
     from {
-      transform: translateY(130%);
+      opacity: 0;
+      transform: translateY(10px);
     }
     to {
-      transform: translateY(0);
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes answer-nudge {
+    0%,
+    100% {
+      transform: none;
+    }
+    25% {
+      transform: translateX(-4px);
+    }
+    75% {
+      transform: translateX(4px);
     }
   }
 
@@ -237,11 +212,11 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-line > span {
-      transform: none;
+    .hero-light-breathe {
       animation: none;
     }
-    .hero-light-breathe {
+    .answer-item {
+      opacity: 1;
       animation: none;
     }
   }

@@ -44,7 +44,7 @@ export function Nav() {
               key={item.href}
               href={item.href}
               className={cn(
-                "text-[13px] transition-colors",
+                "text-sm transition-colors",
                 overHero
                   ? "text-cream-muted hover:text-cream"
                   : "text-foreground-muted hover:text-foreground",
@@ -64,7 +64,7 @@ export function Nav() {
               pushEvent({ event: "cta_click", label: site.ctas.call, location: "nav" })
             }
             className={cn(
-              "hidden rounded-full px-4 py-2 text-[13px] font-medium transition md:inline-flex",
+              "hidden rounded-full px-4 py-2 text-sm font-medium transition md:inline-flex",
               overHero
                 ? "bg-cream text-coral-deep hover:bg-cream/95"
                 : "bg-foreground text-background hover:bg-foreground/90",

@@ -1,8 +1,9 @@
 "use client";
 
+import { hero } from "@/content/hero";
 import { site } from "@/content/site";
 import { pushEvent } from "@/lib/gtm";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export function FinalCtaWhatsApp() {
   return (
@@ -11,15 +12,15 @@ export function FinalCtaWhatsApp() {
       target="_blank"
       rel="noreferrer"
       onClick={() =>
-        pushEvent({ event: "cta_click", label: site.ctas.call, location: "final-cta-call" })
+        pushEvent({ event: "cta_click", label: hero.primaryCta, location: "final-cta-call" })
       }
-      className="group inline-flex items-center gap-2 rounded-full border border-cream-faint px-5 py-3 text-sm font-medium text-cream transition hover:border-cream"
+      className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-full bg-cream px-7 text-base font-semibold text-coral-deep transition hover:bg-cream/95"
     >
-      <MessageCircle size={15} />
-      {site.ctas.call}
+      {hero.primaryCta}
       <ArrowRight
-        size={15}
-        className="ml-1 transition-transform duration-300 group-hover:translate-x-0.5"
+        size={18}
+        aria-hidden
+        className="transition-transform duration-300 group-hover:translate-x-0.5"
       />
     </a>
   );
