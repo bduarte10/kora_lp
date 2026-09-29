@@ -1,253 +1,177 @@
 "use client";
 
-import {
-  companySizeOptions,
-  paidDiagnosticOptions,
-  priorityOptions,
-  segmentOptions,
-  urgencyOptions,
-} from "@/content/diagnostic";
+import { whatsappLinkWith } from "@/content/site";
 import { pushEvent } from "@/lib/gtm";
+import { type Lead, leadSchema, segmentOptions } from "@/lib/lead";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Loader2 } from "lucide-react";
+import { ArrowRight, Loader2, MessageCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-import type { ReactNode, SelectHTMLAttributes } from "react";
+import { type ReactNode, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
-const schema = z.object({
-  name: z.string().min(2, "Informe seu nome"),
-  company: z.string().min(2, "Informe a empresa"),
-  role: z.string().min(2, "Informe seu cargo"),
-  phone: z.string().min(10, "Telefone inválido"),
-  email: z.string().email("E-mail inválido"),
-  segment: z.string().min(1, "Selecione o segmento"),
-  companySize: z.string().min(1, "Selecione o tamanho da empresa"),
-  cnpj: z.string().optional(),
-  mainChallenge: z.string().min(20, "Conte um pouco mais sobre o desafio"),
-  priority: z.string().min(1, "Selecione a prioridade"),
-  urgency: z.string().min(1, "Selecione a urgência"),
-  paidDiagnosticOpenness: z.string().min(1, "Selecione uma opção"),
-});
+const formId = "diagnostic-application";
+const formVariant = "short_v2";
 
-type FormData = z.infer<typeof schema>;
+const fallbackMessage = (lead: Lead) =>
+  `Oi, sou ${lead.name}, da ${lead.clinic} (${lead.location}). Tentei deixar meu contato no site e não foi. Quero ver como a clínica aparece no Google e na IA.`;
 
 export function LeadForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [failed, setFailed] = useState<Lead | null>(null);
+
   const {
     register,
     handleSubmit,
+    setValue,
+    watch,
     formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(schema),
-    defaultValues: {
-      segment: "",
-      companySize: "",
-      priority: "",
-      urgency: "",
-      paidDiagnosticOpenness: "",
-    },
+  } = useForm<Lead>({
+    resolver: zodResolver(leadSchema),
+    defaultValues: { name: "", clinic: "", phone: "", location: "", segment: "", website: "" },
+    mode: "onTouched",
   });
 
-  const onSubmit = async (data: FormData) => {
+  const segment = watch("segment");
+
+  const onSubmit = async (data: Lead) => {
     setSubmitting(true);
-    setError(null);
-    pushEvent({
-      event: "form_submit",
-      form_id: "diagnostic-application",
-      interest: "Diagnóstico GEO",
-      priority: data.priority,
-    });
+    setFailed(null);
+    const lead = { ...data, source: "site /diagnostico" };
+    pushEvent({ event: "form_submit", form_id: formId, form_variant: formVariant });
 
     try {
       const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(lead),
       });
-      if (!res.ok) throw new Error("Falha no envio");
-      pushEvent({
-        event: "lead_qualified",
-        form_id: "diagnostic-application",
-        email: data.email,
-        interest: "Diagnóstico GEO",
-        priority: data.priority,
-      });
+      if (!res.ok) throw new Error(`status ${res.status}`);
+      pushEvent({ event: "lead_qualified", form_id: formId, form_variant: formVariant });
       router.push("/obrigado");
     } catch {
-      setError("Não conseguimos enviar agora. Tente o WhatsApp ou tente de novo em instantes.");
+      setFailed(lead);
       setSubmitting(false);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Nome" error={errors.name?.message}>
-          <input
-            {...register("name")}
-            autoComplete="name"
-            className={inputCls}
-            aria-invalid={!!errors.name}
-          />
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <Field label="Seu nome" error={errors.name?.message}>
+          <input {...register("name")} autoComplete="name" className={inputCls} />
         </Field>
-
-        <Field label="Cargo" error={errors.role?.message}>
-          <input
-            {...register("role")}
-            autoComplete="organization-title"
-            className={inputCls}
-            aria-invalid={!!errors.role}
-          />
+        <Field label="Clínica" error={errors.clinic?.message}>
+          <input {...register("clinic")} autoComplete="organization" className={inputCls} />
         </Field>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Empresa" error={errors.company?.message}>
-          <input
-            {...register("company")}
-            autoComplete="organization"
-            className={inputCls}
-            aria-invalid={!!errors.company}
-          />
-        </Field>
-
-        <Field label="CNPJ (opcional)" error={errors.cnpj?.message}>
-          <input
-            {...register("cnpj")}
-            inputMode="numeric"
-            placeholder="00.000.000/0000-00"
-            className={inputCls}
-            aria-invalid={!!errors.cnpj}
-          />
-        </Field>
-      </div>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="WhatsApp" error={errors.phone?.message}>
+        <Field label="WhatsApp com DDD" error={errors.phone?.message}>
           <input
             {...register("phone")}
             type="tel"
+            inputMode="tel"
             autoComplete="tel"
             placeholder="(11) 90000-0000"
             className={inputCls}
-            aria-invalid={!!errors.phone}
           />
         </Field>
-
-        <Field label="E-mail" error={errors.email?.message}>
+        <Field label="Bairro e cidade da clínica" error={errors.location?.message}>
           <input
-            {...register("email")}
-            type="email"
-            autoComplete="email"
+            {...register("location")}
+            autoComplete="address-level2"
+            placeholder="Moema, São Paulo"
             className={inputCls}
-            aria-invalid={!!errors.email}
           />
         </Field>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Segmento" error={errors.segment?.message}>
-          <Select {...register("segment")} options={segmentOptions} />
-        </Field>
+      <fieldset>
+        <legend className="text-sm font-medium text-foreground-muted">
+          Foco da clínica <span className="font-normal text-foreground-subtle">(opcional)</span>
+        </legend>
+        <div className="mt-2 flex flex-wrap gap-2">
+          {segmentOptions.map((option) => {
+            const active = segment === option;
+            return (
+              <button
+                key={option}
+                type="button"
+                aria-pressed={active}
+                onClick={() => setValue("segment", active ? "" : option)}
+                className={cn(
+                  "min-h-11 rounded-full border px-4 text-sm transition hover:border-coral",
+                  active
+                    ? "border-coral bg-paper-warm text-foreground"
+                    : "border-border bg-background text-foreground-muted",
+                )}
+              >
+                {option}
+              </button>
+            );
+          })}
+        </div>
+      </fieldset>
 
-        <Field label="Tamanho da empresa" error={errors.companySize?.message}>
-          <Select {...register("companySize")} options={companySizeOptions} />
-        </Field>
-      </div>
+      {/* Campo invisível para robôs; pessoas não veem nem alcançam pelo teclado. */}
+      <input
+        {...register("website")}
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+        className="absolute left-[-9999px] h-px w-px opacity-0"
+      />
 
-      <Field label="Principal desafio hoje" error={errors.mainChallenge?.message}>
-        <textarea
-          {...register("mainChallenge")}
-          rows={4}
-          placeholder="Ex.: atendimento sobrecarregado, baixa presença em IA, conteúdo desorganizado, CRM manual..."
-          className={cn(inputCls, "resize-y leading-relaxed")}
-          aria-invalid={!!errors.mainChallenge}
-        />
-      </Field>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Prioridade inicial" error={errors.priority?.message}>
-          <Select {...register("priority")} options={priorityOptions} />
-        </Field>
-
-        <Field label="Urgência" error={errors.urgency?.message}>
-          <Select {...register("urgency")} options={urgencyOptions} />
-        </Field>
-      </div>
-
-      <Field label="Abertura para diagnóstico pago" error={errors.paidDiagnosticOpenness?.message}>
-        <Select {...register("paidDiagnosticOpenness")} options={paidDiagnosticOptions} />
-      </Field>
-
-      <p className="text-xs leading-relaxed text-foreground-subtle">
-        O CNPJ é opcional e usado apenas para consultar dados públicos da empresa e preparar a
-        análise de fit. A submissão não depende dessa consulta.
-      </p>
-
-      {error && <p className="text-sm text-coral-deep">{error}</p>}
+      {failed && (
+        <div role="alert" className="rounded-md border border-coral bg-coral/[0.06] p-4">
+          <p className="text-sm font-medium text-coral-deep">
+            Não conseguimos registrar seu contato agora.
+          </p>
+          <p className="mt-1 text-sm text-foreground-muted">
+            Mande pelo WhatsApp: a mensagem já vai com os seus dados.
+          </p>
+          <a
+            href={whatsappLinkWith(fallbackMessage(failed))}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => pushEvent({ event: "whatsapp_click", location: "form-fallback" })}
+            className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-full bg-foreground px-5 text-sm font-semibold text-background transition hover:bg-foreground/90"
+          >
+            <MessageCircle size={16} aria-hidden />
+            Enviar pelo WhatsApp
+          </a>
+        </div>
+      )}
 
       <button
         type="submit"
         disabled={submitting}
-        className={cn(
-          "inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background transition",
-          "hover:opacity-90 disabled:opacity-60",
-        )}
+        className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 text-base font-semibold text-background transition hover:bg-foreground/90 disabled:opacity-60 sm:w-auto"
       >
-        {submitting && <Loader2 size={16} className="animate-spin" />}
-        Solicitar análise de fit
+        {submitting ? <Loader2 size={18} className="animate-spin" aria-hidden /> : null}
+        Quero que me chamem
+        {!submitting && (
+          <ArrowRight
+            size={16}
+            className="transition-transform duration-300 group-hover:translate-x-0.5"
+            aria-hidden
+          />
+        )}
       </button>
-
-      <p className="text-xs text-foreground-subtle">
-        Ao enviar, você concorda com nossa{" "}
-        <a href="/politica-de-privacidade" className="underline underline-offset-2">
-          política de privacidade
-        </a>
-        . Nunca compartilharemos seus dados.
-      </p>
     </form>
   );
 }
 
 const inputCls =
-  "w-full rounded-sm border border-border bg-background px-3.5 py-2.5 text-sm text-foreground placeholder:text-foreground-subtle transition focus:border-foreground focus:outline-none";
+  "w-full rounded-md border border-border bg-background px-3.5 py-3 text-base text-foreground placeholder:text-foreground-subtle transition focus:border-foreground focus:outline-none";
 
-function Field({
-  label,
-  error,
-  children,
-}: {
-  label: string;
-  error?: string;
-  children: ReactNode;
-}) {
+function Field({ label, error, children }: { label: string; error?: string; children: ReactNode }) {
   return (
     // biome-ignore lint/a11y/noLabelWithoutControl: The form control is passed as a child and remains inside the label.
     <label className="block">
-      <span className="mb-1.5 block text-xs font-medium text-foreground-muted">{label}</span>
+      <span className="mb-1.5 block text-sm font-medium text-foreground-muted">{label}</span>
       {children}
-      {error && <span className="mt-1 block text-xs text-coral-deep">{error}</span>}
+      {error && <span className="mt-1.5 block text-sm text-coral-deep">{error}</span>}
     </label>
-  );
-}
-
-function Select({
-  options,
-  ...props
-}: SelectHTMLAttributes<HTMLSelectElement> & { options: readonly string[] }) {
-  return (
-    <select {...props} className={inputCls}>
-      <option value="">Selecione...</option>
-      {options.map((option) => (
-        <option key={option} value={option}>
-          {option}
-        </option>
-      ))}
-    </select>
   );
 }

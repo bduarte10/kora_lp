@@ -16,7 +16,7 @@ Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind v4 (@theme 
 - **Tokens:** todos os valores visuais saem de `src/styles/tokens.css` e `@theme inline` em `globals.css`. Nunca hardcode hex/spacing.
 - **Motion:** GSAP via dynamic import dentro de `SmoothScrollProvider`. Sempre respeitar `prefers-reduced-motion`.
 - **Copy:** centralizado em `src/content/*`. Componentes consomem, não duplicam strings.
-- **Forms:** `react-hook-form` + `zod`. Submissão via `/api/lead` (Resend + Sheets).
+- **Forms:** `react-hook-form` + `zod`. Submissão via `/api/lead`, que repassa ao webhook do Apps Script (`LEAD_WEBHOOK_URL`).
 - **Tracking:** push em `window.dataLayer` via `lib/gtm.ts`. Nunca chamar pixels direto — só GTM.
 
 ## Design skills
@@ -33,7 +33,7 @@ Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind v4 (@theme 
 
 ## Lead flow
 
-`LeadForm → POST /api/lead → { Resend e-mail, Google Sheets append } → redirect /obrigado → dispara conversões GTM`
+`LeadForm → POST /api/lead → Apps Script (scripts/lead-webhook.gs: linha na planilha + e-mail) → redirect /obrigado`. Se o envio falhar, o formulário oferece o WhatsApp com os dados preenchidos; o lead nunca some calado.
 
 ## Tracking events (padronizados)
 

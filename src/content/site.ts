@@ -63,7 +63,7 @@ export const site = {
   ctas: {
     call: "Agendar 15 minutos",
     callHref: waLink(callMessage),
-    apply: "Aplicar para a mensalidade",
+    apply: "Deixar meu contato",
     applyHref: "/diagnostico",
   },
 

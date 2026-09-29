@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           <h2 className="display-balanced text-[length:var(--fs-h3)]">1. Dados coletados</h2>
           <p>
             Coletamos: (a) dados fornecidos voluntariamente em formulários ou agendamentos (nome,
-            e-mail, telefone, empresa, mensagem); (b) dados técnicos de navegação (cookies, IP,
+            telefone, clínica, bairro e cidade); (b) dados técnicos de navegação (cookies, IP,
             páginas visitadas) por meio de ferramentas como Google Analytics, Meta Pixel e LinkedIn
             Insight Tag, mediante seu consentimento.
           </p>
@@ -41,8 +41,8 @@ export default function PrivacyPage() {
           <h2 className="display-balanced text-[length:var(--fs-h3)]">3. Compartilhamento</h2>
           <p>
             Não vendemos nem compartilhamos seus dados com terceiros para fins comerciais.
-            Utilizamos processadores como Resend (envio de e-mail), Google (planilhas e analytics) e
-            Vercel (hospedagem), todos sob acordos de tratamento de dados.
+            Utilizamos processadores como Google (planilhas, e-mail e analytics) e Vercel
+            (hospedagem), todos sob acordos de tratamento de dados.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">4. Cookies</h2>

@@ -1,4 +1,4 @@
-import { ProgressiveLeadForm } from "@/components/forms/progressive-lead-form";
+import { LeadForm } from "@/components/forms/lead-form";
 import { JsonLd } from "@/components/seo/json-ld";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import { diagnosticApplication } from "@/content/diagnostic-application";
@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 const pageUrl = `${site.url}${diagnosticApplication.route}`;
 
 export const metadata: Metadata = {
-  title: "Aplicação para clínicas",
+  title: "Deixe seu contato",
   description: diagnosticApplication.description,
   alternates: {
     canonical: diagnosticApplication.route,
@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: pageUrl,
     siteName: site.name,
-    title: "Aplicação para clínicas | KORA",
+    title: "Deixe seu contato | KORA",
     description: diagnosticApplication.description,
     images: [
       {
         url: site.defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "Aplicação para clínicas KORA",
+        alt: "Contato KORA para clínicas",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aplicação para clínicas | KORA",
+    title: "Deixe seu contato | KORA",
     description: diagnosticApplication.description,
     images: [site.defaultOgImage],
   },
@@ -54,7 +54,7 @@ const breadcrumbJsonLd = {
     {
       "@type": "ListItem",
       position: 2,
-      name: "Aplicação",
+      name: "Contato",
       item: pageUrl,
     },
   ],
@@ -101,8 +101,8 @@ export default function DiagnosticApplicationPage() {
           <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <div className="border-b border-border pb-8">
-                <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
-                  Aplicação KORA
+                <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
+                  Para clínicas odontológicas
                 </p>
                 <h1 className="display mt-5 max-w-[12ch] text-[length:var(--fs-h1)]">
                   {diagnosticApplication.title}
@@ -113,7 +113,7 @@ export default function DiagnosticApplicationPage() {
               </div>
 
               <div className="py-8">
-                <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
+                <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
                   O que esperar
                 </p>
                 <div className="mt-5 divide-y divide-border border-y border-border">
@@ -136,15 +136,12 @@ export default function DiagnosticApplicationPage() {
               <p className="max-w-md text-sm font-medium leading-relaxed text-foreground">
                 {offer.price}
               </p>
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-foreground-muted">
-                {offer.note}
-              </p>
             </div>
 
             <div className="lg:col-span-7">
               <div className="flex flex-col gap-4 border border-border bg-bone p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
                 <div>
-                  <p className="font-medium text-foreground">Não quer preencher formulário?</p>
+                  <p className="font-medium text-foreground">Prefere falar agora?</p>
                   <p className="mt-1 text-sm leading-relaxed text-foreground-muted">
                     15 minutos no WhatsApp, sem apresentação comercial.
                   </p>
@@ -166,7 +163,13 @@ export default function DiagnosticApplicationPage() {
               </div>
 
               <div className="mt-6 border border-border bg-paper p-5 shadow-lg sm:p-8 lg:p-10">
-                <ProgressiveLeadForm />
+                <h2 className="display-balanced text-[length:var(--fs-h3)]">
+                  A gente chama você no WhatsApp
+                </h2>
+                <p className="mt-2 mb-7 text-sm leading-relaxed text-foreground-muted">
+                  Com o bairro, já chegamos com a resposta que o seu paciente vê hoje.
+                </p>
+                <LeadForm />
               </div>
             </div>
           </div>
