@@ -91,6 +91,24 @@
   --shadow-md: 0 8px 24px rgba(23, 23, 23, 0.06);
   --shadow-lg: 0 24px 64px rgba(23, 23, 23, 0.08);
   --shadow-coral: 0 24px 80px rgba(155, 46, 26, 0.18);
+
+  /* Explorações de hero (/1a a /4c). Temporário: sai quando uma direção for escolhida. */
+  --hv-snow: 251 250 248; /* #FBFAF8 */
+  --hv-peach: 247 233 223; /* #F7E9DF */
+  --hv-night: 9 9 10; /* #09090A */
+  --hv-night-soft: 17 17 19; /* #111113 */
+  --hv-night-line: 35 35 38; /* #232326 */
+  --hv-night-mute: 143 143 149; /* #8F8F95 */
+  --hv-ember: 224 138 106; /* #E08A6A */
+  --hv-sand: 232 227 217; /* #E8E3D9 */
+  --hv-sand-line: 201 194 181; /* #C9C2B5 */
+  --hv-umber: 43 41 38; /* #2B2926 */
+  --hv-umber-soft: 94 90 83; /* #5E5A53 */
+  --hv-flame: 232 85 47; /* #E8552F */
+  --hv-lime: 216 240 76; /* #D8F04C */
+  --hv-soot: 20 18 16; /* #141210 */
+  --hv-soot-soft: 42 38 34; /* #2A2622 */
+  --hv-milk: 255 246 239; /* #FFF6EF */
 }
 
 @media (prefers-reduced-motion: reduce) {

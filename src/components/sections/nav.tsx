@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function Nav() {
+export function Nav({ heroTone = "cream" }: { heroTone?: "cream" | "ink" }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -18,6 +18,7 @@ export function Nav() {
   }, []);
 
   const overHero = !scrolled;
+  const onDarkHero = overHero && heroTone === "cream";
 
   return (
     <header
@@ -31,7 +32,7 @@ export function Nav() {
           href="/"
           className={cn(
             "text-base font-semibold tracking-[-0.04em] transition-colors",
-            overHero ? "text-cream" : "text-foreground",
+            onDarkHero ? "text-cream" : "text-foreground",
           )}
           aria-label={`${site.name}, início`}
         >
@@ -45,7 +46,7 @@ export function Nav() {
               href={item.href}
               className={cn(
                 "text-sm transition-colors",
-                overHero
+                onDarkHero
                   ? "text-cream-muted hover:text-cream"
                   : "text-foreground-muted hover:text-foreground",
               )}
@@ -65,7 +66,7 @@ export function Nav() {
             }
             className={cn(
               "hidden rounded-full px-4 py-2 text-sm font-medium transition md:inline-flex",
-              overHero
+              onDarkHero
                 ? "bg-cream text-coral-deep hover:bg-cream/95"
                 : "bg-foreground text-background hover:bg-foreground/90",
             )}
@@ -77,7 +78,7 @@ export function Nav() {
             onClick={() => setOpen((s) => !s)}
             className={cn(
               "inline-flex h-9 w-9 items-center justify-center rounded-full border transition md:hidden",
-              overHero ? "border-cream-faint text-cream" : "border-border text-foreground",
+              onDarkHero ? "border-cream-faint text-cream" : "border-border text-foreground",
             )}
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
