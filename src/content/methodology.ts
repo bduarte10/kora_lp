@@ -3,6 +3,30 @@ export const methodology = {
   title: "Um relatório com dado, não uma opinião sobre o seu Instagram.",
   description:
     "Toda clínica começa com uma linha de base: as mesmas perguntas que um paciente faria, feitas no Google e no ChatGPT, com data e print. É contra essa linha que cada mês é comparado.",
+  research: {
+    title: "O que encontramos em setembro de 2026",
+    stats: [
+      {
+        value: "13",
+        label:
+          "perguntas de paciente sobre odontologia, feitas ao Google com IA a partir de São Paulo",
+      },
+      {
+        value: "11",
+        label: "respostas recomendaram clínicas ou dentistas pelo nome",
+      },
+      {
+        value: "5 de 13",
+        label: "respostas citaram a mesma clínica de implante",
+      },
+    ],
+    example: {
+      question:
+        "Clínicas de odontologia de alto padrão em Moema e Vila Nova Conceição: quais as mais reconhecidas?",
+      answer: "A resposta citou seis clínicas pelo nome, quatro delas com o endereço da rua.",
+    },
+    caveat: "Uma cidade e uma ferramenta: é uma amostra, não um estudo. Mas é real, não exemplo.",
+  },
   metricsTitle: "O que o relatório mostra",
   metrics: [
     {
