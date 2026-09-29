@@ -152,6 +152,49 @@
     z-index: 0;
   }
 
+  /* Hero: a resposta de IA monta clínica por clínica; a do leitor chega por último */
+  .answer-item {
+    opacity: 0;
+    animation: answer-in 0.6s var(--ease-out-expo) forwards;
+  }
+  .answer-item:nth-child(1) {
+    animation-delay: 0.7s;
+  }
+  .answer-item:nth-child(2) {
+    animation-delay: 0.95s;
+  }
+  .answer-item:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+  .answer-missing {
+    animation: answer-in 0.6s var(--ease-out-expo) 1.9s forwards, answer-nudge 0.5s ease-in-out 2.5s;
+  }
+  [data-play="false"] .answer-item {
+    animation-play-state: paused;
+  }
+  @keyframes answer-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes answer-nudge {
+    0%,
+    100% {
+      transform: none;
+    }
+    25% {
+      transform: translateX(-4px);
+    }
+    75% {
+      transform: translateX(4px);
+    }
+  }
+
   /* Hero craft: camada de luz do fundo "respirando" */
   .hero-light-breathe {
     will-change: transform, opacity;
@@ -170,6 +213,10 @@
 
   @media (prefers-reduced-motion: reduce) {
     .hero-light-breathe {
+      animation: none;
+    }
+    .answer-item {
+      opacity: 1;
       animation: none;
     }
   }

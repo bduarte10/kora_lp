@@ -1,3 +1,4 @@
+import { InViewPlay } from "@/components/motion/in-view-play";
 import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import { NoiseBackground } from "@/components/ui/noise-background";
@@ -62,50 +63,52 @@ export function Hero() {
 
         {/* Direita: a resposta de IA em que a clínica do leitor não aparece */}
         <Reveal delay={0.2} className="min-w-0 lg:col-span-5">
-          <figure>
-            <div className="overflow-hidden rounded-[20px] bg-paper text-foreground shadow-[0_30px_80px_rgba(60,20,8,0.35)]">
-              <div className="flex items-center gap-3 border-b border-border px-5 py-4">
-                <Search size={17} className="shrink-0 text-coral" aria-hidden />
-                <span className="text-base font-medium">{answer.query}</span>
-              </div>
+          <InViewPlay>
+            <figure>
+              <div className="overflow-hidden rounded-[20px] bg-paper text-foreground shadow-[0_30px_80px_rgba(60,20,8,0.35)]">
+                <div className="flex items-center gap-3 border-b border-border px-5 py-4">
+                  <Search size={17} className="shrink-0 text-coral" aria-hidden />
+                  <span className="text-base font-medium">{answer.query}</span>
+                </div>
 
-              <div className="px-5 pt-5">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-foreground-subtle">
-                  {answer.label}
-                </p>
-                <p className="mt-1.5 hidden leading-relaxed text-foreground-muted sm:block">
-                  {answer.intro}
-                </p>
-              </div>
+                <div className="px-5 pt-5">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-foreground-subtle">
+                    {answer.label}
+                  </p>
+                  <p className="mt-1.5 hidden leading-relaxed text-foreground-muted sm:block">
+                    {answer.intro}
+                  </p>
+                </div>
 
-              <ol className="flex flex-col gap-2.5 p-5">
-                {answer.cited.map((clinic, i) => (
-                  <li
-                    key={clinic.id}
-                    className="flex items-center gap-3.5 rounded-xl border border-border bg-background-elev px-4 py-3"
-                  >
-                    <span className="font-mono text-[13px] text-foreground-subtle">{i + 1}º</span>
-                    <span className="flex min-w-0 flex-col">
-                      <span className="font-semibold">{clinic.name}</span>
-                      <span className="hidden text-sm text-foreground-subtle sm:block">
-                        {clinic.reason}
+                <ol className="flex flex-col gap-2.5 p-5">
+                  {answer.cited.map((clinic, i) => (
+                    <li
+                      key={clinic.id}
+                      className="answer-item flex items-center gap-3.5 rounded-xl border border-border bg-background-elev px-4 py-3"
+                    >
+                      <span className="font-mono text-[13px] text-foreground-subtle">{i + 1}º</span>
+                      <span className="flex min-w-0 flex-col">
+                        <span className="font-semibold">{clinic.name}</span>
+                        <span className="hidden text-sm text-foreground-subtle sm:block">
+                          {clinic.reason}
+                        </span>
                       </span>
+                    </li>
+                  ))}
+                  <li className="answer-item answer-missing flex items-center gap-3.5 rounded-xl border-[1.5px] border-dashed border-coral bg-coral/[0.07] px-4 py-3 text-coral-deep">
+                    <span className="font-mono text-[13px]" aria-hidden>
+                      ?
+                    </span>
+                    <span className="flex min-w-0 flex-col">
+                      <span className="font-semibold">{answer.missing.name}</span>
+                      <span className="text-sm">{answer.missing.reason}</span>
                     </span>
                   </li>
-                ))}
-                <li className="flex items-center gap-3.5 rounded-xl border-[1.5px] border-dashed border-coral bg-coral/[0.07] px-4 py-3 text-coral-deep">
-                  <span className="font-mono text-[13px]" aria-hidden>
-                    ?
-                  </span>
-                  <span className="flex min-w-0 flex-col">
-                    <span className="font-semibold">{answer.missing.name}</span>
-                    <span className="text-sm">{answer.missing.reason}</span>
-                  </span>
-                </li>
-              </ol>
-            </div>
-            <figcaption className="mt-4 text-sm text-cream-muted">{answer.caption}</figcaption>
-          </figure>
+                </ol>
+              </div>
+              <figcaption className="mt-4 text-sm text-cream-muted">{answer.caption}</figcaption>
+            </figure>
+          </InViewPlay>
         </Reveal>
       </div>
     </section>
