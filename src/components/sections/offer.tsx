@@ -1,12 +1,13 @@
 import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracking/tracked-link";
+import { hero } from "@/content/hero";
 import { offer } from "@/content/offer";
 import { site } from "@/content/site";
-import { ArrowRight, Check, MessageCircle } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
 export function Offer() {
   return (
-    <section id="preco" className="section scroll-mt-16 bg-bone border-y border-border">
+    <section id="preco" className="section scroll-mt-16">
       <div className="container-page grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-x-16 lg:gap-y-10">
         <div className="max-w-2xl lg:col-span-6">
           <Reveal>
@@ -23,46 +24,25 @@ export function Offer() {
         </div>
 
         <Reveal delay={0.16} className="lg:col-span-5 lg:col-start-8 lg:row-span-2">
-          <div className="rounded-2xl bg-paper p-6 text-foreground shadow-lg sm:p-8">
-            <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
-              Próximo passo
+          <div className="rounded-2xl border border-border bg-background-elev p-6 text-foreground shadow-lg sm:p-8">
+            <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
+              {offer.card.kicker}
             </p>
             <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
-              Aplique em uma página focada, sem distrações.
+              {offer.card.title}
             </h3>
-            <p className="mt-5 text-sm leading-relaxed text-foreground-muted">
-              O formulário leva poucos minutos e pergunta só o necessário para entendermos a
-              clínica, a urgência e se a mensalidade faz sentido agora.
-            </p>
+            <p className="mt-5 leading-relaxed text-foreground-muted">{offer.card.description}</p>
 
             <div className="mt-7 grid grid-cols-2 border-y border-border text-sm">
               <div className="border-r border-border py-4 pr-4">
-                <p className="font-medium text-foreground">3 a 4 min</p>
-                <p className="mt-1 text-xs text-foreground-subtle">Tempo médio</p>
+                <p className="font-medium text-foreground">15 min</p>
+                <p className="mt-1 text-[13px] text-foreground-subtle">Conversa pelo WhatsApp</p>
               </div>
               <div className="py-4 pl-4">
                 <p className="font-medium text-foreground">{site.pricing.monthlyFrom}/mês</p>
-                <p className="mt-1 text-xs text-foreground-subtle">Mensalidade a partir de</p>
+                <p className="mt-1 text-[13px] text-foreground-subtle">Mensalidade a partir de</p>
               </div>
             </div>
-
-            <p className="mt-6 text-sm leading-relaxed text-foreground-muted">{offer.note}</p>
-
-            <TrackedLink
-              href={site.ctas.applyHref}
-              event={{
-                event: "cta_click",
-                label: site.ctas.apply,
-                location: "offer-section",
-              }}
-              className="group mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition hover:bg-foreground/90"
-            >
-              {site.ctas.apply}
-              <ArrowRight
-                size={15}
-                className="transition-transform duration-300 group-hover:translate-x-0.5"
-              />
-            </TrackedLink>
 
             <TrackedLink
               href={site.ctas.callHref}
@@ -70,13 +50,29 @@ export function Offer() {
               rel="noreferrer"
               event={{
                 event: "cta_click",
-                label: site.ctas.call,
-                location: "offer-section-call",
+                label: hero.primaryCta,
+                location: "offer-section",
               }}
-              className="mt-4 flex w-full items-center justify-center gap-2 text-sm font-medium text-foreground-muted underline-offset-4 transition hover:text-foreground hover:underline"
+              className="group mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 text-base font-semibold text-background transition hover:bg-foreground/90"
             >
-              <MessageCircle size={15} />
-              Ou agende 15 minutos antes de aplicar
+              {hero.primaryCta}
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-0.5"
+                aria-hidden
+              />
+            </TrackedLink>
+
+            <TrackedLink
+              href={site.ctas.applyHref}
+              event={{
+                event: "cta_click",
+                label: site.ctas.apply,
+                location: "offer-section-apply",
+              }}
+              className="mt-4 flex w-full items-center justify-center text-sm font-medium text-foreground-muted underline-offset-4 transition hover:text-foreground hover:underline"
+            >
+              {offer.card.applyLink}
             </TrackedLink>
           </div>
         </Reveal>
@@ -84,7 +80,7 @@ export function Offer() {
         <div className="max-w-2xl lg:col-span-6">
           <Reveal delay={0.14}>
             <div className="border-y border-border py-7">
-              <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
+              <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
                 O que entra
               </p>
               <ul className="mt-5 space-y-3">

@@ -31,7 +31,7 @@ export function Methodology() {
 
         <Reveal delay={0.14} className="mt-16">
           <div className="border-y border-cream-faint py-6">
-            <p className="font-mono text-xs uppercase tracking-wider text-cream-faint">
+            <p className="font-mono text-[13px] uppercase tracking-wider text-cream-muted">
               {methodology.frameworkName}
             </p>
             <ol className="mt-6 grid gap-4 lg:grid-cols-5">
@@ -43,7 +43,7 @@ export function Methodology() {
                     className="group border border-cream-faint p-5 transition duration-300 hover:bg-background/10"
                   >
                     <div className="flex items-center justify-between gap-4">
-                      <span className="font-mono text-xs text-cream-faint">
+                      <span className="font-mono text-[13px] text-cream-muted">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                       <Icon
@@ -68,7 +68,7 @@ export function Methodology() {
         <div className="mt-10 grid grid-flow-dense gap-4 lg:grid-cols-12">
           <Reveal delay={0.04} className="lg:col-span-7">
             <article className="h-full border border-cream-faint p-6 sm:p-8">
-              <p className="font-mono text-xs uppercase tracking-wider text-cream-faint">
+              <p className="font-mono text-[13px] uppercase tracking-wider text-cream-muted">
                 {methodology.metricsTitle}
               </p>
               <h3 className="display-balanced mt-4 max-w-[20ch] text-[length:var(--fs-h2)]">
@@ -95,7 +95,7 @@ export function Methodology() {
 
           <Reveal delay={0.08} className="lg:col-span-5">
             <article className="flex h-full flex-col justify-between border border-cream-faint bg-background/10 p-6 sm:p-8">
-              <p className="font-mono text-xs uppercase tracking-wider text-cream-faint">
+              <p className="font-mono text-[13px] uppercase tracking-wider text-cream-muted">
                 Limite honesto
               </p>
               <p className="mt-8 display-balanced text-[length:var(--fs-h3)] leading-tight">

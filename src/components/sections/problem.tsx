@@ -46,7 +46,7 @@ export function Problem() {
               }${i === 2 || i === 3 ? " sm:border-t sm:border-border" : ""}`}
             >
               <div className="flex items-center gap-3">
-                <span className="font-mono text-xs text-foreground-faint">0{i + 1}</span>
+                <span className="font-mono text-[13px] text-foreground-subtle">0{i + 1}</span>
                 <span className="h-px flex-1 bg-border" aria-hidden />
               </div>
               <h3 className="display-balanced mt-5 text-[length:var(--fs-h3)]">{p.title}</h3>

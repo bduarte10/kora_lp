@@ -22,7 +22,7 @@ export function Services() {
               <article className="grid gap-8 py-14 md:grid-cols-12 md:gap-12">
                 <div className="md:col-span-3">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-foreground-faint">
+                    <span className="font-mono text-[13px] text-foreground-subtle">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="h-px w-12 bg-border-strong" aria-hidden />

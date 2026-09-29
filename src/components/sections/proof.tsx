@@ -36,7 +36,7 @@ export function Proof() {
     <section id="cases" className="section border-t border-border">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">Antes e depois</p>
+          <p className="eyebrow section-anchor">Na prática</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[24ch] text-[length:var(--fs-h1)]">
@@ -47,7 +47,7 @@ export function Proof() {
         <Reveal delay={0.12} className="mt-20">
           <figure className="relative overflow-hidden rounded-2xl bg-coral px-4 py-10 sm:px-10 sm:py-14 lg:px-20 lg:py-20">
             <div className="mx-auto max-w-3xl rounded-[20px] bg-paper p-5 text-foreground shadow-[0_30px_80px_rgba(60,20,8,0.35)] sm:p-8">
-              <p className="font-mono text-xs uppercase tracking-wider text-foreground-subtle">
+              <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
                 {reportSample.kicker}
               </p>
               <p className="display-balanced mt-2 text-[length:var(--fs-h3)]">
@@ -102,7 +102,7 @@ export function Proof() {
               <article className="grid gap-8 py-14 md:grid-cols-12 md:gap-12">
                 <div className="md:col-span-3">
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-xs text-foreground-faint">
+                    <span className="font-mono text-[13px] text-foreground-subtle">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span className="h-px w-10 bg-border-strong" aria-hidden />
@@ -110,13 +110,15 @@ export function Proof() {
                   <h3 className="display-balanced mt-4 text-[length:var(--fs-h2)]">{t.area}</h3>
                 </div>
                 <div className="md:col-span-4">
-                  <p className="font-mono text-xs uppercase tracking-wider text-foreground-faint">
+                  <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
                     Antes
                   </p>
                   <p className="mt-3 leading-relaxed text-foreground-muted">{t.before}</p>
                 </div>
                 <div className="md:col-span-5">
-                  <p className="font-mono text-xs uppercase tracking-wider text-coral">Depois</p>
+                  <p className="font-mono text-[13px] uppercase tracking-wider text-coral">
+                    Depois
+                  </p>
                   <p className="mt-3 leading-relaxed text-foreground">{t.after}</p>
                 </div>
               </article>

@@ -11,4 +11,11 @@ export const offer = {
   ],
   price: `A partir de ${site.pricing.monthlyFrom} por mês. Setup e prazo mínimo são combinados na conversa, antes de qualquer contrato.`,
   note: "Se preferir entender o método antes de preencher qualquer formulário, agende 15 minutos.",
+  card: {
+    kicker: "Próximo passo",
+    title: "Comece por uma conversa de 15 minutos.",
+    description:
+      "Fazemos juntos as perguntas que seu paciente faria ao Google e ao ChatGPT e vemos quem aparece hoje. Se fizer sentido, a proposta vem depois.",
+    applyLink: "Prefere o formulário? Aplicar para a mensalidade",
+  },
 } as const;

@@ -71,16 +71,20 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 
 **Ritmo de bg colors (alternância intencional):**
 
-1. Hero — `bg-coral` + aurora
+1. Hero — `bg-coral` + NoiseBackground
 2. Problem — `bg-background` (paper)
-3. Problem — `bg-background` (paper)
-4. Diagnostic — `bg-bone border-y`, split de oferta e aplicação
-5. Process — `bg-background` (paper)
-6. Services — `bg-bone border-y`
-7. Proof — `bg-background`
+3. Services — `bg-bone border-y`
+4. Offer — `bg-background` (paper)
+5. Process — `bg-bone border-y`
+6. Methodology — `bg-foreground` (ink)
+7. Proof — `bg-background` (paper)
 8. FAQ — `bg-bone border-y`
-9. FinalCTA — `bg-coral` + aurora (bookend do Hero)
+9. FinalCTA — `bg-coral` (bookend do Hero)
 10. Footer — `bg-background` (paper)
+
+**CTA:** a principal é sempre a conversa de 15 minutos pelo WhatsApp ("Ver onde minha clínica aparece"). "Aplicar para a mensalidade" aparece como link ou botão outline, nunca como botão cheio.
+
+**Piso de texto:** 13px para labels mono e eyebrows, 14px para nav. Numerais e labels usam `stone` (`foreground-subtle`), não `mist`/`fog`, para passar AA sobre cream.
 
 **Grids específicos:**
 - Problem: 2×2 simples com `divide-y` + `divide-y-0 sm:grid sm:grid-cols-2`. Sem bento.
