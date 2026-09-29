@@ -100,7 +100,8 @@ Split 7/5 sobre coral:
 
 1. **Esquerda:** eyebrow "Para clínicas odontológicas", H1 em `--fs-hero` (`clamp(2.75rem, 5vw + 0.5rem, 5.25rem)`, maior texto da página), lead, uma CTA primária cream (WhatsApp, "Ver onde minha clínica aparece") e um link sublinhado para `#mensalidade`. Nota de 15px com duração da conversa e preço inicial.
 2. **Direita:** painel cream com uma resposta de IA para "onde fazer implante em Moema?". Três clínicas genéricas citadas (Clínica A, B, C) e a última linha tracejada em coral, "Sua clínica: não citada". Legenda "Exemplo ilustrativo" sempre visível.
-3. **Fundo:** `NoiseBackground` (luz diagonal, grade, grain).
+3. **Fundo:** coral quase chapado. `NoiseBackground` só adiciona uma luz radial fraca no topo esquerdo (22%, para o texto cream manter contraste) e grão a 18%. Sem grade, sem escurecimento para marrom.
+4. **Motion:** as três clínicas entram uma por uma (0,7 a 1,2 s) e a linha "Sua clínica" chega por último, a 1,9 s, com um tremor curto. Com `prefers-reduced-motion`, tudo aparece de uma vez.
 
 Sem marquee, sem faixa editorial, sem checklist de inclusos (o conteúdo vive em Services). Min-height `92svh`.
 
@@ -120,11 +121,14 @@ Bookend do Hero — mesma surface coral + aurora. Split 5/6:
 Stack reduzida:
 - **SmoothScrollProvider** (Lenis) — suave, sem exagero.
 - **Reveal** — fade + translate-y simples, scroll-triggered.
+- **Scrub** — timeline GSAP presa à rolagem (`scrub: 0.6`), passo a passo. Usado na linha da timeline de Process (ponto e preenchimento coral por etapa) e nas linhas da tabela do relatório.
+- **CountUp** — os números da pesquisa contam até o valor uma vez, ao entrar na tela.
+- **InViewPlay** — segura a animação CSS da resposta de IA do hero até o card aparecer (no mobile ele fica abaixo da dobra).
 - **Aurora CSS** — `@keyframes aurora-drift-1/2/3` 28-36s ease-in-out infinite alternate.
 
-Removidos (não fazem sentido nessa lane): `ScrubReveal`, `CardStack`, `StickySpy`, `ImageScaleFade`, `Marquee` JS, `SplitText`, `PinnedSection`. Apenas `Reveal` + `SmoothScrollProvider` permanecem.
+Scroll-driven só onde o movimento conta algo (progresso, relatório sendo preenchido). Nada de pin, parallax ou texto que se monta letra a letra. Nunca apagar texto para dar foco: derruba o contraste.
 
-`prefers-reduced-motion`: aurora e a luz do hero param.
+`prefers-reduced-motion`: nada anima; tudo aparece no estado final.
 
 ## Components
 

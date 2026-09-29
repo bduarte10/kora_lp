@@ -1,4 +1,6 @@
+import { CountUp } from "@/components/motion/count-up";
 import { Reveal } from "@/components/motion/reveal";
+import { Scrub } from "@/components/motion/scrub";
 import { methodology } from "@/content/methodology";
 import { reportSample } from "@/content/report-sample";
 
@@ -33,7 +35,9 @@ export function Report() {
           <dl className="mt-8 grid gap-8 sm:grid-cols-3 sm:gap-10">
             {methodology.research.stats.map((stat) => (
               <div key={stat.value}>
-                <dt className="display text-[length:var(--fs-h1)]">{stat.value}</dt>
+                <dt className="display text-[length:var(--fs-h1)]">
+                  <CountUp value={stat.value} />
+                </dt>
                 <dd className="mt-3 max-w-[30ch] leading-relaxed text-cream-muted">{stat.label}</dd>
               </div>
             ))}
@@ -61,42 +65,51 @@ export function Report() {
                 {reportSample.clinic}
               </p>
 
-              <table className="mt-6 w-full border-collapse text-left">
-                <thead>
-                  <tr className="border-b border-border text-sm text-foreground-subtle">
-                    <th scope="col" className="py-3 pr-4 font-medium">
-                      {reportSample.columns.question}
-                    </th>
-                    <th scope="col" className="hidden py-3 pr-4 font-medium sm:table-cell">
-                      {reportSample.columns.where}
-                    </th>
-                    <th scope="col" className="py-3 text-right font-medium">
-                      {reportSample.columns.result}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {reportSample.rows.map((row) => (
-                    <tr key={row.question} className="border-b border-border">
-                      <td className="py-4 pr-4">{row.question}</td>
-                      <td className="hidden py-4 pr-4 text-sm text-foreground-muted sm:table-cell">
-                        {row.where}
-                      </td>
-                      <td className="py-4 text-right">
-                        <span
-                          className={
-                            row.cited
-                              ? "inline-block whitespace-nowrap rounded-full bg-foreground px-3 py-1 text-sm font-semibold text-background"
-                              : "inline-block whitespace-nowrap rounded-full border border-dashed border-coral px-3 py-1 text-sm font-semibold text-coral-deep"
-                          }
-                        >
-                          {row.result}
-                        </span>
-                      </td>
+              <Scrub
+                steps="tbody tr"
+                tweens={[
+                  { select: ":scope", from: { opacity: 0.15, y: 12 }, to: { opacity: 1, y: 0 } },
+                ]}
+                start="top 75%"
+                end="bottom 55%"
+              >
+                <table className="mt-6 w-full border-collapse text-left">
+                  <thead>
+                    <tr className="border-b border-border text-sm text-foreground-subtle">
+                      <th scope="col" className="py-3 pr-4 font-medium">
+                        {reportSample.columns.question}
+                      </th>
+                      <th scope="col" className="hidden py-3 pr-4 font-medium sm:table-cell">
+                        {reportSample.columns.where}
+                      </th>
+                      <th scope="col" className="py-3 text-right font-medium">
+                        {reportSample.columns.result}
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {reportSample.rows.map((row) => (
+                      <tr key={row.question} className="border-b border-border">
+                        <td className="py-4 pr-4">{row.question}</td>
+                        <td className="hidden py-4 pr-4 text-sm text-foreground-muted sm:table-cell">
+                          {row.where}
+                        </td>
+                        <td className="py-4 text-right">
+                          <span
+                            className={
+                              row.cited
+                                ? "inline-block whitespace-nowrap rounded-full bg-foreground px-3 py-1 text-sm font-semibold text-background"
+                                : "inline-block whitespace-nowrap rounded-full border border-dashed border-coral px-3 py-1 text-sm font-semibold text-coral-deep"
+                            }
+                          >
+                            {row.result}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </Scrub>
 
               <figcaption className="mt-5 text-sm text-foreground-muted">
                 {reportSample.footnote}
