@@ -76,7 +76,7 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 3. Services — `bg-bone border-y`, com o card de preço (`#preco`)
 4. Process — `bg-background` (paper)
 5. Report — `bg-foreground` (ink)
-6. About — `bg-background` (paper), quem faz + dados legais
+6. About — `bg-background` (paper), quem faz + dados legais. Fora da página até o conteúdo ser decidido (`sections/about.tsx` segue pronto).
 7. FAQ — `bg-bone border-y`
 8. FinalCTA — `bg-coral` (bookend do Hero)
 9. Footer — `bg-background` (paper)
