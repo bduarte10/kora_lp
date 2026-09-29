@@ -3,7 +3,7 @@ import { process } from "@/content/process";
 
 export function Process() {
   return (
-    <section id="processo" className="section bg-bone border-y border-border">
+    <section id="processo" className="section">
       <div className="container-page">
         <Reveal>
           <p className="eyebrow section-anchor">Como funciona</p>
@@ -15,38 +15,19 @@ export function Process() {
           </h2>
         </Reveal>
 
-        <ol className="mt-20 grid gap-y-4 md:gap-y-0">
+        <ol className="mt-16 grid gap-10 md:grid-cols-2 md:gap-x-10 lg:grid-cols-4">
           {process.map((step, i) => (
             <Reveal key={step.step} delay={0.04 * i} as="li">
-              <div className="grid items-baseline gap-6 border-t border-border py-10 md:grid-cols-12 md:gap-10">
-                <div className="md:col-span-2">
-                  <span className="font-mono text-[13px] text-foreground-subtle">{step.step}</span>
-                </div>
-                <div className="md:col-span-5">
-                  <h3 className="display-balanced text-[length:var(--fs-h2)]">{step.title}</h3>
-                </div>
-                <div className="md:col-span-5">
-                  <p className="leading-relaxed text-foreground-muted">{step.description}</p>
-                  <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] text-foreground-subtle">
-                    <span className="inline-flex items-center gap-1.5">
-                      <span className="inline-block h-1 w-1 rounded-full bg-coral" />
-                      <span className="font-medium uppercase tracking-wider text-foreground-muted">
-                        Duração
-                      </span>
-                      <span>{step.duration}</span>
-                    </span>
-                  </div>
-                  <ul className="mt-4 flex flex-wrap gap-2">
-                    {step.outputs.map((o) => (
-                      <li
-                        key={o}
-                        className="rounded-full border border-border bg-background px-3 py-1 text-[13px] text-foreground-muted"
-                      >
-                        {o}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className="relative border-t border-border-strong pt-7">
+                <span
+                  aria-hidden
+                  className="absolute -top-[5px] left-0 h-[9px] w-[9px] rounded-full bg-coral"
+                />
+                <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
+                  {step.duration}
+                </p>
+                <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)]">{step.title}</h3>
+                <p className="mt-3 leading-relaxed text-foreground-muted">{step.description}</p>
               </div>
             </Reveal>
           ))}

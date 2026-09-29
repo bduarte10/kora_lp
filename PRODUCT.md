@@ -6,38 +6,37 @@ brand
 
 ## Users
 
-Fundadores, diretores comerciais, líderes de marketing e líderes de operação em PMEs brasileiras com 20 a 200 colaboradores. Já sentiram que IA mudou a forma como clientes pesquisam fornecedores, mas ainda não sabem como preparar presença, conteúdo, atendimento e dados internos para esse novo ambiente.
+Donos e donas de clínicas odontológicas no Brasil, principalmente de implante, estética e clínica geral. Muitos chegam pelo celular, depois de uma mensagem de prospecção. Pagam ou já pagaram agência e desconfiam de promessa de marketing: querem ver onde a clínica aparece hoje e o que muda com o trabalho.
 
-O leitor chega com ceticismo legítimo: quer autoridade, método e clareza, não promessa de IA genérica. Ele pode não conhecer o termo GEO, mas entende a pergunta central: "se meu cliente perguntar para uma IA quem contratar, minha empresa aparece como opção confiável?"
+O leitor não conhece o termo GEO e não precisa conhecer. Ele entende a pergunta central: "quando o paciente pergunta ao Google ou ao ChatGPT onde fazer implante, minha clínica aparece?"
 
 ## Product Purpose
 
-A landing converte intenção qualificada em aplicação para o **Diagnóstico GEO & Automação de Atendimento**. A KORA se posiciona como consultoria high ticket para empresas que querem ser encontradas, citadas e escolhidas por ChatGPT, Gemini, Perplexity e Google com IA, com atendimento e automação preparados para absorver essa demanda.
+A landing vende uma **mensalidade** (a partir de R$ 1.500/mês) que cuida de a clínica ser encontrada no Google, no Maps e em IA, ser a opção mais fácil de escolher quando o paciente compara, e ver todo mês o que mudou. O primeiro mês é o diagnóstico.
 
-Sucesso não é volume bruto de leads. Sucesso é aplicação com contexto suficiente para triagem, fit comercial e venda de diagnóstico pago.
+Sucesso é uma conversa de 15 minutos no WhatsApp com uma clínica que tem fit. O formulário em `/diagnostico` é o caminho alternativo para quem prefere não conversar antes.
 
 ## Brand Personality
 
-**Confiante, claro, cinematográfico.**
+**Confiante, claro, concreto.**
 
-Voz de bússola, não de vendedor. A KORA explica a mudança de busca com precisão, traduz GEO para consequência operacional e mostra como a implantação acontece. O tom é premium sem ser distante, técnico sem virar jargão e adulto sem parecer corporativo.
+Voz de quem mostra, não de quem promete. A KORA traduz presença em IA para o que a clínica vê: a resposta que o paciente recebe, quem aparece no lugar, quantas ligações o perfil trouxe. Premium sem ser distante, técnico sem jargão.
 
 ## Anti-references
 
-- Agência de site por assinatura, com planos baratos e "tudo incluso".
-- Chatbot genérico, plug-and-play, sem base de conhecimento e sem governança.
-- Consultoria de IA abstrata, cheia de hype e sem impacto operacional.
-- SEO tradicional vendido como se nada tivesse mudado.
-- Landing que empurra WhatsApp antes de construir confiança.
+- Agência que vende post em rede social e não mede nada.
+- Promessa de "primeiro lugar no Google" ou citação garantida.
+- Antes e depois, preço de procedimento e depoimento de paciente: proibidos pelo CFO (art. 44) no conteúdo das clínicas.
+- Consultoria de IA abstrata, cheia de hype e sem impacto na agenda da clínica.
 
 ## Design Principles
 
-1. **Categoria antes da ferramenta.** A página precisa fazer GEO parecer inevitável e compreensível para um empresário.
-2. **Diagnóstico como produto premium.** Aplicação, fit e escopo sustentam percepção high ticket.
-3. **Prática supera promessa.** Entregáveis, etapas, critérios e riscos aparecem com clareza.
-4. **GEO legível para humanos e IAs.** Headings e FAQs respondem perguntas reais em linguagem citável.
-5. **WhatsApp secundário.** Canal rápido existe, mas a conversão principal é aplicação para diagnóstico.
+1. **Mostrar o produto.** A resposta de IA e o relatório aparecem na página como exemplo, rotulados como exemplo, sem número inventado.
+2. **Uma ação principal.** Toda CTA primária leva à conversa de 15 minutos no WhatsApp.
+3. **Prática supera promessa.** Entregáveis, etapas, métricas e limites aparecem com clareza.
+4. **Legível para humanos e IAs.** Headings e FAQs respondem perguntas reais em linguagem citável.
+5. **Curta.** Cada seção precisa ganhar o lugar; o que repete outra seção sai.
 
 ## Accessibility & Inclusion
 
-WCAG 2.2 nível **AA**. Contraste mínimo 4.5:1 em texto corrido e 3:1 em UI. Navegação completa por teclado, foco visível, `prefers-reduced-motion` respeitado, labels associados em formulários e idioma `pt-BR`.
+WCAG 2.2 nível **AA**. Contraste mínimo 4.5:1 em texto corrido e 3:1 em UI. Texto a partir de 13px. Navegação completa por teclado, foco visível, `prefers-reduced-motion` respeitado, labels associados em formulários e idioma `pt-BR`.
