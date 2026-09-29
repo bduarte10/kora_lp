@@ -3,6 +3,7 @@
 import { SmoothScrollProvider } from "@/components/motion/smooth-scroll-provider";
 import { Footer } from "@/components/sections/footer";
 import { Nav } from "@/components/sections/nav";
+import { HeroSwitcher } from "@/components/widgets/hero-switcher";
 import { WhatsAppFab } from "@/components/widgets/whatsapp-fab";
 import { heroVariantNav } from "@/content/hero-variants";
 import { usePathname } from "next/navigation";
@@ -27,6 +28,7 @@ export function MarketingChrome({ children }: { children: ReactNode }) {
           </main>
           <Footer />
           <WhatsAppFab />
+          <HeroSwitcher />
         </>
       )}
     </SmoothScrollProvider>
