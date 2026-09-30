@@ -13,12 +13,15 @@ const fromEnvMessage = (value: string | undefined) => {
   }
 };
 
+export const formatBRL = (value: number) =>
+  new Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+    maximumFractionDigits: 0,
+  }).format(value);
+
 const monthlyFromBRL = 1500;
-const monthlyFrom = new Intl.NumberFormat("pt-BR", {
-  style: "currency",
-  currency: "BRL",
-  maximumFractionDigits: 0,
-}).format(monthlyFromBRL);
+const monthlyFrom = formatBRL(monthlyFromBRL);
 
 const callMessage =
   "Oi, vim pelo site da KORA. Quero a análise gratuita: ver como minha clínica aparece no Google e nas respostas de IA.";
