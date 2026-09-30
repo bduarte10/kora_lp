@@ -28,23 +28,6 @@
   --color-border: rgb(var(--border));
   --color-border-strong: rgb(var(--border-strong));
 
-  --color-hv-snow: rgb(var(--hv-snow));
-  --color-hv-peach: rgb(var(--hv-peach));
-  --color-hv-night: rgb(var(--hv-night));
-  --color-hv-night-soft: rgb(var(--hv-night-soft));
-  --color-hv-night-line: rgb(var(--hv-night-line));
-  --color-hv-night-mute: rgb(var(--hv-night-mute));
-  --color-hv-ember: rgb(var(--hv-ember));
-  --color-hv-sand: rgb(var(--hv-sand));
-  --color-hv-sand-line: rgb(var(--hv-sand-line));
-  --color-hv-umber: rgb(var(--hv-umber));
-  --color-hv-umber-soft: rgb(var(--hv-umber-soft));
-  --color-hv-flame: rgb(var(--hv-flame));
-  --color-hv-lime: rgb(var(--hv-lime));
-  --color-hv-soot: rgb(var(--hv-soot));
-  --color-hv-soot-soft: rgb(var(--hv-soot-soft));
-  --color-hv-milk: rgb(var(--hv-milk));
-
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
@@ -212,26 +195,7 @@
     }
   }
 
-  /* Hero craft: camada de luz do fundo "respirando" */
-  .hero-light-breathe {
-    will-change: transform, opacity;
-    animation: hero-light-breathe 22s ease-in-out infinite alternate;
-  }
-  @keyframes hero-light-breathe {
-    from {
-      transform: scale(1) translate3d(0, 0, 0);
-      opacity: 0.92;
-    }
-    to {
-      transform: scale(1.12) translate3d(2%, -2%, 0);
-      opacity: 1;
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .hero-light-breathe {
-      animation: none;
-    }
     .answer-item {
       opacity: 1;
       animation: none;

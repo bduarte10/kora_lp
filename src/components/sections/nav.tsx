@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export function Nav({ heroTone = "cream" }: { heroTone?: "cream" | "ink" }) {
+export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -18,7 +18,6 @@ export function Nav({ heroTone = "cream" }: { heroTone?: "cream" | "ink" }) {
   }, []);
 
   const overHero = !scrolled;
-  const onDarkHero = overHero && heroTone === "cream";
 
   return (
     <header
@@ -30,10 +29,7 @@ export function Nav({ heroTone = "cream" }: { heroTone?: "cream" | "ink" }) {
       <div className="container-page flex h-16 items-center justify-between">
         <a
           href="/"
-          className={cn(
-            "text-base font-semibold tracking-[-0.04em] transition-colors",
-            onDarkHero ? "text-cream" : "text-foreground",
-          )}
+          className="text-base font-semibold tracking-[-0.04em] text-foreground"
           aria-label={`${site.name}, início`}
         >
           {site.name}
@@ -44,12 +40,7 @@ export function Nav({ heroTone = "cream" }: { heroTone?: "cream" | "ink" }) {
             <a
               key={item.href}
               href={item.href}
-              className={cn(
-                "text-sm transition-colors",
-                onDarkHero
-                  ? "text-cream-muted hover:text-cream"
-                  : "text-foreground-muted hover:text-foreground",
-              )}
+              className="text-sm text-foreground-muted transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
@@ -64,22 +55,14 @@ export function Nav({ heroTone = "cream" }: { heroTone?: "cream" | "ink" }) {
             onClick={() =>
               pushEvent({ event: "cta_click", label: site.ctas.call, location: "nav" })
             }
-            className={cn(
-              "hidden rounded-full px-4 py-2 text-sm font-medium transition md:inline-flex",
-              onDarkHero
-                ? "bg-cream text-coral-deep hover:bg-cream/95"
-                : "bg-foreground text-background hover:bg-foreground/90",
-            )}
+            className="hidden rounded-full bg-foreground px-4 py-2 text-sm font-medium text-background transition hover:bg-foreground/90 md:inline-flex"
           >
             {site.ctas.call}
           </a>
           <button
             type="button"
             onClick={() => setOpen((s) => !s)}
-            className={cn(
-              "inline-flex h-9 w-9 items-center justify-center rounded-full border transition md:hidden",
-              onDarkHero ? "border-cream-faint text-cream" : "border-border text-foreground",
-            )}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition md:hidden"
             aria-label={open ? "Fechar menu" : "Abrir menu"}
             aria-expanded={open}
           >
