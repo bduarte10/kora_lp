@@ -5,7 +5,11 @@ const [questions, cited] = methodology.research.stats;
 
 export const hero = {
   eyebrow: "Para clínicas odontológicas",
-  headlineLines: ["O paciente pergunta à IA. Ela indica três clínicas.", "A sua é uma delas?"],
+  headlineLines: [
+    "O paciente pergunta à\u00a0IA.",
+    "Ela indica três clínicas.",
+    "A sua é uma delas?",
+  ],
   description:
     "A KORA cuida, todo mês, para que a sua clínica esteja na resposta do Google e do ChatGPT. E mostra, com print e data, o que mudou.",
   primaryCta: "Ver onde minha clínica aparece",

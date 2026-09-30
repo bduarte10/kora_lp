@@ -32,13 +32,20 @@ export default async function OpenGraphImage() {
       >
         {site.name}
       </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        <div style={{ fontSize: 76, lineHeight: 1, letterSpacing: "-0.03em" }}>
-          {hero.headlineLines[0]}
-        </div>
-        <div style={{ fontSize: 76, lineHeight: 1, letterSpacing: "-0.03em", color: "#56565C" }}>
-          {hero.headlineLines[1]}
-        </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+        {hero.headlineLines.map((line, i) => (
+          <div
+            key={line}
+            style={{
+              fontSize: 76,
+              lineHeight: 1,
+              letterSpacing: "-0.03em",
+              color: i === hero.headlineLines.length - 1 ? "#A04A30" : "#0C0C0E",
+            }}
+          >
+            {line}
+          </div>
+        ))}
       </div>
       <div
         style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#56565C" }}

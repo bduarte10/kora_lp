@@ -48,7 +48,7 @@
 
   /* Type scale (massive na hero, escala generosa) */
   --fs-display: clamp(3rem, 6vw + 1rem, 7.5rem);
-  --fs-hero: clamp(2.4rem, 3vw + 0.9rem, 3.75rem); /* Hero H1 ao lado do celular com a resposta de IA */
+  --fs-hero: clamp(2.25rem, 2.2vw + 1.25rem, 3.25rem); /* Hero H1: três frases, uma por linha no desktop */
   --fs-h1: clamp(2.25rem, 3vw + 1rem, 3.75rem);
   --fs-h2: clamp(1.875rem, 2vw + 1rem, 2.75rem);
   --fs-h3: clamp(1.375rem, 0.8vw + 1rem, 1.75rem);

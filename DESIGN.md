@@ -99,7 +99,7 @@ Bordas 1px neutras, nunca side-stripe colorida.
 
 Fundo claro (`background-elev`) com uma luz quente radial (`--kora-blush`) atrás da foto. Split 2 colunas:
 
-1. **Esquerda:** eyebrow coral, H1 em `--fs-hero` com a pergunta final em coral ("A sua é uma delas?"), subtítulo, CTA coral (WhatsApp) com a nota "Grátis, em 15 min" e o preço ao lado, e o selo com o dado real da pesquisa ("11 de 13").
+1. **Esquerda:** eyebrow coral, H1 em `--fs-hero` com três frases, uma por linha (`block`), e a última inteira em coral ("A sua é uma delas?"). No mobile cada frase quebra balanceada e "à IA" fica junto (espaço não separável), subtítulo, CTA coral (WhatsApp) com a nota "Grátis, em 15 min" e o preço ao lado, e o selo com o dado real da pesquisa ("11 de 13").
 2. **Direita:** foto em arco (`public/images/hero-paciente.jpg`, paciente olhando o celular) e, na frente dela, um celular com a resposta de IA para "implante em Moema": três clínicas com nota e bairro. Embaixo, a pílula coral "Sua clínica não aparece aqui". Legenda "Exemplo ilustrativo" sempre visível.
 3. **Mobile:** sem a foto; o celular centralizado com a pílula logo abaixo.
 4. **Motion:** as clínicas entram uma por uma e a pílula chega por último, só quando o celular aparece na tela (`InViewPlay`). Com `prefers-reduced-motion`, tudo aparece de uma vez.

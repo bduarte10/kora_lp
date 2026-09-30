@@ -15,8 +15,19 @@ export function Hero() {
         {/* Esquerda: a pergunta, a promessa, a CTA e a prova */}
         <div className="min-w-0">
           <p className="text-sm font-medium text-coral">{hero.eyebrow}</p>
-          <h1 className="mt-5 text-[length:var(--fs-hero)] leading-[1.04] font-medium tracking-[-0.042em] text-balance">
-            {hero.headlineLines[0]} <span className="text-coral">{hero.headlineLines[1]}</span>
+          <h1 className="mt-5 text-[length:var(--fs-hero)] leading-[1.08] font-medium tracking-[-0.04em]">
+            {hero.headlineLines.map((line, i) => (
+              <span
+                key={line}
+                className={
+                  i === hero.headlineLines.length - 1
+                    ? "block text-balance text-coral"
+                    : "block text-balance"
+                }
+              >
+                {line}
+              </span>
+            ))}
           </h1>
           <p className="mt-6 max-w-lg text-[length:var(--fs-lead)] leading-relaxed text-foreground-muted">
             {hero.description}
