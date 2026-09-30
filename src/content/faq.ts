@@ -12,7 +12,7 @@ export const faq: FAQItem[] = [
   },
   {
     q: "Quanto custa?",
-    a: `A mensalidade começa em ${site.pricing.monthlyFrom}. O valor final e o setup dependem do tamanho da clínica e de quantos procedimentos e bairros entram no trabalho. O contrato mínimo é de 6 meses, e se o relatório do 3º mês não mostrar evolução você cancela sem multa. Tudo é fechado na conversa, antes de qualquer contrato.`,
+    a: `A mensalidade começa em ${site.pricing.monthlyFrom}. O valor final e o setup dependem do tamanho da clínica e de quantos procedimentos e bairros entram no trabalho. O contrato mínimo é de 6 meses. Se o relatório do 3º mês não mostrar evolução, o mês seguinte é por nossa conta e o trabalho continua, desde que a clínica tenha feito a parte dela: acessos liberados, conteúdo aprovado no prazo e pedido de avaliação aos pacientes em dia. Evolução é aparecer em mais respostas de IA, ser recomendada mais vezes ou receber mais ligações, rotas e cliques pelo Perfil do Google. Tudo é fechado na conversa, antes de qualquer contrato.`,
   },
   {
     q: "Isso respeita as regras de publicidade do CFO?",
