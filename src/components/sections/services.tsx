@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/motion/reveal";
 import { TrackedLink } from "@/components/tracking/tracked-link";
 import { hero } from "@/content/hero";
-import { offer } from "@/content/offer";
+import { offer, plans } from "@/content/offer";
 import { services, servicesIntro } from "@/content/services";
 import { site } from "@/content/site";
 import { ArrowRight, Check } from "lucide-react";
@@ -63,29 +63,34 @@ export function Services() {
               <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
                 {offer.card.kicker}
               </p>
-              <p className="mt-4 text-sm text-foreground-muted">{offer.card.priceLabel}</p>
-              <p className="display mt-1 text-[length:var(--fs-h1)]">
-                {site.pricing.monthlyFrom}
-                <span className="text-[length:var(--fs-h3)] font-medium tracking-normal text-foreground-muted">
-                  /mês
-                </span>
-              </p>
-              <p className="mt-5 leading-relaxed text-foreground">{offer.card.firstMonth}</p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
-                {offer.card.terms}
-              </p>
-              <p className="mt-5 rounded-lg bg-bone p-4 text-sm leading-relaxed text-foreground">
-                {offer.card.value.text}{" "}
-                <a
-                  href={offer.card.value.source.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-foreground-subtle underline underline-offset-2 hover:text-foreground"
-                >
-                  Fonte: {offer.card.value.source.label}
-                </a>
-              </p>
-
+              <ul className="mt-4 divide-y divide-border border-y border-border">
+                {plans.map((plan) => (
+                  <li key={plan.id} className="py-3.5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                      <p className="flex items-center gap-2 font-semibold text-foreground">
+                        {plan.name}
+                        {plan.recommended ? (
+                          <span className="rounded-full border border-coral px-2 py-0.5 font-mono text-[11px] font-medium uppercase tracking-wider text-coral-deep">
+                            {offer.card.recommendedLabel}
+                          </span>
+                        ) : null}
+                      </p>
+                      <p className="font-semibold tabular-nums text-foreground">
+                        {plan.pricePrefix ? (
+                          <span className="mr-1 text-xs font-normal text-foreground-muted">
+                            {plan.pricePrefix}
+                          </span>
+                        ) : null}
+                        {plan.price}
+                        <span className="text-sm font-normal text-foreground-muted">/mês</span>
+                      </p>
+                    </div>
+                    <p className="mt-1.5 text-sm leading-relaxed text-foreground-muted">
+                      {plan.summary}
+                    </p>
+                  </li>
+                ))}
+              </ul>
               <TrackedLink
                 href={site.ctas.callHref}
                 target="_blank"
@@ -95,7 +100,7 @@ export function Services() {
                   label: hero.primaryCta,
                   location: "offer-section",
                 }}
-                className="group mt-8 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 text-base font-semibold text-background transition hover:bg-foreground/90"
+                className="group mt-6 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 text-base font-semibold text-background transition hover:bg-foreground/90"
               >
                 {hero.primaryCta}
                 <ArrowRight
@@ -116,6 +121,20 @@ export function Services() {
               >
                 {offer.card.applyLink}
               </TrackedLink>
+              <p className="mt-6 text-sm leading-relaxed text-foreground-muted">
+                {offer.card.terms}
+              </p>
+              <p className="mt-5 rounded-lg bg-bone p-4 text-sm leading-relaxed text-foreground">
+                {offer.card.value.text}{" "}
+                <a
+                  href={offer.card.value.source.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-foreground-subtle underline underline-offset-2 hover:text-foreground"
+                >
+                  Fonte: {offer.card.value.source.label}
+                </a>
+              </p>
             </div>
           </Reveal>
         </div>
