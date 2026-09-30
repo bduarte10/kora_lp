@@ -1,27 +1,9 @@
-import { enrichCnpj, normalizeCnpj } from "@/lib/cnpj";
-import { sendLeadEmail } from "@/lib/resend";
-import { appendLeadToSheet } from "@/lib/sheets";
+import { serverEnv } from "@/lib/env";
+import { leadSchema } from "@/lib/lead";
 import * as Sentry from "@sentry/nextjs";
 import { NextResponse } from "next/server";
-import { z } from "zod";
 
 export const runtime = "nodejs";
-
-const schema = z.object({
-  name: z.string().min(2).max(120),
-  phone: z.string().min(10).max(20),
-  email: z.string().email().max(160),
-  company: z.string().min(2).max(160),
-  role: z.string().max(120).optional(),
-  segment: z.string().min(1).max(120),
-  companySize: z.string().min(1).max(80),
-  cnpj: z.string().max(24).optional(),
-  mainChallenge: z.string().min(8).max(2000),
-  priority: z.string().min(1).max(120),
-  urgency: z.string().min(1).max(120),
-  paidDiagnosticOpenness: z.string().min(1).max(120),
-  message: z.string().max(2000).optional(),
-});
 
 export async function POST(req: Request) {
   let body: unknown;
@@ -31,7 +13,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid_json" }, { status: 400 });
   }
 
-  const parsed = schema.safeParse(body);
+  const parsed = leadSchema.safeParse(body);
   if (!parsed.success) {
     return NextResponse.json(
       { error: "validation_failed", issues: parsed.error.flatten() },
@@ -39,28 +21,27 @@ export async function POST(req: Request) {
     );
   }
 
-  const cnpj = normalizeCnpj(parsed.data.cnpj);
-  const cnpjEnrichment = await enrichCnpj(cnpj);
-  const lead = { ...parsed.data, cnpj, cnpjEnrichment };
+  // Campo invisível: só robô preenche. Responde sucesso para não ensinar o robô.
+  if (parsed.data.website) return NextResponse.json({ ok: true });
 
-  const [emailResult, sheetsResult] = await Promise.allSettled([
-    sendLeadEmail(lead),
-    appendLeadToSheet(lead),
-  ]);
-
-  if (emailResult.status === "rejected") {
-    console.error("[lead] resend falhou:", emailResult.reason);
-    Sentry.captureException(emailResult.reason, { tags: { channel: "resend" } });
-  }
-  if (sheetsResult.status === "rejected") {
-    console.error("[lead] sheets falhou:", sheetsResult.reason);
-    Sentry.captureException(sheetsResult.reason, { tags: { channel: "sheets" } });
+  const webhook = serverEnv.LEAD_WEBHOOK_URL;
+  if (!webhook) {
+    Sentry.captureMessage("[lead] LEAD_WEBHOOK_URL ausente; lead não foi salvo", "error");
+    return NextResponse.json({ error: "not_configured" }, { status: 503 });
   }
 
-  const allFailed = emailResult.status === "rejected" && sheetsResult.status === "rejected";
-
-  if (allFailed) {
-    Sentry.captureMessage("[lead] todos os canais de entrega falharam", "error");
+  const { website: _, ...lead } = parsed.data;
+  try {
+    const res = await fetch(webhook, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(lead),
+      signal: AbortSignal.timeout(10_000),
+    });
+    const result = (await res.json()) as { ok?: boolean };
+    if (!res.ok || !result.ok) throw new Error(`webhook respondeu ${res.status}`);
+  } catch (error) {
+    Sentry.captureException(error, { tags: { channel: "lead-webhook" } });
     return NextResponse.json({ error: "delivery_failed" }, { status: 502 });
   }
 

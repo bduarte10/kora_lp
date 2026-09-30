@@ -195,26 +195,7 @@
     }
   }
 
-  /* Hero craft: camada de luz do fundo "respirando" */
-  .hero-light-breathe {
-    will-change: transform, opacity;
-    animation: hero-light-breathe 22s ease-in-out infinite alternate;
-  }
-  @keyframes hero-light-breathe {
-    from {
-      transform: scale(1) translate3d(0, 0, 0);
-      opacity: 0.92;
-    }
-    to {
-      transform: scale(1.12) translate3d(2%, -2%, 0);
-      opacity: 1;
-    }
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .hero-light-breathe {
-      animation: none;
-    }
     .answer-item {
       opacity: 1;
       animation: none;

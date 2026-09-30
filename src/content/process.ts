@@ -8,10 +8,10 @@ export type ProcessStep = {
 export const process: ProcessStep[] = [
   {
     step: "01",
-    title: "Conversa",
+    title: "Análise gratuita",
     duration: "15 minutos",
     description:
-      "Olhamos juntos o que o Google e a IA respondem hoje quando um paciente procura o que a sua clínica faz. Se não fizer sentido, a gente diz.",
+      "Fazemos com você as perguntas que o paciente faria no Google e no ChatGPT, com o nome do seu bairro, e mostramos o print de quem aparece. Não custa nada. Se não fizer sentido, a gente diz.",
   },
   {
     step: "02",

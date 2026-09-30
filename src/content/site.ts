@@ -21,7 +21,7 @@ const monthlyFrom = new Intl.NumberFormat("pt-BR", {
 }).format(monthlyFromBRL);
 
 const callMessage =
-  "Oi, vim pelo site da KORA. Quero agendar 15 minutos para ver como minha clínica aparece no Google e nas respostas de IA.";
+  "Oi, vim pelo site da KORA. Quero a análise gratuita: ver como minha clínica aparece no Google e nas respostas de IA.";
 
 export const site = {
   name: "Kora GEO",
@@ -61,9 +61,9 @@ export const site = {
   },
 
   ctas: {
-    call: "Agendar 15 minutos",
+    call: "Análise gratuita",
     callHref: waLink(callMessage),
-    apply: "Aplicar para a mensalidade",
+    apply: "Deixar meu contato",
     applyHref: "/diagnostico",
   },
 

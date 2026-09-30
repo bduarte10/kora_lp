@@ -12,19 +12,11 @@ export const faq: FAQItem[] = [
   },
   {
     q: "Quanto custa?",
-    a: `A mensalidade começa em ${site.pricing.monthlyFrom}. O valor final e o setup dependem do tamanho da clínica e de quantos procedimentos e bairros entram no trabalho. Tudo é fechado na conversa, antes de qualquer contrato.`,
-  },
-  {
-    q: "Vocês fazem atendimento automático no WhatsApp?",
-    a: "Hoje não. O foco é fazer a clínica ser encontrada e escolhida. Atendimento com IA no WhatsApp está nos nossos planos, e só vamos oferecer quando custo, ferramenta e regras de uso estiverem definidos.",
+    a: `A mensalidade começa em ${site.pricing.monthlyFrom}. O valor final e o setup dependem do tamanho da clínica e de quantos procedimentos e bairros entram no trabalho. O contrato mínimo é de 6 meses, e se o relatório do 3º mês não mostrar evolução você cancela sem multa. Tudo é fechado na conversa, antes de qualquer contrato.`,
   },
   {
     q: "Isso respeita as regras de publicidade do CFO?",
     a: "Sim. O Código de Ética Odontológica proíbe anunciar preço, usar antes e depois, depoimento de paciente em anúncio e promessa de resultado. O conteúdo que produzimos explica procedimentos e o que define o custo, sem anunciar valor, e passa pela aprovação do dentista responsável antes de ir ao ar.",
-  },
-  {
-    q: "O que é GEO?",
-    a: "GEO é o nome técnico do trabalho de fazer uma empresa ser entendida e citada por IAs como o ChatGPT, o Gemini e o Google com IA. Na prática, para uma clínica, significa perfil do Google completo, avaliações, informações iguais em toda parte e páginas que respondem as dúvidas do paciente.",
   },
   {
     q: "Vocês garantem que minha clínica vai aparecer no ChatGPT?",
@@ -41,5 +33,9 @@ export const faq: FAQItem[] = [
   {
     q: "Para quem a KORA não é indicada?",
     a: "Para quem quer só post em rede social ou volume barato de leads. O trabalho funciona melhor em clínicas particulares com foco em implante, reabilitação ou estética, e com um dentista disposto a revisar o conteúdo antes de publicar.",
+  },
+  {
+    q: "O que é GEO?",
+    a: "GEO é o nome técnico do trabalho de fazer uma empresa ser entendida e citada por IAs como o ChatGPT, o Gemini e o Google com IA. Na prática, para uma clínica, significa perfil do Google completo, avaliações, informações iguais em toda parte e páginas que respondem as dúvidas do paciente.",
   },
 ];

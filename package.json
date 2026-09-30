@@ -24,7 +24,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "geist": "^1.7.0",
-    "googleapis": "^144.0.0",
     "gsap": "^3.15.0",
     "lenis": "^1.1.20",
     "lucide-react": "^0.469.0",
@@ -36,7 +35,6 @@
     "rehype-autolink-headings": "^7.1.0",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
-    "resend": "^4.0.1",
     "tailwind-merge": "^2.6.0",
     "zod": "^3.24.1"
   },

@@ -1,10 +1,10 @@
 # Design
 
-Visual system para a landing **KORA**. A página vende uma mensalidade de presença no Google, no Maps e em IA para clínicas odontológicas. Lane **Drenched Coral + Aurora** (referência: resend.com, lovable.dev). Surface coral muted (#A04A30 burnt sienna) cobre Hero e FinalCTA como bookends. Demais seções em cream warm com accent coral parcimonioso. Tipografia única Geist com weights altos e tracking calibrado. Motion mínimo.
+Visual system para a landing **KORA**. A página vende uma mensalidade de presença no Google, no Maps e em IA para clínicas odontológicas. Lane **Drenched Coral + Aurora** (referência: resend.com, lovable.dev). O topo é claro e quente, com foto e o celular da resposta de IA; o coral muted (#A04A30 burnt sienna) fica nas ações e no FinalCTA. Demais seções em cream warm com accent coral parcimonioso. Tipografia única Geist com weights altos e tracking calibrado. Motion mínimo.
 
 ## Theme
 
-Tema claro warm. Cena física: dono ou dona de clínica odontológica abre a página, muitas vezes no celular, depois de uma mensagem de prospecção ou de perceber que pacientes perguntam à IA onde se tratar. O coral drenched no hero captura atenção dos primeiros 1,5s; transição para cream serve a leitura longa do scroll. Hero coral também serve como ancoragem de identidade. Dark mode propositalmente postergado.
+Tema claro warm. Cena física: dono ou dona de clínica odontológica abre a página, muitas vezes no celular, depois de uma mensagem de prospecção ou de perceber que pacientes perguntam à IA onde se tratar. Nos primeiros segundos o hero mostra a cena do problema: a paciente no celular e a resposta de IA sem a clínica dela. O coral puxa o olho para a pergunta e para a CTA; o cream serve a leitura longa do scroll. Dark mode propositalmente postergado.
 
 ## Color
 
@@ -71,21 +71,22 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 
 **Ritmo de bg colors (alternância intencional):**
 
-1. Hero — `bg-coral` + NoiseBackground
+1. Hero — `bg-background-elev` + luz `blush`, foto e celular
 2. Problem — `bg-background` (paper)
 3. Services — `bg-bone border-y`, com o card de preço (`#preco`)
 4. Process — `bg-background` (paper)
 5. Report — `bg-foreground` (ink)
-6. FAQ — `bg-bone border-y`
-7. FinalCTA — `bg-coral` (bookend do Hero)
-8. Footer — `bg-background` (paper)
+6. About — `bg-background` (paper), quem faz + dados legais. Fora da página até o conteúdo ser decidido (`sections/about.tsx` segue pronto).
+7. FAQ — `bg-bone border-y`
+8. FinalCTA — `bg-coral` (bookend do Hero)
+9. Footer — `bg-background` (paper)
 
 **CTA:** a principal é sempre a conversa de 15 minutos pelo WhatsApp ("Ver onde minha clínica aparece"). "Aplicar para a mensalidade" aparece como link ou botão outline, nunca como botão cheio.
 
 **Piso de texto:** 13px para labels mono e eyebrows, 14px para nav. Numerais e labels usam `stone` (`foreground-subtle`), não `mist`/`fog`, para passar AA sobre cream.
 
 **Grids específicos:**
-- Problem: 3 colunas com `border-t`, sem numerais.
+- Problem: bloco `bone` com os números reais da pesquisa (prova do problema antes da solução) + 3 colunas com `border-t`, sem numerais.
 - Services: 7 colunas com os três pilares (kicker coral, título, entregáveis em 2 colunas) + card de preço sticky em 5 colunas.
 - Process: timeline de 4 colunas (2 no tablet, 1 no mobile), linha com ponto coral, duração em mono acima do título.
 - Report: título e lead em 6/6; exemplo de relatório (tabela) em 7 colunas, métricas e limite honesto em 5.
@@ -94,16 +95,16 @@ Gutter fluido `clamp(1.25rem, 3vw, 2rem)`. Section spacing `clamp(7rem, 11vw, 14
 
 Bordas 1px neutras, nunca side-stripe colorida.
 
-## Hero composition (v13)
+## Hero composition (v14)
 
-Split 7/5 sobre coral:
+Fundo claro (`background-elev`) com uma luz quente radial (`--kora-blush`) atrás da foto. Split 2 colunas:
 
-1. **Esquerda:** eyebrow "Para clínicas odontológicas", H1 em `--fs-hero` (`clamp(2.75rem, 5vw + 0.5rem, 5.25rem)`, maior texto da página), lead, uma CTA primária cream (WhatsApp, "Ver onde minha clínica aparece") e um link sublinhado para `#mensalidade`. Nota de 15px com duração da conversa e preço inicial.
-2. **Direita:** painel cream com uma resposta de IA para "onde fazer implante em Moema?". Três clínicas genéricas citadas (Clínica A, B, C) e a última linha tracejada em coral, "Sua clínica: não citada". Legenda "Exemplo ilustrativo" sempre visível.
-3. **Fundo:** coral quase chapado. `NoiseBackground` só adiciona uma luz radial fraca no topo esquerdo (22%, para o texto cream manter contraste) e grão a 18%. Sem grade, sem escurecimento para marrom.
-4. **Motion:** as três clínicas entram uma por uma (0,7 a 1,2 s) e a linha "Sua clínica" chega por último, a 1,9 s, com um tremor curto. Com `prefers-reduced-motion`, tudo aparece de uma vez.
+1. **Esquerda:** eyebrow coral, H1 em `--fs-hero` com a pergunta final em coral ("A sua é uma delas?"), subtítulo, CTA coral (WhatsApp) com a nota "Grátis, em 15 min" e o preço ao lado, e o selo com o dado real da pesquisa ("11 de 13").
+2. **Direita:** foto em arco (`public/images/hero-paciente.jpg`, paciente olhando o celular) e, na frente dela, um celular com a resposta de IA para "implante em Moema": três clínicas com nota e bairro. Embaixo, a pílula coral "Sua clínica não aparece aqui". Legenda "Exemplo ilustrativo" sempre visível.
+3. **Mobile:** sem a foto; o celular centralizado com a pílula logo abaixo.
+4. **Motion:** as clínicas entram uma por uma e a pílula chega por último, só quando o celular aparece na tela (`InViewPlay`). Com `prefers-reduced-motion`, tudo aparece de uma vez.
 
-Sem marquee, sem faixa editorial, sem checklist de inclusos (o conteúdo vive em Services). Min-height `92svh`.
+O coral fica para as ações e para o CTA final; o topo da página é claro. O nav tem um estilo só (texto escuro, fundo transparente no topo e blur depois de rolar).
 
 ## FinalCTA composition
 

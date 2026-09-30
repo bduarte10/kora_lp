@@ -1,43 +1,26 @@
 export const diagnosticApplication = {
   route: "/diagnostico",
-  title: "Aplique para a mensalidade da sua clínica",
+  title: "Prefere que a gente chame você?",
   description:
-    "Responda o essencial sobre a clínica, como ela aparece hoje e a urgência. Com isso a KORA volta com setup, prazo e preço fechados, sem proposta genérica.",
+    "Deixe nome, clínica e bairro. A gente faz a pergunta que o seu paciente faria ao Google e à IA e chama você no WhatsApp com o que apareceu.",
   expectations: [
     {
       label: "Tempo",
-      value: "3 a 4 minutos",
-      description: "Perguntas objetivas, sem proposta pronta antes de entender o cenário.",
+      value: "Menos de 1 minuto",
+      description: "Quatro campos. O resto a gente conversa.",
     },
     {
-      label: "Análise",
-      value: "Onde a clínica aparece",
-      description: "Google, Maps e IA, clínicas citadas no seu lugar, perfil e avaliações.",
+      label: "Antes de chamar",
+      value: "A pergunta do seu bairro",
+      description:
+        "Rodamos no Google com IA e no ChatGPT e vemos quem aparece no lugar da clínica.",
     },
     {
       label: "Retorno",
       value: "Em até 1 dia útil",
-      description: "Voltamos com setup, prazo e preço fechados, ou dizemos que não é o momento.",
-    },
-  ],
-  steps: [
-    {
-      eyebrow: "Etapa 1",
-      title: "Primeiro, a clínica.",
-      description: "Isso ajuda a entender se a mensalidade faz sentido para o momento da clínica.",
-    },
-    {
-      eyebrow: "Etapa 2",
-      title: "Agora, seus contatos.",
-      description: "Usaremos esses dados apenas para retornar sobre a aplicação.",
-    },
-    {
-      eyebrow: "Etapa 3",
-      title: "Por fim, o contexto.",
-      description:
-        "Uma resposta curta já basta. O objetivo é qualificar a conversa, não criar tarefa.",
+      description: "Pelo WhatsApp que você informar, sem apresentação comercial.",
     },
   ],
   footerNote:
-    "Ao enviar, você concorda com nossa política de privacidade. Nunca compartilharemos seus dados.",
+    "Ao enviar, você concorda com nossa política de privacidade. Usamos seus dados só para responder este contato.",
 } as const;

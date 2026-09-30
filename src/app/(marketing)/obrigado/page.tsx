@@ -1,7 +1,8 @@
 "use client";
 
+import { site } from "@/content/site";
 import { pushEvent } from "@/lib/gtm";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, MessageCircle } from "lucide-react";
 import { useEffect } from "react";
 
 export default function ThankYouPage() {
@@ -12,16 +13,26 @@ export default function ThankYouPage() {
   return (
     <section className="section">
       <div className="container-text text-center">
-        <h1 className="display text-[length:var(--fs-h1)]">Aplicação recebida.</h1>
-        <p className="mt-6 text-foreground-muted">
-          Vamos analisar o contexto da sua clínica e voltar em até 1 dia útil com setup, prazo e
-          preço, ou dizer que não é o momento.
+        <h1 className="display text-[length:var(--fs-h1)]">Recebemos seu contato.</h1>
+        <p className="mt-6 text-[length:var(--fs-lead)] leading-relaxed text-foreground-muted">
+          Vamos fazer a pergunta do seu bairro no Google com IA e no ChatGPT e chamar você no
+          WhatsApp em até 1 dia útil.
         </p>
         <a
-          href="/"
-          className="mt-10 inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm transition hover:border-foreground"
+          href={site.ctas.callHref}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => pushEvent({ event: "whatsapp_click", location: "thank-you" })}
+          className="mt-10 inline-flex min-h-12 items-center gap-2 rounded-full bg-foreground px-6 text-base font-semibold text-background transition hover:bg-foreground/90"
         >
-          <ArrowLeft size={16} />
+          <MessageCircle size={17} aria-hidden />
+          Quer adiantar? Chame agora
+        </a>
+        <a
+          href="/"
+          className="mt-4 flex items-center justify-center gap-2 text-sm text-foreground-muted transition hover:text-foreground"
+        >
+          <ArrowLeft size={16} aria-hidden />
           Voltar ao início
         </a>
       </div>

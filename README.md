@@ -8,7 +8,7 @@ Landing page de **implantação de IA & automação para PMEs brasileiras**. Pos
 - **Tailwind CSS v4** com `@theme inline` design tokens
 - **GSAP + ScrollTrigger + Lenis** para motion cinematográfico
 - **shadcn/ui** (Radix primitives) para componentes base
-- **Resend** + **Google Sheets API** para captura de leads
+- **Google Sheets via Apps Script** (`scripts/lead-webhook.gs`) para captura de leads
 - **Cal.com** embed para agendamento
 - **GTM** (GA4 + Meta Pixel + LinkedIn Insight Tag) com Consent Mode v2
 - **Vercel** hosting + Analytics + Speed Insights
@@ -44,7 +44,7 @@ src/
 │   ├── widgets/       # CalEmbed, WhatsAppFab
 │   └── tracking/      # GTM, ConsentBanner
 ├── content/           # Copy estruturado (site, services, process, faq)
-├── lib/               # env, gtm, sheets, resend, seo, utils
+├── lib/               # env, gtm, lead, seo, utils
 └── styles/            # tokens.css
 ```
 
@@ -65,8 +65,7 @@ Spec em `~/.claude/plans/crie-uma-nova-pasta-kind-peach.md`.
 
 - Domínio `kora.com.br` (apontar para Vercel)
 - Conta Cal.com com event type `diagnostico-kora`
-- Service Account Google + Spreadsheet compartilhada
-- Domínio verificado no Resend (DKIM/SPF)
+- Planilha com o Apps Script publicado e `LEAD_WEBHOOK_URL` na Vercel
 - Containers: GTM, GA4, Meta Business, LinkedIn Campaign Manager
 - WhatsApp Business + número
 - CNPJ + endereço (footer + política de privacidade)

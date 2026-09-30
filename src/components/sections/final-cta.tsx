@@ -29,8 +29,9 @@ export function FinalCTA() {
             </Reveal>
             <Reveal delay={0.12}>
               <p className="mt-7 max-w-md text-[length:var(--fs-lead)] leading-relaxed text-cream-muted">
-                Em 15 minutos a gente faz junto as perguntas que seu paciente faria ao Google e ao
-                ChatGPT e vê quem aparece hoje. Se fizer sentido, a mensalidade vem depois.
+                Em 15 minutos, sem custo, a gente faz junto as perguntas que seu paciente faria ao
+                Google e ao ChatGPT e mostra quem aparece hoje. Se fizer sentido, a mensalidade vem
+                depois.
               </p>
             </Reveal>
 
@@ -38,7 +39,8 @@ export function FinalCTA() {
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
                 <p className="text-[13px] text-cream-muted">
-                  Sem apresentação comercial. Mensalidade a partir de {site.pricing.monthlyFrom}.
+                  Grátis e sem apresentação comercial. Mensalidade a partir de{" "}
+                  {site.pricing.monthlyFrom}.
                 </p>
               </div>
             </Reveal>
@@ -48,14 +50,14 @@ export function FinalCTA() {
           <Reveal delay={0.22} className="lg:col-span-6 lg:col-start-7">
             <div className="rounded-2xl bg-paper p-6 text-foreground shadow-lg sm:p-10">
               <p className="font-mono text-[13px] uppercase tracking-wider text-foreground-subtle">
-                Prefere o formulário?
+                Prefere que a gente chame?
               </p>
               <h3 className="display-balanced mt-3 text-[length:var(--fs-h3)] text-foreground">
-                Aplicação para a mensalidade
+                Deixe seu contato
               </h3>
               <p className="mt-5 text-sm leading-relaxed text-foreground-muted">
-                Responda em etapas, em poucos minutos, e a gente volta com setup, prazo e preço para
-                a sua clínica.
+                Nome, clínica e bairro. Em até 1 dia útil a gente chama você no WhatsApp, já com a
+                pergunta do seu bairro feita.
               </p>
               <TrackedLink
                 href={site.ctas.applyHref}
