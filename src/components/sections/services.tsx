@@ -76,15 +76,10 @@ export function Services() {
                 {offer.card.terms}
               </p>
               <p className="mt-5 rounded-lg bg-bone p-4 text-sm leading-relaxed text-foreground">
-                {offer.card.value.text}{" "}
-                <a
-                  href={offer.card.value.source.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-foreground-subtle underline underline-offset-2 hover:text-foreground"
-                >
-                  Fonte: {offer.card.value.source.label}
-                </a>
+                {offer.card.guarantee}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
+                {offer.card.exclusions}
               </p>
 
               <TrackedLink

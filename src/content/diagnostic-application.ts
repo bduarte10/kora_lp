@@ -22,5 +22,5 @@ export const diagnosticApplication = {
     },
   ],
   footerNote:
-    "Ao enviar, você concorda com nossa política de privacidade. Usamos seus dados só para responder este contato.",
+    "Ao enviar, você concorda com nossa política de privacidade. Usamos seus dados para responder este contato e, se você quiser seguir, enviar uma proposta.",
 } as const;

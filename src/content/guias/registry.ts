@@ -28,6 +28,7 @@ export const groupLabels: Record<GuideGroup, string> = {
 };
 
 const PUBLISHED = "2026-06-14";
+const REVISED = "2026-10-01";
 
 export const guides: Guide[] = [
   {
@@ -35,10 +36,10 @@ export const guides: Guide[] = [
     title: "O que é GEO: como aparecer no ChatGPT, Gemini e Perplexity (e como difere do SEO)",
     description:
       "GEO (Generative Engine Optimization) é otimizar seu site para ser citado por IAs como ChatGPT, Gemini e Perplexity. Entenda como funciona, como difere do SEO e o que fazer na prática.",
-    tldr: "GEO (Generative Engine Optimization) é a prática de otimizar um site para ser citado nas respostas de assistentes de IA como ChatGPT, Gemini e Perplexity. Diferente do SEO, que busca posições no Google, o GEO foca em conteúdo factual e bem estruturado, dados acessíveis a crawlers de IA e autoridade da marca para que o modelo cite sua empresa como fonte.",
+    tldr: "GEO (Generative Engine Optimization) é a prática de otimizar um site para ser citado nas respostas de assistentes de IA como ChatGPT, Gemini e Perplexity. Diferente do SEO, que busca posições no Google, o GEO foca em conteúdo factual e bem estruturado, dados acessíveis aos robôs de busca das IAs e autoridade da marca para que o modelo cite sua empresa como fonte.",
     group: "fundamentos",
     datePublished: PUBLISHED,
-    dateModified: PUBLISHED,
+    dateModified: REVISED,
     related: ["automatizar-atendimento-whatsapp-ia"],
     Content: OQueEGeo,
     faq: [
@@ -48,7 +49,7 @@ export const guides: Guide[] = [
       },
       {
         q: "Como faço meu site ser citado pelo ChatGPT?",
-        a: "Permita o acesso dos crawlers de IA (GPTBot, OAI-SearchBot), publique conteúdo que responda perguntas de forma direta e factual, use dados estruturados (schema.org) e construa autoridade com menções da marca em fontes confiáveis.",
+        a: "Não bloqueie o robô de busca da OpenAI (OAI-SearchBot) — o GPTBot, de treino, é decisão à parte —, publique conteúdo que responda perguntas de forma direta e factual, use dados estruturados (schema.org) e construa autoridade com menções da marca em fontes confiáveis.",
       },
       {
         q: "Quanto tempo leva para aparecer nas IAs?",
@@ -64,7 +65,7 @@ export const guides: Guide[] = [
     tldr: "Para automatizar o atendimento no WhatsApp com IA, use a API oficial (WhatsApp Business Platform) conectada a um agente de IA que responde dúvidas frequentes, qualifica leads e agenda, escalando para um humano quando necessário. Bem feito, resolve a maior parte das conversas repetitivas; mal feito, frustra o cliente — por isso o desenho do fluxo e o handoff humano são essenciais.",
     group: "fundamentos",
     datePublished: PUBLISHED,
-    dateModified: PUBLISHED,
+    dateModified: REVISED,
     related: ["o-que-e-geo", "ia-automacao-clinicas-sigilo"],
     Content: AutomatizarWhatsapp,
     faq: [
@@ -86,7 +87,7 @@ export const guides: Guide[] = [
     tldr: "Clínicas podem usar IA e automação para agendamento, lembretes e triagem inicial, desde que tratem dados de saúde como dados sensíveis sob a LGPD: com base legal adequada, consentimento quando exigido, minimização de dados, contratos com os fornecedores (operadores) e nada de expor conteúdo clínico em ferramentas sem garantia de confidencialidade. O sigilo profissional continua valendo para o que a automação coleta.",
     group: "clinicas",
     datePublished: PUBLISHED,
-    dateModified: PUBLISHED,
+    dateModified: REVISED,
     related: ["automatizar-atendimento-whatsapp-ia"],
     Content: IaClinicasSigilo,
     faq: [

@@ -95,7 +95,7 @@ export function ArticleLayout({ guide }: { guide: Guide }) {
               href="/diagnostico"
               className="inline-flex items-center justify-center rounded-full bg-coral px-5 py-3 text-sm font-medium text-cream transition hover:bg-coral-deep"
             >
-              Aplicar para a mensalidade
+              {site.ctas.apply}
             </Link>
             <a
               href={whatsapp}

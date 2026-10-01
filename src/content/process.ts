@@ -16,22 +16,22 @@ export const process: ProcessStep[] = [
   {
     step: "02",
     title: "Diagnóstico e setup",
-    duration: "Primeiro mês",
+    duration: "Mês 1",
     description:
-      "Rodamos as perguntas que seus pacientes fazem, auditamos perfil, avaliações, site e diretórios, e entregamos o diagnóstico com as ações priorizadas.",
+      "Registramos a linha de base com as perguntas que seus pacientes fazem, auditamos perfil, avaliações, site e diretórios, configuramos os acessos e fazemos as primeiras correções. O mês termina com o diagnóstico e o plano dos próximos.",
   },
   {
     step: "03",
-    title: "Primeiras entregas",
-    duration: "Segundo mês",
+    title: "Execução",
+    duration: "Mês 2",
     description:
-      "Perfil do Google revisado, rotina de avaliações combinada com a recepção e as primeiras páginas sobre procedimentos no ar, aprovadas pelo dentista.",
+      "Perfil do Google revisado, rotina de avaliações combinada com a recepção e as primeiras páginas sobre procedimentos no ar, aprovadas pelo dentista. Começam os relatórios mensais.",
   },
   {
     step: "04",
-    title: "Rotina mensal",
-    duration: "Contínuo",
+    title: "Fechamento do piloto",
+    duration: "Mês 3",
     description:
-      "Todo mês repetimos as mesmas perguntas, cuidamos do perfil e das avaliações e entregamos o relatório com as ações do mês seguinte.",
+      "O trabalho continua e o relatório de fechamento compara tudo com a linha de base. Com ele, a clínica decide se segue. Se seguir, vira rotina mensal.",
   },
 ];

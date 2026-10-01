@@ -14,7 +14,7 @@ export default function PrivacyPage() {
       <div className="container-text">
         <h1 className="display text-[length:var(--fs-h1)]">Política de Privacidade</h1>
         <p className="mt-6 text-sm text-foreground-subtle">
-          Última atualização: {new Date().toLocaleDateString("pt-BR")}
+          Última atualização: 1º de outubro de 2026
         </p>
 
         <div className="prose prose-neutral mt-12 max-w-none space-y-6 leading-relaxed text-foreground">
@@ -26,23 +26,27 @@ export default function PrivacyPage() {
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">1. Dados coletados</h2>
           <p>
-            Coletamos: (a) dados fornecidos voluntariamente em formulários ou agendamentos (nome,
-            telefone, clínica, bairro e cidade); (b) dados técnicos de navegação (cookies, IP,
-            páginas visitadas) por meio de ferramentas como Google Analytics, Meta Pixel e LinkedIn
-            Insight Tag, mediante seu consentimento.
+            Coletamos: (a) os dados que você informa no formulário ou no WhatsApp (nome, telefone,
+            clínica, bairro e cidade), junto com a página e a campanha de onde veio a visita; (b)
+            dados de navegação (cookies, IP, páginas visitadas), pelo Google Tag Manager e pelo
+            PostHog, só depois do seu consentimento; (c) métricas agregadas de audiência e
+            desempenho da Vercel, que não usam cookies; (d) registros de erro do site, pelo Sentry,
+            para corrigir falhas.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">2. Finalidade</h2>
           <p>
-            Os dados são usados para: responder solicitações, organizar diagnósticos, enviar
-            propostas comerciais relevantes e mensurar a eficácia de campanhas publicitárias.
+            Os dados são usados para: responder o seu contato, fazer a análise gratuita, enviar uma
+            proposta se você quiser seguir e medir quais páginas e campanhas trazem contatos.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">3. Compartilhamento</h2>
           <p>
-            Não vendemos nem compartilhamos seus dados com terceiros para fins comerciais.
-            Utilizamos processadores como Google (planilhas, e-mail e analytics) e Vercel
-            (hospedagem), todos sob acordos de tratamento de dados.
+            Não vendemos seus dados. Eles passam por fornecedores que os tratam em nosso nome:
+            Google (planilha, e-mail e Tag Manager), Vercel (hospedagem e métricas), PostHog
+            (análise de navegação) e Sentry (registro de erros). Alguns desses fornecedores guardam
+            dados fora do Brasil. Ferramentas de anúncio, como as da Meta e do LinkedIn, só são
+            carregadas pelo Tag Manager e só depois do seu consentimento.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">4. Cookies</h2>
