@@ -1,7 +1,12 @@
 import { formatBRL, site } from "./site";
 
-const guarantee =
-  "Contrato mínimo de 6 meses. Se o relatório do 3º mês não mostrar evolução, o mês seguinte é por nossa conta e o trabalho continua. O setup é informado na conversa, antes de qualquer contrato.";
+export const setupPrices = {
+  essencial: formatBRL(1500),
+  completo: formatBRL(2500),
+  extraUnit: formatBRL(1000),
+};
+
+const guarantee = `Contrato mínimo de 6 meses. Se o relatório do 3º mês não mostrar evolução, o mês seguinte é por nossa conta e o trabalho continua. Setup a partir de ${setupPrices.essencial}, pago uma vez, na assinatura.`;
 
 export const planPrices = {
   essencial: site.pricing.monthlyFrom,
