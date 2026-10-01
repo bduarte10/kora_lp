@@ -39,8 +39,7 @@ export function FinalCTA() {
               <div className="mt-10 space-y-4">
                 <FinalCtaWhatsApp />
                 <p className="text-[13px] text-cream-muted">
-                  Grátis e sem compromisso. Mensalidade a partir de{" "}
-                  {site.pricing.monthlyFrom}.
+                  Grátis e sem compromisso. Mensalidade a partir de {site.pricing.monthlyFrom}.
                 </p>
               </div>
             </Reveal>
