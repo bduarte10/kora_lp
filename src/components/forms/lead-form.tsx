@@ -1,13 +1,14 @@
 "use client";
 
 import { whatsappLinkWith } from "@/content/site";
+import { readAttribution } from "@/lib/attribution";
 import { pushEvent } from "@/lib/gtm";
-import { type Lead, leadSchema, segmentOptions } from "@/lib/lead";
+import { type Lead, type LeadFields, leadFieldsSchema, segmentOptions } from "@/lib/lead";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowRight, Loader2, MessageCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const formId = "diagnostic-application";
@@ -20,6 +21,7 @@ export function LeadForm() {
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const [failed, setFailed] = useState<Lead | null>(null);
+  const submissionId = useRef<string | null>(null);
 
   const {
     register,
@@ -27,19 +29,31 @@ export function LeadForm() {
     setValue,
     watch,
     formState: { errors },
-  } = useForm<Lead>({
-    resolver: zodResolver(leadSchema),
+  } = useForm<LeadFields>({
+    resolver: zodResolver(leadFieldsSchema),
     defaultValues: { name: "", clinic: "", phone: "", location: "", segment: "", website: "" },
     mode: "onTouched",
   });
 
   const segment = watch("segment");
 
-  const onSubmit = async (data: Lead) => {
+  const onSubmit = async (data: LeadFields) => {
     setSubmitting(true);
     setFailed(null);
-    const lead = { ...data, source: "site /diagnostico" };
-    pushEvent({ event: "form_submit", form_id: formId, form_variant: formVariant });
+    // O mesmo id em todos os reenvios deste formulário: o webhook grava só uma vez.
+    submissionId.current ??= crypto.randomUUID();
+    const lead: Lead = {
+      ...data,
+      id: submissionId.current,
+      source: "site /diagnostico",
+      attribution: readAttribution(),
+    };
+    pushEvent({
+      event: "form_submit",
+      form_id: formId,
+      form_variant: formVariant,
+      submission_id: lead.id,
+    });
 
     try {
       const res = await fetch("/api/lead", {
@@ -48,7 +62,12 @@ export function LeadForm() {
         body: JSON.stringify(lead),
       });
       if (!res.ok) throw new Error(`status ${res.status}`);
-      pushEvent({ event: "lead_qualified", form_id: formId, form_variant: formVariant });
+      pushEvent({
+        event: "lead_received",
+        form_id: formId,
+        form_variant: formVariant,
+        submission_id: lead.id,
+      });
       router.push("/obrigado");
     } catch {
       setFailed(lead);

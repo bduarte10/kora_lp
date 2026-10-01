@@ -38,7 +38,7 @@ export function Hero() {
               href={site.ctas.callHref}
               target="_blank"
               rel="noreferrer"
-              event={{ event: "cta_click", label: hero.primaryCta, location: "hero-primary" }}
+              event={{ event: "whatsapp_click", label: hero.primaryCta, location: "hero-primary" }}
               className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-full bg-coral px-7 text-base font-medium text-cream shadow-[var(--shadow-coral)] transition hover:bg-coral-deep"
             >
               {hero.primaryCta}

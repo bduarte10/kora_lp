@@ -12,7 +12,7 @@ export function FinalCtaWhatsApp() {
       target="_blank"
       rel="noreferrer"
       onClick={() =>
-        pushEvent({ event: "cta_click", label: hero.primaryCta, location: "final-cta-call" })
+        pushEvent({ event: "whatsapp_click", label: hero.primaryCta, location: "final-cta-call" })
       }
       className="group inline-flex min-h-14 items-center justify-center gap-2.5 rounded-full bg-cream px-7 text-base font-semibold text-coral-deep transition hover:bg-cream/95"
     >

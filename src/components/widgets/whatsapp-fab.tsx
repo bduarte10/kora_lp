@@ -21,7 +21,7 @@ export function WhatsAppFab() {
       href={whatsappLink()}
       target="_blank"
       rel="noreferrer"
-      onClick={() => pushEvent({ event: "whatsapp_click", location: "fab" })}
+      onClick={() => pushEvent({ event: "whatsapp_click", label: "WhatsApp", location: "fab" })}
       aria-label={`Conversar com ${site.name} no WhatsApp`}
       className={cn(
         "fixed bottom-5 right-5 z-30 inline-flex items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background shadow-lg transition-all duration-300",

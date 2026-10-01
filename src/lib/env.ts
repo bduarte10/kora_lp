@@ -2,6 +2,7 @@ import { z } from "zod";
 
 const serverSchema = z.object({
   LEAD_WEBHOOK_URL: z.string().url().optional(),
+  LEAD_WEBHOOK_SECRET: z.string().optional(),
 });
 
 const clientSchema = z.object({
@@ -20,6 +21,7 @@ const empty = (v: string | undefined) => v || undefined;
 
 export const serverEnv = serverSchema.parse({
   LEAD_WEBHOOK_URL: empty(process.env.LEAD_WEBHOOK_URL),
+  LEAD_WEBHOOK_SECRET: empty(process.env.LEAD_WEBHOOK_SECRET),
 });
 
 export const clientEnv = clientSchema.parse({

@@ -151,7 +151,7 @@ export default function DiagnosticApplicationPage() {
                   target="_blank"
                   rel="noreferrer"
                   event={{
-                    event: "cta_click",
+                    event: "whatsapp_click",
                     label: site.ctas.call,
                     location: "diagnostic-page-top",
                   }}
