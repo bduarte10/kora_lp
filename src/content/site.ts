@@ -36,7 +36,7 @@ export const site = {
   description: `A KORA faz clínicas odontológicas aparecerem quando o paciente procura no Google, no Maps e no ChatGPT, e mostra todo mês o que mudou. Mensalidade a partir de ${monthlyFrom}.`,
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://koraintelligence.com.br",
   locale: "pt-BR",
-  defaultOgImage: "/og-default.png",
+  defaultOgImage: "/opengraph-image",
 
   contact: {
     whatsappNumber,
@@ -71,11 +71,11 @@ export const site = {
   },
 
   nav: [
-    { href: "#mensalidade", label: "O que entra" },
-    { href: "#preco", label: "Preço" },
-    { href: "#processo", label: "Como funciona" },
-    { href: "#relatorio", label: "O relatório" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/#mensalidade", label: "O que entra" },
+    { href: "/#preco", label: "Preço" },
+    { href: "/#processo", label: "Como funciona" },
+    { href: "/#relatorio", label: "O relatório" },
+    { href: "/#faq", label: "FAQ" },
   ],
 } as const;
 

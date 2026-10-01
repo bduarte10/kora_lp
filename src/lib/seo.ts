@@ -58,8 +58,8 @@ export const baseMetadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
     apple: "/apple-touch-icon.png",
   },
 };
@@ -74,8 +74,8 @@ export const organizationJsonLd = {
   taxID: site.cnpj,
   foundingDate: site.foundingDate,
   url: siteUrl,
-  logo: `${siteUrl}/og-default.png`,
-  image: `${siteUrl}/og-default.png`,
+  logo: `${siteUrl}/favicon.svg`,
+  image: `${siteUrl}${site.defaultOgImage}`,
   description: site.description,
   slogan: site.tagline,
   telephone: `+${site.contact.whatsappNumber.replace(/\D/g, "")}`,
@@ -148,7 +148,7 @@ export const professionalServiceJsonLd = {
   name: site.name,
   description: site.description,
   url: siteUrl,
-  image: `${siteUrl}/og-default.png`,
+  image: `${siteUrl}${site.defaultOgImage}`,
   areaServed: { "@type": "Country", name: "Brazil" },
   serviceType: "Presença no Google, no Maps e em respostas de IA para clínicas odontológicas",
   address: {
