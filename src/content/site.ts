@@ -20,7 +20,7 @@ export const formatBRL = (value: number) =>
     maximumFractionDigits: 0,
   }).format(value);
 
-const monthlyFromBRL = 1500;
+const monthlyFromBRL = 2500;
 const monthlyFrom = formatBRL(monthlyFromBRL);
 
 const callMessage =

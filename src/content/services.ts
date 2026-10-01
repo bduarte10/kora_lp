@@ -36,7 +36,7 @@ export const services: ServicePillar[] = [
     deliverables: [
       "Rotina com a recepção para pedir avaliações",
       "Resposta às avaliações do Google",
-      "Páginas que explicam procedimentos e o que define o custo",
+      "Duas páginas por mês que explicam procedimentos e o que define o custo",
       "Todo conteúdo aprovado pelo dentista responsável",
     ],
   },
@@ -50,7 +50,7 @@ export const services: ServicePillar[] = [
       "Perguntas de pacientes testadas no Google e no ChatGPT",
       "Clínicas concorrentes que aparecem no seu lugar",
       "Ligações e rotas vindas do perfil do Google",
-      "Próximas ações do mês",
+      "E-mail semanal e relatório mensal com as próximas ações",
     ],
   },
 ];

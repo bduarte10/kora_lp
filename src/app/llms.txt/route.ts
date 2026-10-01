@@ -1,5 +1,4 @@
 import { type GuideGroup, groupLabels, guides } from "@/content/guias/registry";
-import { planPrices } from "@/content/offer";
 import { site } from "@/content/site";
 
 // Gera /llms.txt no padrão llmstxt.org a partir do conteúdo do site — mantém-se
@@ -21,7 +20,7 @@ function buildLlmsTxt(): string {
     "",
     "## Páginas",
     `- [Início](${base}/): o que entra na mensalidade para clínicas, preço, método e perguntas frequentes.`,
-    `- [Aplicação](${base}/diagnostico): formulário para clínicas. Planos Essencial (${planPrices.essencial}/mês), Completo (${planPrices.completo}/mês) e Rede, para mais de uma unidade.`,
+    `- [Aplicação](${base}/diagnostico): formulário para clínicas, mensalidade a partir de ${site.pricing.monthlyFrom} por clínica, com tudo incluído.`,
     `- [Guias](${base}/guias): conteúdo answer-first sobre GEO, automação de atendimento e IA aplicada.`,
     "",
   ];
