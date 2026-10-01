@@ -42,7 +42,12 @@ export function LeadForm() {
     // O mesmo id em todos os reenvios deste formulário: o webhook grava só uma vez.
     submissionId.current ??= crypto.randomUUID();
     const lead: Lead = { ...data, id: submissionId.current, source: "site /diagnostico" };
-    pushEvent({ event: "form_submit", form_id: formId, form_variant: formVariant });
+    pushEvent({
+      event: "form_submit",
+      form_id: formId,
+      form_variant: formVariant,
+      submission_id: lead.id,
+    });
 
     try {
       const res = await fetch("/api/lead", {
@@ -51,7 +56,12 @@ export function LeadForm() {
         body: JSON.stringify(lead),
       });
       if (!res.ok) throw new Error(`status ${res.status}`);
-      pushEvent({ event: "lead_qualified", form_id: formId, form_variant: formVariant });
+      pushEvent({
+        event: "lead_received",
+        form_id: formId,
+        form_variant: formVariant,
+        submission_id: lead.id,
+      });
       router.push("/obrigado");
     } catch {
       setFailed(lead);

@@ -28,17 +28,11 @@ export type GTMEvent =
       event: "form_submit";
       form_id: string;
       form_variant?: string;
+      submission_id?: string;
       interest?: string;
       priority?: string;
     }
-  | {
-      event: "lead_qualified";
-      form_id: string;
-      form_variant?: string;
-      email?: string;
-      interest?: string;
-      priority?: string;
-    }
+  | { event: "lead_received"; form_id: string; form_variant?: string; submission_id: string }
   | { event: "section_view"; section: string };
 
 export function pushEvent(payload: GTMEvent) {

@@ -37,4 +37,6 @@ Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind v4 (@theme 
 
 ## Tracking events (padronizados)
 
-`cta_click` · `form_submit` · `lead_qualified` · `schedule_click` · `whatsapp_click` · `section_view`
+`cta_click` · `form_submit` · `lead_received` · `schedule_click` · `whatsapp_click` · `section_view`
+
+`form_submit` é a tentativa; `lead_received` só sai quando `/api/lead` confirma a gravação, com o `submission_id` do envio. Qualificação comercial não é evento do site.
