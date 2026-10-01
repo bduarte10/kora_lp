@@ -24,9 +24,12 @@ export async function POST(req: Request) {
   // Campo invisível: só robô preenche. Responde sucesso para não ensinar o robô.
   if (parsed.data.website) return NextResponse.json({ ok: true });
 
-  const webhook = serverEnv.LEAD_WEBHOOK_URL;
-  if (!webhook) {
-    Sentry.captureMessage("[lead] LEAD_WEBHOOK_URL ausente; lead não foi salvo", "error");
+  const { LEAD_WEBHOOK_URL: webhook, LEAD_WEBHOOK_SECRET: secret } = serverEnv;
+  if (!webhook || !secret) {
+    Sentry.captureMessage(
+      "[lead] LEAD_WEBHOOK_URL ou LEAD_WEBHOOK_SECRET ausente; lead não foi salvo",
+      "error",
+    );
     return NextResponse.json({ error: "not_configured" }, { status: 503 });
   }
 
@@ -35,11 +38,16 @@ export async function POST(req: Request) {
     const res = await fetch(webhook, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(lead),
+      body: JSON.stringify({ ...lead, secret }),
       signal: AbortSignal.timeout(10_000),
     });
-    const result = (await res.json()) as { ok?: boolean };
-    if (!res.ok || !result.ok) throw new Error(`webhook respondeu ${res.status}`);
+    const result = (await res.json()) as { ok?: boolean; notified?: boolean; error?: string };
+    if (!res.ok || !result.ok) {
+      throw new Error(`webhook respondeu ${res.status} ${result.error ?? ""}`.trim());
+    }
+    if (result.notified === false) {
+      Sentry.captureMessage(`[lead] ${lead.id} gravado, mas o e-mail de aviso falhou`, "warning");
+    }
   } catch (error) {
     Sentry.captureException(error, { tags: { channel: "lead-webhook" } });
     return NextResponse.json({ error: "delivery_failed" }, { status: 502 });
