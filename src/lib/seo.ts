@@ -1,5 +1,5 @@
 import { faq } from "@/content/faq";
-import { offer, plans } from "@/content/offer";
+import { offer } from "@/content/offer";
 import { services } from "@/content/services";
 import { site } from "@/content/site";
 import type { Metadata } from "next";
@@ -129,19 +129,17 @@ export const offerServiceJsonLd = {
     "@type": "BusinessAudience",
     audienceType: "Clínicas odontológicas",
   },
-  offers: plans.map((plan) => ({
+  offers: {
     "@type": "Offer",
-    name: `Plano ${plan.name}`,
-    description: plan.summary,
     url: `${siteUrl}/diagnostico`,
     priceSpecification: {
       "@type": "UnitPriceSpecification",
       priceCurrency: "BRL",
-      ...(plan.pricePrefix ? { minPrice: plan.priceBRL } : { price: plan.priceBRL }),
+      minPrice: site.pricing.monthlyFromBRL,
       unitCode: "MON",
       unitText: "mês",
     },
-  })),
+  },
 };
 
 export const professionalServiceJsonLd = {

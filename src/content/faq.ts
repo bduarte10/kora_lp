@@ -1,4 +1,4 @@
-import { planPrices, setupPrices } from "./offer";
+import { pricing } from "./offer";
 
 export type FAQItem = {
   q: string;
@@ -12,7 +12,7 @@ export const faq: FAQItem[] = [
   },
   {
     q: "Quanto custa?",
-    a: `São três planos. O Essencial custa ${planPrices.essencial} por mês e cobre 1 unidade, até 2 procedimentos e 1 bairro. O Completo custa ${planPrices.completo} por mês, cobre até 4 procedimentos e 3 bairros e inclui duas páginas por mês e um e-mail semanal. Clínicas com mais de uma unidade ficam no plano Rede, que é o Completo mais ${planPrices.extraUnit} por unidade a mais. Dá para subir de plano a qualquer momento, sem novo setup. O setup é pago uma vez, na assinatura: ${setupPrices.essencial} no Essencial, ${setupPrices.completo} no Completo e mais ${setupPrices.extraUnit} por unidade a mais na Rede. Ele cobre a configuração inicial: acessos, correção de dados nos diretórios, dados estruturados e o começo da rotina de avaliações. O contrato mínimo é de 6 meses. Se o relatório do 3º mês não mostrar evolução, o mês seguinte é por nossa conta e o trabalho continua, desde que a clínica tenha feito a parte dela: acessos liberados, conteúdo aprovado no prazo e pedido de avaliação aos pacientes em dia. Evolução é aparecer em mais respostas de IA, ser recomendada mais vezes ou receber mais ligações, rotas e cliques pelo Perfil do Google. Tudo é fechado na conversa, antes de qualquer contrato.`,
+    a: `A mensalidade é de ${pricing.monthly} por clínica e inclui tudo: Perfil do Google, avaliações, diretórios, dados estruturados, menções em fontes locais, duas páginas por mês, e-mail semanal e relatório mensal, com até 4 procedimentos e 3 bairros. Cada unidade a mais custa ${pricing.extraUnit} por mês. O setup é de ${pricing.setup}, pago uma vez, na assinatura, e cobre a configuração inicial: acessos, correção de dados nos diretórios, dados estruturados e o começo da rotina de avaliações. O contrato mínimo é de 6 meses. Se o relatório do 3º mês não mostrar evolução, o mês seguinte é por nossa conta e o trabalho continua, desde que a clínica tenha feito a parte dela: acessos liberados, conteúdo aprovado no prazo e pedido de avaliação aos pacientes em dia. Evolução é aparecer em mais respostas de IA, ser recomendada mais vezes ou receber mais ligações, rotas e cliques pelo Perfil do Google. Tudo é fechado na conversa, antes de qualquer contrato.`,
   },
   {
     q: "Isso respeita as regras de publicidade do CFO?",
