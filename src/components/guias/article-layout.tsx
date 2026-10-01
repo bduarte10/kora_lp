@@ -1,9 +1,13 @@
 import { JsonLd } from "@/components/seo/json-ld";
+import { TrackedLink } from "@/components/tracking/tracked-link";
 import { relatedGuides } from "@/content/guias/registry";
 import type { Guide } from "@/content/guias/registry";
 import { site, whatsappLinkWith } from "@/content/site";
 import { buildArticleJsonLd, buildBreadcrumbJsonLd, buildFaqJsonLd } from "@/lib/seo";
 import Link from "next/link";
+
+const applyLabel = "Aplicar para a mensalidade";
+const whatsappLabel = "Falar no WhatsApp";
 
 function formatDate(iso: string) {
   return new Date(`${iso}T12:00:00`).toLocaleDateString("pt-BR", {
@@ -91,20 +95,22 @@ export function ArticleLayout({ guide }: { guide: Guide }) {
             no lugar dela, e cuida todo mês do que faz a clínica ser encontrada e escolhida.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link
+            <TrackedLink
               href="/diagnostico"
+              event={{ event: "cta_click", label: applyLabel, location: "guide-end" }}
               className="inline-flex items-center justify-center rounded-full bg-coral px-5 py-3 text-sm font-medium text-cream transition hover:bg-coral-deep"
             >
-              Aplicar para a mensalidade
-            </Link>
-            <a
+              {applyLabel}
+            </TrackedLink>
+            <TrackedLink
               href={whatsapp}
               target="_blank"
               rel="noreferrer"
+              event={{ event: "whatsapp_click", label: whatsappLabel, location: "guide-end" }}
               className="inline-flex items-center justify-center rounded-full border border-border px-5 py-3 text-sm font-medium text-foreground transition hover:bg-background"
             >
-              Falar no WhatsApp
-            </a>
+              {whatsappLabel}
+            </TrackedLink>
           </div>
         </section>
 

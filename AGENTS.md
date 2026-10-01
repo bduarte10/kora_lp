@@ -40,3 +40,5 @@ Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind v4 (@theme 
 `cta_click` · `form_submit` · `lead_received` · `schedule_click` · `whatsapp_click` · `section_view`
 
 `form_submit` é a tentativa; `lead_received` só sai quando `/api/lead` confirma a gravação, com o `submission_id` do envio. Qualificação comercial não é evento do site.
+
+Link que abre o WhatsApp dispara `whatsapp_click`; CTA para página do site dispara `cta_click`. Os dois levam `label` e `location`.

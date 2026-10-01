@@ -22,7 +22,7 @@ function capturePosthog(event: string, props: Record<string, unknown>) {
 
 export type GTMEvent =
   | { event: "cta_click"; label: string; location: string }
-  | { event: "whatsapp_click"; location: string }
+  | { event: "whatsapp_click"; location: string; label?: string }
   | { event: "diagnostic_interest"; location: string; priority?: string }
   | {
       event: "form_submit";
