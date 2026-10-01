@@ -28,13 +28,11 @@ Na prática os dois se complementam: um site bem feito para SEO já tem boa base
 
 ## Como otimizar seu site para GEO na prática
 
-- **Permita os crawlers de IA** no seu `robots.txt`: GPTBot e OAI-SearchBot (OpenAI), PerplexityBot (Perplexity) e Google-Extended (Gemini). Se você bloqueia esses robôs, sua chance de ser citado cai.
+- **Separe busca de treinamento no `robots.txt`:** cada empresa de IA usa robôs diferentes para fins diferentes. Na OpenAI, o OAI-SearchBot busca páginas para mostrar no ChatGPT e o GPTBot coleta conteúdo para treinar modelos; dá para liberar o primeiro e bloquear o segundo. O PerplexityBot indexa para a busca do Perplexity. O Google-Extended controla o uso do conteúdo no treino e no embasamento do Gemini, mas não muda nada na Pesquisa Google, que depende do Googlebot. Para aparecer em respostas com busca, o que importa é não bloquear os robôs de busca. Liberar treinamento é decisão sua, não requisito.
 - **Escreva answer-first:** responda a pergunta logo no primeiro parágrafo, antes de contextualizar. IAs (e pessoas) preferem.
 - **Use dados estruturados (schema.org):** marque negócio local, FAQ, produtos e serviços. Isso ajuda a máquina a entender o que é o quê.
 - **Considere um `llms.txt`:** um arquivo que resume e aponta seu conteúdo principal para sistemas de IA, ainda em adoção, mas de baixo custo para implementar.
 - **Construa autoridade e menções:** ser citado em diretórios, portais e veículos confiáveis aumenta a probabilidade de a sua marca entrar no "conhecimento" dos modelos.
-
-Se você vai escolher um parceiro para isso, vale ler nosso guia de [como escolher quem cria seu site](/guias/como-escolher-quem-cria-seu-site) — porque GEO costuma andar junto de site bem construído.
 
 ## Quanto tempo leva
 

@@ -51,7 +51,8 @@ export default function GuiasIndexPage() {
         </h1>
         <p className="mt-4 leading-relaxed text-foreground-muted">
           Respostas diretas sobre como aparecer nas respostas de IA e automatizar atendimento sem
-          quebrar sigilo. Método aberto; a execução é o que se contrata.
+          quebrar sigilo. A mensalidade da KORA cuida da presença de clínicas odontológicas no
+          Google e em IA; automação de atendimento não faz parte dela.
         </p>
       </header>
 
