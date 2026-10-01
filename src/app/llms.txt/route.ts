@@ -20,7 +20,7 @@ function buildLlmsTxt(): string {
     "",
     "## Páginas",
     `- [Início](${base}/): o que entra na mensalidade para clínicas, preço, método e perguntas frequentes.`,
-    `- [Aplicação](${base}/diagnostico): formulário para clínicas, mensalidade a partir de ${site.pricing.monthlyFrom} por clínica, com tudo incluído.`,
+    `- [Aplicação](${base}/diagnostico): formulário para clínicas, mensalidade de ${site.pricing.monthlyFrom} por clínica, com piloto de 3 meses.`,
     `- [Guias](${base}/guias): conteúdo answer-first sobre GEO, automação de atendimento e IA aplicada.`,
     "",
   ];
