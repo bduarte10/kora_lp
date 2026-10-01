@@ -7,7 +7,7 @@ export const hero = {
   eyebrow: "Para clínicas odontológicas",
   headlineLines: [
     "O paciente pergunta à\u00a0IA.",
-    "Ela responde com nomes de\u00a0clínicas.",
+    "Ela cita algumas clínicas.",
     "A sua é uma delas?",
   ],
   description:
