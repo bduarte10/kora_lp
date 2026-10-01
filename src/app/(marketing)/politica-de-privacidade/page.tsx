@@ -52,7 +52,8 @@ export default function PrivacyPage() {
           <h2 className="display-balanced text-[length:var(--fs-h3)]">4. Cookies</h2>
           <p>
             Usamos cookies essenciais e analíticos. Você pode aceitar ou recusar cookies não
-            essenciais pelo banner de consentimento. A recusa não impede o uso do site.
+            essenciais pelo banner de consentimento e mudar a escolha quando quiser em “Preferências
+            de cookies”, no rodapé. A recusa não impede o uso do site.
           </p>
 
           <h2 className="display-balanced text-[length:var(--fs-h3)]">5. Seus direitos</h2>
