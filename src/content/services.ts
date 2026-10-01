@@ -36,7 +36,7 @@ export const services: ServicePillar[] = [
     deliverables: [
       "Rotina com a recepção para pedir avaliações",
       "Resposta às avaliações do Google",
-      "Duas páginas por mês que explicam procedimentos e o que define o custo",
+      "Páginas que explicam procedimentos e o que define o custo",
       "Todo conteúdo aprovado pelo dentista responsável",
     ],
   },
