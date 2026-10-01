@@ -21,6 +21,14 @@ const HEADER = [
   "Bairro e cidade",
   "Tipo de clínica",
   "Origem",
+  "Página de entrada",
+  "Site de origem",
+  "UTM source",
+  "UTM medium",
+  "UTM campaign",
+  "UTM term",
+  "UTM content",
+  "Click ID",
   "ID do envio",
   "E-mail de aviso",
 ];
@@ -29,6 +37,7 @@ const NOTIFY_COLUMN = HEADER.indexOf("E-mail de aviso") + 1;
 
 const REQUIRED = { name: 120, clinic: 160, phone: 20, location: 160 };
 const OPTIONAL = { segment: 80, source: 80 };
+const CLICK_IDS = ["gclid", "gbraid", "wbraid", "fbclid", "msclkid", "li_fat_id"];
 
 function doPost(e) {
   let lead;
@@ -47,7 +56,25 @@ function doPost(e) {
 
   const book = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = book.getSheetByName("Leads") || book.insertSheet("Leads");
-  const row = [lead.name, lead.clinic, lead.phone, lead.location, lead.segment, lead.source];
+  const from = lead.attribution || {};
+  const row = [
+    lead.name,
+    lead.clinic,
+    lead.phone,
+    lead.location,
+    lead.segment,
+    lead.source,
+    from.landing_page,
+    from.referrer,
+    from.utm_source,
+    from.utm_medium,
+    from.utm_campaign,
+    from.utm_term,
+    from.utm_content,
+    CLICK_IDS.filter((key) => from[key])
+      .map((key) => key + "=" + from[key])
+      .join("; "),
+  ];
 
   // A trava impede que dois reenvios simultâneos do mesmo id passem pela checagem.
   const lock = LockService.getScriptLock();
@@ -95,6 +122,12 @@ function invalidField(lead) {
     const value = lead[field];
     if (value == null) continue;
     if (typeof value !== "string" || value.length > OPTIONAL[field]) return field;
+  }
+  const from = lead.attribution;
+  if (from == null) return null;
+  if (typeof from !== "object") return "attribution";
+  for (const key in from) {
+    if (typeof from[key] !== "string" || from[key].length > 300) return "attribution." + key;
   }
   return null;
 }

@@ -1,4 +1,5 @@
 import { JsonLd } from "@/components/seo/json-ld";
+import { AttributionCapture } from "@/components/tracking/attribution";
 import { ConsentBanner } from "@/components/tracking/consent-banner";
 import { GTM, GTMNoScript } from "@/components/tracking/gtm";
 import { PostHog } from "@/components/tracking/posthog";
@@ -39,6 +40,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <GTMNoScript />
         {children}
         <ConsentBanner />
+        <AttributionCapture />
         <PostHog />
         <Analytics />
         <SpeedInsights />

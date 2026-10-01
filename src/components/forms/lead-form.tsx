@@ -1,6 +1,7 @@
 "use client";
 
 import { whatsappLinkWith } from "@/content/site";
+import { readAttribution } from "@/lib/attribution";
 import { pushEvent } from "@/lib/gtm";
 import { type Lead, type LeadFields, leadFieldsSchema, segmentOptions } from "@/lib/lead";
 import { cn } from "@/lib/utils";
@@ -41,7 +42,12 @@ export function LeadForm() {
     setFailed(null);
     // O mesmo id em todos os reenvios deste formulário: o webhook grava só uma vez.
     submissionId.current ??= crypto.randomUUID();
-    const lead: Lead = { ...data, id: submissionId.current, source: "site /diagnostico" };
+    const lead: Lead = {
+      ...data,
+      id: submissionId.current,
+      source: "site /diagnostico",
+      attribution: readAttribution(),
+    };
     pushEvent({
       event: "form_submit",
       form_id: formId,
