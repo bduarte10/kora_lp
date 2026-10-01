@@ -143,7 +143,7 @@ export default function DiagnosticApplicationPage() {
                 <div>
                   <p className="font-medium text-foreground">Prefere falar agora?</p>
                   <p className="mt-1 text-sm leading-relaxed text-foreground-muted">
-                    15 minutos no WhatsApp, sem apresentação comercial.
+                    15 minutos no WhatsApp, sem compromisso.
                   </p>
                 </div>
                 <TrackedLink

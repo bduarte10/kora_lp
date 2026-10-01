@@ -18,7 +18,7 @@ export const diagnosticApplication = {
     {
       label: "Retorno",
       value: "Em até 1 dia útil",
-      description: "Pelo WhatsApp que você informar, sem apresentação comercial.",
+      description: "Pelo WhatsApp que você informar, sem compromisso.",
     },
   ],
   footerNote:
