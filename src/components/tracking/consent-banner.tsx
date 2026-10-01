@@ -4,9 +4,13 @@ import { pushConsent } from "@/lib/gtm";
 import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "kora:consent";
+const OPEN_EVENT = "kora:consent-open";
+
+type Choice = "granted" | "denied";
 
 export function ConsentBanner() {
   const [visible, setVisible] = useState(false);
+  const [choice, setChoice] = useState<Choice | null>(null);
 
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -15,6 +19,14 @@ export function ConsentBanner() {
     } else if (stored === "granted") {
       pushConsent(true);
     }
+
+    const open = () => {
+      const current = window.localStorage.getItem(STORAGE_KEY);
+      setChoice(current === "granted" || current === "denied" ? current : null);
+      setVisible(true);
+    };
+    window.addEventListener(OPEN_EVENT, open);
+    return () => window.removeEventListener(OPEN_EVENT, open);
   }, []);
 
   if (!visible) return null;
@@ -42,6 +54,11 @@ export function ConsentBanner() {
         </a>
         .
       </p>
+      {choice && (
+        <p className="mt-2 text-sm text-foreground-subtle">
+          Sua escolha atual: cookies {choice === "granted" ? "aceitos" : "recusados"}.
+        </p>
+      )}
       <div className="mt-3 flex flex-wrap gap-2">
         <button
           type="button"
@@ -59,5 +76,17 @@ export function ConsentBanner() {
         </button>
       </div>
     </div>
+  );
+}
+
+export function ConsentPreferencesButton({ className }: { className?: string }) {
+  return (
+    <button
+      type="button"
+      onClick={() => window.dispatchEvent(new Event(OPEN_EVENT))}
+      className={className}
+    >
+      Preferências de cookies
+    </button>
   );
 }

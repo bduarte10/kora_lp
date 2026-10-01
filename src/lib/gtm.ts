@@ -44,16 +44,24 @@ export function pushEvent(payload: GTMEvent) {
   capturePosthog(event, props);
 }
 
+function gtag(..._args: unknown[]) {
+  window.dataLayer = window.dataLayer ?? [];
+  // biome-ignore lint/style/noArguments: o Consent Mode só reconhece o objeto arguments, não um array.
+  window.dataLayer.push(arguments as unknown as Record<string, unknown>);
+}
+
 export function pushConsent(granted: boolean) {
   if (typeof window === "undefined") return;
-  window.dataLayer = window.dataLayer ?? [];
-  window.dataLayer.push({
-    event: "consent_update",
-    ad_storage: granted ? "granted" : "denied",
-    ad_user_data: granted ? "granted" : "denied",
-    ad_personalization: granted ? "granted" : "denied",
-    analytics_storage: granted ? "granted" : "denied",
-  });
+  const state = granted ? "granted" : "denied";
+  const consent = {
+    ad_storage: state,
+    ad_user_data: state,
+    ad_personalization: state,
+    analytics_storage: state,
+  };
+  gtag("consent", "update", consent);
+  // Gatilho para tags que precisam rodar logo depois da mudança de consentimento.
+  window.dataLayer.push({ event: "consent_update", ...consent });
 
   // Reflete a decisão de consentimento no PostHog ao vivo.
   if (!clientEnv.NEXT_PUBLIC_POSTHOG_KEY) return;

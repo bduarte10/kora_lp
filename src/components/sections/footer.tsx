@@ -1,3 +1,4 @@
+import { ConsentPreferencesButton } from "@/components/tracking/consent-banner";
 import { site } from "@/content/site";
 import { Instagram, Linkedin } from "lucide-react";
 
@@ -80,6 +81,7 @@ export function Footer() {
             <a href="/termos" className="hover:text-foreground">
               Termos
             </a>
+            <ConsentPreferencesButton className="hover:text-foreground" />
           </div>
         </div>
       </div>
