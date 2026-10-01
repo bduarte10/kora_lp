@@ -25,7 +25,8 @@ export const methodology = {
         "Clínicas de odontologia de alto padrão em Moema e Vila Nova Conceição: quais as mais reconhecidas?",
       answer: "A resposta citou seis clínicas pelo nome, quatro delas com o endereço da rua.",
     },
-    caveat: "Uma cidade e uma ferramenta: é uma amostra, não um estudo. Mas é real, não exemplo.",
+    caveat:
+      "Uma cidade e uma ferramenta: é uma amostra exploratória, não um estudo. Mas as respostas são reais, não exemplo.",
   },
   metricsTitle: "O que o relatório mostra",
   metrics: [
@@ -47,7 +48,8 @@ export const methodology = {
     },
     {
       label: "Perfil do Google",
-      description: "Ligações, pedidos de rota e visitas ao site vindos do perfil.",
+      description:
+        "Cliques para ligar, pedidos de rota e cliques para o site registrados no perfil.",
     },
     {
       label: "Avaliações",

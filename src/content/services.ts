@@ -8,9 +8,9 @@ export type ServicePillar = {
 
 export const servicesIntro = {
   bridge:
-    "A IA não inventa: ela repete o que o Google, as avaliações e o site dizem da clínica. Por isso o trabalho começa ali.",
+    "A IA monta a resposta com o que encontra sobre a clínica: o perfil do Google, as avaliações, o site e outras fontes. A resposta pode variar e até errar. Com informação certa e igual em toda parte, fica mais fácil a clínica ser entendida e indicada. Por isso o trabalho começa ali.",
   success:
-    "O objetivo é simples: quando alguém perguntar “implante em [seu bairro]”, o nome da sua clínica está na resposta, com avaliações recentes e uma página que tira a dúvida do paciente. E você vê, todo mês, quantas ligações e rotas isso trouxe.",
+    "O objetivo é simples: quando alguém perguntar “implante em [seu bairro]”, a sua clínica tem tudo para estar na resposta, com avaliações recentes e uma página que tira a dúvida do paciente. Todo mês você vê três coisas, separadas: o que entregamos, onde a clínica apareceu e quantos cliques para ligar e pedidos de rota o perfil do Google registrou. Clique não é paciente: quantos viraram consulta, só a agenda da clínica mostra.",
 };
 
 export const services: ServicePillar[] = [
@@ -19,7 +19,7 @@ export const services: ServicePillar[] = [
     kicker: "Ser encontrada",
     title: "Sua clínica na resposta do Google, do Maps e da IA",
     description:
-      "O Google e o ChatGPT recomendam a clínica que conseguem entender e confirmar em várias fontes. Arrumamos essas fontes para que a clínica apareça quando o paciente procura.",
+      "O Google e o ChatGPT tendem a recomendar a clínica que conseguem entender e confirmar em várias fontes. Arrumamos essas fontes para a clínica ter mais chance de aparecer quando o paciente procura.",
     deliverables: [
       "Perfil do Google revisado e atualizado todo mês",
       "Nome, endereço e telefone iguais em diretórios e redes",
@@ -32,7 +32,7 @@ export const services: ServicePillar[] = [
     kicker: "Ser escolhida",
     title: "A opção mais fácil de escolher quando o paciente compara",
     description:
-      "Entre três clínicas citadas, o paciente escolhe a que tem avaliações recentes e responde as dúvidas dele. Cuidamos disso todo mês, dentro das regras do CFO.",
+      "Entre as clínicas citadas, o paciente escolhe a que tem avaliações recentes e responde as dúvidas dele. Cuidamos disso todo mês, dentro das regras do CFO.",
     deliverables: [
       "Rotina com a recepção para pedir avaliações",
       "Resposta às avaliações do Google",
@@ -49,7 +49,7 @@ export const services: ServicePillar[] = [
     deliverables: [
       "Perguntas de pacientes testadas no Google e no ChatGPT",
       "Clínicas concorrentes que aparecem no seu lugar",
-      "Ligações e rotas vindas do perfil do Google",
+      "Cliques para ligar e pedidos de rota no perfil do Google",
       "E-mail semanal e relatório mensal com as próximas ações",
     ],
   },

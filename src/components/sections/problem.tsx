@@ -1,35 +1,18 @@
 import { CountUp } from "@/components/motion/count-up";
 import { Reveal } from "@/components/motion/reveal";
 import { methodology } from "@/content/methodology";
-
-const pains = [
-  {
-    title: "Quem entra primeiro, fica.",
-    body: "Quando a IA confia numa clínica, ela repete o nome. Em setembro, a mesma clínica de implante apareceu em 5 das 13 respostas. Quanto antes a sua entra, menos espaço sobra para o vizinho.",
-  },
-  {
-    title: "Site que não responde a dúvida manda o paciente embora.",
-    body: "O paciente quer saber se dói, quanto tempo leva e o que muda o preço. Preço não pode ser anunciado, mas dá para explicar o que define o custo. Se o site não responde, a IA busca a resposta, e a clínica, em outro lugar.",
-  },
-  {
-    title: "Perfil desatualizado tira a clínica do mapa.",
-    body: "Horário errado, poucas avaliações e nenhuma resposta a elas. É dali que o Google e a IA tiram os dados para recomendar alguém.",
-  },
-];
+import { problem } from "@/content/problem";
 
 export function Problem() {
   return (
     <section id="problema" className="section">
       <div className="container-page">
         <Reveal>
-          <p className="eyebrow section-anchor">O problema</p>
+          <p className="eyebrow section-anchor">{problem.eyebrow}</p>
         </Reveal>
         <Reveal delay={0.05}>
           <h2 className="display mt-5 max-w-[20ch] text-[length:var(--fs-h1)]">
-            O paciente mudou de busca.{" "}
-            <span className="text-foreground-muted">
-              A maioria das clínicas ainda não percebeu.
-            </span>
+            {problem.title} <span className="text-foreground-muted">{problem.titleMuted}</span>
           </h2>
         </Reveal>
 
@@ -63,7 +46,7 @@ export function Problem() {
         </Reveal>
 
         <ul className="mt-14 grid gap-10 md:grid-cols-3 md:gap-12">
-          {pains.map((p, i) => (
+          {problem.pains.map((p, i) => (
             <Reveal key={p.title} delay={0.04 * i} as="li" className="border-t border-border pt-8">
               <h3 className="display-balanced text-[length:var(--fs-h3)]">{p.title}</h3>
               <p className="mt-4 leading-relaxed text-foreground-muted">{p.body}</p>
