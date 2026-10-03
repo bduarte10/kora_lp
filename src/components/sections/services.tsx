@@ -70,17 +70,13 @@ export function Services() {
                   /mês
                 </span>
               </p>
-              <p className="mt-2 text-sm text-foreground-muted">{offer.card.extraUnit}</p>
-              <p className="mt-5 leading-relaxed text-foreground">{offer.card.firstMonth}</p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
-                {offer.card.terms}
-              </p>
-              <p className="mt-5 rounded-lg bg-bone p-4 text-sm leading-relaxed text-foreground">
-                {offer.card.guarantee}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
-                {offer.card.exclusions}
-              </p>
+              <p className="mt-3 text-foreground">{offer.card.terms}</p>
+              <a
+                href="#faq"
+                className="mt-3 inline-block text-sm text-foreground-muted underline underline-offset-4 transition hover:text-foreground"
+              >
+                {offer.card.detailsLink}
+              </a>
 
               <TrackedLink
                 href={site.ctas.callHref}

@@ -11,14 +11,14 @@ export const hero = {
     "A sua é uma delas?",
   ],
   description:
-    "A KORA cuida, todo mês, das informações que o Google e o ChatGPT usam para indicar uma clínica. E mostra, com print e data, o que mudou.",
+    "A Kora GEO cuida, todo mês, das informações que o Google e o ChatGPT usam para indicar uma clínica. E mostra, com print e data, o que mudou.",
   primaryCta: "Ver onde minha clínica aparece",
   note: "Grátis, em 15 min pelo WhatsApp",
   price: `A partir de ${site.pricing.monthlyFrom}/mês`,
   proof: {
     value: `${cited.value} de ${questions.value}`,
     label:
-      "respostas reais do Google com IA citaram clínicas pelo nome. Amostra da KORA em São Paulo, set/2026.",
+      "respostas reais do Google com IA citaram clínicas pelo nome. Amostra da Kora GEO em São Paulo, set/2026.",
   },
   photo: { src: "/images/hero-paciente.jpg", alt: "Mulher sorrindo enquanto olha o celular" },
   answer: {

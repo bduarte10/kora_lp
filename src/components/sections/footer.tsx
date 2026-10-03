@@ -47,7 +47,7 @@ export function Footer() {
                   href={site.social.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="KORA no LinkedIn"
+                  aria-label="Kora GEO no LinkedIn"
                   className="inline-flex items-center gap-2 text-foreground-muted transition hover:text-foreground"
                 >
                   <Linkedin size={15} aria-hidden />
@@ -59,7 +59,7 @@ export function Footer() {
                   href={site.social.instagram}
                   target="_blank"
                   rel="noreferrer"
-                  aria-label="KORA no Instagram"
+                  aria-label="Kora GEO no Instagram"
                   className="inline-flex items-center gap-2 text-foreground-muted transition hover:text-foreground"
                 >
                   <Instagram size={15} aria-hidden />

@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: pageUrl,
     siteName: site.name,
-    title: "Deixe seu contato | KORA",
+    title: "Deixe seu contato | Kora GEO",
     description: diagnosticApplication.description,
     images: [
       {
         url: site.defaultOgImage,
         width: 1200,
         height: 630,
-        alt: "Contato KORA para clínicas",
+        alt: "Contato Kora GEO para clínicas",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Deixe seu contato | KORA",
+    title: "Deixe seu contato | Kora GEO",
     description: diagnosticApplication.description,
     images: [site.defaultOgImage],
   },
@@ -183,7 +183,7 @@ export default function DiagnosticApplicationPage() {
                 href={site.social.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="KORA no LinkedIn"
+                aria-label="Kora GEO no LinkedIn"
                 className="inline-flex items-center gap-1.5 hover:text-foreground"
               >
                 <Linkedin size={14} aria-hidden />

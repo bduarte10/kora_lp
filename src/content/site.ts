@@ -24,7 +24,7 @@ const monthlyFromBRL = 2500;
 const monthlyFrom = formatBRL(monthlyFromBRL);
 
 const callMessage =
-  "Oi, vim pelo site da KORA. Quero a análise gratuita: ver como minha clínica aparece no Google e nas respostas de IA.";
+  "Oi, vim pelo site da Kora GEO. Quero a análise gratuita: ver como minha clínica aparece no Google e nas respostas de IA.";
 
 export const site = {
   name: "Kora GEO",
@@ -33,7 +33,7 @@ export const site = {
   cnpj: "54.381.960/0001-78",
   foundingDate: "2024-03-19",
   tagline: "Presença no Google e em IA para clínicas odontológicas",
-  description: `A KORA faz clínicas odontológicas aparecerem quando o paciente procura no Google, no Maps e no ChatGPT, e mostra todo mês o que mudou. Mensalidade a partir de ${monthlyFrom}.`,
+  description: `A Kora GEO faz clínicas odontológicas aparecerem quando o paciente procura no Google, no Maps e no ChatGPT, e mostra todo mês o que mudou. Mensalidade a partir de ${monthlyFrom}.`,
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://koraintelligence.com.br",
   locale: "pt-BR",
   defaultOgImage: "/opengraph-image",
@@ -42,7 +42,7 @@ export const site = {
     whatsappNumber,
     whatsappMessage:
       fromEnvMessage(process.env.NEXT_PUBLIC_WHATSAPP_MESSAGE) ??
-      "Oi, vim pelo site da KORA e quero tirar uma dúvida sobre a mensalidade para clínicas",
+      "Oi, vim pelo site da Kora GEO e quero tirar uma dúvida sobre a mensalidade para clínicas",
     address: {
       street: "Av. Paulista, 1106, sala 01, andar 16",
       district: "Bela Vista",

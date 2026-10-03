@@ -55,7 +55,7 @@ export function About() {
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground-muted transition hover:text-foreground"
             >
               <Linkedin size={15} aria-hidden />
-              KORA no LinkedIn
+              Kora GEO no LinkedIn
             </a>
           </div>
         </Reveal>

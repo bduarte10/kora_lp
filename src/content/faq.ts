@@ -7,7 +7,7 @@ export type FAQItem = {
 
 export const faq: FAQItem[] = [
   {
-    q: "O que a KORA faz por uma clínica odontológica?",
+    q: "O que a Kora GEO faz por uma clínica odontológica?",
     a: "Faz a clínica aparecer quando o paciente procura no Google, no Maps e em IAs como o ChatGPT e o Gemini, e ser a opção mais fácil de escolher quando ele compara: perfil do Google, avaliações e páginas que respondem as dúvidas do paciente. Todo mês, um relatório mostra o que mudou.",
   },
   {
@@ -32,10 +32,10 @@ export const faq: FAQItem[] = [
   },
   {
     q: "Preciso trocar meu site ou minha agência?",
-    a: "Não. A KORA trabalha com o site que a clínica já tem e convive com a agência que cuida das redes e dos anúncios. Quando o site atrapalha, dizemos o que ajustar. Se a clínica não tem site, fazemos um completo, no domínio e no nome dela, com orçamento à parte, informado antes de assinar.",
+    a: "Não. A Kora GEO trabalha com o site que a clínica já tem e convive com a agência que cuida das redes e dos anúncios. Quando o site atrapalha, dizemos o que ajustar. Se a clínica não tem site, fazemos um completo, no domínio e no nome dela, com orçamento à parte, informado antes de assinar.",
   },
   {
-    q: "Para quem a KORA não é indicada?",
+    q: "Para quem a Kora GEO não é indicada?",
     a: "Para quem quer só post em rede social ou volume barato de leads. O trabalho funciona melhor em clínicas particulares com foco em implante, reabilitação ou estética, e com um dentista disposto a revisar o conteúdo antes de publicar.",
   },
   {

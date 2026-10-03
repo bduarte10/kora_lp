@@ -24,7 +24,7 @@ const groupOrder: GuideGroup[] = ["fundamentos", "clinicas"];
 const itemListJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Guias KORA",
+  name: "Guias Kora GEO",
   itemListElement: guides.map((g, i) => ({
     "@type": "ListItem",
     position: i + 1,
@@ -51,7 +51,7 @@ export default function GuiasIndexPage() {
         </h1>
         <p className="mt-4 leading-relaxed text-foreground-muted">
           Respostas diretas sobre como aparecer nas respostas de IA e automatizar atendimento sem
-          quebrar sigilo. A mensalidade da KORA cuida da presença de clínicas odontológicas no
+          quebrar sigilo. A mensalidade da Kora GEO cuida da presença de clínicas odontológicas no
           Google e em IA; automação de atendimento não faz parte dela.
         </p>
       </header>

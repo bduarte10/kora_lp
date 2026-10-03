@@ -20,7 +20,7 @@ export function ArticleLayout({ guide }: { guide: Guide }) {
   const url = `${site.url}/guias/${guide.slug}`;
   const related = relatedGuides(guide.slug);
   const whatsapp = whatsappLinkWith(
-    `Oi! Li o guia "${guide.title}" no site da KORA e quero saber mais.`,
+    `Oi! Li o guia "${guide.title}" no site da Kora GEO e quero saber mais.`,
   );
 
   return (
@@ -57,7 +57,7 @@ export function ArticleLayout({ guide }: { guide: Guide }) {
         <h1 className="display mt-4 text-[length:var(--fs-h1)] leading-[1.1]">{guide.title}</h1>
 
         <p className="mt-3 text-sm text-foreground-subtle">
-          Atualizado em {formatDate(guide.dateModified)} · KORA
+          Atualizado em {formatDate(guide.dateModified)} · Kora GEO
         </p>
 
         <div className="mt-8 rounded-2xl border border-coral bg-coral/5 p-6">
